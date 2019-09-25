@@ -16,8 +16,9 @@ public class Task05 {
      * 5. В классе Cat не должно быть методов.
      */
 
-    public static void main(String[] args) {
-        //напишите тут ваш код
+     public static void main(String[] args) {
+        Cat Obj1 = new Cat();
+        Cat Obj2 = new Cat();
     }
 
     public static class Cat {
