@@ -1,0 +1,27 @@
+package com.company;
+
+public class Task02_1 {
+
+        /**
+         * Написать программу, выводящую на экран надпись "Hello World!" 3 раза. Каждый раз - с новой строки.
+         * <p>
+         * Пример вывода на экран:
+         * Hello World!
+         * Hello World!
+         * Hello World!
+         * Hello World!
+         * <p>
+         * Требования:
+         * 1. Программа должна выводить текст.
+         * 2. Текст должен начинаться с "Hello".
+         * 3. Текст должен заканчиваться на "!".
+         * 4. Текст должен состоять из 3 строк.
+         * 5. Попробуй удалить метод main, в пустом месте написать psvm и нажать tab.
+         */
+
+        public static void main(String[] args) {
+            for (int i = 0; i < 3; i++) {
+                System.out.println("Hello World!");
+            }
+        }
+}
