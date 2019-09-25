@@ -18,11 +18,11 @@ public class Task03 {
      * 5. Метод hackSalary должен увеличить переданное число на 100 и вывести на экран надпись согласно шаблону.
      */
 
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         hackSalary(700);
     }
 
     public static void hackSalary(int a) {
-        // напишите тут ваш код
+        System.out.println("Твоя зарплата составляет: " + (a+100) + " долларов в месяц");
     }
 }
