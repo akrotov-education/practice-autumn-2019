@@ -17,23 +17,14 @@ public class Task11 {
      * 5. Метод min должен возвращать минимальное значение из чисел a, b и с.
      */
 
-    public static int min(int a, int b, int c) {
-        //напишите тут ваш код
+     public static int min(int a, int b, int c) {
         if (a<b) {
-            if (a<c) {
-                return a;
-            }
-           else {
-               return c;
-           }
+            if (a<c) {return a;}
+           else {return c;}
         }
         else {
-            if (a<c) {
-                return b;
-            }
-            else {
-                return c;
-            }
+            if (a<c) {return b;}
+            else {return c;}
         }
     };
 
