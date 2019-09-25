@@ -14,7 +14,7 @@ public class Task01 {
      * 5. Текст должен состоять из одной строки.
      */
 
-    public static void main(String[] args) {
-        // Напишите здесь ваш код
+     public static void main(String[] args) {
+        System.out.println("Hello World!");
     }
 }
