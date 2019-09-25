@@ -20,7 +20,7 @@ public class Task01 {
      */
 
     public static void main(String[] args) {
-        Person person;
+        Person person = new Person();
     }
 
     public static class Person {
