@@ -19,7 +19,7 @@ public class Task06 {
         printCircleLength(5);
     }
 
-    public static void printCircleLength(int radius) {
-        //напишите тут ваш код
+   public static void printCircleLength(int radius) {
+        System.out.println(2*3.14*radius);
     }
 }
