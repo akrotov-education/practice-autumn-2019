@@ -25,8 +25,8 @@ public class Task09 {
         System.out.println(sumDigitsInNumber(546));
     }
 
-    public static int sumDigitsInNumber(int number) {
+   public static int sumDigitsInNumber(int number) {
         //напишите тут ваш код
-        return 0;
+        return (number/100)+(number/10%10)+(number%10);
     }
 }
