@@ -15,7 +15,7 @@ public class Task06 {
      * 5. Выводимый текст должен соответствовать заданию.
      */
 
-    public static void main(String[] args) {
-        //напишите тут ваш код
+   public static void main(String[] args) {
+        System.out.println("Будешь плохо кодить, придет Java и съест твою память");
     }
 }
