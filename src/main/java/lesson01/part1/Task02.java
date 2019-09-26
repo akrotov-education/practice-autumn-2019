@@ -2,6 +2,8 @@ package lesson01.part1;
 
 public class Task02 {
 
+
+
     /**
      * Написать программу, выводящую на экран надпись "Hello World!" 3 раза. Каждый раз - с новой строки.
      * <p>
@@ -20,6 +22,8 @@ public class Task02 {
      */
 
     public static void main(String[] args) {
-        // Напишите здесь ваш код
+        System.out.println("Hello World!");
+        System.out.println("Hello World!");
+        System.out.println("Hello World!");
     }
 }

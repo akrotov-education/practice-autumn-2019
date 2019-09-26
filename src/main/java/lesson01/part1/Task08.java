@@ -23,12 +23,12 @@ public class Task08 {
      */
 
     public static void main(String[] args) {
-        System.out.println(getMetreFromCentimetre(243));
+        System.out.println(getMetreFromCentimetre(343));
     }
 
     public static int getMetreFromCentimetre(int centimetre) {
-        //напишите тут ваш код
+        int metr=centimetre/100;
 
-        return 0;
+        return metr;
     }
 }

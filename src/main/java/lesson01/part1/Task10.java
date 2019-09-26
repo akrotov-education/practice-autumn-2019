@@ -1,5 +1,7 @@
 package lesson01.part1;
 
+import java.time.LocalTime;
+import java.time.Duration;
 public class Task10 {
 
     /**
@@ -15,7 +17,10 @@ public class Task10 {
      */
 
     public static void main(String[] args) {
-        int secondsAfter15 = 0;
+        LocalTime start = LocalTime.of(15,00);
+        LocalTime end = LocalTime.of(15,30);
+        Duration d = Duration.between(start, end);;
+        int secondsAfter15 = (int) d.getSeconds();
         System.out.println(secondsAfter15);
     }
 }
