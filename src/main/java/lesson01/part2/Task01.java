@@ -21,9 +21,26 @@ public class Task01 {
 
     public static void main(String[] args) {
         //напишите тут ваш код
+        Person Russian = new Person();
+        Russian.name = "George";
+        Russian.age = 20;
+        Russian.weight = 63;
+        Russian.money = 1000;
+        Russian.getPerson();
+
     }
 
     public static class Person {
+        String name;
+        int age;
+        int weight;
+        int money;
+
+        public void getPerson(){
+            System.out.println("My name is " +name + ", i am " + age  + " years old, my weight is " + weight + " and i have " + money + " roubles");
+        }
+
         //напишите тут ваш код
+
     }
 }

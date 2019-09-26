@@ -1,5 +1,7 @@
 package lesson01.part1;
 
+import java.time.LocalTime;
+import static java.time.temporal.ChronoUnit.SECONDS;
 public class Task10 {
 
     /**
@@ -15,7 +17,12 @@ public class Task10 {
      */
 
     public static void main(String[] args) {
-        int secondsAfter15 = 0;
+
+        LocalTime localTime2 = LocalTime.of(15, 30, 0);
+        LocalTime localTime1 = LocalTime.of(15,0,0);
+        int secondsAfter15 = (int)SECONDS.between(localTime1, localTime2);
+
+
         System.out.println(secondsAfter15);
     }
 }

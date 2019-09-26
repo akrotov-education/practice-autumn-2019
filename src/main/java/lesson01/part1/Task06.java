@@ -15,11 +15,12 @@ public class Task06 {
      * 4. Программа должна выводить длину окружности с радиусом 5.
      */
 
-    public static void main(String[] args) {
-        printCircleLength(5);
+    public static void main(String[] args) {     printCircleLength(5);
     }
 
-    public static void printCircleLength(int radius) {
+    public  static void printCircleLength(int radius) {
+        double L =  2 * Math.PI * radius;
+        System.out.println("Длина окружности равна " + L);
         //напишите тут ваш код
     }
 }
