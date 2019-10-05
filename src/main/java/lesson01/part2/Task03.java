@@ -23,6 +23,8 @@ public class Task03 {
     }
 
     public static void hackSalary(int a) {
+        a=a+100;
+        System.out.println(a);
         // напишите тут ваш код
     }
 }
