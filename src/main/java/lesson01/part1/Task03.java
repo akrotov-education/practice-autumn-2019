@@ -15,6 +15,7 @@ public class Task03 {
      */
 
     public static void main(String[] args) {
-        // Напишите здесь ваш код
+        int currentYear = 2019;
+        System.out.println(currentYear - 98);
     }
 }
