@@ -29,7 +29,10 @@ public class Task13 {
     }
 
     public static double getWeight(int earthWeight) {
-        //напишите тут ваш код
-        return 0D;
+        Scanner sc = new Scanner(System.in);
+        int We = sc.nextInt();
+        sc.close();
+        double WMas = We * 0.17;
+        return WMas;
     }
 }
