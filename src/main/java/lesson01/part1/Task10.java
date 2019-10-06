@@ -1,4 +1,6 @@
 package lesson01.part1;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 public class Task10 {
 
@@ -15,7 +17,9 @@ public class Task10 {
      */
 
     public static void main(String[] args) {
-        int secondsAfter15 = 0;
+        LocalDateTime inTime = LocalDateTime.of(2019, 9, 25, 15, 0, 0);
+        LocalDateTime outTime = LocalDateTime.of(2019, 9, 25, 15, 30, 0);
+        int secondsAfter15 = (int) ChronoUnit.SECONDS.between(inTime, outTime);
         System.out.println(secondsAfter15);
     }
 }

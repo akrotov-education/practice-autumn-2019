@@ -1,5 +1,7 @@
 package lesson01.part1;
 
+//import org.graalvm.compiler.replacements.nodes.CStringConstant;
+
 public class Task09 {
 
     /**
@@ -26,7 +28,13 @@ public class Task09 {
     }
 
     public static int sumDigitsInNumber(int number) {
-        //напишите тут ваш код
-        return 0;
+        int sum = 0;
+
+        while (number != 0) {
+            sum += number % 10;
+            number /= 10;
+        }
+
+        return sum;
     }
 }
