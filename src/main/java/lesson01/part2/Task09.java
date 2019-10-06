@@ -16,7 +16,13 @@ public class Task09 {
      */
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        Cat cat=new Cat();
+        cat.owner=new Woman();
+        Fish cat1=new Fish();
+        cat.owner=new Woman();
+        Dog cat2=new Dog();
+        cat.owner=new Woman();
+
     }
 
     public static class Cat {
