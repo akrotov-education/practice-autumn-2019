@@ -15,7 +15,8 @@ public class Task10 {
      */
 
     public static void main(String[] args) {
-        int secondsAfter15 = 0;
-        System.out.println(secondsAfter15);
+        LocalTime specificTime1 = LocalTime.of(15, 0, 0 );
+        LocalTime specificTime2 = LocalTime.of(15, 30, 0);
+        System.out.println(specificTime2.getMinute() - specificTime1.getMinute());
     }
 }
