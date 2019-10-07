@@ -23,7 +23,9 @@ public class Task04 {
      */
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        int a = 5;
+        int b = 7;
+        system.out.printl(a+b);
+        system.out.printl(a*b);
     }
-
 }
