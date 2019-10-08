@@ -1,5 +1,6 @@
 package lesson01.part1;
 
+
 public class Task06 {
 
     /**
@@ -21,5 +22,6 @@ public class Task06 {
 
     public static void printCircleLength(int radius) {
         //напишите тут ваш код
+        System.out.println(2 * Math.PI * radius);
     }
 }
