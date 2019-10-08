@@ -1,6 +1,6 @@
 package lesson01.part1;
 
-public class Task09 {
+public class   Task09 {
 
     /**
      * Напиши код метода sumDigitsInNumber(int number). Метод на вход принимает целое трехзначное число. Нужно посчитать сумму цифр этого числа, и вернуть эту сумму.
@@ -26,7 +26,7 @@ public class Task09 {
     }
 
     public static int sumDigitsInNumber(int number) {
-        //напишите тут ваш код
+
         return 0;
     }
 }

@@ -27,8 +27,10 @@ public class Task08 {
     }
 
     public static int getMetreFromCentimetre(int centimetre) {
-        //напишите тут ваш код
-
+        centimetre = 243;
+        int getMetreFromCentimetre = centimetre % 100;
+        getMetreFromCentimetre = (centimetre - getMetreFromCentimetre) / 100;
+        System.out.println(getMetreFromCentimetre);
         return 0;
     }
 }
