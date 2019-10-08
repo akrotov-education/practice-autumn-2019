@@ -16,12 +16,13 @@ public class Task09 {
      */
 
     public static void main(String[] args) {
+        Woman woman=new Woman();
         Cat cat=new Cat();
-        cat.owner=new Woman();
+        cat.owner=woman;
         Fish cat1=new Fish();
-        cat.owner=new Woman();
+        cat1.owner=woman;
         Dog cat2=new Dog();
-        cat.owner=new Woman();
+        cat2.owner=woman;
 
     }
 
