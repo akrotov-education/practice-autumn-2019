@@ -16,10 +16,11 @@ public class Task06 {
      */
 
     public static void main(String[] args) {
+        //напишите тут ваш код
         printCircleLength(5);
     }
 
     public static void printCircleLength(int radius) {
-        //напишите тут ваш код
+        System.out.println(2*3.14*radius);
     }
 }

@@ -1,5 +1,7 @@
 package lesson01.part1;
 
+import java.util.Calendar;
+
 public class Task03 {
 
     /**
@@ -15,6 +17,15 @@ public class Task03 {
      */
 
     public static void main(String[] args) {
-        // Напишите здесь ваш код
+        /*Напишите здесь ваш код
+        int year = 2019 - 98;
+        System.out.println(year);
+        или еще проще :D
+        System.out.println("1921");
+        ну а если серьезно, то*/
+        Calendar calendar = Calendar.getInstance();
+        int Year = calendar.get(Calendar.YEAR);
+        System.out.println(Year - 98);
+
     }
 }

@@ -1,5 +1,6 @@
 package lesson01.part1;
 
+
 public class Task10 {
 
     /**

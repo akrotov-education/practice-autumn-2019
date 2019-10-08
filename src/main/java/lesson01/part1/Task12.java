@@ -21,5 +21,6 @@ public class Task12 {
         String peach = "Персик";
 
         //напишите тут ваш код
+        System.out.print("Фрукты:\n" + apple + "\n" + peach);
     }
 }
