@@ -27,6 +27,6 @@ public class Task05 {
         System.out.print(" равно ");
         //System.out.print("пятнадцать");
         //System.out.print(21);
-        System.out.print((int) Math.pow(3,2));
+        System.out.print((int) Math.pow(3,3));
     }
 }
