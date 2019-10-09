@@ -15,7 +15,5 @@ public class Task10 {
      */
 
     public static void main(String[] args) {
-        int secondsAfter15 = 0;
-        System.out.println(secondsAfter15);
     }
 }
