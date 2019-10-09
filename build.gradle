@@ -14,3 +14,14 @@ compileTestJava.options.encoding = 'UTF-8'
 repositories {
     mavenCentral()
 }
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.5.2'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
