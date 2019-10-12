@@ -7,5 +7,20 @@
     <groupId>mtuci.java</groupId>
     <artifactId>java</artifactId>
     <version>1.0</version>
+<<<<<<< HEAD
+=======
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+>>>>>>> 0e1f9ccef6b9e889c7acce5defc37f7bc5a9a39d
 
 </project>
