@@ -1,4 +1,4 @@
-package lesson01.part1;
+﻿package lesson01.part1;
 
 public class Task10 {
 
@@ -15,10 +15,7 @@ public class Task10 {
      */
 
     public static void main(String[] args) {
-<<<<<<< HEAD
         int secondsAfter15 = 0;
         System.out.println(secondsAfter15);
-=======
->>>>>>> 0e1f9ccef6b9e889c7acce5defc37f7bc5a9a39d
     }
 }
