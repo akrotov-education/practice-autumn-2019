@@ -4,10 +4,20 @@ package lesson02.part01.task0315;
 Каждый охотник желает знать…
 */
 
+import com.sun.org.apache.xpath.internal.operations.Or;
+
+import javax.swing.*;
+
 public class Solution {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        new Red();
+        new Orange();
+        new Yellow();
+        new Green();
+        new Blue();
+        new Indigo();
+        new Violet();
     }
 
     public static class Red {
