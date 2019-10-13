@@ -7,7 +7,7 @@ package lesson02.part01.task0304;
 public class Solution {
     public static double addTenPercent(int i) {
         //напишите тут ваш код
-        return 0d;
+        return i + (i / 10.0);
     }
 
     public static void main(String[] args) {
