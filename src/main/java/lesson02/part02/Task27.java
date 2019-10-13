@@ -34,6 +34,19 @@ import java.util.*;
 public class Task27 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        int numb = new Scanner(System.in).nextInt();
+        if (numb < 1 || numb > 999)
+            return;
+        if (numb % 2 == 0)
+            System.out.print("четное ");
+        else
+            System.out.print("нечетное ");
+        if (numb / 10 == 0)
+            System.out.print("однозначное ");
+        else if (numb / 100 == 0)
+            System.out.print("двузначное ");
+        else if (numb / 1000 == 0)
+            System.out.print("трехзначное ");
+        System.out.println("число");
     }
 }

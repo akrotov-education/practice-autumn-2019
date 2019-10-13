@@ -29,6 +29,20 @@ import java.util.*;
 public class Task26 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        int numb = new Scanner(System.in).nextInt();
+        if (numb == 0)
+            System.out.println("ноль");
+        else{
+            if (numb<0)
+                System.out.print("отрицательное ");
+            else
+                System.out.print("положительное ");
+            if (numb % 2 == 0)
+                System.out.print("четное ");
+            else
+                System.out.print("нечетное ");
+            System.out.println("число");
+        }
 
     }
 }

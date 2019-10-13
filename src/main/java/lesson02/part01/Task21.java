@@ -16,5 +16,11 @@ package lesson02.part01;
 public class Task21 {
     public static void main(String[] args) {
         //напишите тут ваш код
+        double pi = Math.PI;
+        while((int)pi%10 != 9){
+            System.out.println("Я хочу большую зарплату, и для этого изучаю Java");
+            System.out.println("Я хочу большую зарплату, и для этого изучаю Java");
+            pi*=10;
+        }
     }
 }

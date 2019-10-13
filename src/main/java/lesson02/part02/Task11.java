@@ -26,6 +26,22 @@ public class Task11 {
 
     public static void checkSeason(int month) {
         //напишите тут ваш код
+        switch (month) {
+            case 3: case 4: case 5:
+                System.out.println("весна");
+                break;
+            case 6: case 7: case 8:
+                System.out.println("лето");
+                break;
+            case 9: case 10: case 11:
+                System.out.println("осень");
+                break;
+            case 12: case 1: case 2:
+                System.out.println("зима");
+                break;
+            default:
+                System.out.println("нет такого месяца");
+        }
 
     }
 }

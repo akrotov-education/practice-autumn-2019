@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры три числа а, b, c – стороны предполагаемого треугольника.
  * Определить возможность существования треугольника по сторонам. Результат вывести на экран в следующем виде:
@@ -20,6 +22,16 @@ package lesson02.part02;
 public class Task15 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int c = scan.nextInt();
+        double halfSum = (a+b+c)/2d;
+        if(a<halfSum && b<halfSum && c<halfSum){
+            System.out.println("Треугольник существует.");
+        }
+        else {
+            System.out.println("Треугольник не существует.");
+        }
     }
 }
