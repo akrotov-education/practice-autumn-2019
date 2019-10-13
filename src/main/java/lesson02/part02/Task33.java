@@ -26,6 +26,10 @@ package lesson02.part02;
 public class Task33 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        int cnt = 0;
+        while(cnt != 100){
+            System.out.print("S");
+            if (++cnt % 10 == 0) System.out.println();
+        }
     }
 }

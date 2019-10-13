@@ -34,6 +34,19 @@ import java.util.*;
 public class Task27 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        Scanner s = new Scanner(System.in);
+        int num = s.nextInt();
+        if (num > 0 && num < 1000){
+            if (num % 2 == 0){
+                if (Math.floorDiv(num, 100) != 0) System.out.println("четное трехзначное число");
+                else if (Math.floorDiv(num, 10) != 0) System.out.println("четное двузначное число");
+                else System.out.println("четное однозначное число");
+            }
+            else{
+                if (Math.floorDiv(num, 100) != 0) System.out.println("нечетное трехзначное число");
+                else if (Math.floorDiv(num, 10) != 0) System.out.println("нечетное двузначное число");
+                else System.out.println("нечетное однозначное число");
+            }
+        }
     }
 }
