@@ -16,7 +16,12 @@ public class Task14 {
 
     public static void print3(String s) {
         //напишите тут ваш код
-
+        int i = 0;
+        while ( i < 3) {
+            System.out.print(s + " ");
+            i++;
+        }
+        System.out.println("\n");
     }
 
     public static void main(String[] args) {
