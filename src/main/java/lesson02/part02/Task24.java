@@ -22,6 +22,24 @@ import java.util.*;
 public class Task24 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        Scanner scanner = new Scanner(System.in);
+
+        int[] values = new int[3];
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Value: ?");
+            values[i] = scanner.nextInt();
+        }
+
+        //Нужно ли делать проверку на существование 2х и неравенство всех???
+        if(values[0] == values[1])
+            System.out.println(3);
+        else if(values[1] == values[2])
+            System.out.println(1);
+        else
+            System.out.println(2);
+
+
+
 
     }
 }

@@ -25,6 +25,7 @@ public class Task06 {
             String fullName = firstName + " " + lastName;
 
             //напишите тут ваш код
+            this.fullName = fullName;
         }
     }
 }

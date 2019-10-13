@@ -30,6 +30,20 @@ import java.util.*;
 public class Task25 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("X: ?");
+        int x = scanner.nextInt();
 
+        System.out.println("Y: ?");
+        int y = scanner.nextInt();
+
+        if(x>0 && y>0)
+            System.out.println(1);
+        if(x<0 && y>0)
+            System.out.println(2);
+        if(x<0 && y<0)
+            System.out.println(3);
+        if(x>0 && y<0)
+            System.out.println(4);
     }
 }

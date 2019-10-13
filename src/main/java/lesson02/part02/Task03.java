@@ -23,7 +23,7 @@ public class Task03 {
 
         public void setName(String name) {
             //напишите тут ваш код
-
+            this.name = name;
         }
     }
 }

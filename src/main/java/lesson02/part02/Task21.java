@@ -20,6 +20,16 @@ import java.util.*;
 public class Task21 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("First name: ?");
+        String firstName = scanner.nextLine();
 
+        System.out.println("Second name: ?");
+        String secondName = scanner.nextLine();
+
+        if(firstName.equals(secondName))
+            System.out.println("Имена идентичны");
+        else if(firstName.length() == secondName.length())
+            System.out.println("Длины имен равны");
     }
 }
