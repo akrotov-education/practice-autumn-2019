@@ -23,6 +23,8 @@ package lesson02.part01;
 public class Task09 {
     public static void main(String[] args) {
         //напишите тут ваш код
+        for (int i = 0 ; i < 5 ; i++)
+            System.out.println(i);
 
     }
 }
