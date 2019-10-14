@@ -27,9 +27,39 @@ package lesson02.part02;
  * 5.	Если нет равных чисел, ничего не выводить.
  */
 
+
+import java.io.*;
+import java.util.*;
+
 public class Task17 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        int c1,c2,c3;
+        System.out.print("Введите данные ");
+        String cS = bufferedReader.readLine();
+        c1 = Integer.parseInt(cS);
+        cS = bufferedReader.readLine();
+        c2 = Integer.parseInt(cS);
+        cS = bufferedReader.readLine();
+        c3 = Integer.parseInt(cS);
+
+        int i=0;
+        if(c1==c2)
+        {
+            System.out.print(c1+ " "+c2);
+            i++;
+        }
+        if(c2==c3 && i==1)
+            System.out.print(" " + c3);
+        if(i==0 && c2==c3)
+            System.out.print(c2+ " "+c3);
+        if(c1==c3 && i==0)
+            System.out.print(c1+" "+c3);
+
 
     }
 }

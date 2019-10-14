@@ -14,9 +14,26 @@ package lesson02.part02;
  * 5.	Если введенное число равно нулю, необходимо вывести ноль.
  */
 
+import java.io.*;
+import java.util.*;
+
 public class Task12 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        int cI=0;
+            System.out.print("Введите число ");
+            String cS = bufferedReader.readLine();
+            cI = Integer.parseInt(cS);
+
+            if (cI < 0)
+                cI = cI + 1;
+            if (cI > 0)
+                cI = cI * 2;
+            System.out.println(cI);
 
     }
 

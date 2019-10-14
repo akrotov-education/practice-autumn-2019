@@ -23,6 +23,15 @@ package lesson02.part01;
 public class Task09 {
     public static void main(String[] args) {
         //напишите тут ваш код
+        System.out.println(1);
+        String cymmaS ="1";
+        int cymma =1;
+        for(int i=2;i<6;i++)
+        {
+            cymma=cymma+i;
+            cymmaS=cymmaS+"+"+i;
+            System.out.println(cymmaS+"="+cymma);
 
+        }
     }
 }

@@ -17,9 +17,22 @@ package lesson02.part02;
 import java.io.*;
 import java.util.*;
 
+
 public class Task21 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
+        String n1,n2;
+        System.out.print("Введите имена \n");
+        n1 = bufferedReader.readLine();
+        n2 = bufferedReader.readLine();
+        if(n1.equals(n2))
+            System.out.print("Имена идентичны");
+
+        else if(n1.length()==n2.length())
+            System.out.print("Длины имен равны");
     }
 }

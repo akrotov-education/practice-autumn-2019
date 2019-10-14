@@ -15,9 +15,26 @@ package lesson02.part02;
  * 4.	В программе должен использоваться цикл for.
  */
 
+import java.io.*;
+import java.util.*;
+
 public class Task36 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
+        int c1, c2;
+        System.out.print("Введите данные \n");
+        String cS = bufferedReader.readLine();
+        c1 = Integer.parseInt(cS);
+        cS = bufferedReader.readLine();
+        c2 = Integer.parseInt(cS);
+        for(int i=0;i<c1;i++) {
+            for (int j = 0; j < c2; j++)
+                System.out.print("8");
+            System.out.print("\n");
+        }
     }
 }

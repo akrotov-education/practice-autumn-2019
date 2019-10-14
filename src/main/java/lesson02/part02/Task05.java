@@ -22,6 +22,7 @@ public class Task05 {
 
         public static void setCatsCount(int catsCount) {
             //напишите тут ваш код
+            Cat.catsCount=catsCount;
 
         }
     }

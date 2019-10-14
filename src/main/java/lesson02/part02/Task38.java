@@ -14,9 +14,16 @@ package lesson02.part02;
  * 5.	В программе должен использоваться цикл for.
  */
 
-public class Task38 {
-    public static void main(String[] args) {
-        //напишите тут ваш код
+import java.io.*;
+import java.util.*;
 
+public class Task38 {
+    public static void main(String[] args) throws Exception {
+        //напишите тут ваш код
+        for(int i=0;i<10;i++)
+            System.out.print("8");
+
+        for(int i=0;i<10;i++)
+            System.out.print("\n8");
     }
 }

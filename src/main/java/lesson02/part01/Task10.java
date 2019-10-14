@@ -23,6 +23,8 @@ public class Task10 {
 
     public static void writeToConsole(String s) {
         //напишите тут ваш код
+        String p="printing: ";
+        System.out.print(p+s);
 
     }
 }

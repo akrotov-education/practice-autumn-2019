@@ -29,6 +29,27 @@ import java.util.*;
 public class Task26 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
+        int cI;
+        System.out.print("Введите данные \n");
+        String cS = bufferedReader.readLine();
+        cI = Integer.parseInt(cS);
+        int m;
+        m=cI%2;
+        if(cI<0)
+            if(m==0)
+                System.out.print("Отрицательное четное число");
+            else
+                System.out.print("Отрицательное нечетное число");
+        else if(cI>0)
+            if(m==0)
+                System.out.print("Положительное четное число");
+            else
+                System.out.print("Положительное нечетное число");
+        else
+            System.out.print("Нуль");
     }
 }

@@ -24,6 +24,12 @@ public class Task08 {
 
     public static void compare(int a) {
         //напишите тут ваш код
+        if(a<5)
+            System.out.print("Число меньше 5\n");
+        else if(a>5)
+            System.out.print("Число больше 5\n");
+        else
+            System.out.print("Число равно 5\n");
 
     }
 }
