@@ -24,7 +24,11 @@ package lesson02.part02;
 
 public class Task37 {
     public static void main(String[] args) {
-        //напишите тут ваш код
-
+        for (int i = 1; i<=10; i++){
+            for (int n = 1; n<=i; n++){
+                System.out.print(8);
+            }
+            System.out.println("");
+        }
     }
 }

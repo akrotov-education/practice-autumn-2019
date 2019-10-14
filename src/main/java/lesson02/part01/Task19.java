@@ -1,5 +1,7 @@
 package lesson02.part01;
 
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры имя и вывести надпись:
  * name зарабатывает $5,000. Ха-ха-ха!
@@ -15,7 +17,9 @@ package lesson02.part01;
 
 public class Task19 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        System.out.println(name + " зарабатывает $5,000. Ха-ха-ха!");
 
     }
 }
