@@ -17,10 +17,12 @@ public class Task08 {
     public static void main(String[] args) {
         //напишите тут ваш код
         Cat cat8 = new Cat();
-        Cat cat9;
+        Cat cat9 = new Cat();
+        Cat cat10 = new Cat();
+        Cat cat, cat1, cat2, cat3, cat4, cat5, cat6, cat7;
         //напишите тут ваш код
     }
-
+//почему ругается:(
     public static class Cat {
 
     }
