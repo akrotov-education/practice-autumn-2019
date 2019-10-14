@@ -24,5 +24,15 @@ public class Task09 {
     public static void main(String[] args) {
         //напишите тут ваш код
 
+        String str="1";
+        int s=1;
+        System.out.println(str);
+        str=str+"+";
+        for(int i=2;i<6;i++) {
+            s=s+i;
+            System.out.println(str+i+"="+s);
+            str=str+i+"+";
+        }
+
     }
 }
