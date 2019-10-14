@@ -1,7 +1,6 @@
 package lesson01.part1;
-
+import java.time.LocalDateTime;
 public class Task03 {
-
     /**
      * Мой юный друг
      * Сейчас 2019 год. Наш университет основан 98 лет назад.
@@ -15,6 +14,9 @@ public class Task03 {
      */
 
     public static void main(String[] args) {
-        // Напишите здесь ваш код
+        LocalDateTime date1 = LocalDateTime.now();
+        int date2 = date1.getYear();
+        int date3 = date2 - 98;
+        System.out.println("Сейчас " + date2 + " год. Наш университет основан в " + date3 + " году.");
     }
 }

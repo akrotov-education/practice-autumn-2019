@@ -1,7 +1,6 @@
 package lesson01.part2;
 
 public class Task08 {
-
     /**
      * Создай 10 переменных типа Cat и 8 объектов типа Cat.
      * <p>
@@ -15,13 +14,28 @@ public class Task08 {
      */
 
     public static void main(String[] args) {
-        //напишите тут ваш код
-        Cat cat8 = new Cat();
+        Cat cat1;
+        Cat cat2;
+        Cat cat3;
+        Cat cat4;
+        Cat cat5;
+        Cat cat6;
+        Cat cat7;
+        Cat cat8;
         Cat cat9;
-        //напишите тут ваш код
+        Cat cat10;
+
+        cat1 = new Cat();
+        cat2 = new Cat();
+        cat3 = new Cat();
+        cat4 = new Cat();
+        cat5 = new Cat();
+        cat6 = new Cat();
+        cat7 = new Cat();
+        cat8 = new Cat();
+
     }
 
     public static class Cat {
-
     }
 }

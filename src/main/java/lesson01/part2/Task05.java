@@ -1,7 +1,6 @@
 package lesson01.part2;
 
 public class Task05 {
-
     /**
      * Создать объект типа Cat 2 раза.
      * Сохрани каждый экземпляр в свою переменную.
@@ -17,11 +16,11 @@ public class Task05 {
      */
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        Cat Simon = new Cat();
+        Cat Masya = new Cat();
     }
 
     public static class Cat {
 
     }
-
 }

@@ -20,10 +20,22 @@ public class Task01 {
      */
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        Person Hooman =  new Person();
+        Hooman.name = "Алина";
+        Hooman.age = 21;
+        Hooman.weight = 100500;
+        Hooman.money = 500;
+        Hooman.displayInfo();
     }
 
     public static class Person {
-        //напишите тут ваш код
+        String name;
+        int age;
+        int weight;
+        int money;
+        void displayInfo() {
+            System.out.printf("Имя: %s \nВозраст: %s\nВес: %s \nДеньги: %s", name, age, weight, money);
+        }
     }
+
 }

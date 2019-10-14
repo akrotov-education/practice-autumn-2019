@@ -1,7 +1,6 @@
 package lesson01.part1;
 
 public class Task14 {
-
     /**
      * В методе main расставь правильно знаки плюс и минус, чтобы значение переменной result получилось равным 20.
      * Знаки нужно расставить только в строчке, в которой объявляется переменная result.
@@ -23,8 +22,9 @@ public class Task14 {
 
     public static void main(String[] args) {
 
-        int result = + a + b + c + d;
+        int result = - a + b - c + d;
 
         System.out.println(result);
     }
+
 }

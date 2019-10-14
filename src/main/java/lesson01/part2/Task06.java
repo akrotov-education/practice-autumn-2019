@@ -1,7 +1,6 @@
 package lesson01.part2;
 
 public class Task06 {
-
     /**
      * Необъективная реальность
      * Напиши программу, которая выводит на экран надпись: "Будешь плохо кодить, придет Java и съест твою память".
@@ -16,6 +15,6 @@ public class Task06 {
      */
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        System.out.println("Будешь плохо кодить, придет Java и съест твою память");
     }
 }

@@ -1,7 +1,6 @@
 package lesson01.part2;
 
 public class Task11 {
-
     /**
      * Написать функцию, которая вычисляет минимум из трёх чисел.
      * <p>
@@ -18,8 +17,14 @@ public class Task11 {
      */
 
     public static int min(int a, int b, int c) {
-        //напишите тут ваш код
-        return 0;
+        int minimum = a;
+        if (b < minimum) {
+            minimum = b;
+        }
+        if (c < minimum) {
+            minimum = c;
+        }
+        return minimum;
     }
 
     public static void main(String[] args) {
@@ -28,5 +33,4 @@ public class Task11 {
         System.out.println(min(3, 5, 3));
         System.out.println(min(5, 5, 10));
     }
-
 }
