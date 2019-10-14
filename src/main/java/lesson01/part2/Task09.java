@@ -15,6 +15,7 @@ public class Task09 {
      * 5. Класс Woman не должен содержать переменных.
      */
 
+<<<<<<< HEAD
    public static void main(String[] args) {
         Cat cat1 = new Cat();
         Dog dog1 = new Dog();
@@ -23,6 +24,9 @@ public class Task09 {
         cat1.owner = woman1;
         dog1.owner = woman1;
         fish1.owner = woman1;
+=======
+    public static void main(String[] args) {
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
         //напишите тут ваш код
     }
 

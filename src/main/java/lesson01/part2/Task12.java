@@ -21,6 +21,7 @@ public class Task12 {
      */
 
     public static int min(int a, int b, int c, int d) {
+<<<<<<< HEAD
         int min1 = min(a,b);
         int min2 = min(c,d);
         return min(min1, min2);
@@ -29,6 +30,15 @@ public class Task12 {
     public static int min(int a, int b) {
         if (a<b) {return a;}
         else {return b;}
+=======
+        //напишите тут ваш код
+        return 0;
+    }
+
+    public static int min(int a, int b) {
+        //напишите тут ваш код
+        return 0;
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     }
 
     public static void main(String[] args) throws Exception {

@@ -14,7 +14,12 @@ public class Task01 {
      * 5. Текст должен состоять из одной строки.
      */
 
+<<<<<<< HEAD
      public static void main(String[] args) {
         System.out.println("Hello World!");
+=======
+    public static void main(String[] args) {
+        // Напишите здесь ваш код
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     }
 }

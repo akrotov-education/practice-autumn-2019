@@ -14,10 +14,16 @@ public class Task14 {
      * 5. Метод print3 должен выводить переданную строку (слово) на экран три раза, но в одной строке.
      */
 
+<<<<<<< HEAD
      public static void print3(String s) {
         System.out.print("\n");
         for (int i = 0; i < 3; i ++)
         System.out.print(s+" ");
+=======
+    public static void print3(String s) {
+        //напишите тут ваш код
+
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     }
 
     public static void main(String[] args) {

@@ -20,7 +20,11 @@ public class Task04 {
         // y = y - x;
         // y = y + x;
         // y = y + x;
+<<<<<<< HEAD
          y = x / y;
+=======
+        // y = x / y;
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
         // y = y / x;
         // y = y * x;
 

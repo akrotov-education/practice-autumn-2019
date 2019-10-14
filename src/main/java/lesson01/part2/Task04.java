@@ -22,11 +22,16 @@ public class Task04 {
      * 6. Каждое значение должно быть выведено с новой строки
      */
 
+<<<<<<< HEAD
    public static void main(String[] args) {
         int a = 5;
         int b = 7;
         System.out.println(a+b);
         System.out.println(a*b);
+=======
+    public static void main(String[] args) {
+        //напишите тут ваш код
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     }
 
 }

@@ -15,8 +15,12 @@ public class Task03 {
      */
 
     public static void main(String[] args) {
+<<<<<<< HEAD
         Calendar calendar = Calendar.getInstance();
         int Year = calendar.get(Calendar.YEAR);
         System.out.println(Year - 98);
+=======
+        // Напишите здесь ваш код
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     }
 }

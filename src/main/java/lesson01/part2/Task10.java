@@ -18,10 +18,15 @@ public class Task10 {
      */
 
     public static int min(int a, int b) {
+<<<<<<< HEAD
         if (a<b) {
             return a;}
         else {
             return b;}
+=======
+        return 0;
+        //напишите тут ваш код
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     }
 
     public static void main(String[] args) {

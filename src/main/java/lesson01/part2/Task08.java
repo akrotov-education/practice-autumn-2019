@@ -14,6 +14,7 @@ public class Task08 {
      * 5. В классе Cat не должно быть методов.
      */
 
+<<<<<<< HEAD
      public static void main(String[] args) {
         //напишите тут ваш код
         Cat cat11 = new Cat();
@@ -37,6 +38,15 @@ public class Task08 {
         Cat cat210;
         //10 переменных типа Cat
     }
+=======
+    public static void main(String[] args) {
+        //напишите тут ваш код
+        Cat cat8 = new Cat();
+        Cat cat9;
+        //напишите тут ваш код
+    }
+
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     public static class Cat {
 
     }

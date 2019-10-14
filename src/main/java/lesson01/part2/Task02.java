@@ -16,13 +16,22 @@ public class Task02 {
      * 5. Программа должна вывести три числа: 2 1 0. Каждое число в отдельной строке.
      */
 
+<<<<<<< HEAD
    public static void main(String[] args) {
+=======
+    public static void main(String[] args) {
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
         div(6, 3);
         div(10, 6);
         div(2, 4);
     }
 
     public static void div(int a, int b) {
+<<<<<<< HEAD
         System.out.println(a/b);
+=======
+        //напишите тут ваш код
+
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     }
 }

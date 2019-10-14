@@ -6,8 +6,13 @@ public class Task05 {
      * Создать объект типа Cat 2 раза.
      * Сохрани каждый экземпляр в свою переменную.
      * Имена переменных должны быть разные.
+<<<<<<< HEAD
      *
      *
+=======
+     * <p>
+     * <p>
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
      * Требования:
      * 1. Программа не должна выводить текст на экран.
      * 2. В методе main должно быть только две переменные типа Cat.
@@ -16,9 +21,14 @@ public class Task05 {
      * 5. В классе Cat не должно быть методов.
      */
 
+<<<<<<< HEAD
      public static void main(String[] args) {
         Cat Obj1 = new Cat();
         Cat Obj2 = new Cat();
+=======
+    public static void main(String[] args) {
+        //напишите тут ваш код
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     }
 
     public static class Cat {

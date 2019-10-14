@@ -20,7 +20,11 @@ public class Task02 {
      */
 
     public static void main(String[] args) {
+<<<<<<< HEAD
         for (int i = 0; i < 3; i++)
         System.out.println("Hello World!");
+=======
+        // Напишите здесь ваш код
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     }
 }

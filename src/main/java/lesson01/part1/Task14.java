@@ -23,7 +23,11 @@ public class Task14 {
 
     public static void main(String[] args) {
 
+<<<<<<< HEAD
         int result = - a + b - c + d;
+=======
+        int result = + a + b + c + d;
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
 
         System.out.println(result);
     }

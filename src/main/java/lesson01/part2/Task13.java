@@ -16,8 +16,13 @@ public class Task13 {
      */
 
     public static void print3(String s) {
+<<<<<<< HEAD
         for (int i = 0; i < 3; i ++)
         System.out.println(s);
+=======
+        //напишите тут ваш код
+
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     }
 
     public static void main(String[] args) {
