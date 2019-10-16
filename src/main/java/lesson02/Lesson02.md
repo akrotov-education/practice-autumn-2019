@@ -1,19 +1,30 @@
 Занятие 2. Потоки ввода/вывода, Ветвления, Циклы, Классы.
 ================
 
+Получение задач урока:
+================
+1. Открой терминал для выполнения команд git: **View -> Tool Windows -> Terminal** или `Alt + F12`<br>
+2. Проверь, что git настроен на отслеживание изменений из upstream репозитория<br>
+`git remote -v`<br>
+Результат команды должен содержать строки:<br>
+`upstream        https://github.com/MtuciLabs/java-practice-tasks.git (fetch)`<br>
+`upstream        https://github.com/MtuciLabs/java-practice-tasks.git (push)`<br>
+3. Если это не так, добавь ссылку на **upstream** репозиторий<br>
+`git remote add upstream https://github.com/MtuciLabs/java-practice-tasks.git`<br>
+4. Выполни _fetch_, чтобы увидеть изменения базового репозитория.<br>
+`git fetch --all`<br>
+5. Найди ветку `lesson02` и создай на ее основе локальную ветку по шаблону: **группа/фамилия-имя/lesson02** и переключись на нее.<br>
+Пример: `but1801/ivanov-ivan/lesson02`
+
+Также, эти шаги можно выполнить прямо через интерфейс Idea<br>
+[Получение изменений из базового репозитория](https://github.com/MtuciLabs/java-lectures/blob/master/tutorials/%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B8%D0%B7%20%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F.md)<br>
+
+
 Задание:
 ================
-1. Обновить локальный репозиторий. <br>
-```git pull https://github.com/akrotov-education/practice-autumn-2019``` <br>
-2. Переключиться на ветку **lesson02**. <br>
-```git checkout lesson02```
-3. Создать ветку **secondname/lesson02** и переключиться на нее. <br>
-```git checkout -b secondname/lesson02```
-4. Написать код к предложенным задачам, проверить программу на выполнение всех условий условий. <br>
-5. Зафиксировать изменения в ветку **secondname/lesson02** c сообщением **Secondname/lesson02 | Completed** и отправить их на удаленный сервер. <br>
-```git -am "Secondname lesson02 | Completed"```<br>
-```git push```
-6. Создать Pull Request в ветку **lesson02** к репозиторию.
+1. Напиши код к предложенным задачам, проверь программу на выполнение всех требований.<br>
+2. Зафиксируй изменения в созданную ветку _(commit)_ и отправь их в GitHub _(push)_.<br>
+3. Создай Pull Request в ветку lesson02 в репозитории [MtuciLabs/java-practice-tasks](https://github.com/MtuciLabs/java-practice-tasks).
 
 Дополнительная информация:
 ================
