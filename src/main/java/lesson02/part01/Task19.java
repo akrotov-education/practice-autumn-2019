@@ -1,5 +1,7 @@
 package lesson02.part01;
 
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры имя и вывести надпись:
  * name зарабатывает $5,000. Ха-ха-ха!
