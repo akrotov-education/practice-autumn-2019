@@ -22,7 +22,7 @@ public class Task12 {
 
     public static int min(int a, int b, int c, int d) {
         //напишите тут ваш код
-        return Math.min(min(a, b),min(c, d));
+        return min(min(a, b),min(c, d));
     }
 
     public static int min(int a, int b) {

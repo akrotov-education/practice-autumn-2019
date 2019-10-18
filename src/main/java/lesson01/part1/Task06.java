@@ -21,6 +21,6 @@ public class Task06 {
 
     public static void printCircleLength(int radius) {
         //напишите тут ваш код
-        System.out.println(2 * 3.14d * radius);
+        System.out.println(2 * 3.14 * radius);
     }
 }

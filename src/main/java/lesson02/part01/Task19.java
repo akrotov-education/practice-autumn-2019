@@ -16,6 +16,11 @@ package lesson02.part01;
 public class Task19 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Name: ?");
+        String name = scanner.nextLine();
+
+        System.out.println(name + " зарабатывает $5,000. Ха-ха-ха!");
     }
 }

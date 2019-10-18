@@ -1,5 +1,7 @@
 package lesson02.part01;
 
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры число n.
  * Вывести на экран надпись «Я буду зарабатывать $n в час».
@@ -17,6 +19,10 @@ package lesson02.part01;
 public class Task22 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Value: ?");
+        System.out.println("Я буду зарабатывать $" + scanner.nextInt() + " в час");
 
     }
 }
