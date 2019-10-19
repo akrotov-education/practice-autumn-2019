@@ -19,8 +19,8 @@ public class Task03 {
     public static void main(String[] args) {
         //напишите тут ваш код
 
-        convertEurToUsd(31, 1.4);
-        convertEurToUsd(56, 1.5);
+        System.out.println(convertEurToUsd(31, 1.4));
+        System.out.println(convertEurToUsd(56, 1.5));
     }
 
     public static double convertEurToUsd(int eur, double course) {
