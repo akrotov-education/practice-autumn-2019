@@ -1,6 +1,5 @@
 package lesson01.part1;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
