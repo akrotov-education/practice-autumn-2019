@@ -21,15 +21,11 @@ public class Task12 {
     public static void main(String[] args) {
         String[] strArray = { "Мама", "Мыла", "Раму" };
 
-        for (int i = 0; i < strArray.length; i++) {
-            String currentCombination = strArray[i];
-            for (int j = 0; j < strArray.length; j++) {
-                if (j == i) continue;
-
-                currentCombination += strArray[j];
-            }
-
-            System.out.println(currentCombination);
-        }
+        System.out.println(strArray[0]+strArray[1]+strArray[2]);
+        System.out.println(strArray[0]+strArray[2]+strArray[1]);
+        System.out.println(strArray[1]+strArray[0]+strArray[2]);
+        System.out.println(strArray[1]+strArray[2]+strArray[0]);
+        System.out.println(strArray[2]+strArray[0]+strArray[1]);
+        System.out.println(strArray[2]+strArray[1]+strArray[0]);
     }
 }
