@@ -26,9 +26,8 @@ public class Task08 {
         System.out.println(getMetreFromCentimetre(243));
     }
 
-    public static int getMetreFromCentimetre(int centimetre) {
-        //напишите тут ваш код
+    public static int getMetreFromCentimetre(int centimetre) 
 
-        return 0;
+        return centimetre/100;
     }
 }
