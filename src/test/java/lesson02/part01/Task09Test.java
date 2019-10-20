@@ -17,8 +17,13 @@ public class Task09Test {
         ByteArrayOutputStream outputArray = SystemOutGatewayUtil.getOutputArray();
         String s = outputArray.toString();
         String[] arr = s.split("\n");
-        System.out.println(arr[1]);
-        Assert.assertTrue("Message", s.contains("382"));
+        Assert.assertTrue("Message", arr.length == 5);
+        int[] results = {1, 3, 6, 10, 15};
+        for(int i = 0; i < arr.length; i++) {
+            int res = Integer.parseInt(arr[i].replaceAll("\\s", ""));
+            Assert.assertTrue("Message", res == results[i]);
+        }
+
     }
     @Before
     public void before() {

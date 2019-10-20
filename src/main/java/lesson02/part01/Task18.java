@@ -25,6 +25,6 @@ public class Task18 {
         String name = in.nextLine();
         int num1 = in.nextInt();
         int num2 = in.nextInt();
-        System.out.println(name + " получает " + num1 + " через " + num2 + " лет");
+        System.out.println(name + " получает " + num1 + " через " + num2 + " лет.");
     }
 }
