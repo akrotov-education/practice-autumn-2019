@@ -31,7 +31,7 @@ public class Task20 {
         Arrays.sort(values, Collections.reverseOrder());
 
         for (int value : values) {
-            System.out.println(value);
+            System.out.print(value + " ");
         }
     }
 }

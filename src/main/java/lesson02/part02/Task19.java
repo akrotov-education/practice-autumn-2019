@@ -19,16 +19,16 @@ public class Task19 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Value: ?");
-        int min = scanner.nextInt();
+        int max = scanner.nextInt();
 
         for (int i = 0; i < 3; i++)
         {
             System.out.println("Value: ?");
             int input = scanner.nextInt();
-            if(min > input)
-                min = input;
+            if(max < input)
+                max = input;
         }
 
-        System.out.println(min);
+        System.out.println(max);
     }
 }

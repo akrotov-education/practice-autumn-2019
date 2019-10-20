@@ -17,12 +17,13 @@ public class Task23 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Name and age: ?");
-        String string = scanner.nextLine();
+        System.out.println("Name: ?");
+        String name = scanner.nextLine();
 
-        String[] separated = string.split(" ");
+        System.out.println("Name: ?");
+        int age = scanner.nextInt();
 
-        if(separated.length == 2 && Integer.parseInt(separated[1]) > 20)
+        if(age > 20)
             System.out.println("И 18-ти достаточно");
     }
 }

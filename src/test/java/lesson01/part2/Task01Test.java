@@ -43,8 +43,6 @@ public class Task01Test {
             Assert.fail("no variable");
         }
 
-        ClassReader cl = ClassReader.openClass(Task01.class);
-
         try
         {
             PowerMockito.mockStatic(Task01.Person.class);

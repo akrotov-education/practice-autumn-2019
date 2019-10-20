@@ -27,7 +27,7 @@ public class Task01 {
         public int age = 20;
 
         public void adjustAge(int age) {
-            this.age = age + 20;
+            this.age = this.age + age;
 
             //смотря что надо выводить -_-
             System.out.println("Age in adjustAge() is: " + this.age);
