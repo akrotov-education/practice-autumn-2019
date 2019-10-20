@@ -1,4 +1,4 @@
-package lesson02.part01;
+package main.java.lesson02.part01;
 
 /**
  * Напиши код метода addTenPercent, который увеличивает переданное целое число на 10%.
@@ -16,7 +16,7 @@ package lesson02.part01;
 public class Task04 {
     public static double addTenPercent(int i) {
         //напишите тут ваш код
-        return 0d;
+        return i*1.1;
     }
 
     public static void main(String[] args) {

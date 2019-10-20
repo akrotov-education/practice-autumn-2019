@@ -1,4 +1,4 @@
-package lesson02.part01;
+package main.java.lesson02.part01;
 
 /**
  * Добавь метод public static int convertToSeconds(int hour) который будет конвертировать часы в секунды.
@@ -15,9 +15,13 @@ package lesson02.part01;
 
 public class Task11 {
     //напишите тут ваш код
+    public static int convertToSeconds (int h){
+        return h * 60 * 60;
+    }
 
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        System.out.println(convertToSeconds(1));
+        System.out.println(convertToSeconds(5));
     }
 }

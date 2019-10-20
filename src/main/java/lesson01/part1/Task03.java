@@ -1,4 +1,6 @@
-package lesson01.part1;
+package main.java.lesson01.part1;
+
+import java.time.LocalDate;
 
 public class Task03 {
 
@@ -16,5 +18,7 @@ public class Task03 {
 
     public static void main(String[] args) {
         // Напишите здесь ваш код
+
+        System.out.println((LocalDate.now()).minusYears(98).getYear());
     }
 }

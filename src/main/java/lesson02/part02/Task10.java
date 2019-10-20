@@ -1,4 +1,4 @@
-package lesson02.part02;
+package main.java.lesson02.part02;
 
 /**
  * Напишите метод checkInterval. Метод должен проверять попало ли целое число в интервал от 50 до 100
@@ -27,6 +27,10 @@ public class Task10 {
 
     public static void checkInterval(int a) {
         //напишите тут ваш код
+        if (a < 100 && a > 50)
+            System.out.println("Число " + a + " содержится в интервале");
+        else
+            System.out.println("Число " + a + " не содержится в интервале");
 
     }
 }

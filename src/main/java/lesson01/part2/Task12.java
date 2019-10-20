@@ -1,4 +1,4 @@
-package lesson01.part2;
+package main.java.lesson01.part2;
 
 public class Task12 {
 
@@ -22,12 +22,15 @@ public class Task12 {
 
     public static int min(int a, int b, int c, int d) {
         //напишите тут ваш код
-        return 0;
+        return min(min(a,b), min(c,d));
     }
 
     public static int min(int a, int b) {
         //напишите тут ваш код
-        return 0;
+        if (a < b)
+            return a;
+        else
+            return b;
     }
 
     public static void main(String[] args) throws Exception {

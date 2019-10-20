@@ -1,4 +1,4 @@
-package lesson01.part1;
+package main.java.lesson01.part1;
 
 public class Task07 {
 
@@ -27,7 +27,7 @@ public class Task07 {
 
     public static double convertCelsiusToFahrenheit(int celsius) {
         //напишите тут ваш код
-
-        return 0;
+        double Far = 9./5 * celsius + 32;
+        return Far;
     }
 }

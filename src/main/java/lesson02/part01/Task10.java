@@ -1,4 +1,4 @@
-package lesson02.part01;
+package main.java.lesson02.part01;
 
 /**
  * Реализуй метод public static void writeToConsole(String s), который добавляет к началу строки выражение "printing: "
@@ -23,6 +23,7 @@ public class Task10 {
 
     public static void writeToConsole(String s) {
         //напишите тут ваш код
+        System.out.println("printing: " + s);
 
     }
 }

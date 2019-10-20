@@ -1,4 +1,4 @@
-package lesson02.part02;
+package main.java.lesson02.part02;
 
 /**
  * Используя цикл for вывести на экран прямоугольный треугольник из восьмёрок со сторонами 10 и 10.
@@ -25,6 +25,10 @@ package lesson02.part02;
 public class Task37 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        String s = "8";
+        for (int count = 0; count < 10; count++){
+            System.out.println(s);
+            s = s + 8;
+        }
     }
 }
