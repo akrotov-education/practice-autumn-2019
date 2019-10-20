@@ -21,7 +21,19 @@ import java.util.*;
 
 public class Task24 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        Scanner scanner = new Scanner(System.in);
+        int int1 = scanner.nextInt();
+        int int2 = scanner.nextInt();
+        int int3 = scanner.nextInt();
 
+        if (int1==int2&&int1!=int3){
+            System.out.println("3");
+        }
+        else if (int1==int3&&int1!=int2){
+            System.out.println("2");
+        }
+        else if (int2==int3&&int1!=int3){
+            System.out.println("1");
+        }
     }
 }

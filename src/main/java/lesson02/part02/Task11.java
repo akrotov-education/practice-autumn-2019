@@ -26,6 +26,11 @@ public class Task11 {
 
     public static void checkSeason(int month) {
         //напишите тут ваш код
-
+        if (month > 0 && month < 3) System.out.println("winter");
+        else if (month > 2 && month < 6) System.out.println("spring");
+        else if (month > 5 && month < 9) System.out.println("summer");
+        else if (month > 8 && month < 12) System.out.println("autumn");
+        else if (month == 12) System.out.println("winter");
+        else System.out.println("error");
     }
 }

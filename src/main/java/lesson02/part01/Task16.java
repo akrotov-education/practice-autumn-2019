@@ -14,6 +14,7 @@ package lesson02.part01;
 public class Task16 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        System.out.println("日本語");
+        //私は去年の12月から日本語の勉強をしています
     }
 }

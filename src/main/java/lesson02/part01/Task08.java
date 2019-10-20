@@ -15,6 +15,6 @@ package lesson02.part01;
 public class Task08 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        System.out.println(10*9*8*7*6*1*2*3*4*5);
     }
 }

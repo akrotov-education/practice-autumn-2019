@@ -15,7 +15,9 @@ package lesson02.part02;
 public class Task04 {
 
     public static void main(String[] args) {
-
+        Cat cat = new Cat();
+        Cat.addNewCat();
+        System.out.println(Cat.catsCount);
     }
 
     public static class Cat {
@@ -23,7 +25,7 @@ public class Task04 {
 
         public static void addNewCat() {
             //напишите тут ваш код
-
+            catsCount++;
         }
     }
 

@@ -5,11 +5,11 @@ public class Task01 {
     /**
      * В классе Person объяви следующие переменные: name типа String, age типа int, weight типа int, money типа int.
      * В методе main создай объект Person, занеси его ссылку в переменную person.
-     * <p>
+     *
      * Подсказка: для создания объекта Person и занесения его ссылки в переменную person используй конструкцию:
      * ТипПеременной имяПеременной = new ТипСоздаваемогоОбъекта();
-     * <p>
-     * <p>
+     *
+     *
      * Требования:
      * 1. В классе Person объяви переменную name типа String.
      * 2. В классе Person объяви переменную age типа int.
@@ -21,9 +21,26 @@ public class Task01 {
 
     public static void main(String[] args) {
         //напишите тут ваш код
+        Person Russian = new Person();
+        Russian.name = "George";
+        Russian.age = 20;
+        Russian.weight = 63;
+        Russian.money = 1000;
+        Russian.getPerson();
+
     }
 
     public static class Person {
+        String name;
+        int age;
+        int weight;
+        int money;
+
+        public void getPerson(){
+            System.out.println("My name is " +name + ", i am " + age  + " years old, my weight is " + weight + " and i have " + money + " roubles");
+        }
+
         //напишите тут ваш код
+
     }
 }

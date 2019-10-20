@@ -14,9 +14,23 @@ package lesson02.part01;
  * 4.	Выведенный тест должен полностью соответствовать заданию.
  */
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+
 public class Task22 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
+        String str1 = bufferedReader.readLine();
+
+        int num = Integer.parseInt(str1);
+
+        System.out.print("Я буду зарабатывать " + "$" + num + " в час");
     }
-}
+    }
+
