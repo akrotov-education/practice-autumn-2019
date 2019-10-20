@@ -21,5 +21,12 @@ public class Task12 {
         String peach = "Персик";
 
         //напишите тут ваш код
+        String str = apple + " " + porridge + " " + sausage + " " + peach;  
+        String str1[] = str.split(" ");
+        for (String fruits : str1)
+        {
+        	if (fruits.equals("Яблоко") || fruits.equals("Персик"))
+        		System.out.println(fruits);
+        }
     }
 }

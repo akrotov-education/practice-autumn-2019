@@ -24,6 +24,14 @@ public class Task15 {
 
     public static void main(String[] args) {
         //напишите тут ваш код
+    	Man man = new Man();
+		Woman woman = new Woman();
+		
+		man.wife = woman;
+		woman.husband = man;
+		
+		System.out.println(man.wife);
+		System.out.println(woman.husband);
     }
 
     public static class Man {

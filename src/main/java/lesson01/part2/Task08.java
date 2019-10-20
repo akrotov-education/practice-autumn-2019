@@ -16,9 +16,25 @@ public class Task08 {
 
     public static void main(String[] args) {
         //напишите тут ваш код
-        Cat cat8 = new Cat();
-        Cat cat9;
+        Cat cat1 = new Cat(); 
+        Cat cat2 = new Cat(); 
+        Cat cat3 = new Cat(); 
+        Cat cat4 = new Cat(); 
+        Cat cat5 = new Cat(); 
+        Cat cat6 = new Cat(); 
+        Cat cat7 = new Cat(); 
+        Cat cat8 = new Cat(); 
+        Cat cat9 = new Cat(); 
+        Cat cat10 = new Cat();
         //напишите тут ваш код
+        Cat сcat1; 
+        Cat cсat2; 
+        Cat cсat3; 
+        Cat cсat4; 
+        Cat cсat5; 
+        Cat cсat6; 
+        Cat cсat7; 
+        Cat cсat8;
     }
 
     public static class Cat {
