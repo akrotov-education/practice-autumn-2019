@@ -1,4 +1,7 @@
-package lesson02.part02;
+package main.java.lesson02.part02;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * Ввести с клавиатуры строку name.
@@ -22,6 +25,13 @@ package lesson02.part02;
 public class Task43 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine();
+        int bYear = Integer.parseInt(reader.readLine());
+        int bMonth = Integer.parseInt(reader.readLine());
+        int bDay = Integer.parseInt(reader.readLine());
 
+        System.out.println("Меня зовут " + name);
+        System.out.println("Я родился " + bDay + "." + bMonth + "." + bYear);
     }
 }
