@@ -16,8 +16,30 @@ package lesson02.part01;
  */
 
 public class Task12 {
-    public static void main(String[] args) {
-        //напишите тут ваш код
+    static String[] mass = {"Мама", "Мыла", "Раму"};
 
+    public static void Swap(int a, int b) {
+        String t = mass[a];
+        mass[a] = mass[b];
+        mass[b] = t;
+    }
+
+    public static void Generate(int k) {
+        if (k == 2) {
+            for (int i = 0; i < 3; i++) {
+                System.out.print(mass[i]);
+            }
+            System.out.println(" ");
+        } else {
+            for (int j = k; j < 3; j++) {
+                Swap(k, j);
+                Generate(k + 1);
+                Swap(k, j);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Generate(0);
     }
 }

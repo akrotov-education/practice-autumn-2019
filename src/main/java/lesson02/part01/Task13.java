@@ -18,7 +18,18 @@ package lesson02.part01;
 
 public class Task13 {
     public static void main(String[] args) {
-        //напишите тут ваш код
 
+        int[] stroka = {1,2,3,4,5,6,7,8,9,10};
+        int[] stolb = {1,2,3,4,5,6,7,8,9,10};
+
+        int result;
+        int b = 1;
+        for (int i = 0; i < 10; i++){
+            for (int j = 0; j < 10; j++){
+                result = stroka[i] * stolb[j];
+                System.out.print(result + " ");
+            }
+            System.out.println();
+        }
     }
 }

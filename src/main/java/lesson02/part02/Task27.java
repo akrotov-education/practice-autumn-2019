@@ -33,7 +33,18 @@ import java.util.*;
 
 public class Task27 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        System.out.println("Введите число: ");
+        Scanner str = new Scanner(System.in);
+        int num = str.nextInt();
+        if (num > 0 & num < 1000) {
+            String chet;
+            if (num % 2 == 0) chet = "четное ";
+            else chet = "нечетное ";
+            String des;
+            if (num / 100 > 0) des = "трехзначное ";
+            else if (num / 10 > 0) des = "двузначное ";
+            else des = "однозначное ";
+            System.out.println(chet + des + "число");
+        }
     }
 }

@@ -20,7 +20,15 @@ import java.util.*;
 
 public class Task18 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        System.out.print("Введите имя: ");
+        BufferedReader name = new BufferedReader(new InputStreamReader(System.in));
+        String str1 = name.readLine();
+        System.out.print("Введите первое число: ");
+        BufferedReader number1 = new BufferedReader(new InputStreamReader(System.in));
+        String str2 = number1.readLine();
+        System.out.print("Введите второе число: ");
+        BufferedReader number2 = new BufferedReader(new InputStreamReader(System.in));
+        String str3 = number2.readLine();
+        System.out.println(str1 + " получает " + str2 + " через " + str3 + " лет");
     }
 }

@@ -15,9 +15,16 @@ package lesson02.part01;
  * 6.	Выведенный тест должен полностью соответствовать заданию.
  */
 
+import java.util.Scanner;
 public class Task20 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        System.out.print("Введите имена: ");
+        Scanner str = new Scanner(System.in);
+        if (str.hasNextLine()) {
+            String name1 = str.nextLine();
+            String name2 = str.nextLine();
+            String name3 = str.nextLine();
+            System.out.println(name1 + " + " + name2 + " + " + name3 + " = Чистая любовь, да-да!");
+        }
     }
 }

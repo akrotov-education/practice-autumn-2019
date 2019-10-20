@@ -14,7 +14,10 @@ package lesson02.part02;
 
 public class Task31 {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        int i = 10;
+        do {
+            System.out.println(i--);
+        } while (i > 0);
 
     }
 }

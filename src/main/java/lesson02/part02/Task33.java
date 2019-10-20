@@ -25,7 +25,15 @@ package lesson02.part02;
 
 public class Task33 {
     public static void main(String[] args) {
-        //напишите тут ваш код
-
+        int chet2 = 10;
+        do {
+            int chet1 = 10;
+            System.out.println();
+            chet2--;
+            do {
+                System.out.print("S");
+                chet1--;
+            } while (chet1 > 0);
+        }while (chet2 > 0);
     }
 }
