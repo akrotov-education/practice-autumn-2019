@@ -1,5 +1,8 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * Допишите код метода setName, чтобы с его помощью установить значение private String fullName равное значению локальной переменной String fullName.
  * <p>
@@ -14,17 +17,23 @@ package lesson02.part02;
 
 public class Task06 {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws Exception{
+        System.out.print("Введите имя и фамилию: ");
+        BufferedReader firstname = new BufferedReader(new InputStreamReader(System.in));
+        String str1 = firstname.readLine();
+        BufferedReader lastname = new BufferedReader(new InputStreamReader(System.in));
+        String str2 = lastname.readLine();
+        Cat cat = new Cat();
+        cat.setName(str1,str2);
+        System.out.println("Полное имя котика: " + cat.fullName);
     }
 
     public static class Cat {
+
         private String fullName;
 
         public void setName(String firstName, String lastName) {
-            String fullName = firstName + " " + lastName;
-
-            //напишите тут ваш код
+            this.fullName = firstName + " " + lastName;
         }
     }
 }

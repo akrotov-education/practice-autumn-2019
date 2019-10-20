@@ -1,7 +1,6 @@
 package lesson01.part2;
 
 public class Task10 {
-
     /**
      * Написать функцию, которая возвращает минимум из двух чисел.
      * <p>
@@ -18,8 +17,13 @@ public class Task10 {
      */
 
     public static int min(int a, int b) {
-        return 0;
-        //напишите тут ваш код
+        int minimum;
+        if (a < b) {
+            minimum = a;
+        } else {
+            minimum = b;
+        }
+        return minimum;
     }
 
     public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры имя и используя цикл for 10 раз вывести: <имя> любит меня.
  * <p>
@@ -25,7 +27,11 @@ package lesson02.part02;
 
 public class Task39 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        System.out.println("Введите имя: ");
+        Scanner str = new Scanner(System.in);
+        String name = str.nextLine();
+        for (int i = 0; i < 10; i++){
+            System.out.println(name + " любит меня.");
+        }
     }
 }

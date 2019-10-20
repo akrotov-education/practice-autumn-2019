@@ -1,13 +1,12 @@
 package lesson01.part2;
 
 public class Task05 {
-
     /**
      * Создать объект типа Cat 2 раза.
      * Сохрани каждый экземпляр в свою переменную.
      * Имена переменных должны быть разные.
-     * <p>
-     * <p>
+     *
+     *
      * Требования:
      * 1. Программа не должна выводить текст на экран.
      * 2. В методе main должно быть только две переменные типа Cat.
@@ -17,11 +16,11 @@ public class Task05 {
      */
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        Cat Simon = new Cat();
+        Cat Masya = new Cat();
     }
 
     public static class Cat {
 
     }
-
 }

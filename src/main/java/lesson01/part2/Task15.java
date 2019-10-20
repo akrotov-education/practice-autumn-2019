@@ -1,7 +1,6 @@
 package lesson01.part2;
 
 public class Task15 {
-
     /**
      * О семейных отношениях
      * В методе main создай объект Man, сохрани ссылку на него в переменную man.
@@ -23,7 +22,10 @@ public class Task15 {
      */
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        Man man = new Man();
+        Woman woman = new Woman();
+        man.wife = woman;
+        woman.husband = man;
     }
 
     public static class Man {

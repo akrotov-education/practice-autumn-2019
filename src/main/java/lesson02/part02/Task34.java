@@ -26,7 +26,15 @@ package lesson02.part02;
 
 public class Task34 {
     public static void main(String[] args) {
-        //напишите тут ваш код
-
+        int stolb = 1;
+        do {
+            int strok = 1;
+            do {
+                System.out.print(stolb * strok + " ");
+                strok++;
+            } while (strok < 11);
+            System.out.println();
+            stolb++;
+        }while(stolb < 11);
     }
 }

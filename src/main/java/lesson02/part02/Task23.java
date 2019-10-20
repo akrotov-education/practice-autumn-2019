@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры имя и возраст. Если возраст больше 20 вывести надпись «И 18-ти достаточно».
  * <p>
@@ -13,7 +15,12 @@ package lesson02.part02;
 
 public class Task23 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        System.out.println("Введите имя: ");
+        Scanner str1 = new Scanner(System.in);
+        String name = str1.nextLine();
+        System.out.println("Введите возраст: ");
+        Scanner str2 = new Scanner(System.in);
+        int age = str2.nextInt();
+        if (age > 20) System.out.println("И 18-ти достаточно");
     }
 }

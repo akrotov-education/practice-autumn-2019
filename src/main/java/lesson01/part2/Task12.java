@@ -21,13 +21,26 @@ public class Task12 {
      */
 
     public static int min(int a, int b, int c, int d) {
-        //напишите тут ваш код
-        return 0;
+        int minimum;
+        int minA_B = min(a,b);
+        int minC_D = min(c,d);
+
+        if (minA_B < minC_D) {
+            minimum = minA_B;
+        } else {
+            minimum = minC_D;
+        }
+        return minimum;
     }
 
     public static int min(int a, int b) {
-        //напишите тут ваш код
-        return 0;
+        int minimum;
+        if (a < b) {
+            minimum = a;
+        } else {
+            minimum = b;
+        }
+        return minimum;
     }
 
     public static void main(String[] args) throws Exception {

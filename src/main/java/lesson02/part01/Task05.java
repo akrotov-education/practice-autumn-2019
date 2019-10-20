@@ -13,7 +13,10 @@ package lesson02.part01;
 
 public class Task05 {
     public static void main(String[] args) {
-        //напишите тут ваш код
-
+        String month = "may";
+        month = month.toUpperCase();
+        int day = 24;
+        int year = 1998;
+        System.out.println(month + " " + day + " " + year);
     }
 }
