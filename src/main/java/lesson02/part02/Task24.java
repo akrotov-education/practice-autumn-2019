@@ -21,7 +21,25 @@ import java.util.*;
 
 public class Task24 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Введите a: ");
+        String s= reader.readLine();
+        int a=Integer.parseInt(s);
+        System.out.println("Введите b: ");
+        String f= reader.readLine();
+        int b=Integer.parseInt(f);
+        System.out.println("Введите c: ");
+        String h= reader.readLine();
+        int c=Integer.parseInt(h);
+        if (b==c&&a!=b)
+            System.out.println("1");
+        if (a==c&&b!=c)
+            System.out.println("2");
+        if (b==a&&c!=b)
+            System.out.println("3");
+        else
+            System.out.println("Числа различны");
+
 
     }
 }

@@ -1,5 +1,9 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  * Используя цикл for вывести на экран прямоугольный треугольник из восьмёрок со сторонами 10 и 10.
  * Пример вывода на экран:
@@ -23,8 +27,19 @@ package lesson02.part02;
  */
 
 public class Task37 {
-    public static void main(String[] args) {
-        //напишите тут ваш код
-
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Введите n");
+        String a=reader.readLine();
+        int m=Integer.parseInt(a);
+        System.out.println("Введите m");
+        String c=reader.readLine();
+        int n=Integer.parseInt(c);
+        for(int g=1;g<=m; g++) {
+            for (int i=1; i<=n; i++) {
+                System.out.print("8");
+            }
+            System.out.println();
+        }
     }
 }

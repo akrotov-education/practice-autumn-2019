@@ -29,7 +29,21 @@ import java.util.*;
 
 public class Task25 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Введите a: ");
+        String d=reader.readLine();
+        int a=Integer.parseInt(d);
+        System.out.println("Введите b: ");
+        String c=reader.readLine();
+        int b=Integer.parseInt(c);
+        if (a>0&&b>0)
+            System.out.println("1");
+        if (a<0&&b>0)
+            System.out.println("2");
+        if (a<0&&b<0)
+            System.out.println("3");
+        if (a>0&&b<0)
+            System.out.println("4");
 
     }
 }
