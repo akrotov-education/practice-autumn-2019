@@ -1,10 +1,15 @@
 package lesson01.part2;
 
+import lesson02.part01.Task07;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import util.ClassReader;
 
@@ -13,10 +18,12 @@ import static org.mockito.Mockito.*;
 import java.util.concurrent.ExecutionException;
 
 import static org.junit.Assert.*;
-@RunWith(JUnit4.class)
+@RunWith(PowerMockRunner.class)
 public class Task01Test {
 
+    static boolean crated = false;
     @Test
+    @PrepareForTest(Task01.class)
     public void test01()
     {
         try {
@@ -40,20 +47,24 @@ public class Task01Test {
 
         try
         {
-            boolean found = false;
-            String clLine;
-            while((clLine = cl.readLine()) !=null) {
-                if (clLine.contains("Person person = new Person"))
-                    found = true;
-            }
+            PowerMockito.mockStatic(Task01.Person.class);
+            PowerMockito.whenNew(Task01.Person.class).withNoArguments().thenAnswer(new Answer<Object>() {
+                @Override
+                public Object answer(InvocationOnMock invocationOnMock) throws Throwable {
+                    crated = true;
+                    return new Task01.Person();
+                }
+            });
 
-            if(!found)
-                throw new Exception();
+            Task01.main(null);
 
+            Assert.assertTrue(crated);
         }
         catch (Exception e)
         {
             Assert.fail("неправильное создание объекта");
         }
+
+
     }
 }
