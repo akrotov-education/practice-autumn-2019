@@ -5,15 +5,16 @@ import java.io.*;
 public class SystemInGatewayUtil {
 
     private static final InputStream originalIn = System.in;
-    private static ByteArrayInputStream inContent = new ByteArrayInputStream(new byte[256]);
+    private static ByteArrayInputStream inContent = new ByteArrayInputStream("".getBytes());
     private static InputStream customIn = new CustomInputStream();
 
     public static void setOriginalIn() {
         System.setIn(originalIn);
     }
 
-    public static void setCustomIn() {
-        System.setIn(customIn);
+    public static void setCustomIn(String userInput) {
+        inContent = new ByteArrayInputStream(userInput.getBytes());
+        System.setIn(inContent);
     }
 
     public static ByteArrayInputStream getInputArray() {

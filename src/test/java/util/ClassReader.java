@@ -3,9 +3,6 @@ package util;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.nio.Buffer;
 
 public class ClassReader extends BufferedReader{
     FileReader fr;
@@ -79,29 +76,4 @@ public class ClassReader extends BufferedReader{
         return "";
     }
 
-    public String getMethod(Method method) throws Exception
-    {
-        String fileOut;
-        String methodName = Modifier.toString(method.getModifiers()) + " "
-                + method.getReturnType().getName() + " "
-                + method.getName();
-
-        while((fileOut = readLine())!=null)
-        {
-            if(fileOut.contains(methodName) && containsParams(fileOut, method));
-        }
-
-        reset();
-        return "";
-    }
-
-    private static boolean containsParams(String filed, Method method)
-    {
-        Class[] params = method.getParameterTypes();
-        for (Class param: params) {
-            //if(filed (param.getTypeName().toString()))
-            //{return false;
-        }
-        return true;
-    }
 }
