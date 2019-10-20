@@ -35,6 +35,7 @@ public class Task16 {
         InputStream inputStream = System.in;
         Reader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
         System.out.print("Введите время ");
         String cS = bufferedReader.readLine();
         int t = Integer.parseInt(cS);

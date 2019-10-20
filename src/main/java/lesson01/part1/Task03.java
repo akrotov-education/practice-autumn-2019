@@ -16,5 +16,10 @@ public class Task03 {
 
     public static void main(String[] args) {
         // Напишите здесь ваш код
+        int t1=2019, t=98;
+        int t0;
+        t0=t1-t;
+        System.out.print("Год основания МТУСИ - "+t0);
+
     }
 }

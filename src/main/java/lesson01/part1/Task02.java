@@ -20,6 +20,8 @@ public class Task02 {
      */
 
     public static void main(String[] args) {
-        System.out.println("Hello World!\nHello World!\nHello World!");
+        // Напишите здесь ваш код
+        System.out.print("Helloooooo!\nHelloooooo!\nHelloooooo!");
+
     }
 }
