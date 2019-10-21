@@ -19,13 +19,7 @@ public class Task11 {
 
     public static int min(int a, int b, int c) {
         //напишите тут ваш код
-        if (a < b && a < c)
-            return a;
-        else
-            if (b < c)
-                return b;
-            else
-                return c;
+        return 0;
     }
 
     public static void main(String[] args) {
