@@ -122,7 +122,7 @@ public class Task14Test {
                     collect.get(a + 3).equals("        }") &&
                     collect.get(a + 4).equals("    }");
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

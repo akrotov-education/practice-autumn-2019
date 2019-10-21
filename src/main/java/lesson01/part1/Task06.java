@@ -20,6 +20,6 @@ public class Task06 {
     }
 
     public static void printCircleLength(int radius) {
-        System.out.println(2*3.14*radius);
+        System.out.println("L = " + (2*3.14*radius));
     }
 }

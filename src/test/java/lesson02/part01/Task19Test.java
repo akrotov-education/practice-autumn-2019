@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Task18Test {
-    public static String fileName = "./src/main/java/lesson02/part01/Task18.java";
+public class Task19Test {
+    public static String fileName = "./src/main/java/lesson02/part01/Task19.java";
 
     @Before
     public void before() {
@@ -30,12 +30,10 @@ public class Task18Test {
     }
 
     @Test
-    public void test18OutputScreen() throws Exception {
+    public void test19OutputScreen() throws Exception {
         String name = "kek";
-        int num1 = 15;
-        int num2 = 12;
-        SystemInGatewayUtil.provideInput(name + "\n" + num1 + "\n" + num2);
-        Task18.main(null);
+        SystemInGatewayUtil.provideInput(name);
+        Task19.main(null);
         SystemOutGatewayUtil.setOriginalOut();
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
         String s = outputArr.toString();
@@ -47,13 +45,13 @@ public class Task18Test {
     }
 
     @Test
-    public void test18ReadKeyboard() {
+    public void test19ReadKeyboard() throws Exception {
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 
             List<String> collect = stream.collect(Collectors.toList());
             int a = 0;
             int b = 0;
-            int number = 0;
+            boolean var = false;
 
             for (int i = 0; i < collect.size(); i++) {
                 if (collect.get(i).contains("public static void main(String[] args)")) {
@@ -67,12 +65,12 @@ public class Task18Test {
 
             for (int i = a; i < b; i++) {
                 if (collect.get(i).contains(".readLine()"))
-                    number++;
+                    var = true;
             }
 
             Assert.assertTrue(
                     "Программа должна считывать данные с клавиатуры",
-                    number == 3
+                    var
             );
         } catch (IOException e) {
             e.printStackTrace();
@@ -80,37 +78,33 @@ public class Task18Test {
     }
 
     @Test
-    public void test18ContainsVariables() throws Exception {
+    public void test19ContainsName() throws Exception {
         String name = "kek";
-        int num1 = 15;
-        int num2 = 12;
-        SystemInGatewayUtil.provideInput(name + "\n" + num1 + "\n" + num2);
-        Task18.main(null);
+        SystemInGatewayUtil.provideInput(name);
+        Task19.main(null);
         SystemOutGatewayUtil.setOriginalOut();
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
         String s = outputArr.toString();
 
         Assert.assertTrue(
-                "Программа должна считывать данные с клавиатуры",
-                s.contains(name + " ") && s.contains(" " + num1 + " ") && s.contains(" " + num2 + " ")
+                "Выведенный текст должен содержать введенное имя",
+                s.contains(name + " ")
         );
     }
 
     @Test
-    public void test18RightString() throws Exception {
+    public void test19RightString() throws Exception {
         String name = "kek";
-        int num1 = 15;
-        int num2 = 12;
-        SystemInGatewayUtil.provideInput(name + "\n" + num1 + "\n" + num2);
-        Task18.main(null);
+        SystemInGatewayUtil.provideInput(name);
+        Task19.main(null);
         SystemOutGatewayUtil.setOriginalOut();
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
         String s = outputArr.toString();
 
         Assert.assertTrue(
                 "Выведенный тест должен полностью соответствовать заданию",
-                s.equals(name + " получает " + num1 + " через " + num2 + " лет.") ||
-                        s.equals(name + " получает " + num1 + " через " + num2 + " лет.\n")
+                s.equals(name + " зарабатывает $5,000. Ха-ха-ха!") ||
+                        s.equals(name + " зарабатывает $5,000. Ха-ха-ха!\n")
         );
     }
 }

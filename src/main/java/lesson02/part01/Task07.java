@@ -14,44 +14,44 @@ package lesson02.part01;
 
 public class Task07 {
     public static void main(String[] args) {
-        Zerg zerg1 = new Zerg("zerg1");
-        Zerg zerg2 = new Zerg("zerg2");
-        Zerg zerg3 = new Zerg("zerg3");
-        Zerg zerg4 = new Zerg("zerg4");
-        Zerg zerg5 = new Zerg("zerg5");
+        Zerg zerg1 = new Zerg();
+        zerg1.name = "kek";
+        Zerg zerg2 = new Zerg();
+        zerg2.name = "ke2";
+        Zerg zerg3 = new Zerg();
+        zerg3.name = "ke3";
+        Zerg zerg4 = new Zerg();
+        zerg4.name = "kek4";
+        Zerg zerg5 = new Zerg();
+        zerg5.name = "ke5";
 
-        Protoss prot1 = new Protoss("prot1");
-        Protoss prot2 = new Protoss("prot2");
-        Protoss prot3 = new Protoss("prot3");
+        Protoss lol1 = new Protoss();
+        lol1.name = "lol1";
+        Protoss lol2 = new Protoss();
+        Protoss lol3 = new Protoss();
+        lol2.name = "lol2";
+        lol3.name = "lol3";
 
-        Terran ter1 = new Terran("ter1");
-        Terran ter2 = new Terran("ter2");
-        Terran ter3 = new Terran("ter3");
-        Terran ter4 = new Terran("ter4");
+        Terran tr1 = new Terran();
+        Terran tr2 = new Terran();
+        Terran tr3 = new Terran();
+        Terran tr4 = new Terran();
+        tr1.name = "of";
+        tr2.name = "of1";
+        tr3.name = "of4";
+        tr4.name = "of4fdddd";
 
     }
 
     public static class Zerg {
         public String name;
-
-        public Zerg(String name){
-            this.name = name;
-        }
     }
 
     public static class Protoss {
         public String name;
-
-        public Protoss(String name){
-            this.name = name;
-        }
     }
 
     public static class Terran {
         public String name;
-
-        public Terran(String name){
-            this.name = name;
-        }
     }
 }

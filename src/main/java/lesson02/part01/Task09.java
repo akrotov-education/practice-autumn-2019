@@ -23,14 +23,12 @@ package lesson02.part01;
 public class Task09 {
     public static void main(String[] args) {
         int sum = 1;
-        String str = "1";
 
         System.out.println(sum);
 
         for (int i = 2; i < 6; i++) {
-            str += "+" + i;
             sum += i;
-            System.out.println(str + "=" + sum);
+            System.out.println(sum);
         }
 
     }
