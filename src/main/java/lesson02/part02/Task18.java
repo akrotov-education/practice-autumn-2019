@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры два целых числа, и вывести на экран минимальное из них. Если два числа равны между собой, необходимо вывести любое.
  * <p>
@@ -13,7 +15,14 @@ package lesson02.part02;
 
 public class Task18 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        if (a==b){
+            System.out.println(a);
+        }
+        else {
+            System.out.println(Math.min(a, b));
+        }
     }
 }

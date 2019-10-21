@@ -17,11 +17,10 @@ public class Task05 {
      */
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        Cat tiger = new Cat();
+        Cat puma = new Cat();
     }
-
     public static class Cat {
-
     }
 
 }
