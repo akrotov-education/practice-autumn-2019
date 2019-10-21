@@ -23,7 +23,8 @@ public class Task04 {
      */
 
     public static void main(String[] args) {
-        int a = 5, b = 3;
+        int a = 5;
+        int b = 3;
 
         System.out.print(a + b + "\n" + a * b);
     }
