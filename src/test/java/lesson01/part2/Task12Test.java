@@ -1,8 +1,10 @@
 package lesson01.part2;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import util.SystemInGatewayUtil;
 import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
@@ -38,6 +40,11 @@ public class Task12Test {
         }
     }
 
+    @After
+    public void after() {
+
+        SystemOutGatewayUtil.clearOutput();
+    }
 
     @Test
     public void test12_1() {
@@ -128,7 +135,7 @@ public class Task12Test {
 
 
 
-        Assert.assertTrue("Не пройдено 3е условие!", collect.get(4).contains("min("));
+        Assert.assertTrue("Не пройдено 4е условие!", collect.get(38).contains("min("));
     }
 
     @Test
