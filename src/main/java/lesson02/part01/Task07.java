@@ -15,7 +15,12 @@ package lesson02.part01;
 public class Task07 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+    	Zerg ultralisk = new Zerg();
+    	ultralisk.name = "Ultralisk";
+    	Protoss dt = new Protoss();
+    	dt.name = "Dark Templar";
+    	Terran thor = new Terran();
+    	thor.name = "Thor";
     }
 
     public static class Zerg {

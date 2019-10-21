@@ -23,6 +23,10 @@ package lesson02.part01;
 public class Task09 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+    	int[] mas = {1, 2, 3, 4, 5};
+    	int sum = 0;
+    	for (int i : mas) {
+    		System.out.println(sum+=i);
+		}
     }
 }

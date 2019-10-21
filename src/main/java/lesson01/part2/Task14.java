@@ -16,7 +16,10 @@ public class Task14 {
 
     public static void print3(String s) {
         //напишите тут ваш код
-
+    	String st = s;
+    	for (int i = 0; i < 2; i++)
+    		st += " " + s;
+    	System.out.println(st);
     }
 
     public static void main(String[] args) {

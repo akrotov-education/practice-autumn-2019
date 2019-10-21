@@ -23,7 +23,7 @@ public class Task04 {
 
         public static void addNewCat() {
             //напишите тут ваш код
-
+            catsCount += 1;
         }
     }
 
