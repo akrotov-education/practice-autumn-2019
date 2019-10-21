@@ -1,4 +1,4 @@
-package lesson01.part2;
+package main.java.lesson01.part2;
 
 public class Task14 {
 
@@ -16,6 +16,9 @@ public class Task14 {
 
     public static void print3(String s) {
         //напишите тут ваш код
+        for (int i = 0; i < 3; i++)
+            System.out.print(s + " ");
+        System.out.println("");
 
     }
 

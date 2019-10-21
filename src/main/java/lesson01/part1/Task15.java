@@ -1,4 +1,4 @@
-package lesson01.part1;
+package main.java.lesson01.part1;
 
 public class Task15 {
 
@@ -20,6 +20,6 @@ public class Task15 {
 
     public static void main(String[] args) {
         //Измените код
-        System.out.println(Math.cos(number));
+        System.out.println(Math.pow(number,2));
     }
 }

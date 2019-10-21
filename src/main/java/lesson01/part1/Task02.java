@@ -1,4 +1,4 @@
-package lesson01.part1;
+package main.java.lesson01.part1;
 
 public class Task02 {
 
@@ -21,5 +21,11 @@ public class Task02 {
 
     public static void main(String[] args) {
         // Напишите здесь ваш код
+        String s = "Hello World!";
+        System.out.print(s+"\n");
+        System.out.print(s+"\n");
+        System.out.print(s);
+
     }
+
 }

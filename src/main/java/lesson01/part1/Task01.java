@@ -1,6 +1,8 @@
-package lesson01.part1;
+package main.java.lesson01.part1;
 
 public class Task01 {
+
+
 
     /**
      * Hello World!
@@ -16,5 +18,8 @@ public class Task01 {
 
     public static void main(String[] args) {
         // Напишите здесь ваш код
+        String s = "Hello World!";
+        System.out.print(s);
+        
     }
 }

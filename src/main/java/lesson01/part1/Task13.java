@@ -1,4 +1,4 @@
-package lesson01.part1;
+package main.java.lesson01.part1;
 
 public class Task13 {
 
@@ -30,6 +30,7 @@ public class Task13 {
 
     public static double getWeight(int earthWeight) {
         //напишите тут ваш код
-        return 0D;
+        double moonWeight = earthWeight * 0.17;
+        return moonWeight;
     }
 }

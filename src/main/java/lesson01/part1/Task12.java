@@ -1,4 +1,4 @@
-package lesson01.part1;
+package main.java.lesson01.part1;
 
 public class Task12 {
 
@@ -14,6 +14,11 @@ public class Task12 {
      * 5. Программа не должна выводить переменные, значения которых не являются названиями фруктов.
      */
 
+    public static void Check(String fr)
+    { if (fr.equals("Яблоко") || fr.equals("Персик"))
+        System.out.print(fr+"\n");
+    }
+
     public static void main(String[] args) {
         String apple = "Яблоко";
         String porridge = "Каша";
@@ -21,5 +26,9 @@ public class Task12 {
         String peach = "Персик";
 
         //напишите тут ваш код
+        Check(apple);
+        Check(porridge);
+        Check(sausage);
+        Check(peach);
     }
 }
