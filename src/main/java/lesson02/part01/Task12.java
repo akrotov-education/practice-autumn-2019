@@ -1,5 +1,7 @@
 package lesson02.part01;
 
+import org.omg.CORBA.WStringSeqHelper;
+
 /**
  * Вывести на экран все возможные комбинации слов «Мама», «Мыла», «Раму».
  * Подсказка: их 6 штук. Каждую комбинацию вывести с новой строки. Слова не разделять. Пример:
@@ -17,7 +19,13 @@ package lesson02.part01;
 
 public class Task12 {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        String[] strArray = { "Мама", "Мыла", "Раму" };
 
+        System.out.println(strArray[0]+strArray[1]+strArray[2]);
+        System.out.println(strArray[0]+strArray[2]+strArray[1]);
+        System.out.println(strArray[1]+strArray[0]+strArray[2]);
+        System.out.println(strArray[1]+strArray[2]+strArray[0]);
+        System.out.println(strArray[2]+strArray[0]+strArray[1]);
+        System.out.println(strArray[2]+strArray[1]+strArray[0]);
     }
 }
