@@ -17,11 +17,11 @@ package lesson02.part01;
 
 public class Task03 {
     public static void main(String[] args) {
-        convertEurToUsd(10,20);
-        convertEurToUsd(55,33);
+        System.out.println(convertEurToUsd(10,20));
+        System.out.println(convertEurToUsd(30,40));
     }
 
-    public static double convertEurToUsd(int eur, double course) {
+    public static double convertEurToUsd(int eur, int course) {
         return eur*course;
     }
 }

@@ -15,7 +15,6 @@ package lesson02.part01;
 public class Task08 {
     public static void main(String[] args) {
         int rez = 1;
-        int n = 1;
         for (int i = 1; i<=10; i++) {
             rez*=i;
         }

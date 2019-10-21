@@ -17,6 +17,6 @@ public class Task03 {
     public static void main(String[] args) {
         int a = 2019;
         int b = 98;
-        System.out.print("MTUCI was found in " + (a - b));
+        System.out.print(a - b);
     }
 }

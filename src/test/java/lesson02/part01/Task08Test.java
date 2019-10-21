@@ -1,4 +1,4 @@
-package lesson01.part1;
+package lesson02.part01;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -14,33 +14,31 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 @RunWith(JUnit4.class)
-public class Task06Test {
 
-
+public class Task08Test {
     @Before
     public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
 
     }
-
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
     }
     @Test
-    public void checkOutput(){
-        Task06.main(null);
+    public void CheckOutput(){
+        Task08.main(null);
         ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
         String s2 = s.toString();
-        Assert.assertEquals("31.400000000000002\n", s2);
+        Assert.assertEquals("3628800\n", s2);
     }
     @Test
-    public void checkParameter() {
-        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson01/part1/Task06.java");
-        String lineWithMethodCall = lines.get(18);
+    public void checkMainContainPrint() {
+        List<String> lines = ReadFileUtil.readFileInList("/Users/Xesavov/Documents/practice-autumn-2019/src/main/java/lesson02/part01/Task08.java");
+        String lineWithMethodCall = lines.get(20);
 
 
-        Assert.assertTrue("Method main must call method printCircleLength with parameter 5",
-                lineWithMethodCall.contains("printCircleLength(5);"));
+        Assert.assertTrue("Method main must contain print",
+                lineWithMethodCall.contains("System.out.println"));
     }
 }

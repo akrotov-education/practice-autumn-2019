@@ -14,6 +14,5 @@ package lesson02.part01;
 public class Task05 {
     public static void main(String[] args) {
         System.out.println("JULY 12 1998");
-
     }
 }

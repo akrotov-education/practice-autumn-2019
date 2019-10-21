@@ -28,7 +28,7 @@ public class Task01Test {
         SystemOutGatewayUtil.setOriginalOut();
     }
     @Test
-    public void test1(){
+    public void CheckOutput(){
         Task01.main(null);
         ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
         String s2 = s.toString();

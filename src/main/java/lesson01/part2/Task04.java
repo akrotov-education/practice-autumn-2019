@@ -1,5 +1,7 @@
 package lesson01.part2;
 
+import com.sun.org.apache.bcel.internal.classfile.LocalVariableTable;
+
 public class Task04 {
 
     /**
@@ -21,12 +23,18 @@ public class Task04 {
      * 5. Метод main должен выводить на экран произведение переменных a и b.
      * 6. Каждое значение должно быть выведено с новой строки
      */
+    public int a = 10;
+    public int b = 20;
+
+
+    public static Task04 obj;
+
 
     public static void main(String[] args) {
-        int a = 10;
-        int b = 20;
-        System.out.println(a+b);
-        System.out.println(a*b);
+        obj = new Task04();
+
+        System.out.println(obj.a+obj.b);
+        System.out.println(obj.a*obj.b);
     }
 
 }

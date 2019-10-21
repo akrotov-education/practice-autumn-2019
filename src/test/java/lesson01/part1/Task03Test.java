@@ -25,10 +25,10 @@ public class Task03Test {
         SystemOutGatewayUtil.setOriginalOut();
     }
     @Test
-    public void test3(){
+    public void CheckOutput(){
         Task03.main(null);
         ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
         String s2 = s.toString();
-        Assert.assertEquals("MTUCI was found in 1921", s2);
+        Assert.assertEquals("1921", s2);
     }
 }
