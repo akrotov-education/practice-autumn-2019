@@ -1,5 +1,7 @@
 package lesson02.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -17,8 +19,8 @@ import java.util.Scanner;
 
 public class Task19 {
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine();
         System.out.println(name + " зарабатывает $5,000. Ха-ха-ха!");
 
     }

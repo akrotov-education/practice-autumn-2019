@@ -26,7 +26,7 @@ public class Task11 {
         final protected int b = 25;
         final private int c = 2;
 
-        public long getVolume(int a, int b, int c) {
+        public static long getVolume(int a, int b, int c) {
             int rez = (int) ((a * b * c)/0.001);
             return rez;
         }

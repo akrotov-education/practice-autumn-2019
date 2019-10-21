@@ -29,7 +29,6 @@ public class Task13 {
     }
 
     public static double getWeight(int earthWeight) {
-        double rez = earthWeight*0.17;
-        return rez;
+        return earthWeight*0.17;
     }
 }

@@ -29,6 +29,7 @@ public class Task01Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
     @Test
     public void CheckOutput(){
@@ -39,7 +40,7 @@ public class Task01Test {
     }
     @Test
     public void test03CallDiv() {
-        try (Stream<String> stream = Files.lines(Paths.get("/Users/Xesavov/Documents/practice-autumn-2019/src/main/java/lesson02/part1/Task01.java"))) {
+        try (Stream<String> stream = Files.lines(Paths.get("./src/main/java/lesson02/part01/Task01.java"))) {
 
             List<String> collect = stream.collect(Collectors.toList());
             boolean div = false;

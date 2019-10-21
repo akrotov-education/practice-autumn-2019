@@ -1,5 +1,6 @@
 package lesson01.part2;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,11 +14,16 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Task05Test {
-    public static String fileName = "/Users/Xesavov/Documents/practice-autumn-2019/src/main/java/lesson01/part2/Task05.java";
+    public static String fileName = "./src/main/java/lesson01/part2/Task05.java";
 
     @Before
     public void before() {
         SystemOutGatewayUtil.setCustomOut();
+    }
+
+    @After
+    public void after() {
+        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -33,7 +39,7 @@ public class Task05Test {
                     break;
                 }
             Assert.assertTrue(
-                    "РџСЂРѕРіСЂР°РјРјР° РЅРµ РґРѕР»Р¶РЅР° РІС‹РІРѕРґРёС‚СЊ С‚РµРєСЃС‚ РЅР° СЌРєСЂР°РЅ",
+                    "Программа не должна выводить текст на экран",
                     var
             );
         } catch (IOException e) {
@@ -65,7 +71,7 @@ public class Task05Test {
                     cats++;
             }
             Assert.assertTrue(
-                    "Р’ РјРµС‚РѕРґРµ main РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ С‚РѕР»СЊРєРѕ РґРІРµ РїРµСЂРµРјРµРЅРЅС‹Рµ С‚РёРїР° Cat",
+                    "В методе main должно быть только две переменные типа Cat",
                     cats == 2
             );
         } catch (IOException e) {
@@ -97,7 +103,7 @@ public class Task05Test {
                     cats++;
             }
 
-            Assert.assertTrue("РџРµСЂРµРјРµРЅРЅС‹Рј СЃСЂР°Р·Сѓ РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ РїСЂРёСЃРІРѕРµРЅС‹ Р·РЅР°С‡РµРЅРёСЏ", cats == 2);
+            Assert.assertTrue("Переменным сразу должны быть присвоены значения", cats == 2);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -128,7 +134,7 @@ public class Task05Test {
             }
 
             Assert.assertTrue(
-                    "Р’ РєР»Р°СЃСЃРµ Cat РЅРµ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РїРµСЂРµРјРµРЅРЅС‹С…",
+                    "В классе Cat не должно быть переменных",
                     var
             );
         } catch (IOException e) {
@@ -160,7 +166,7 @@ public class Task05Test {
                     var = false;
             }
             Assert.assertTrue(
-                    "Р’ РєР»Р°СЃСЃРµ Cat РЅРµ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РјРµС‚РѕРґРѕРІ",
+                    "В классе Cat не должно быть методов",
                     var
             );
         } catch (IOException e) {

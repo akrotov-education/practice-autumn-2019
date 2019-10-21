@@ -28,24 +28,15 @@ import java.util.*;
 
 public class Task26 {
     public static void main(String[] args) throws Exception {
-        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
-        int a = Integer.parseInt(read.readLine());
-            if(a % 2 != 0){
-                if(a <= 9){
-                    System.out.println("нечетное однозначное число");
-                }
-                else if (a <= 99 ){
-                    System.out.println("нечетное двузначное число");
-                }
-                else {
-                    System.out.println("нечетное трехзначное число");
-                }
-            } else if (a <= 9){
-                System.out.println("четное однозначное число");
-            } else if(a <= 99){
-                System.out.println("четное двузначное число");
-            }else {
-                System.out.println("четное трехзначное число");
-            }
+        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(reader.readLine());
+        String result = "";
+        if (num > 0) result+="положительное ";
+        else result+="отрицательное ";
+        if (Math.abs(num)%2==0) result+="четное число";
+        if (Math.abs(num)%2==1) result+="нечетное число";
+        if (num != 0) System.out.println(result);
+        else System.out.println("ноль");
     }
 }

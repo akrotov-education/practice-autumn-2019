@@ -25,8 +25,9 @@ public class Task15 {
     public static void main(String[] args) {
         Man man = new Man();
         Woman woman = new Woman();
-        woman.husband = man;
+
         man.wife = woman;
+        woman.husband = man;
     }
 
     public static class Man {

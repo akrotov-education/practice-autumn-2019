@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -29,8 +31,10 @@ import java.util.Scanner;
 
 public class Task16 {
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        double time = scanner.nextDouble();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        //Scanner scanner = new Scanner(System.in);
+        //double time = scanner.nextDouble();
+        double time = Double.parseDouble(reader.readLine());
         if ((time%5>0)&&(time%5<3)||(time%5==0)){
             System.out.println("зеленый");
         }

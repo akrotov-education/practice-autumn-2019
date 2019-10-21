@@ -21,9 +21,10 @@ import java.util.*;
 
 public class Task17 {
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        String year = scanner.nextLine();
-        String name = scanner.nextLine();
+        //Scanner scanner = new Scanner(System.in);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine();
+        String year = reader.readLine();
         System.out.println(name+ " захватит мир через " + year + " лет. Му-ха-ха!");
     }
 }

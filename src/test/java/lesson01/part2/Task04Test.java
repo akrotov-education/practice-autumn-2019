@@ -1,6 +1,5 @@
 package lesson01.part2;
 
-import lesson01.part1.Task01;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,10 +9,6 @@ import org.junit.runners.JUnit4;
 import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-
-import static org.junit.Assert.*;
 @RunWith(JUnit4.class)
 public class Task04Test {
     @Test

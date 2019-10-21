@@ -15,7 +15,7 @@ package lesson02.part02;
 
 public class Task40 {
     public static void main(String[] args) {
-        for (int i = 0; i<=100; i++){
+        for (int i = 0; i<100; i++){
             System.out.println("Я никогда не буду работать за копейки. Амиго");
         }
     }
