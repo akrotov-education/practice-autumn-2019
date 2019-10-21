@@ -28,6 +28,7 @@ public class Task42Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
+        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test

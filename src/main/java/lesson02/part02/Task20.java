@@ -16,10 +16,9 @@ public class Task20 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
         Scanner in = new Scanner(System.in);
-        List<Double> numbers = new ArrayList<Double>();
+        List<Integer> numbers = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            System.out.println("Введите число");
-            numbers.add(in.nextDouble());
+            numbers.add(in.nextInt());
         }
         numbers.sort(Comparator.reverseOrder());
         for (int i = 0; i < 3; i++)
