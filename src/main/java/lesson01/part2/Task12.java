@@ -27,6 +27,7 @@ public class Task12 {
 
     public static int min(int a, int b) {
         //напишите тут ваш код
+
         return (a<b)?a:b;
     }
 

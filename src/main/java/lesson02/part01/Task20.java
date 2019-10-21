@@ -1,7 +1,10 @@
 package lesson02.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
- * Ввести с клавиатуры три имени, вывести на экран надпись:
+ * пВвести с клавиатуры три имени, вывести на экран надись:
  * name1 + name2 + name3 = Чистая любовь, да-да!
  * Пример: Вася + Ева + Анжелика = Чистая любовь, да-да!
  * <p>
@@ -18,6 +21,9 @@ package lesson02.part01;
 public class Task20 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println(reader.readLine()+" + "+reader.readLine()+" + "+reader.readLine()+" = Чистая любовь, да-да! ");
+
 
     }
 }

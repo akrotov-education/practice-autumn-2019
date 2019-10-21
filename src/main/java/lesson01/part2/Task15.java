@@ -27,6 +27,7 @@ public class Task15 {
         Woman woman=new Woman();
         man.wife=woman;
         woman.husband=man;
+
     }
 
     public static class Man {
