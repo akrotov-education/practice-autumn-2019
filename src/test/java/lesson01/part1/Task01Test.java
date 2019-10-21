@@ -8,30 +8,31 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import util.SystemOutGatewayUtil;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
 import static org.junit.Assert.*;
-
 @RunWith(JUnit4.class)
+
 public class Task01Test {
+
+
     @Before
-    public void before() {
+    public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
+
     }
 
     @After
-    public void after() {
+    public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
-
     @Test
-    public void testOutput() {
+    public void CheckOutput(){
         Task01.main(null);
-        ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-
-        String strOutput = output.toString();
-        Assert.assertTrue("Invalid output: Expected 'Hello World!'",
-                strOutput.equals("Hello World!\n") ||
-                strOutput.equals("Hello World!"));
+        ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
+        String s2 = s.toString();
+        Assert.assertEquals("Hello World!\n", s2);
     }
 }

@@ -11,27 +11,25 @@ import util.SystemOutGatewayUtil;
 import java.io.ByteArrayOutputStream;
 
 import static org.junit.Assert.*;
-
 @RunWith(JUnit4.class)
 public class Task03Test {
+
     @Before
-    public void before() {
+    public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
+
     }
 
     @After
-    public void after() {
+    public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
-
     @Test
-    public void testYear() {
+    public void CheckOutput(){
         Task03.main(null);
-
-        ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String year = output.toString();
-        Assert.assertTrue("Expected 1921" ,
-                year.contentEquals("1921") ||
-                year.contentEquals("1921\n"));
+        ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
+        String s2 = s.toString();
+        Assert.assertEquals("1921\n", s2);
     }
 }

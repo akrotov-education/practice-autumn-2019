@@ -22,9 +22,9 @@ public class Task13 {
         while (i < 11) {
             while (j < 11) {
                 System.out.print(i * j + " ");
-                System.out.println();
                 j++;
             }
+            System.out.println();
             j = 1;
             i++;
         }

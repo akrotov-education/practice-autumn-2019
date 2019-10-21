@@ -29,8 +29,6 @@ public class Task13 {
     }
 
     public static double getWeight(int earthWeight) {
-        double moonWeight = .17 * earthWeight;
-
-        return moonWeight;
+        return 0.17 * earthWeight;
     }
 }

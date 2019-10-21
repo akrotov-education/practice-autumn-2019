@@ -11,29 +11,24 @@ import util.SystemOutGatewayUtil;
 import java.io.ByteArrayOutputStream;
 
 import static org.junit.Assert.*;
-
 @RunWith(JUnit4.class)
 public class Task02Test {
+
     @Before
-    public void before() {
+    public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
-    }
 
+    }
     @After
-    public void after() {
+    public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
-
     @Test
-    public void testOutput() {
+    public void CheckOutput(){
         Task02.main(null);
-
-        ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] strArr = output.toString().split("\n");
-
-        Assert.assertEquals("Need to print 3 times", strArr.length, 3);
-        for (String str : strArr) {
-            Assert.assertEquals(str, "Hello World!");
-        }
+        ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
+        String s2 = s.toString();
+        Assert.assertEquals("Hello World!\nHello World!\nHello World!\n", s2);
     }
 }

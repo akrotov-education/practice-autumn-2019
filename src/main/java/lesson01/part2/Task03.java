@@ -24,7 +24,7 @@ public class Task03 {
 
     public static void hackSalary(int a) {
         int newSalary = a + 100;
-        String messageTmpl = "Твоя зарплата составляет %d долларов в месяц";
+        String messageTmpl = "Твоя зарплата составляет: %d долларов в месяц.";
         System.out.println(String.format(messageTmpl, newSalary));
     }
 }

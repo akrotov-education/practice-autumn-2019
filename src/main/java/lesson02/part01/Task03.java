@@ -19,8 +19,8 @@ public class Task03 {
     public static void main(String[] args) {
         double currentCourse = 0.91;
 
-        double inUsd = convertEurToUsd(23, 0.91);
-        double inUsd2 = convertEurToUsd(10, 0.91);
+        double inUsd = convertEurToUsd(23, currentCourse);
+        double inUsd2 = convertEurToUsd(10, currentCourse);
 
         System.out.println(inUsd);
         System.out.println(inUsd2);

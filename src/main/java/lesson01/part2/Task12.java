@@ -21,7 +21,7 @@ public class Task12 {
      */
 
     public static int min(int a, int b, int c, int d) {
-        return min(min(a, b), min(b, c));
+        return min(min(a, b), min(c, d));
     }
 
     public static int min(int a, int b) {
