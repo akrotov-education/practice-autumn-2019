@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 
 public class Task10Test {
 
-    private static String fileName = "C:\\Users\\Lemon\\Documents\\GitHub\\practice-autumn-2019\\src\\main\\java\\lesson01\\part1\\Task10.java";
+    private static String fileName = "./src/main/java/lesson01/part1/Task10.java";
 
     @Before
     public void setUp() throws Exception {

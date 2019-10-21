@@ -20,13 +20,25 @@ public class Task07 {
         Zerg c = new Zerg();
         Zerg d = new Zerg();
         Zerg e = new Zerg();
+        a.name = "a1";
+        b.name = "b1";
+        c.name = "c1";
+        d.name = "d1";
+        e.name = "e1";
         Protoss f = new Protoss();
         Protoss g = new Protoss();
         Protoss h = new Protoss();
+        f.name = "f1";
+        g.name = "g1";
+        h.name = "h1";
         Terran i = new Terran();
         Terran j = new Terran();
         Terran k = new Terran();
         Terran l = new Terran();
+        i.name = "i1";
+        j.name = "j1";
+        k.name = "k1";
+        l.name = "l1";
     }
 
     public static class Zerg {
