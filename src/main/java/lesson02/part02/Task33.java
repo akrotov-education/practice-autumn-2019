@@ -35,7 +35,7 @@ public class Task33 {
             }
             i++;
             j = 0;
-            System.out.println('\n');
+            System.out.print('\n');
         }
     }
 }

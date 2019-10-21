@@ -21,7 +21,7 @@ public class Task14 {
             System.out.print(s + " ");
             i++;
         }
-        System.out.println("\n");
+        System.out.print("\n");
     }
 
     public static void main(String[] args) {

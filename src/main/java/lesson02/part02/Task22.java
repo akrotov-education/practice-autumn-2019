@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -16,9 +18,9 @@ import java.util.Scanner;
 public class Task22 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-        Scanner sc = new Scanner(System.in);
-        String name = sc.nextLine();
-        int age = sc.nextInt();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine();
+        int age = Integer.parseInt(reader.readLine());
         if (age < 18) System.out.println("Подрасти ещё");
     }
 }

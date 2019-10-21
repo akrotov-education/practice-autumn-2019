@@ -20,9 +20,9 @@ import java.util.*;
 public class Task21 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-        Scanner sc = new Scanner(System.in);
-        String first = sc.nextLine();
-        String second = sc.nextLine();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String first = reader.readLine();
+        String second = reader.readLine();
         if (first.equals(second)) System.out.println("Имена идентичны");
         else if (first.length() == second.length()) System.out.println("Длины имен равны");
     }

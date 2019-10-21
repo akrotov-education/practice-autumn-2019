@@ -30,7 +30,7 @@ public class Task12 {
         return a < b ? a : b;
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         System.out.println(min(-20, -10));
         System.out.println(min(-40, -10, -30, 40));
         System.out.println(min(-20, -40, -30, 40));
