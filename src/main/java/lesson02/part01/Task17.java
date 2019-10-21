@@ -1,4 +1,4 @@
-package lesson02.part01;
+package main.java.lesson02.part01;
 
 /**
  * Ввести с клавиатуры число и имя, вывести на экран строку:
@@ -22,6 +22,15 @@ import java.util.*;
 public class Task17 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        String name = bufferedReader.readLine();
+        String sAge = bufferedReader.readLine();
 
+
+        int nAge = Integer.parseInt(sAge);
+
+        System.out.print(name + " захватит мир через " + nAge + " лет. Му-ха-ха!");
     }
 }

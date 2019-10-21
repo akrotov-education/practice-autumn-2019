@@ -1,4 +1,4 @@
-package lesson02.part02;
+package main.java.lesson02.part02;
 
 /**
  * Вывести на экран числа от 10 до 1 используя цикл while. Каждое значение с новой строки.
@@ -15,6 +15,11 @@ package lesson02.part02;
 public class Task31 {
     public static void main(String[] args) {
         //напишите тут ваш код
+        int i = 10;
+        while (i > 0) {
+            System.out.println(i);
+            i--;
 
+        }
     }
 }

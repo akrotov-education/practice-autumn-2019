@@ -1,4 +1,9 @@
-package lesson02.part01;
+package main.java.lesson02.part01;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 
 /**
  * Ввести с клавиатуры имя и вывести надпись:
@@ -16,6 +21,13 @@ package lesson02.part01;
 public class Task19 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        String name = bufferedReader.readLine();
+
+        System.out.print(name + " зарабатывает $5,000. Ха-ха-ха!");
 
     }
 }

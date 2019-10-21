@@ -1,4 +1,4 @@
-package lesson02.part02;
+package main.java.lesson02.part02;
 
 /**
  * Используя цикл for вывести на экран чётные числа от 1 до 100 включительно.
@@ -15,6 +15,8 @@ package lesson02.part02;
 public class Task35 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        for (int i = 1; i <= 100; i++)
+            if (i%2==0)
+                System.out.println(i);
     }
 }

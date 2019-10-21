@@ -1,4 +1,4 @@
-package lesson02.part01;
+package main.java.lesson02.part01;
 
 /**
  * Вывести на экран сумму чисел от 1 до 5 построчно (должно быть 5 строк):
@@ -23,6 +23,11 @@ package lesson02.part01;
 public class Task09 {
     public static void main(String[] args) {
         //напишите тут ваш код
+        int z = 0;
+        for (int i = 1 ; i <= 5 ; i++){
+            z+=i;
+            System.out.println(z);
+        }
 
     }
 }

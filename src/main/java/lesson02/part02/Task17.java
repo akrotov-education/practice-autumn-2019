@@ -1,4 +1,7 @@
-package lesson02.part02;
+package main.java.lesson02.part02;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * Ввести с клавиатуры три целых числа. Определить, имеется ли среди них хотя бы одна пара равных между собой чисел.
@@ -30,6 +33,17 @@ package lesson02.part02;
 public class Task17 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int a = Integer.parseInt(reader.readLine());
+        int b = Integer.parseInt(reader.readLine());
+        int c = Integer.parseInt(reader.readLine());
+        if ((a == b) && (b == c))
+            System.out.println(a + " " + b + " " + c);
+        else if (a == b)
+                System.out.println(a + " " + b);
+            else if ((b == c))
+                     System.out.println(b + " " + c);
+                else if (c == a)
+                         System.out.println(a + " " + c);
     }
 }

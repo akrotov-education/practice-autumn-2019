@@ -1,4 +1,4 @@
-package lesson02.part02;
+package main.java.lesson02.part02;
 
 /**
  * Подумайте, что делает программа.
@@ -27,8 +27,8 @@ public class Task01 {
         public int age = 20;
 
         public void adjustAge(int age) {
-            age = age + 20;
-            System.out.println("Age in adjustAge() is: " + age);
+            this.age = age + 20;
+            System.out.println("Age in adjustAge() is: " + this.age);
         }
     }
 }

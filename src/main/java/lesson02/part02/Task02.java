@@ -1,4 +1,4 @@
-package lesson02.part02;
+package main.java.lesson02.part02;
 
 /**
  * Подсчитать суммарную стоимость яблок.
@@ -25,9 +25,9 @@ public class Task02 {
     public static class Apple {
         public static int applesPrice = 0;
 
-        public static void addPrice(int applesPrice) {
+        public void addPrice(int applesPrice) {
             //напишите тут ваш код
-
+            this.applesPrice = this.applesPrice + applesPrice;
         }
     }
 }

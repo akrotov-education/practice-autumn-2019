@@ -1,4 +1,9 @@
-package lesson02.part02;
+package main.java.lesson02.part02;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 
 /**
  * Ввести с клавиатуры год, определить количество дней в году. Результат вывести на экран в следующем виде:
@@ -24,6 +29,19 @@ package lesson02.part02;
 public class Task14 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int year = Integer.parseInt(reader.readLine());
+        if ((year % 100) == 0) {
+            if ((year % 400 ) == 0)
+                System.out.println("количество дней в году: 366");
+            else
+                System.out.println("количество дней в году: 365");
+        }
+        else {
+            if ((year % 4) == 0 )
+                System.out.println("количество дней в году: 366");
+            else
+                System.out.println("количество дней в году: 365");
+        }
     }
 }

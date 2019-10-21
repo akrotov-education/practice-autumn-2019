@@ -1,4 +1,4 @@
-package lesson02.part02;
+package main.java.lesson02.part02;
 
 /**
  * Помогите коту обрести имя с помощью метода setName.
@@ -23,6 +23,7 @@ public class Task03 {
 
         public void setName(String name) {
             //напишите тут ваш код
+            this.name = name;
 
         }
     }

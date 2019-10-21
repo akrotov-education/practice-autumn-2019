@@ -1,4 +1,4 @@
-package lesson02.part01;
+package main.java.lesson02.part01;
 
 /**
  * Создать 7 объектов, чтобы на экран вывелись 7 цветов радуги.
@@ -24,6 +24,13 @@ package lesson02.part01;
 public class Task14 {
     public static void main(String[] args) {
         //напишите тут ваш код
+        Red red = new Red();
+        Orange orange = new Orange();
+        Yellow yellow = new Yellow();
+        Green green = new Green();
+        Blue blue  = new Blue();
+        Indigo indigo = new Indigo();
+        Violet violet = new Violet();
 
     }
 

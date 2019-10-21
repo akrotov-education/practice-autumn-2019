@@ -1,4 +1,4 @@
-package lesson02.part02;
+package main.java.lesson02.part02;
 
 /**
  * Вывести на экран таблицу умножения 10х10 используя цикл while.
@@ -27,6 +27,19 @@ package lesson02.part02;
 public class Task34 {
     public static void main(String[] args) {
         //напишите тут ваш код
+        int i=1,n=1;
+        while(i<=10)
+        {
+            System.out.print(i+" ");
+            while(n<=9)
+            {
+                n++;
+                System.out.print(i*n+" ");
+            }
+            i++;
+            n=1;
+            System.out.println("");
+        }
 
     }
 }
