@@ -1,55 +1,85 @@
 package lesson01.part1;
-
+//@FoLoKe
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import foloke.utils.DotJavaReader;
 import util.SystemOutGatewayUtil;
-
 import java.io.ByteArrayOutputStream;
 
 @RunWith(JUnit4.class)
 public class Task05Test {
 
-    /* Закомментируй ненужные строки кода, чтобы на экран вывелась надпись:
-            * 9 умножить на 3 равно 27
-            * <p>
-            * Требования:
-            * 1. Программа должна выводить на экран надпись "9 умножить на 3 равно 27"
-            * 2. Нужно раскомментировать одну строку.
-            * 3. Нельзя изменять (добавлять, удалять) строки с кодом.
-            */
-    @Test
-    public void main() {
+    /* 1. Программа должна выводить на экран надпись "9 умножить на 3 равно 27"
+     * 2. Нужно раскомментировать одну строку.
+     * 3. Нельзя изменять (добавлять, удалять) строки с кодом.
+     */
 
-        //TODO: parser
+    private static ByteArrayOutputStream out;
+    private static String output;
+    private static String[] outputStrings;
+
+    @Before
+    public void init()
+    {
         SystemOutGatewayUtil.setCustomOut();
+        out = SystemOutGatewayUtil.getOutputArray();
+        out.reset();
+
         Task05.main(null);
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        String output = out.toString();
+        output = out.toString().trim();
+        outputStrings = output.split("\n");
+    }
 
-        try
-        {
-            DotJavaReader reader = DotJavaReader.openClass(Task05.class);
-            String classString;
-            int rowsCount = 0;
-            while((classString = reader.readLine()) != null)
-            {
-                rowsCount++;
+    @Test
+    public void test05main() {
+        Assert.assertEquals("9 умножить на 3 равно 27", output);
+    }
+
+    @Test
+    public void test0401()
+    {
+        int commentsCount = 0;
+        try {
+            DotJavaReader cr = DotJavaReader.openClass(Task04.class);
+            String classLine;
+            if(cr != null) {
+                while ((classLine = cr.readLine()) != null) {
+                    if (classLine.contains("//"))
+                        commentsCount++;
+                }
+
+                cr.close();
             }
-
-            reader.close();
-
-            Assert.assertEquals(32, rowsCount);
         }
         catch (Exception e)
         {
             System.out.println(e.toString());
         }
-        output = output.trim();
-        Assert.assertEquals("9 умножить на 3 равно 27", output);
+        Assert.assertEquals("расскоментируйте 1 строку", 6, commentsCount);
 
-        out.reset();
+    }
+
+    @Test
+    public void test0402()
+    {
+        int rowsCount = 0;
+        try {
+            DotJavaReader cr = DotJavaReader.openClass(Task04.class);
+            if(cr != null) {
+                while (cr.readLine() != null) {
+                    rowsCount++;
+                }
+
+                cr.close();
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.toString());
+        }
+        Assert.assertEquals("нельзя добавлять/удалять код", 33, rowsCount);
     }
 }
