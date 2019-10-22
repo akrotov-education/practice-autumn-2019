@@ -18,6 +18,10 @@ public class Task11 {
 
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        System.out.println(convertToSeconds(1));
+        System.out.println(convertToSeconds(7));
+    }
+    public static int convertToSeconds(int hour){
+        return hour*60*60;
     }
 }

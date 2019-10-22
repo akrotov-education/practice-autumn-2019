@@ -28,19 +28,17 @@ public class Task14 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int a;
-        String ba=reader.readLine();
-        a=Integer.parseInt(ba);
-        if (a % 100 != 0 && a % 400 == 0) {
-            System.out.println("количество дней в году: 366");
-        } else if (a % 4 == 0 && a % 100 > 0) {
-            System.out.println("количетсво дней в году: 366");
-        } else if (a % 100 == 0) {
-            System.out.println("количетсво дней в году: 365");
-        } else {
 
+        int year = Integer.parseInt(reader.readLine());
+
+        if (year % 400 == 0) {
+            System.out.println("количество дней в году: 366");
+        } else if (year % 100 == 0) {
+            System.out.println("количество дней в году: 365");
+        } else if (year % 4 == 0) {
+            System.out.println("количество дней в году: 366");
+        } else {
             System.out.println("количество дней в году: 365");
         }
-
     }
 }

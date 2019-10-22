@@ -50,6 +50,7 @@ public class Task20Test {
     public void after() {
 
         SystemInGatewayUtil.setOriginalIn();
+        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test

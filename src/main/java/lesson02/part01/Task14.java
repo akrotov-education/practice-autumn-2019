@@ -24,6 +24,13 @@ package lesson02.part01;
 public class Task14 {
     public static void main(String[] args) {
         //напишите тут ваш код
+        Red q=new Red();
+        Orange u21=new Orange();
+        Yellow y=new Yellow();
+        Green t =new Green();
+        Blue r =new Blue();
+        Indigo e =new Indigo();
+        Violet w=new Violet();
 
     }
 

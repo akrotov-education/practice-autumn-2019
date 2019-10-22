@@ -46,6 +46,7 @@ public class Task21Test {
     @After
     public void after() {
         SystemInGatewayUtil.setOriginalIn();
+        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test

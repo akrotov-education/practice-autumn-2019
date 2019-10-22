@@ -29,14 +29,7 @@ public class Task08 {
 
         Cat cat9;
         Cat cat91;
-        Cat cat92;
-        Cat cat93;
-        Cat cat94;
-        Cat cat95;
-        Cat cat96;
-        Cat cat97;
-        Cat cat99;
-        Cat cat98;
+
 
 
         //напишите тут ваш код

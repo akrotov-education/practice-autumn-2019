@@ -18,11 +18,13 @@ package lesson02.part01;
 
 public class Task10 {
     public static void main(String[] args) {
+
         writeToConsole("Hello world!");
     }
 
     public static void writeToConsole(String s) {
         //напишите тут ваш код
+        System.out.println("printing: "+s);
 
     }
 }
