@@ -16,10 +16,10 @@ public class Task12 {
 
     public static void main(String[] args) {
         String apple = "Яблоко";
-        String porridge = "Каша";
-        String sausage = "Колбаса";
+//        String porridge = "Каша";
+//        String sausage = "Колбаса";
         String peach = "Персик";
 
-        //напишите тут ваш код
+        System.out.println(apple + "\n" + peach);
     }
 }

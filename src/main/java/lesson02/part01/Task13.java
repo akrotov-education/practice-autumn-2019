@@ -18,7 +18,20 @@ package lesson02.part01;
 
 public class Task13 {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        int i = 1;
+        while (i < 11) {
+            System.out.print(i + " ");
+            System.out.print(i*2 + " ");
+            System.out.print(i*3 + " ");
+            System.out.print(i*4 + " ");
+            System.out.print(i*5 + " ");
+            System.out.print(i*6 + " ");
+            System.out.print(i*7 + " ");
+            System.out.print(i*8 + " ");
+            System.out.print(i*9 + " ");
+            System.out.println(i*10);
+            i++;
+        }
 
     }
 }

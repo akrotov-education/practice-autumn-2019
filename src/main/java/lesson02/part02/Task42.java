@@ -1,5 +1,8 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * Вводить с клавиатуры числа.
  * Если пользователь ввел -1, вывести на экран сумму всех введенных чисел и завершить программу.
@@ -22,7 +25,17 @@ package lesson02.part02;
 
 public class Task42 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int sum = 0;
+
+        while (true) {
+            int number = Integer.parseInt(reader.readLine());
+            sum += number;
+            if (number == -1)
+                break;
+        }
+
+        System.out.println(sum);
 
     }
 }

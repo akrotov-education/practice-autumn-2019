@@ -21,7 +21,10 @@ import java.util.*;
 
 public class Task17 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine();
+        int years = Integer.parseInt(reader.readLine());
 
+        System.out.println(name + " захватит мир через " + years + ". Му-ха-ха!");
     }
 }

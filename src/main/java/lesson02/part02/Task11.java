@@ -25,7 +25,11 @@ public class Task11 {
     }
 
     public static void checkSeason(int month) {
-        //напишите тут ваш код
+        System.out.println(
+                month > 2 && month < 6 ? "весна" :
+                        month > 5 && month < 9 ? "лето" :
+                                month > 8 && month < 12 ? "осень" : "зима"
+        );
 
     }
 }
