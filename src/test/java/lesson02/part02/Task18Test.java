@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.modules.junit4.PowerMockRunner;
-import util.SystemInGatewayUtil;
+import foloke.utils.SystemInGatewayUtil;
 import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;

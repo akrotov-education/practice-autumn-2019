@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import util.SystemInGatewayUtil;
+import foloke.utils.SystemInGatewayUtil;
 import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;

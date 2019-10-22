@@ -4,15 +4,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import util.ClassReader;
+import foloke.utils.DotJavaReader;
 import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
-
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
 
 
 @RunWith(JUnit4.class)
@@ -25,7 +20,7 @@ public class Task03Test {
         ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
         out.reset();
 
-        ClassReader cl = ClassReader.openClass(Task03.class);
+        DotJavaReader cl = DotJavaReader.openClass(Task03.class);
         String clLine;
         int count = 0;
 

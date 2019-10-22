@@ -4,13 +4,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import util.ClassReader;
+import foloke.utils.DotJavaReader;
 import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-
-import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
 public class Task05Test {
@@ -34,7 +31,7 @@ public class Task05Test {
 
         try
         {
-            ClassReader reader = ClassReader.openClass(Task05.class);
+            DotJavaReader reader = DotJavaReader.openClass(Task05.class);
             String classString;
             int rowsCount = 0;
             while((classString = reader.readLine()) != null)

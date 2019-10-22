@@ -4,15 +4,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.internal.runners.JUnit45AndHigherRunnerImpl;
-import util.ClassReader;
+import foloke.utils.DotJavaReader;
 import util.SystemOutGatewayUtil;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
-import java.lang.reflect.Field;
-
-import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
 public class Task04Test {
@@ -32,7 +27,7 @@ public class Task04Test {
             boolean foundA = false;
             boolean foundB = false;
             String clString = "";
-            ClassReader reader = ClassReader.openClass(Task04.class);
+            DotJavaReader reader = DotJavaReader.openClass(Task04.class);
             while((clString = reader.readLine()) != null)
             {
                 if(clString.contains("int a"))

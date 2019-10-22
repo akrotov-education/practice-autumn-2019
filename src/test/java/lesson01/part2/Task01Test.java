@@ -1,27 +1,21 @@
 package lesson01.part2;
 
-import lesson02.part01.Task07;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
-import util.ClassReader;
 
 import java.lang.reflect.Field;
-import static org.mockito.Mockito.*;
-import java.util.concurrent.ExecutionException;
 
-import static org.junit.Assert.*;
 @RunWith(PowerMockRunner.class)
 public class Task01Test {
 
-    static boolean crated = false;
+    private static boolean crated = false;
+
     @Test
     @PrepareForTest(Task01.class)
     public void test01()
@@ -39,7 +33,7 @@ public class Task01Test {
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.toString());
             Assert.fail("no variable");
         }
 
