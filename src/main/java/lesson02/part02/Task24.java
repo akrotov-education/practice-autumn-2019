@@ -21,19 +21,18 @@ import java.util.*;
 
 public class Task24 {
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        int int1 = scanner.nextInt();
-        int int2 = scanner.nextInt();
-        int int3 = scanner.nextInt();
-
-        if (int1==int2&&int1!=int3){
-            System.out.println("3");
+        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            numbers.add(Integer.parseInt(reader.readLine()));
         }
-        else if (int1==int3&&int1!=int2){
-            System.out.println("2");
+        if (!numbers.get(1).equals(numbers.get(0)) && !numbers.get(1).equals(numbers.get(2))) {
+            if (numbers.get(0).equals(numbers.get(2))) System.out.println(2);
         }
-        else if (int2==int3&&int1!=int3){
-            System.out.println("1");
-        }
+        if (numbers.get(1).equals(numbers.get(0)) && !numbers.get(1).equals(numbers.get(2)))
+            System.out.println(3);
+        if (numbers.get(1).equals(numbers.get(2)) && !numbers.get(0).equals(numbers.get(1)))
+            System.out.println(1);
     }
 }

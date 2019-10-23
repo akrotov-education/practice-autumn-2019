@@ -30,6 +30,7 @@ public class Task13 {
 
     public static double getWeight(int earthWeight) {
         //напишите тут ваш код
-        return earthWeight*0.17;
+        if (earthWeight < 0) return 0;
+        return 0.17 * earthWeight;
     }
 }

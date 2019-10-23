@@ -19,11 +19,10 @@ package lesson02.part01;
 public class Task13 {
     public static void main(String[] args) {
         //напишите тут ваш код
-    for (int a=1; a<11;a++){
-        for (int b=1; b<11;b++){
-            System.out.print(b*a+" ");
+        for (int i = 1; i <= 10; i++) {
+            for (int j = 1; j <= 10; j++)
+                System.out.print(i*j + " ");
+            System.out.println("\n");
         }
-        System.out.println();
-    }
     }
 }

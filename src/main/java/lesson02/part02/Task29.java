@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -37,35 +39,18 @@ import java.util.Scanner;
 
 public class Task29 {
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        int int1 = scanner.nextInt();
-        int int2 = scanner.nextInt();
-        int int3 = scanner.nextInt();
-
-        int count = 0;
-        int tnuoc = 0;
-        if (int1>0){
-            count++;
+        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int[] nums = new int[3];
+        int count1 = 0;
+        int count2 = 0;
+        for (int i = 0; i < 3; i++) {
+            nums[i] = Integer.parseInt(reader.readLine());
         }
-        else if (int1<0){
-            tnuoc++;
-
+        for (int i : nums) {
+            if (i < 0) count2++;
+            else if (i > 0) count1++;
         }
-        if (int2>0){
-            count+=1;
-        }
-        else if (int2<0){
-            tnuoc++;
-
-        }
-        if (int3>0){
-            count+=1;
-        }
-        else if (int3<0){
-            tnuoc++;
-
-        }
-        System.out.println("Kоличество отрицательных чисел: "+count);
-        System.out.println("Kоличество положительных чисел: "+tnuoc);
+        System.out.printf("количество отрицательных чисел: %d\r\nколичество положительных чисел: %d",count2,count1);
     }
 }

@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.util.Scanner;
+
 /**
  * Работа светофора для пешеходов запрограммирована следующим образом: в начале каждого часа в течение трех минут горит зелёный сигнал,
  * затем в течение одной минуты — жёлтый, а потом в течение одной минуты — красный, затем опять зелёный горит три минуты и т. д.
@@ -24,23 +26,16 @@ package lesson02.part02;
  * 4.	Если горит жёлтый цвет, необходимо вывести текст: "жёлтый"
  * 5.	Если горит красный цвет, необходимо вывести текст: "красный"
  */
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 public class Task16 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String number = reader.readLine();
-        double a = Double.parseDouble(number);
-        if((a%5>=0)&&(a%5<3))
-            System.out.println("зеленый");
-        if((a%5<4)&&(a%5>=3))
-            System.out.println("желтый");
-        if((a%5<5)&&(a%5>=4))
-            System.out.println("красный");
-
-
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите количество минут, прошедшее с начала очередного часа");
+        double minutes = in.nextDouble();
+        double colour = minutes % 5;
+        if (colour < 3) System.out.println("зелёный");
+        if (colour >= 3 && colour < 4) System.out.println("жёлтый");
+        if (colour >= 4 && colour < 5) System.out.println("красный");
     }
 }

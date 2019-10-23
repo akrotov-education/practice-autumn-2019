@@ -1,7 +1,10 @@
 package lesson02.part02;
 
+import lesson02.cw.loop.Do;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /**
  * Ввести с клавиатуры два числа m и n.
@@ -24,14 +27,11 @@ public class Task36 {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int m = Integer.parseInt(reader.readLine());
         int n = Integer.parseInt(reader.readLine());
-        for (int j = 0; j < m; j++)
-        {
-            for (int i = 0; i < n; i++)
-            {
-                System.out.print ("8");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(8);
             }
-            System.out.print (""+"\n");
+            System.out.print('\n');
         }
-
     }
 }

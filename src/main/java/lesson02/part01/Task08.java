@@ -15,6 +15,12 @@ package lesson02.part01;
 public class Task08 {
     public static void main(String[] args) {
         //напишите тут ваш код
-        System.out.println(10*9*8*7*6*1*2*3*4*5);
+        int i = 1;
+        int result = 1;
+        while (i < 11) {
+            result*=i;
+            i++;
+        }
+        System.out.println(result);
     }
 }

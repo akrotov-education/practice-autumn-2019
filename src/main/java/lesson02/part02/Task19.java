@@ -1,7 +1,9 @@
 package lesson02.part02;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * Ввести с клавиатуры четыре числа, и вывести максимальное из них. Если числа равны между собой, необходимо вывести любое.
@@ -17,29 +19,13 @@ import java.io.InputStreamReader;
 public class Task19 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-        int num1 = Integer.parseInt(reader.readLine());
-        int num2 = Integer.parseInt(reader.readLine());
-        int num3 = Integer.parseInt(reader.readLine());
-        int num4 = Integer.parseInt(reader.readLine());
-        int a,b;
-        if (num1<num2)
-            a=num2;
-        else if (num1==num2)
-            a=num2;
-        else a=num1;
-
-        if (num3<num4)
-            b=num4;
-        else if (num3==num4)
-            b=num4;
-        else b=num3;
-
-        if (a<b)
-            System.out.println(b);
-        else if (a==b)
-            System.out.println(b);
-        else System.out.println(a);
+        Scanner in = new Scanner(System.in);
+        List<Integer> numbers = new ArrayList<Integer>();
+        for (int i = 0; i < 4; i++) {
+            System.out.println("введите число");
+            numbers.add(in.nextInt());
+        }
+        numbers.sort(Comparator.naturalOrder());
+        System.out.println(numbers.get(3));
     }
 }

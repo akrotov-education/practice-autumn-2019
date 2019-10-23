@@ -1,5 +1,9 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -24,15 +28,20 @@ import java.util.Scanner;
 
 public class Task42 {
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        int sum=0;
+        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        List<Integer> nums = new ArrayList<>();
+        int number = 0;
         while (true) {
-            int number = scanner.nextInt();
-            sum = sum + number;
-            if (number == -1){
-                System.out.println(sum);
+            number = Integer.parseInt(reader.readLine());
+            nums.add(number);
+            if (number == -1)
                 break;
-            }
         }
+        int summ = 0;
+        for (int i : nums) {
+            summ+=i;
+        }
+        System.out.println(summ);
     }
 }

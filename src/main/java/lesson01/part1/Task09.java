@@ -26,9 +26,13 @@ public class Task09 {
     }
 
     public static int sumDigitsInNumber(int number) {
-        int a = number / 100;
-        int b = (number / 10 )% 10;
-        int c = number % 10;
-        return (a+b+c);
+        //напишите тут ваш код
+        number = Math.abs(number);
+        int summ = 0;
+        while (number != 0) {
+            summ += number % 10;
+            number /= 10;
+        }
+        return summ;
     }
 }

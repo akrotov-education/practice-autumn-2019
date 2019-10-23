@@ -1,5 +1,10 @@
 package lesson02.part02;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры три целых числа. Определить, имеется ли среди них хотя бы одна пара равных между собой чисел.
  * Если такая пара существует, вывести на экран числа через пробел. Если все три числа равны между собой, то вывести все три.
@@ -27,30 +32,27 @@ package lesson02.part02;
  * 5.	Если нет равных чисел, ничего не выводить.
  */
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 public class Task17 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int num1 = Integer.parseInt(reader.readLine());
-        int num2 = Integer.parseInt(reader.readLine());
-        int num3 = Integer.parseInt(reader.readLine());
-        if ((num1 == num2) && (num2 == num3)){
-            System.out.println(num1 + " " + num2 + " " + num3);
-            System.out.println("<p>");
-            System.out.println("<p>");}
-        else if (num1 == num2){
-            System.out.println(num1 + " " + num2);
-            System.out.println("<p>");}
-        else if ((num2 == num3)){
-            System.out.println(num2 + " " + num3);
-            System.out.println("<p>");}
-        else if (num3 == num1){
-            System.out.println(num1 + " " + num3);
-            System.out.println("<p>");}
-
+        Scanner in = new Scanner(System.in);
+        List<Integer> numbers = new ArrayList<Integer>();
+        for (int i = 0; i < 3; i++) {
+            System.out.println("введите число");
+            numbers.add(in.nextInt());
+        }
+        if (numbers.get(0).equals(numbers.get(1)) && numbers.get(0).equals(numbers.get(2))) {
+            for (int i = 0; i < 3; i++)
+                System.out.print(numbers.get(i) + " ");
+            System.exit(0);
+        }
+        for (int i = 0; i < 2; i++) {
+            for (int j = 1; j < 3; j++) {
+                if (numbers.get(i).equals(numbers.get(j))) {
+                    System.out.print(numbers.get(i) + " " + numbers.get(j));
+                    System.exit(0);
+                }
+            }
+        }
     }
 }

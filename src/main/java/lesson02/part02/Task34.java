@@ -27,19 +27,16 @@ package lesson02.part02;
 public class Task34 {
     public static void main(String[] args) {
         //напишите тут ваш код
-        int i=1,n=1;
-        while(i<=10)
-        {
-            System.out.print(i+" ");
-            while(n<=9)
-            {
-                n++;
-                System.out.print(i*n+" ");
+        int i = 1;
+        int j = 1;
+        while (i < 11) {
+            while (j < 11) {
+                System.out.print(i*j + " ");
+                j++;
             }
             i++;
-            n=1;
-            System.out.println("");
+            j = 1;
+            System.out.print('\n');
         }
-
     }
 }

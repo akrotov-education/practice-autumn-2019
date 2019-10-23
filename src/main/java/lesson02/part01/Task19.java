@@ -1,5 +1,7 @@
 package lesson02.part01;
 
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры имя и вывести надпись:
  * name зарабатывает $5,000. Ха-ха-ха!
@@ -13,20 +15,12 @@ package lesson02.part01;
  * 4.	Выведенный текст должен полностью соответствовать заданию.
  */
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-
 public class Task19 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-        InputStream inputStream = System.in;
-        Reader inputStreamReader = new InputStreamReader(inputStream);
-        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
-        String name = bufferedReader.readLine();
-
-        System.out.print(name + " зарабатывает $5,000 каждый день. Для этого он каждый день...");
+        Scanner in = new Scanner(System.in);
+        System.out.println("enter name");
+        String name = in.nextLine();
+        System.out.println(name + " зарабатывает $5,000. Ха-ха-ха!");
     }
 }

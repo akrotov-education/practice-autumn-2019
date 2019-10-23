@@ -25,9 +25,9 @@ public class Task02 {
     public static class Apple {
         public static int applesPrice = 0;
 
-        public  void addPrice(int applesPrice) {
+        public static void addPrice(int applesPrice) {
             //напишите тут ваш код
-    this.applesPrice += applesPrice;
+            Apple.applesPrice += applesPrice;
         }
     }
 }

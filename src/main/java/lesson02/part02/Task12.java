@@ -19,12 +19,11 @@ import java.util.Scanner;
 public class Task12 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-        Scanner sc = new Scanner(System.in);
-        System.out.println("введите число");
-        int temp = sc.nextInt();
-        if (temp < 0) temp++;
-        else if (temp > 0) temp*= 2;
-        System.out.println(temp);
+        Scanner in = new Scanner(System.in);
+        int num = in.nextInt();
+        if (num > 0) System.out.print(num * 2);
+        else if (num < 0) System.out.print(num + 1);
+        else if (num == 0) System.out.print(num);
     }
 
 }

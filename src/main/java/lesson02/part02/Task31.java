@@ -19,7 +19,6 @@ public class Task31 {
         while (i > 0) {
             System.out.println(i);
             i--;
-
         }
     }
 }

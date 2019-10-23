@@ -1,5 +1,7 @@
 package lesson02.part01;
 
+import java.util.*;
+
 /**
  * Ввести с клавиатуры три имени, вывести на экран надпись:
  * name1 + name2 + name3 = Чистая любовь, да-да!
@@ -15,23 +17,15 @@ package lesson02.part01;
  * 6.	Выведенный тест должен полностью соответствовать заданию.
  */
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-
 public class Task20 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-        InputStream inputStream = System.in;
-        Reader inputStreamReader = new InputStreamReader(inputStream);
-        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
-        String ストリング一 = bufferedReader.readLine();
-        String ストリング二 = bufferedReader.readLine();
-        String ストリング三 = bufferedReader.readLine();
-
-        System.out.println( ストリング一+ " + " + ストリング二 + " + " + ストリング三 + " = Чистая любовь, да-да!");
-
+        List<String> names = new ArrayList<String>();
+        Scanner input = new Scanner(System.in);
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Введите имя");
+            names.add(input.nextLine());
+        }
+        System.out.println(names.get(0) + " + " + names.get(1) + " + " + names.get(2) + " = Чистая любовь, да-да!");
     }
 }

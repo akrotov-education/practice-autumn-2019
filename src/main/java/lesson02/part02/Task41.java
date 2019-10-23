@@ -1,5 +1,10 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -17,20 +22,13 @@ import java.util.Scanner;
 
 public class Task41 {
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int c = scanner.nextInt();
-
-        int max = Math.max(Math.max(a,b), c);
-        int min = Math.min(Math.min(a,b), c);
-        int mid = a + b + c - (min + max);
-
-        if (a==b&&b==c){
-            System.out.println(a);
+        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        List<Integer> nums = new ArrayList<Integer>();
+        for (int i = 0; i < 3; i++) {
+            nums.add(Integer.parseInt(reader.readLine()));
         }
-        else {
-            System.out.println(mid);
-        }
+        nums.sort(Comparator.naturalOrder());
+        System.out.println(nums.get(1));
     }
 }

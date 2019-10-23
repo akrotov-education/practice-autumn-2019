@@ -1,5 +1,7 @@
 package lesson02.part01;
 
+
+
 /**
  * Вывести на экран все возможные комбинации слов «Мама», «Мыла», «Раму».
  * Подсказка: их 6 штук. Каждую комбинацию вывести с новой строки. Слова не разделять. Пример:
@@ -18,12 +20,15 @@ package lesson02.part01;
 public class Task12 {
     public static void main(String[] args) {
         //напишите тут ваш код
-        String str1 = "Мама" , str2 = "Мыла" , str3 = "Раму";
-        System.out.println(str1+str2+str3);
-        System.out.println(str1+str3+str2);
-        System.out.println(str2+str1+str3);
-        System.out.println(str2+str3+str1);
-        System.out.println(str3+str1+str2);
-        System.out.println(str3+str2+str1);
+        String[] words = new String[3];
+        words[0] = "Мама";
+        words[1] = "Мыла";
+        words[2] = "Раму";
+        System.out.println(words[0] + words[1] + words[2]);
+        System.out.println(words[0] + words[2] + words[1]);
+        System.out.println(words[1] + words[0] + words[2]);
+        System.out.println(words[1] + words[2] + words[0]);
+        System.out.println(words[2] + words[0] + words[1]);
+        System.out.println(words[2] + words[1] + words[0]);
     }
 }

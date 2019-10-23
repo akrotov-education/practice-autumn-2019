@@ -22,16 +22,11 @@ import java.util.*;
 public class Task17 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-        InputStream inputStream = System.in;
-        Reader inputStreamReader = new InputStreamReader(inputStream);
-        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
-        String name = bufferedReader.readLine();
-        String Age = bufferedReader.readLine();
-
-
-        int intAge = Integer.parseInt(Age);
-
-        System.out.print(name + " захватит мир через " + intAge + " лет. Му-ха-ха!");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter name");
+        String name = input.nextLine();
+        System.out.println("Enter year");
+        String years = input.nextLine();
+        System.out.println(name + " захватит мир через " + years + " лет. Му-ха-ха!");
     }
 }
