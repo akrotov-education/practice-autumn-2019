@@ -21,6 +21,11 @@ public class SystemInGatewayUtil {
         System.setIn(inContent);
     }
 
+    public static ByteArrayInputStream getInputArray()
+    {
+        return inContent;
+    }
+
     private static class CustomInputStream extends InputStream {
 
         @Override
