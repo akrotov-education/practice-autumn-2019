@@ -1,43 +1,105 @@
-package test.java.lesson02.part02;
+package lesson02.part02;
 
-import main.java.lesson02.part02.Task39;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.SystemInGatewayUtil;
-import test.java.util.SystemOutGatewayUtil;
+import util.SystemInGatewayUtil;
+import util.SystemOutGatewayUtil;
 
-import java.io.ByteArrayOutputStream;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import static org.junit.Assert.*;
 @RunWith(JUnit4.class)
+
 public class Task39Test {
+    private static String fileName = "./src/main/java/lesson02/part02/Task39.java";
+
+    @Before
+    public void setUp() throws Exception {
+        SystemOutGatewayUtil.setCustomOut();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemInGatewayUtil.setOriginalIn();
+    }
 
     @Test
-    public void test39() throws Exception {
-        SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
-
-        SystemInGatewayUtil.setCustomIn("test");
-        Task39.main(null);
-        String[] output = out.toString().trim().split("\n");
-
-        int index = 0;
-        for (int i = 0; i < output.length; i++) {
-            if(output[i].trim().equals("test любит меня."))
-            {
-                break;
+    public void task39ifKeyboardInput() {
+        boolean isInputExist = false;
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+            List<String> collect = stream.collect(Collectors.toList());
+            for (String s : collect) {
+                if (s.contains("nextInt()") || s.contains("nextLine()") || s.contains("readLine()")) {
+                    isInputExist = true;
+                    break;
+                }
             }
-            index++;
-        }
-
-        Assert.assertEquals(10, output.length - index);
-
-        for(int j = index; j < output.length; j++){
-            Assert.assertEquals("test любит меня.", output[j].trim());
+            Assert.assertTrue("Программа не должна получать числа с клавиатуры",isInputExist);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
+    @Test
+    public void task39ifPrintWasUsed() {
+        boolean isPrintUsed = false;
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+            List<String> collect = stream.collect(Collectors.toList());
+            for (String s : collect) {
+                if (s.contains("System.out.println") || s.contains("System.out.print")) {
+                    isPrintUsed = true;
+                    break;
+                }
+            }
+            Assert.assertTrue("Программа должна содержать консольный вывод.",
+                    isPrintUsed);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void task39isResultGood() throws Exception {
+        SystemInGatewayUtil.provideInput("Java\n");
+        Task39.main(null);
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Неправильный вывод",
+                "Java любит меня.\n" +
+                        "Java любит меня.\n" +
+                        "Java любит меня.\n" +
+                        "Java любит меня.\n" +
+                        "Java любит меня.\n" +
+                        "Java любит меня.\n" +
+                        "Java любит меня.\n" +
+                        "Java любит меня.\n" +
+                        "Java любит меня.\n" +
+                        "Java любит меня.\n",result);
+        stream.reset();
+    }
+
+    @Test
+    public void task39ifForUsed() {
+        boolean isForUsed = false;
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+            List<String> collect = stream.collect(Collectors.toList());
+            for (String s : collect) {
+                if (s.contains("for (")) {
+                    isForUsed = true;
+                    break;
+                }
+            }
+            Assert.assertTrue("Должен использоваться цикл for.",
+                    isForUsed);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

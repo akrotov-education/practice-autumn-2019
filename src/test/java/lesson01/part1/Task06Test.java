@@ -1,46 +1,47 @@
-package test.java.lesson01.part1;
+package lesson01.part1;
 
-import main.java.lesson01.part1.Task06;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.SystemOutGatewayUtil;
+import util.ReadFileUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.lang.reflect.Method;
+import java.util.List;
 
 import static org.junit.Assert.*;
-
 @RunWith(JUnit4.class)
 public class Task06Test {
 
-    /* Требования:
-     * 1. В методе printCircleLength нужно вывести длину окружности, рассчитанную по формуле: 2 * Pi * radius.
-     * 2. Метод main должен вызывать метод printCircleLength с параметром 5.
-     * 3. Метод main не должен вызывать команду вывода текста на экран.
-     * 4. Программа должна выводить длину окружности с радиусом 5.
-     */
-    @Test
-    public void main() {
-        //TODO: contains println;
+
+    @Before
+    public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
-        Task06.printCircleLength(5);
 
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        String rawout = out.toString();
-        String output = out.toString().trim();
-        Assert.assertEquals(Double.toString(2 * Math.PI * 5), output);
-        try {
-            out.reset();
-            Task06.main(null);
-            Assert.assertTrue(out.toString().equals(rawout));
-        }catch(Exception e)
-        {
-            System.out.println(e.toString());
-        }
+    }
 
-        out.reset();
+    @After
+    public void tearDown() throws Exception {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
+    @Test
+    public void checkOutput(){
+        Task06.main(null);
+        ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
+        String s2 = s.toString();
+        Assert.assertEquals("L = 31.400002\n", s2);
+    }
+    @Test
+    public void checkParameter() {
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson01/part1/Task06.java");
+        String lineWithMethodCall = lines.get(18);
+
+
+        Assert.assertTrue("Method main must call method printCircleLength with parameter 5",
+                lineWithMethodCall.contains("printCircleLength(5);"));
     }
 }

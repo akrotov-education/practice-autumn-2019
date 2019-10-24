@@ -1,48 +1,98 @@
-package test.java.lesson02.part02;
+package lesson02.part02;
 
-import main.java.lesson02.part02.Task20;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.SystemInGatewayUtil;
-import test.java.util.SystemOutGatewayUtil;
+import util.SystemInGatewayUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
 
-import static org.junit.Assert.*;
-
 @RunWith(JUnit4.class)
 public class Task20Test {
+    @Before
+    public void setUp() {
+        SystemOutGatewayUtil.setCustomOut();
+    }
+
+    @After
+    public void tearDown() {
+        SystemInGatewayUtil.setOriginalIn();
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
 
     @Test
-    public void test20() throws Exception {
-        SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
+    public void checkInput() {
+        SystemInGatewayUtil.provideInput("1\n2\n5");
 
-        SystemInGatewayUtil.setCustomIn("2\n1\n3");
-        Task20.main(null);
-        String[] output = out.toString().trim().split("\n");
-        Assert.assertEquals("3 2 1", output[output.length - 1].trim());
-        out.reset();
+        try {
+            Task20.main(null);
+        } catch (Exception e) {
+            Assert.fail("The program should read numbers from keyboard");
+        }
+    }
 
-        SystemInGatewayUtil.setCustomIn("1\n1\n3");
-        Task20.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("3 1 1", output[output.length - 1].trim());
-        out.reset();
+    @Test
+    public void checkOutput() {
+        SystemInGatewayUtil.provideInput("1\n2\n5");
 
-        SystemInGatewayUtil.setCustomIn("3\n1\n1");
-        Task20.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("3 1 1", output[output.length - 1].trim());
-        out.reset();
+        try {
+            Task20.main(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        SystemInGatewayUtil.setCustomIn("2\n2\n2");
-        Task20.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("2 2 2", output[output.length - 1].trim());
-        out.reset();
+        ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
+        Assert.assertTrue("The program must output numbers", output.toString().length() > 0);
+        String[] outLines = output.toString().split("\n")[0].split(" ");
+
+        try {
+            for (String line : outLines) {
+                Integer.parseInt(line);
+            }
+        } catch (NumberFormatException e) {
+            Assert.fail("The program must output numbers");
+        }
+    }
+
+    @Test
+    public void checkCorrectOutput() {
+        SystemInGatewayUtil.provideInput("1\n2\n5");
+
+        try {
+            Task20.main(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
+        String[] outLines = output.toString().split("\n");
+
+        Assert.assertTrue("The program should display 3 values in one line divided by space",
+                outLines.length == 1 && outLines[0].split(" ").length == 3
+        );
+    }
+
+    @Test
+    public void checkDescendOutput() {
+        SystemInGatewayUtil.provideInput("2\n10\n0");
+
+        try {
+            Task20.main(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
+        String[] outStrNums = output.toString().split("\n")[0].split(" ");
+
+        Assert.assertTrue("The program should display 3 values in one line divided by space",
+                Integer.parseInt(outStrNums[0]) > Integer.parseInt(outStrNums[1]) &&
+                        Integer.parseInt(outStrNums[1]) > Integer.parseInt(outStrNums[2])
+        );
     }
 }

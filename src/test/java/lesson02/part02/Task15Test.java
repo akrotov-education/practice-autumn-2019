@@ -1,36 +1,74 @@
-package test.java.lesson02.part02;
+package lesson02.part02;
 
-import main.java.lesson02.part02.Task15;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.SystemInGatewayUtil;
-import test.java.util.SystemOutGatewayUtil;
+import util.SystemInGatewayUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
 
-import static org.junit.Assert.*;
-
 @RunWith(JUnit4.class)
 public class Task15Test {
+    @Before
+    public void setUp() {
+        SystemOutGatewayUtil.setCustomOut();
+    }
+
+    @After
+    public void tearDown() {
+        SystemInGatewayUtil.setOriginalIn();
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
 
     @Test
-    public void test15() throws Exception {
-        SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
+    public void checkInput() {
+        SystemInGatewayUtil.provideInput("1\n2\n3");
 
-        SystemInGatewayUtil.setCustomIn("1700\n1\n1");
-        Task15.main(null);
-        String[] output = out.toString().trim().split("\n");
-        Assert.assertEquals("Треугольник не существует.", output[output.length - 1].trim());
-        out.reset();
+        try {
+            Task15.main(null);
+        } catch (Exception e) {
+            Assert.fail("The program should read value from keyboard");
+        }
+    }
 
-        SystemInGatewayUtil.setCustomIn("5\n2\n4");
-        Task15.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("Треугольник существует.", output[output.length - 1].trim());
-        out.reset();
+    @Test
+    public void triangleExists() {
+        SystemInGatewayUtil.provideInput("2\n2\n1");
+
+        try {
+            Task15.main(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
+        String[] outLines = output.toString().split("\n");
+        Assert.assertEquals("The program should display that triangle exists",
+                "Треугольник существует.",
+                outLines[0]
+        );
+    }
+
+    @Test
+    public void triangleNotExists() {
+        SystemInGatewayUtil.provideInput("1\n2\n3");
+
+        try {
+            Task15.main(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
+        String[] outLines = output.toString().split("\n");
+        Assert.assertEquals("The program should display that triangle doesn't exists",
+                "Треугольник не существует.",
+                outLines[0]
+        );
     }
 }

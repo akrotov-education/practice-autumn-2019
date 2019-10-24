@@ -1,31 +1,50 @@
-package test.java.lesson02.part01;
+package lesson02.part01;
 
-import main.java.lesson02.part01.Task04;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.SystemOutGatewayUtil;
+import util.ReadFileUtil;
+import util.SystemOutGatewayUtil;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.Assert.*;
-
 @RunWith(JUnit4.class)
+
 public class Task04Test {
-
-    @Test
-    public void test04()
-    {
+    @Before
+    public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
 
-        Assert.assertEquals( 55, Task04.addTenPercent(50), 0);
-        Assert.assertTrue(out.toString().isEmpty());
-
+    }
+    @After
+    public void tearDown() throws Exception {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
+    @Test
+    public void CheckOutput(){
         Task04.main(null);
-        Assert.assertTrue(out.toString().trim().matches("\\d+\\.\\d+"));
+        ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
+        String s2 = s.toString();
+        Assert.assertEquals("9.9\n", s2);
+    }
+    @Test
+    public void checkParameter() {
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson02/part01/Task04.java");
+        String lineWithMethodCall = lines.get(23);
+
+
+        Assert.assertTrue("Method main must call method addTenPercent with parameter 9",
+                lineWithMethodCall.contains("System.out.println(addTenPercent(9));"));
     }
 }

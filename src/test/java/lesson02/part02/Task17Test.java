@@ -1,49 +1,143 @@
-package test.java.lesson02.part02;
+package lesson02.part02;
 
-import main.java.lesson02.part02.Task17;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.SystemInGatewayUtil;
-import test.java.util.SystemOutGatewayUtil;
+import util.ReadFileUtil;
+import util.SystemInGatewayUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
-
-import static org.junit.Assert.*;
-
+import java.util.List;
 
 @RunWith(JUnit4.class)
 public class Task17Test {
+    @Before
+    public void setUp() {
+        SystemOutGatewayUtil.setCustomOut();
+    }
+
+    @After
+    public void tearDown() {
+        SystemInGatewayUtil.setOriginalIn();
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
 
     @Test
-    public void test17() throws Exception {
-        SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
+    public void checkInput() {
+        SystemInGatewayUtil.provideInput("1\n2\n3");
 
-        SystemInGatewayUtil.setCustomIn("2\n2\n1");
-        Task17.main(null);
-        String[] output = out.toString().trim().split("\n");
-        Assert.assertEquals("2 2", output[output.length - 1].trim());
-        out.reset();
+        try {
+            Task17.main(null);
+        } catch (Exception e) {
+            Assert.fail("The program should read numbers from keyboard");
+        }
+    }
 
-        SystemInGatewayUtil.setCustomIn("3\n2\n3");
-        Task17.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("3 3", output[output.length - 1].trim());
-        out.reset();
+    @Test
+    public void mainCallsPrint() {
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson02/part02/Task17.java");
 
-        SystemInGatewayUtil.setCustomIn("1\n3\n3");
-        Task17.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("3 3", output[output.length - 1].trim());
-        out.reset();
+        int startLine = 0;
+        for (int i = 0; i < lines.size(); i++) {
+            if (lines.get(i).contains("public static void main")) {
+                startLine = i;
+                break;
+            }
+        }
 
-        SystemInGatewayUtil.setCustomIn("2\n2\n2");
-        Task17.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("2 2 2", output[output.length - 1].trim());
-        out.reset();
+        Boolean isCallingPrint = false;
+        for (int i = startLine; i < lines.size(); i++) {
+            String line = lines.get(i);
+
+            if (line.contains("}")) {
+                break;
+            }
+
+            if (line.contains("System.out.print")) {
+                isCallingPrint = true;
+                break;
+            }
+        }
+
+        Assert.assertTrue("Main should calls System.out.println() or System.out.print()", isCallingPrint);
+    }
+
+    @Test
+    public void checkTwoEquals() {
+        SystemInGatewayUtil.provideInput("4\n5\n5");
+        try {
+            Task17.main(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        SystemInGatewayUtil.provideInput("5\n4\n5");
+        try {
+            Task17.main(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        SystemInGatewayUtil.provideInput("5\n5\n4");
+        try {
+            Task17.main(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
+        String[] outLines = output.toString().split("\n");
+        Assert.assertEquals("The program should display two equal nums",
+                "5 5",
+                outLines[0]
+        );
+
+        Assert.assertEquals("The program should display two equal nums",
+                "5 5",
+                outLines[1]
+        );
+
+        Assert.assertEquals("The program should display two equal nums",
+                "5 5",
+                outLines[2]
+        );
+    }
+
+    @Test
+    public void checkThreeEquals() {
+        SystemInGatewayUtil.provideInput("5\n5\n5");
+        try {
+            Task17.main(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
+        String[] outLines = output.toString().split("\n");
+        Assert.assertEquals("The program should display three equal nums",
+                "5 5 5",
+                outLines[0]
+        );
+    }
+
+    @Test
+    public void checkNoEquals() {
+        SystemInGatewayUtil.provideInput("1\n2\n3");
+        try {
+            Task17.main(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
+        Assert.assertTrue("The program shouldn't display anything",
+                output.toString().length() == 0
+        );
     }
 }

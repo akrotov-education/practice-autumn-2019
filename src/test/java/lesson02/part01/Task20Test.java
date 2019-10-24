@@ -1,42 +1,127 @@
-package test.java.lesson02.part01;
+package lesson02.part01;
 
-import main.java.lesson02.part01.Task20;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import test.java.util.SystemInGatewayUtil;
-import test.java.util.SystemOutGatewayUtil;
+import util.SystemInGatewayUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.Assert.*;
 
-@RunWith(JUnit4.class)
 public class Task20Test {
-    @Test
-    public void test20() throws Exception
-    {
+    public static String s;
+    public static List<String> collect;
+    public static String n1="aaa";
+    public static String n2="bbb";
+    public static String n3="ccc";
+
+    @Before
+    public void before() throws Exception {
+        SystemInGatewayUtil.provideInput(""+n1+"\n"+n2+"\n"+n3);
+
         SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
-
-        String name1 = "test1";
-        String name2 = "test2";
-        String name3 = "test3";
-
-        SystemInGatewayUtil.setCustomIn(name1 + "\n" + name2 + "\n" + name3);
-
         Task20.main(null);
-        String[] output = out.toString().trim().split("\n");
-        boolean found = false;
+        SystemOutGatewayUtil.setOriginalOut();
+        ByteArrayOutputStream ouputArr = SystemOutGatewayUtil.getOutputArray();
+        s = ouputArr.toString();
 
-        for (String outString : output) {
-            if(outString.trim().equals(name1 + " + " + name2 + " + " + name3 + " = " + "Чистая любовь, да-да!")) {
-                found = true;
-            }
+
+
+
+        String fileName="./src/main/java/lesson02/part01/Task20.java";
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+            collect = stream.collect(Collectors.toList());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        Assert.assertTrue("что с выводом?", found);
     }
+
+    @After
+    public void after() {
+
+        SystemInGatewayUtil.setOriginalIn();
+        SystemOutGatewayUtil.clearOutput();
+    }
+
+    @Test
+    public void test21_1(){
+        int a=0,b=0;
+        boolean var=false;
+        for (int i = 0; i < collect.size(); i++)
+            if (collect.get(i).contains("public static void main(String[] args)")) {
+                a = i + 1;
+                break;
+            }
+        for (int i = a; i < collect.size(); i++)
+            if (collect.get(i).contains("}")) {
+                b = i;
+                break;
+            }
+        For3:
+        for (int i = a; i < b; i++) {
+            if (collect.get(i).contains("print") ){
+                var = true;
+                break For3;
+
+            }
+
+        }
+        Assert.assertTrue("Не пройдено 3е условие!", var);
+    }
+
+    @Test
+    public void test21_2(){
+        int a=0,b=0;
+        boolean var=false;
+        for (int i = 0; i < collect.size(); i++)
+            if (collect.get(i).contains("public static void main(String[] args) throws Exception")) {
+                a = i + 1;
+                break;
+            }
+        for (int i = a; i < collect.size(); i++)
+            if (collect.get(i).contains("}")) {
+                b = i;
+                break;
+            }
+        For3:
+        for (int i = a; i < b; i++) {
+            if (collect.get(i).contains("readLine()") ){
+                var = true;
+                break For3;
+
+            }
+
+        }
+        Assert.assertTrue("Не пройдено 2е условие!", var);
+    }
+    @Test
+    public void test21_3(){
+        Assert.assertTrue("Не пройдено 3е условие!", Pattern.compile(n1).matcher(s).find());
+    }
+
+    @Test
+    public void test21_4(){
+        Assert.assertTrue("Не пройдено 4е условие!", Pattern.compile(n2).matcher(s).find());
+    }
+
+    @Test
+    public void test21_5(){
+        Assert.assertTrue("Не пройдено 3е условие!", Pattern.compile(n3).matcher(s).find());
+    }
+
+    @Test
+    public void test21_6(){
+        Assert.assertTrue("Не пройдено 6е условие!", s.equals(n1+" + "+n2+" + "+n3+" = Чистая любовь, да-да!\n"));
+    }
+
 }

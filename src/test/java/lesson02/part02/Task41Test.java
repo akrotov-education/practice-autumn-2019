@@ -1,48 +1,100 @@
-package test.java.lesson02.part02;
+package lesson02.part02;
 
-import main.java.lesson02.part02.Task41;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.SystemInGatewayUtil;
-import test.java.util.SystemOutGatewayUtil;
+import util.SystemInGatewayUtil;
+import util.SystemOutGatewayUtil;
 
-import java.io.ByteArrayOutputStream;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import static org.junit.Assert.*;
 @RunWith(JUnit4.class)
+
 public class Task41Test {
+    private static String fileName = "./src/main/java/lesson02/part02/Task41.java";
+
+    @Before
+    public void setUp() throws Exception {
+        SystemOutGatewayUtil.setCustomOut();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemInGatewayUtil.setOriginalIn();
+    }
 
     @Test
-    public void test41() throws Exception {
-        SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
+    public void task41ifKeyboardInput() {
+        boolean isInputExist = false;
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+            List<String> collect = stream.collect(Collectors.toList());
+            for (String s : collect) {
+                if (s.contains("nextInt()") || s.contains("nextLine()") || s.contains("readLine()")) {
+                    isInputExist = true;
+                    break;
+                }
+            }
+            Assert.assertTrue("Программа должна получать числа с клавиатуры",isInputExist);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-        SystemInGatewayUtil.setCustomIn("3\n4\n2");
+    @Test
+    public void task41ifPrintWasUsed() {
+        boolean isPrintUsed = false;
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+            List<String> collect = stream.collect(Collectors.toList());
+            for (String s : collect) {
+                if (s.contains("System.out.println") || s.contains("System.out.print")) {
+                    isPrintUsed = true;
+                    break;
+                }
+            }
+            Assert.assertTrue("Программа должна содержать консольный вывод.",
+                    isPrintUsed);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void task41isResultGood() throws Exception {
+        SystemInGatewayUtil.provideInput("1\n3\n2\n");
         Task41.main(null);
-        String[] output = out.toString().trim().split("\n");
-        Assert.assertEquals("3", output[output.length - 1].trim());
-        out.reset();
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Неправильный вывод",
+                "2\n",result);
+        stream.reset();
+    }
 
-        SystemInGatewayUtil.setCustomIn("1\n4\n2");
+    @Test
+    public void task41isResultGoodForThreeEquals() throws Exception {
+        SystemInGatewayUtil.provideInput("3\n3\n3\n");
         Task41.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("2", output[output.length - 1].trim());
-        out.reset();
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Неправильный вывод",
+                "3\n",result);
+        stream.reset();
+    }
 
-        SystemInGatewayUtil.setCustomIn("3\n4\n5");
+    @Test
+    public void task41isResultGoodForTwoEquals() throws Exception {
+        SystemInGatewayUtil.provideInput("1\n2\n2\n");
         Task41.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("4", output[output.length - 1].trim());
-        out.reset();
-
-        SystemInGatewayUtil.setCustomIn("3\n3\n3");
-        Task41.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("3", output[output.length - 1].trim());
-        out.reset();
-
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Неправильный вывод",
+                "2\n",result);
+        stream.reset();
     }
 }

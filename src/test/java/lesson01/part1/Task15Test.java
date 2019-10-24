@@ -1,47 +1,129 @@
-package test.java.lesson01.part1;
+package lesson01.part1;
 
-import main.java.lesson01.part1.Task15;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import test.java.util.SystemOutGatewayUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.text.NumberFormat;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import static org.junit.Assert.*;
-
-@RunWith(JUnit4.class)
 public class Task15Test {
+    public static String fileName = "./src/main/java/lesson01/part1/Task15.java";
+
+    @Before
+    public void before() {
+        SystemOutGatewayUtil.setCustomOut();
+    }
+
+    @After
+    public void after() {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
 
     @Test
-    public void main() {
+    public void test15NotChange() {
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+
+            List<String> collect = stream.collect(Collectors.toList());
+            boolean var = false;
+
+            for (int i = 0; i < collect.size(); i++) {
+                if (collect.get(i).contains("public static int number")) {
+                    var = true;
+                    break;
+                }
+            }
+
+            Assert.assertTrue(
+                    "У переменной number можно менять только значение",
+                    var
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test15ScreenOutput() {
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+
+            List<String> collect = stream.collect(Collectors.toList());
+            int a = 0;
+            int b = 0;
+            boolean var = false;
+
+            for (int i = 0; i < collect.size(); i++)
+                if (collect.get(i).contains("public static void main(String[] args)")) {
+                    a = i + 1;
+                    break;
+                }
+            for (int i = a; i < collect.size(); i++)
+                if (collect.get(i).contains("}")) {
+                    b = i;
+                    break;
+                }
+            for (int i = a; i < b; i++) {
+                if (collect.get(i).contains("System.out.print"))
+                    var = true;
+            }
+
+            Assert.assertTrue(
+                    "Программа должна выводить текст",
+                    var
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test15ScreenOutputNumber() {
+        Task15.main(null);
+        SystemOutGatewayUtil.setOriginalOut();
+        ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
+        String s = outputArr.toString();
+        boolean var = false;
         try {
-            Field f = Task15.class.getDeclaredField("number");
-
-            Assert.assertTrue(f.getType() == Integer.TYPE);
-            Assert.assertTrue(Modifier.isPublic(f.getModifiers()));
-            Assert.assertTrue(Modifier.isStatic(f.getModifiers()));
-
-
-            int number = (int)f.get(null);
-            double real = Math.pow(number, 2);
-            SystemOutGatewayUtil.setCustomOut();
-            ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-
-            Task15.main(null);
-            Assert.assertEquals(Double.toString(real), out.toString().trim());
-
-            out.reset();
+            Double.parseDouble(s);
+            var = true;
+        } catch (Exception e) {
 
         }
-        catch(Exception e)
-        {
-            System.out.println(e.toString());
+
+        Assert.assertTrue(
+                "Выводимый текст должен быть числом",
+                var
+        );
+    }
+
+    @Test
+    public void test15NumberPow() {
+        Task15.main(null);
+        double number = Math.sqrt(Task15.number);
+        SystemOutGatewayUtil.setOriginalOut();
+        ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
+        String s = outputArr.toString();
+        boolean var = false;
+        try {
+            double outNumber = Double.parseDouble(s);
+            if (outNumber == number)
+                var = true;
+        } catch (Exception e) {
+
         }
 
-
+        Assert.assertTrue(
+                "Выводимый текст должен быть квадратом переменной number",
+                var
+        );
     }
 }

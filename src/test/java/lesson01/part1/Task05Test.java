@@ -1,59 +1,65 @@
-package test.java.lesson01.part1;
+package lesson01.part1;
 
-import main.java.lesson01.part1.Task05;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.ClassReader;
-import test.java.util.SystemOutGatewayUtil;
+import util.ReadFileUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import java.util.List;
 
 import static org.junit.Assert.*;
-
 @RunWith(JUnit4.class)
 public class Task05Test {
 
-    /* Закомментируй ненужные строки кода, чтобы на экран вывелась надпись:
-            * 9 умножить на 3 равно 27
-            * <p>
-            * Требования:
-            * 1. Программа должна выводить на экран надпись "9 умножить на 3 равно 27"
-            * 2. Нужно раскомментировать одну строку.
-            * 3. Нельзя изменять (добавлять, удалять) строки с кодом.
-            */
-    @Test
-    public void main() {
 
-        //TODO: parser
+    @Before
+    public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
+
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
+    @Test
+    public void CheckOutput(){
         Task05.main(null);
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        String output = out.toString();
+        ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
+        String s2 = s.toString();
+        Assert.assertEquals("9 умножить на 3 равно 27", s2);
+    }
+    @Test
+    public void CheckLineComment() {
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson01/part1/Task05.java");
+        String lineWithMethodCall = lines.get(18);
 
-        try
-        {
-            ClassReader reader = ClassReader.openClass(Task05.class);
-            String classString;
-            int rowsCount = 0;
-            while((classString = reader.readLine()) != null)
-            {
-                rowsCount++;
-            }
+        Assert.assertTrue("line must contain //", lineWithMethodCall.contains("//"));
 
-            reader.close();
+        lineWithMethodCall = lines.get(23);
 
-            Assert.assertEquals(32, rowsCount);
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.toString());
-        }
-        output = output.trim();
-        Assert.assertEquals("9 умножить на 3 равно 27", output);
+        Assert.assertTrue("line must contain //", lineWithMethodCall.contains("//"));
 
-        out.reset();
+        lineWithMethodCall = lines.get(24);
+
+        Assert.assertTrue("line must contain //", lineWithMethodCall.contains("//"));
+
+        lineWithMethodCall = lines.get(25);
+
+        Assert.assertTrue("line must contain //", lineWithMethodCall.contains("//"));
+
+        lineWithMethodCall = lines.get(27);
+
+        Assert.assertTrue("line must contain //", lineWithMethodCall.contains("//"));
+
+        lineWithMethodCall = lines.get(28);
+
+        Assert.assertTrue("line must contain //", lineWithMethodCall.contains("//"));
     }
 }

@@ -1,49 +1,111 @@
-package test.java.lesson02.part02;
+package lesson02.part02;
 
-import main.java.lesson02.part02.Task25;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.SystemInGatewayUtil;
-import test.java.util.SystemOutGatewayUtil;
+import util.SystemInGatewayUtil;
+import util.SystemOutGatewayUtil;
 
-import java.io.ByteArrayOutputStream;
-
-import static org.junit.Assert.*;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @RunWith(JUnit4.class)
+
 public class Task25Test {
+    private static String fileName = "./src/main/java/lesson02/part02/Task25.java";
+
+    @Before
+    public void setUp() throws Exception {
+        SystemOutGatewayUtil.setCustomOut();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemInGatewayUtil.setOriginalIn();
+    }
 
     @Test
-    public void test25() throws Exception {
-        //TODO: check no out on full diff
-        SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
+    public void task25ifPrintWasUsed() {
+        boolean isPrintUsed = false;
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+            List<String> collect = stream.collect(Collectors.toList());
+            for (String s : collect) {
+                if (s.contains("System.out.println()") || s.contains("System.out.print()")) {
+                    isPrintUsed = true;
+                    break;
+                }
+            }
+            Assert.assertTrue("Программа должна содержать консольный вывод.",
+                    isPrintUsed);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-        SystemInGatewayUtil.setCustomIn("4\n4");
-        Task25.main(null);
-        String[] output = out.toString().trim().split("\n");
-        Assert.assertEquals("1", output[output.length - 1].trim());
-        out.reset();
+    @Test
+    public void task25ifKeyboardInput() {
+        boolean isInputExist = false;
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+            List<String> collect = stream.collect(Collectors.toList());
+            for (String s : collect) {
+                if (s.contains("nextInt()") || s.contains("nextLine()") || s.contains("readLine()")) {
+                    isInputExist = true;
+                    break;
+                }
+            }
+            Assert.assertTrue("Программа должна получать числа с клавиатуры",isInputExist);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-        SystemInGatewayUtil.setCustomIn("-4\n4");
+    @Test
+    public void task25correct1stQuarter() throws Exception {
+        SystemInGatewayUtil.provideInput("1\n1\n");
         Task25.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("2", output[output.length - 1].trim());
-        out.reset();
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Если точка находится в первой координатной четверти, вывести \"1\".",
+                "1",result.split("\n")[0]);
+        stream.reset();
+    }
 
-        SystemInGatewayUtil.setCustomIn("-4\n-4");
+    @Test
+    public void task25correct2ndQuarter() throws Exception {
+        SystemInGatewayUtil.provideInput("-1\n1\n");
         Task25.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("3", output[output.length - 1].trim());
-        out.reset();
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Если точка находится во второй координатной четверти, вывести \"2\".",
+                "2",result.split("\n")[0]);
+        stream.reset();
+    }
 
-        SystemInGatewayUtil.setCustomIn("4\n-4");
+    @Test
+    public void task25correct3rdQuarter() throws Exception {
+        SystemInGatewayUtil.provideInput("-1\n-1\n");
         Task25.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("4", output[output.length - 1].trim());
-        out.reset();
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Если точка находится в третьей координатной четверти, вывести \"3\".",
+                "3",result.split("\n")[0]);
+        stream.reset();
+    }
+
+    @Test
+    public void task25correct4thQuarter() throws Exception {
+        SystemInGatewayUtil.provideInput("1\n-1\n");
+        Task25.main(null);
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Если точка находится в четвертой координатной четверти, вывести \"4\".",
+                "4",result.split("\n")[0]);
+        stream.reset();
     }
 }

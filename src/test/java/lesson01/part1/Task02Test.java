@@ -1,49 +1,34 @@
-package test.java.lesson01.part1;
+package lesson01.part1;
 
-import main.java.lesson01.part1.Task02;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.SystemOutGatewayUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 
 import static org.junit.Assert.*;
-
 @RunWith(JUnit4.class)
 public class Task02Test {
 
-    @Test
-    public void main() {
-
+    @Before
+    public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        try {
-            out.flush();
-        }catch (IOException e)
-        {
-            System.out.println(e.toString());
-        }
+
+    }
+    @After
+    public void tearDown() throws Exception {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
+    @Test
+    public void CheckOutput(){
         Task02.main(null);
-
-
-        //Условия
-        Assert.assertFalse("Пусто", out.toString().isEmpty());
-        String[] hells = out.toString().split("\n");
-
-        Assert.assertTrue("не начинается с Hello", out.toString().startsWith("Hello"));
-        Assert.assertTrue("не заканчивается на !", out.toString().endsWith("!"));
-
-        Assert.assertEquals("Не 3 строки", 3, hells.length);
-        for (String hell: hells) {
-            Assert.assertEquals("Hello World!", hell);
-        }
-
-        //ПРОВЕРКА ЕЩЕ ОДНОЙ ПУСТОЙ СТРОКИ ИЗ-ЗА println()
-        Assert.assertFalse("Не одна строка (println в конце)" , out.toString().endsWith("\n"));
-
-        out.reset();
+        ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
+        String s2 = s.toString();
+        Assert.assertEquals("Hello World!\nHello World!\nHello World!\n", s2);
     }
 }

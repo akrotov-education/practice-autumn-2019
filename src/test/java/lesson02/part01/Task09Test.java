@@ -1,37 +1,33 @@
-package test.java.lesson02.part01;
+package lesson02.part01;
 
-import main.java.lesson02.part01.Task09;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.SystemOutGatewayUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
 
 import static org.junit.Assert.*;
-
 @RunWith(JUnit4.class)
 public class Task09Test {
-    @Test
-    public void test09()
-    {
+    @Before
+    public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
 
+    }
+    @After
+    public void tearDown() throws Exception {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
+    @Test
+    public void CheckOutput(){
         Task09.main(null);
-        String[] testStrings = new String[5];
-
-        int s = 0;
-        for(int i = 1; i <= 5; i++)
-        {
-            s += i;
-            testStrings[i - 1] = Integer.toString(s);
-        }
-
-        String[] outStrings = out.toString().trim().replace("\r", "").split("\n");
-
-        Assert.assertArrayEquals(testStrings, outStrings);
+        ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
+        String s2 = s.toString();
+        Assert.assertEquals("1\n3\n6\n10\n15\n", s2);
     }
 }

@@ -1,26 +1,84 @@
-package test.java.lesson02.part01;
+package lesson02.part01;
 
-import main.java.lesson02.part01.Task16;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import test.java.util.SystemOutGatewayUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import static org.junit.Assert.*;
-
-@RunWith(JUnit4.class)
 public class Task16Test {
-    @Test
-    public void test16()
-    {
-        SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
+    public static String fileName = "./src/main/java/lesson02/part01/Task16.java";
 
+    @Before
+    public void before() {
+        SystemOutGatewayUtil.setCustomOut();
+    }
+
+    @After
+    public void after() {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
+
+    @Test
+    public void test16OutputScreen() {
         Task16.main(null);
-        Assert.assertEquals("日本語", out.toString().trim());
+        SystemOutGatewayUtil.setOriginalOut();
+        ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
+        String s = outputArr.toString();
+
+        Assert.assertTrue(
+                "Программа должна выводить текст",
+                !s.isEmpty()
+        );
+    }
+
+    @Test
+    public void test16FirstSymbol() {
+        Task16.main(null);
+        SystemOutGatewayUtil.setOriginalOut();
+        ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
+        String s = outputArr.toString();
+
+        Pattern p = Pattern.compile("^[日]");
+        Matcher m = p.matcher(s);
+
+        Assert.assertTrue(
+                "Текст должен начинаться с \"日\"",
+                m.find()
+        );
+    }
+
+    @Test
+    public void test16LastSymbol() {
+        Task16.main(null);
+        SystemOutGatewayUtil.setOriginalOut();
+        ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
+        String s = outputArr.toString();
+
+        Pattern p = Pattern.compile("[語]$");
+        Matcher m = p.matcher(s);
+
+        Assert.assertTrue(
+                "Текст должен заканчиваться на \"語\"",
+                m.find()
+        );
+    }
+
+    @Test
+    public void test16RightOutputString() {
+        Task16.main(null);
+        SystemOutGatewayUtil.setOriginalOut();
+        ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
+        String s = outputArr.toString();
+
+        Assert.assertTrue(
+                "Выведенный текст должен соответствовать заданию",
+                s.split("\n")[0].equals("日本語")
+        );
     }
 }

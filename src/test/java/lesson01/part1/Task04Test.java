@@ -1,50 +1,42 @@
-package test.java.lesson01.part1;
+package lesson01.part1;
 
-import main.java.lesson01.part1.Task04;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.ClassReader;
-import test.java.util.SystemOutGatewayUtil;
+import util.ReadFileUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
+import java.util.List;
 
+import static org.junit.Assert.*;
 @RunWith(JUnit4.class)
 public class Task04Test {
-            /* 2. Нужно раскомментировать одну строку.
-            * 3. Нельзя изменять (добавлять, удалять) строки с кодом. */
-    @Test
-    public void main() {
+    @Before
+    public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
+
+    }
+    @After
+    public void tearDown() throws Exception {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
+    @Test
+    public void checkOutput(){
         Task04.main(null);
+        ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
+        String s2 = s.toString();
+        Assert.assertEquals("26\n25\n", s2);
+    }
+    @Test
+    public void checkLine() {
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson01/part1/Task04.java");
+        String lineWithMethodCall = lines.get(22);
 
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-
-        int rowsCount = 0;
-        int commentsCount = 0;
-        try {
-            ClassReader cr = ClassReader.openClass(Task04.class);
-            String classLine;
-            while ((classLine = cr.readLine()) != null) {
-                rowsCount++;
-                if(classLine.contains("//"))
-                    commentsCount++;
-            }
-
-            cr.close();
-        }
-        catch (Exception e)
-        {
-            System.out.println("s");
-        }
-        String output = out.toString().trim();
-        output = output.replace("\r","");
-        Assert.assertEquals("расскоментируйте 1 строку", 6, commentsCount);
-        Assert.assertEquals("нельзя добавлять/удалять код", 33, rowsCount);
-        Assert.assertTrue("not 25" , output.contains("25"));
-        Assert.assertTrue("not 26", output.contains("26"));
-
-        out.reset();
+        Assert.assertTrue("line must contain y = x / y;", lineWithMethodCall.contains("y = x / y;"));
     }
 }

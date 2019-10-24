@@ -1,51 +1,58 @@
-package test.java.lesson02.part01;
+package lesson02.part01;
 
-import main.java.lesson02.part01.Task03;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.ClassReader;
-import test.java.util.SystemOutGatewayUtil;
+import util.ReadFileUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
+import java.util.List;
 
-
-
-
-
+import static org.junit.Assert.*;
 @RunWith(JUnit4.class)
+
 public class Task03Test {
-
-    @Test
-    public void test03() {
-        //TODO: parse out calling conversion (can i use PowerMock ?????)
+    @Before
+    public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
 
-        ClassReader cl = ClassReader.openClass(Task03.class);
-        String clLine;
-        int count = 0;
-
-        try {
-            while ((clLine = cl.readLine()) != null) {
-                if(clLine.contains("convertEurToUsd("))
-                count++;
-            }
-        } catch (Exception e) {
-            Assert.fail("что с вызовом конвертации?");
-        }
-
-        Assert.assertEquals(3, count);
-
+    }
+    @After
+    public void tearDown() throws Exception {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
+    @Test
+    public void CheckOutput(){
         Task03.main(null);
-        String[] output = out.toString().trim().split("\n");
-        Assert.assertEquals(2, output.length);
+        ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
+        String s2 = s.toString();
+        Assert.assertEquals("20.93\n9.1\n", s2);
+    }
+    @Test
+    public void checkConvertNoPrint() {
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson02/part01/Task03.java");
+        String lineWithMethodCall = lines.get(29);
 
-        out.reset();
-        Assert.assertEquals(2 * 1.11, Task03.convertEurToUsd(2, 1.11), 0);
-        Assert.assertTrue(out.toString().isEmpty());
 
+        Assert.assertTrue("Method convertEurToUsd mustn't call Print",
+                lineWithMethodCall.contains("return"));
+    }
+    @Test
+    public void checkConvertUses2Times() {
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson02/part01/Task03.java");
+        String lineWithMethodCall = lines.get(21);
+
+        Assert.assertTrue("Method main must call convertEurToUsd",
+                lineWithMethodCall.contains("convertEurToUsd"));
+
+        lineWithMethodCall = lines.get(22);
+
+        Assert.assertTrue("Method main must call convertEurToUsd",
+                lineWithMethodCall.contains("convertEurToUsd"));
     }
 }

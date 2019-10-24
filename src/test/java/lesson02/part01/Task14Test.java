@@ -1,34 +1,148 @@
-package test.java.lesson02.part01;
+package lesson02.part01;
 
-import main.java.lesson02.part01.Task14;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import test.java.util.SystemOutGatewayUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import static org.junit.Assert.*;
-@RunWith(JUnit4.class)
 public class Task14Test {
-    @Test
-    public void test14()
-    {
+    public static String fileName = "./src/main/java/lesson02/part01/Task14.java";
+
+    @Before
+    public void before() {
         SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
+    }
 
-        String[] testStrings = { "Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"};
+    @After
+    public void after() {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
 
+    @Test
+    public void test14OutputScreen() {
         Task14.main(null);
-        String[] output = out.toString().trim().split("\n");
+        SystemOutGatewayUtil.setOriginalOut();
+        ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
+        String s = outputArr.toString();
 
-        Assert.assertEquals(7, output.length);
+        Assert.assertTrue(
+                "Программа должна выводить текст",
+                !s.isEmpty()
+        );
+    }
 
-        for(int i = 0; i < 7; i++)
-        {
-            Assert.assertEquals(testStrings[i], output[i].trim());
+    @Test
+    public void test14Objects() {
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+
+            List<String> collect = stream.collect(Collectors.toList());
+            int a = 0;
+            int b = 0;
+            int number = 0;
+
+            for (int i = 0; i < collect.size(); i++) {
+                if (collect.get(i).contains("public static void main(String[] args)")) {
+                    a = i + 1;
+                }
+                if (collect.get(i).contains("}")) {
+                    b = i;
+                    break;
+                }
+            }
+
+            for (int i = a; i < b; i++) {
+                if (
+                        collect.get(i).contains("new Red();") ||
+                        collect.get(i).contains("new Orange();") ||
+                        collect.get(i).contains("new Yellow();") ||
+                        collect.get(i).contains("new Green();") ||
+                        collect.get(i).contains("new Blue();") ||
+                        collect.get(i).contains("new Indigo();") ||
+                        collect.get(i).contains("new Violet();")
+
+                )
+                    number++;
+            }
+
+            Assert.assertTrue(
+                    "Нужно создать 7 различных объектов, отвечающих за цвета",
+                    number == 7
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
+
+    @Test
+    public void test14Rainbow() {
+        Task14.main(null);
+        SystemOutGatewayUtil.setOriginalOut();
+        ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
+        String s = outputArr.toString();
+
+        Assert.assertTrue(
+                "Порядок создания объектов должен соответствовать порядку цветов в радуге",
+                s.contains(
+                        "Red\n" +
+                        "Orange\n" +
+                        "Yellow\n" +
+                        "Green\n" +
+                        "Blue\n" +
+                        "Indigo\n" +
+                        "Violet\n"
+                )
+        );
+    }
+
+    public boolean checkCode(String color) {
+        boolean test = false;
+
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+
+            List<String> collect = stream.collect(Collectors.toList());
+            int a = 0;
+
+            for (int i = 0; i < collect.size(); i++)
+                if (collect.get(i).contains("public static class " + color + " {")) {
+                    a = i;
+                    break;
+                }
+            test = collect.get(a).equals("    public static class " + color + " {") &&
+                    collect.get(a + 1).equals("        public " + color + "() {") &&
+                    collect.get(a + 2).equals("            System.out.println(\"" + color + "\");") &&
+                    collect.get(a + 3).equals("        }") &&
+                    collect.get(a + 4).equals("    }");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return test;
+    }
+
+    @Test
+    public void test14NotChangeClasses() {
+        boolean test1 = checkCode("Red");
+        boolean test2 = checkCode("Orange");
+        boolean test3 = checkCode("Yellow");
+        boolean test4 = checkCode("Green");
+        boolean test5 = checkCode("Blue");
+        boolean test6 = checkCode("Indigo");
+        boolean test7 = checkCode("Violet");
+
+        Assert.assertTrue(
+                "В классе Cat не должно быть методов",
+                test1 && test2 && test3 && test4 && test5 && test6 && test7
+        );
     }
 }

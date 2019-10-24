@@ -1,50 +1,45 @@
-package test.java.lesson01.part1;
+package lesson01.part1;
 
-import main.java.lesson02.cw.loop.Do;
-import main.java.lesson01.part1.Task07;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.SystemOutGatewayUtil;
+import util.ReadFileUtil;
+import util.SystemOutGatewayUtil;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.lang.reflect.Method;
+import java.util.List;
 
 import static org.junit.Assert.*;
-
 @RunWith(JUnit4.class)
 public class Task07Test {
 
-    /* Требования:
-            * 1. Метод convertCelsiusToFahrenheit(int) должен быть публичным и статическим.
-            * 2. Метод convertCelsiusToFahrenheit должен возвращать значение типа double.
-            * 3. Метод convertCelsiusToFahrenheit не должен ничего выводить на экран.
-            * 4. Метод convertCelsiusToFahrenheit должен правильно переводить градусы Цельсия в градусы Фаренгейта и возвращать это число.
-            */
-    @Test
-    public void main() {
+    @Before
+    public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
 
-        try{
-            Method m = Task07.class.getDeclaredMethod("convertCelsiusToFahrenheit", int.class);
-            Assert.assertTrue(m.toString().contains("public static "));
+    }
 
-            Assert.assertEquals(Double.TYPE, m.getReturnType());
+    @After
+    public void tearDown() throws Exception {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
+    @Test
+    public void CheckOutput(){
+        Task07.main(null);
+        ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
+        String s2 = s.toString();
+        Assert.assertEquals("105.8\n", s2);
+    }
+    @Test
+    public void checkParameter() {
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson01/part1/Task07.java");
+        String lineWithMethodCall = lines.get(24);
 
-            Assert.assertEquals((9d / 5d) * 5 + 32d, m.invoke(null,5));
-            Assert.assertTrue(out.toString().isEmpty());
-
-            Task07.main(null);
-            Assert.assertFalse(out.toString().isEmpty());
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.toString());
-        }
-
-        out.reset();
+        Assert.assertTrue("Method main must call System.out.println(convertCelsiusToFahrenheit(41));",
+                lineWithMethodCall.contains("System.out.println(convertCelsiusToFahrenheit(41));"));
     }
 }

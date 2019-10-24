@@ -1,42 +1,122 @@
-package test.java.lesson01.part2;
+package lesson01.part2;
 
-import main.java.lesson01.part2.Task01;
+import lesson01.part1.Task01;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import util.SystemOutGatewayUtil;
 
-import test.java.util.ClassReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import java.lang.reflect.Field;
-import java.util.concurrent.ExecutionException;
-
-import static org.junit.Assert.*;
-@RunWith(JUnit4.class)
 public class Task01Test {
+    public static String fileName = "./src/main/java/lesson01/part2/Task01.java";
+    public static boolean test1;
+    public static boolean test2;
+    public static boolean test3;
+    public static boolean test4;
+    public static boolean test5;
 
-    static boolean crated = false;
+    @Before
+    public void before() {
+        SystemOutGatewayUtil.setCustomOut();
+    }
+
+    @After
+    public void after() {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
+
     @Test
-    public void test01()
-    {
-        try {
-            Field name = Task01.Person.class.getDeclaredField("name");
-            Assert.assertEquals(String.class, name.getType());
+    public void test01VariableName() {
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 
-            Field age = Task01.Person.class.getDeclaredField("age");
-            Assert.assertEquals(Integer.TYPE, age.getType());
+            List<String> collect = stream.collect(Collectors.toList());
 
-            Field weight = Task01.Person.class.getDeclaredField("money");
-            Assert.assertEquals(Integer.TYPE, weight.getType());
-
+            Assert.assertTrue("Variable name not found!", test1 = collect.get(26).contains("String name;"));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        catch (Exception e)
-        {
-            System.out.println(e);
-            Assert.fail("no variable");
+    }
+
+    @Test
+    public void test01VariableAge() {
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+
+            List<String> collect = stream.collect(Collectors.toList());
+
+            Assert.assertTrue("Variable age not found!", test2 = collect.get(27).contains("int age;"));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
+
+    @Test
+    public void test01VariableWeight() {
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+
+            List<String> collect = stream.collect(Collectors.toList());
+
+            Assert.assertTrue("Variable weight not found!", test3 = collect.get(28).contains("int weight;"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test01VariableMoney() {
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+
+            List<String> collect = stream.collect(Collectors.toList());
+
+            Assert.assertTrue("Variable money not found!", test4 = collect.get(29).contains("int money;"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test01ObjectPerson() {
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+
+            List<String> collect = stream.collect(Collectors.toList());
+            int number = 0;
+
+            for (int i = 0; i < collect.size(); i++) {
+                if (
+                        collect.get(i).contains("Person person = new Person();") ||
+                        collect.get(i).contains("String name;") ||
+                        collect.get(i).contains("int age;") ||
+                        collect.get(i).contains("int weight;") ||
+                        collect.get(i).contains("int money;")
+                )
+                    number++;
+            }
 
 
 
+            Assert.assertTrue("Object person not found!", number == 5);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test01Number() {
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+
+            List<String> collect = stream.collect(Collectors.toList());
+
+            Assert.assertTrue("Должно быть объявлено 5 переменных!",
+                    test5 = collect.get(22).contains("Person person = new Person();"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

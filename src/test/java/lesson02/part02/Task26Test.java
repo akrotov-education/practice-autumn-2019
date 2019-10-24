@@ -1,55 +1,122 @@
-package test.java.lesson02.part02;
+package lesson02.part02;
 
-import main.java.lesson02.part02.Task26;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import test.java.util.SystemInGatewayUtil;
-import test.java.util.SystemOutGatewayUtil;
+import util.SystemInGatewayUtil;
+import util.SystemOutGatewayUtil;
 
-import java.io.ByteArrayOutputStream;
-
-import static org.junit.Assert.*;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @RunWith(JUnit4.class)
+
 public class Task26Test {
+    private static String fileName = "./src/main/java/lesson02/part02/Task26.java";
+
+    @Before
+    public void setUp() throws Exception {
+        SystemOutGatewayUtil.setCustomOut();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemInGatewayUtil.setOriginalIn();
+    }
 
     @Test
-    public void test26() throws Exception {
-        //TODO: check no out on full diff
-        SystemOutGatewayUtil.setCustomOut();
-        ByteArrayOutputStream out = SystemOutGatewayUtil.getOutputArray();
-        out.reset();
+    public void task26ifPrintWasUsed() {
+        boolean isPrintUsed = false;
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+            List<String> collect = stream.collect(Collectors.toList());
+            for (String s : collect) {
+                if (s.contains("System.out.println()") || s.contains("System.out.print()")) {
+                    isPrintUsed = true;
+                    break;
+                }
+            }
+            Assert.assertTrue("Программа должна содержать консольный вывод.",
+                    isPrintUsed);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-        SystemInGatewayUtil.setCustomIn("-2");
-        Task26.main(null);
-        String[] output = out.toString().trim().split("\n");
-        Assert.assertEquals("отрицательное четное число", output[output.length - 1].trim());
-        out.reset();
+    @Test
+    public void task26ifKeyboardInput() {
+        boolean isInputExist = false;
+        try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
+            List<String> collect = stream.collect(Collectors.toList());
+            for (String s : collect) {
+                if (s.contains("nextInt()") || s.contains("nextLine()") || s.contains("readLine()")) {
+                    isInputExist = true;
+                    break;
+                }
+            }
+            Assert.assertTrue("Программа должна получать числа с клавиатуры",isInputExist);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-        SystemInGatewayUtil.setCustomIn("-3");
+    @Test
+    public void task26isNegativeEven() throws Exception {
+        SystemInGatewayUtil.provideInput("-10\n");
         Task26.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("отрицательное нечетное число", output[output.length - 1].trim());
-        out.reset();
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Если число отрицательное и четное, вывести \"отрицательное четное число\".",
+                "отрицательное четное число",result.split("\n")[0]);
+        stream.reset();
+    }
 
-        SystemInGatewayUtil.setCustomIn("0");
+    @Test
+    public void task26isNegativeOdd() throws Exception {
+        SystemInGatewayUtil.provideInput("-9\n");
         Task26.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("ноль", output[output.length - 1].trim());
-        out.reset();
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Если число отрицательное и нечетное, вывести \"отрицательное нечетное число\".",
+                "отрицательное нечетное число",result.split("\n")[0]);
+        stream.reset();
+    }
 
-        SystemInGatewayUtil.setCustomIn("4");
+    @Test
+    public void task26isZero() throws Exception {
+        SystemInGatewayUtil.provideInput("0\n");
         Task26.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("положительное четное число", output[output.length - 1].trim());
-        out.reset();
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Если число равно 0, вывести \"ноль\".",
+                "ноль",result.split("\n")[0]);
+        stream.reset();
+    }
 
-        SystemInGatewayUtil.setCustomIn("3");
+    @Test
+    public void task26isPositiveEven() throws Exception {
+        SystemInGatewayUtil.provideInput("10\n");
         Task26.main(null);
-        output = out.toString().trim().split("\n");
-        Assert.assertEquals("положительное нечетное число", output[output.length - 1].trim());
-        out.reset();
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Если число положительное и четное, вывести \"положительное четное число\".",
+                "положительное четное число",result.split("\n")[0]);
+        stream.reset();
+    }
+
+    @Test
+    public void task26isPositiveOdd() throws Exception {
+        SystemInGatewayUtil.provideInput("11\n");
+        Task26.main(null);
+        ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
+        String result = stream.toString();
+        Assert.assertEquals("Если число положительное и нечетное, вывести \"положительное нечетное число\".",
+                "положительное нечетное число",result.split("\n")[0]);
+        stream.reset();
     }
 }
