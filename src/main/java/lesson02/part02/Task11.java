@@ -19,13 +19,21 @@ package lesson02.part02;
 public class Task11 {
     public static void main(String[] args) {
         checkSeason(12);
-        checkSeason(4);
-        checkSeason(7);
-        checkSeason(10);
+        checkSeason(5);
+        checkSeason(8);
+        checkSeason(9);
+        checkSeason(0);
     }
 
     public static void checkSeason(int month) {
-        //напишите тут ваш код
-
+        if (month==1 || month==2 || month==12)
+            System.out.println("Зима");
+        else if (month>=3 && month<=5)
+            System.out.println("Весна");
+        else if (month>=6 && month<=8)
+            System.out.println("Лето");
+        else if (month>=9 && month<=11)
+            System.out.println("Осень");
+        else System.out.println("Такого месяца не существует");
     }
 }

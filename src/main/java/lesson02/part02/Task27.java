@@ -28,12 +28,25 @@ package lesson02.part02;
  * 10.	Если введенное число не попадает в диапазон 1 - 999, ничего не выводить на экран
  */
 
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
 public class Task27 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+
+        int a = new Scanner(System.in).nextInt();
+        if (a < 1 || a > 999)
+            System.out.print("ошибка ввода");
+        if (a % 2 == 0)
+            System.out.print("четное ");
+        else
+            System.out.print("нечетное ");
+        if (a / 10 == 0)
+            System.out.print("однозначное ");
+        else if (a / 100 == 0)
+            System.out.print("двузначное ");
+        else if (a / 1000 == 0)
+            System.out.print("трехзначное ");
+        System.out.println("число");
 
     }
 }

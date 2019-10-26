@@ -1,5 +1,6 @@
 package lesson02.part02;
-
+import javax.swing.*;
+import java.util.Scanner;
 /**
  * Ввести с клавиатуры три числа, и вывести их в порядке убывания. Выведенные числа должны быть разделены пробелом.
  *
@@ -13,7 +14,21 @@ package lesson02.part02;
 
 public class Task20 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int c = scan.nextInt();
+        int min =  Math.min(Math.min(a, b), c);
+        int max = Math.max(Math.max(a, b), c);
+        int mid = 0;
+        if (c<b || c<a)
+            mid = Math.max(Math.min(a, b), c);
+        else if (c>b || c>a)
+            mid = Math.min(Math.max(a, b), c);
+        else if (c>a)
+            mid = Math.max(Math.min(a, c), b);
+        else if (c<a)
+            mid = Math.min(Math.max(a, c), b);
+        System.out.println(max + " " + mid + " " + min);
     }
 }

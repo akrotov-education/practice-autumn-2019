@@ -16,12 +16,20 @@ package lesson02.part02;
  * 4.	Если все числа разные, ничего не выводить.
  */
 
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
 public class Task24 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int arr[] = new int[3];
+        Scanner scan = new Scanner(System.in);
+        for (int i = 0; i<arr.length; i++)
+            arr[i]=scan.nextInt();
+        if (arr[1] == arr[2])
+            System.out.println(1);
+        else if (arr[0] == arr[2])
+            System.out.println(2);
+        else if (arr[0] == arr[1])
+            System.out.println(3);
 
     }
 }
