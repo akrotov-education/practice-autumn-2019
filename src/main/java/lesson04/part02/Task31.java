@@ -28,7 +28,7 @@ public class Task31 {
 
   public static List getListForSet() {
     //напишите тут ваш код
-    return null;
+    return new ArrayList();
   }
 
   public static List getListForAddOrInsert() {
@@ -38,7 +38,7 @@ public class Task31 {
 
   public static List getListForRemove() {
     //напишите тут ваш код
-    return null;
+    return new LinkedList();
   }
 
   public static void main(String[] args) {

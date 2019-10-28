@@ -1,5 +1,7 @@
 package lesson04.part02;
 
+import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 
 /**
@@ -16,17 +18,27 @@ import java.util.Set;
 
 public class Task32 {
 
-  public static Set<Integer> createSet() {
-    // напишите тут ваш код
-    return null;
-  }
+    public static Set<Integer> createSet() {
+        Set<Integer> set = new HashSet<>();
+        Random r = new Random();
+        while (set.size() < 20) {
+            set.add(r.nextInt(100));
+        }
 
-  public static Set<Integer> removeAllNumbersGreaterThan10(Set<Integer> set) {
-    // напишите тут ваш код
-    return null;
-  }
+        return set;
+    }
 
-  public static void main(String[] args) {
+    public static Set<Integer> removeAllNumbersGreaterThan10(Set<Integer> set) {
+        // напишите тут ваш код
+        Set<Integer> tempSet = new HashSet<>();
+        for (Integer i : set) {
+            if (i <= 10)
+                tempSet.add(i);
+        }
+        return tempSet;
+    }
 
-  }
+    public static void main(String[] args) {
+        System.out.println(removeAllNumbersGreaterThan10(createSet()));
+    }
 }
