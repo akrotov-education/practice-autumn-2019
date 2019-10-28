@@ -1,5 +1,8 @@
 package lesson04.part01;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+
 /**
  * 1. Создай список из слов "мама", "мыла", "раму".
  * 2. После каждого слова вставь в список строку, содержащую слово "именно".
@@ -15,8 +18,16 @@ package lesson04.part01;
 
 public class Task12 {
 
-  public static void main(String[] args) {
-    //напишите тут ваш код
-  }
+    public static void main(String[] args) {
+        //напишите тут ваш код
+        LinkedList<String> list = new LinkedList<>(Arrays.asList("мама", "мыла", "раму"));
+        int initialSize = list.size();
+        for (int i = 1; i < initialSize * 2; i += 2)
+            list.add(i, "именно");
+
+        for (String s : list) {
+            System.out.println(s);
+        }
+    }
 }
 

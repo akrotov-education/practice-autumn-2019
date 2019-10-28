@@ -1,6 +1,7 @@
 package lesson04.part01;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * 1. Создай список слов, заполни его самостоятельно.
@@ -31,20 +32,30 @@ import java.util.ArrayList;
  */
 
 public class Task13 {
-  public static void main(String[] args) {
-    ArrayList<String> strings = new ArrayList<String>();
-    strings.add("роза");
-    strings.add("лоза");
-    strings.add("лира");
-    strings = fix(strings);
+    public static void main(String[] args) {
+        ArrayList<String> strings = new ArrayList<String>();
+        strings.add("роза");
+        strings.add("лоза");
+        strings.add("лира");
+        strings = fix(strings);
 
-    for (String string : strings) {
-      System.out.println(string);
+        for (String string : strings) {
+            System.out.println(string);
+        }
     }
-  }
 
-  public static ArrayList<String> fix(ArrayList<String> strings) {
-    //напишите тут ваш код
-    return null;
-  }
+    public static ArrayList<String> fix(ArrayList<String> strings) {
+        //напишите тут ваш код
+        ArrayList<String> output = new ArrayList<>();
+
+        for (String s : strings){
+            if(s.contains("л")){
+                output.add(s);
+                if(!s.contains("р")){
+                    output.add(s);
+                }
+            }
+        }
+        return output;
+    }
 }

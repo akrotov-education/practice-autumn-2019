@@ -1,6 +1,9 @@
 package lesson04.part01;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 /**
  * 1. Введи с клавиатуры 10 слов в список строк.
@@ -17,17 +20,28 @@ import java.util.ArrayList;
  */
 
 public class Task14 {
-  public static void main(String[] args) throws Exception {
-    // Считать строки с консоли и объявить ArrayList list тут
-    ArrayList<String> list = null;
+    public static void main(String[] args) throws Exception {
+        // Считать строки с консоли и объявить ArrayList list тут
+        ArrayList<String> list = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
 
-    ArrayList<String> result = doubleValues(list);
+        for (int i = 0; i < 10; i++) {
+            list.add(scanner.nextLine());
+        }
 
-    // Вывести на экран result
-  }
+        ArrayList<String> result = doubleValues(list);
 
-  public static ArrayList<String> doubleValues(ArrayList<String> list) {
-    //напишите тут ваш код
-    return null;
-  }
+        // Вывести на экран result
+        for (String s : result)
+            System.out.println(s);
+    }
+
+    public static ArrayList<String> doubleValues(ArrayList<String> list) {
+        //напишите тут ваш код
+        ArrayList<String> output = new ArrayList<String>(list);
+        int initialSize = output.size();
+        for (int i = 1; i < initialSize * 2; i += 2)
+            output.add(i, output.get(i-1));
+        return output;
+    }
 }

@@ -1,5 +1,8 @@
 package lesson04.part01;
 
+import java.util.LinkedList;
+import java.util.Scanner;
+
 /**
  * 1. Создай список строк.
  * 2. Добавь в него 5 строк с клавиатуры.
@@ -15,7 +18,24 @@ package lesson04.part01;
 
 public class Task09 {
 
-  public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
-  }
+    public static void main(String[] args) throws Exception {
+        //напишите тут ваш код
+        LinkedList<String> list = new LinkedList<>();
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < 5; i++)
+        {
+            list.addLast(scanner.nextLine());
+        }
+
+        for (int i = 0; i < 13; i++)
+        {
+            list.addFirst(list.getLast());
+            list.removeLast();
+        }
+
+        for (String s: list)
+        {
+            System.out.println(s);
+        }
+    }
 }
