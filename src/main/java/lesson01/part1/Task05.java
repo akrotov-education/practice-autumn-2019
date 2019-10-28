@@ -1,4 +1,4 @@
-﻿package lesson01.part1;
+package lesson01.part1;
 
 public class Task05 {
 
