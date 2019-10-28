@@ -33,6 +33,9 @@ public class Task26 {
     map.put("Comp", (double) 123);
 
     //напишите тут ваш код
+    for(Map.Entry<String, Object> entry : map.entrySet()){
+      System.out.println(entry.getKey() + " - " + entry.getValue());
+    }
 
   }
 }
