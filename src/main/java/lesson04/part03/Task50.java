@@ -1,5 +1,9 @@
 package lesson04.part03;
 
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 /**
  * Написать программу, которая будет вводить числа с клавиатуры.
  * Код по чтению чисел с клавиатуры должен быть в методе readData.
@@ -17,11 +21,23 @@ package lesson04.part03;
  */
 
 public class Task50 {
-  public static void main(String[] args) {
-    readData();
-  }
+    public static void main(String[] args) {
+        readData();
+    }
 
-  public static void readData() {
-    //напишите тут ваш код
-  }
+    public static void readData() {
+        //напишите тут ваш код
+        ArrayList<Integer> list = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            while (true) {
+                list.add(scanner.nextInt());
+            }
+        } catch (InputMismatchException e) {
+            for (Integer i : list) {
+                System.out.println(i);
+            }
+        }
+    }
 }

@@ -19,24 +19,28 @@ package lesson04.part03.task46;
 
 public class Task46 {
 
-  public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
+    public static void main(String[] args) throws Exception {
+        //напишите тут ваш код
 
-    method1();
+        try {
+            method1();
+        } catch (Exception1 exception1) {
+            System.out.println(exception1);
+        }
 
-    //напишите тут ваш код
+        //напишите тут ваш код
 
-  }
-
-  public static void method1() throws Exception1, Exception2, Exception3 {
-    int i = (int) (Math.random() * 3);
-    if (i == 0) {
-      throw new Exception1();
-    } else if (i == 1) {
-      throw new Exception2();
-    } else if (i == 2) {
-      throw new Exception3();
     }
-  }
+
+    public static void method1() throws Exception1, Exception2, Exception3 {
+        int i = (int) (Math.random() * 3);
+        if (i == 0) {
+            throw new Exception1();
+        } else if (i == 1) {
+            throw new Exception2();
+        } else if (i == 2) {
+            throw new Exception3();
+        }
+    }
 }
 
