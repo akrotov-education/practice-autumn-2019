@@ -1,64 +1,81 @@
-package lesson01.part1;
+package lesson02.part02;
 
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import util.ReadFileUtil;
-import util.SystemOutGatewayUtil;
 
-import java.io.ByteArrayOutputStream;
-import java.util.List;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 
 import static org.junit.Assert.*;
+
 @RunWith(JUnit4.class)
 public class Task05Test {
-
-
-    @Before
-    public void setUp() throws Exception {
-        SystemOutGatewayUtil.setCustomOut();
-
-    }
-
-    @After
-    public void tearDown() throws Exception {
-        SystemOutGatewayUtil.setOriginalOut();
-    }
     @Test
-    public void CheckOutput(){
-        Task05.main(null);
-        ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
-        String s2 = s.toString();
-        Assert.assertEquals("9 умножить на 3 равно 27", s2);
+    public void checkCatFields() {
+        Field[] fields = Task05.Cat.class.getDeclaredFields();
+
+        Assert.assertTrue("Class Cat must contain only one field 'catsCount'",
+                fields.length == 1 && fields[0].getName().contentEquals("catsCount")
+        );
     }
+
     @Test
-    public void CheckLineComment() {
-        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson01/part1/Task05.java");
-        String lineWithMethodCall = lines.get(18);
+    public void checkCatsCountField() {
+        try {
+            Field field = Task05.Cat.class.getDeclaredField("catsCount");
+            String modifier = Modifier.toString(field.getModifiers());
+            String type = field.getType().toString();
 
-        Assert.assertTrue("line must contain //", lineWithMethodCall.contains("//"));
+            Assert.assertEquals("Field catsCount must be private and static",
+                    "private static",
+                    modifier
+            );
+            Assert.assertEquals("Field catsCount must have int type",
+                    "int",
+                    type
+            );
 
-        lineWithMethodCall = lines.get(23);
+            field.setAccessible(true);
+            int val = (int)field.get(null);
+            Assert.assertEquals("Field catsCount must be initialized with value 0",
+                    0,
+                    val
+            );
+        } catch (NoSuchFieldException e) {
+            Assert.fail("Class Cat doesn't contain catsCount field");
+        } catch (IllegalAccessException e) {
+            Assert.fail("Can't get access to field");
+        }
+    }
 
-        Assert.assertTrue("line must contain //", lineWithMethodCall.contains("//"));
+    @Test
+    public void checkClassMethods() {
+        Method[] methods = Task05.Cat.class.getDeclaredMethods();
 
-        lineWithMethodCall = lines.get(24);
+        Assert.assertTrue("Class Cat must contain only one method setCatsCount",
+                methods.length == 1 && methods[0].getName().contentEquals("setCatsCount")
+        );
+    }
 
-        Assert.assertTrue("line must contain //", lineWithMethodCall.contains("//"));
+    @Test
+    public void checkSetCatsCountWork() {
+        Task05.Cat.setCatsCount(10);
+        try {
+            Field field = Task05.Cat.class.getDeclaredField("catsCount");
+            field.setAccessible(true);
+            int val = (int) field.get(null);
 
-        lineWithMethodCall = lines.get(25);
-
-        Assert.assertTrue("line must contain //", lineWithMethodCall.contains("//"));
-
-        lineWithMethodCall = lines.get(27);
-
-        Assert.assertTrue("line must contain //", lineWithMethodCall.contains("//"));
-
-        lineWithMethodCall = lines.get(28);
-
-        Assert.assertTrue("line must contain //", lineWithMethodCall.contains("//"));
+            Assert.assertEquals("Method setCatsCount should set value of field catsCount equals transmitted parameter",
+                    10,
+                    val
+            );
+        } catch (NoSuchFieldException e) {
+            Assert.fail("Class Cat doesn't contain catsCount field");
+        } catch (IllegalAccessException e) {
+            Assert.fail("Can't get access to field");
+        }
     }
 }
