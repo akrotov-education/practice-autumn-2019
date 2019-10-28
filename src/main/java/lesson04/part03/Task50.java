@@ -1,5 +1,9 @@
 package lesson04.part03;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 /**
  * Написать программу, которая будет вводить числа с клавиатуры.
  * Код по чтению чисел с клавиатуры должен быть в методе readData.
@@ -20,8 +24,19 @@ public class Task50 {
   public static void main(String[] args) {
     readData();
   }
-
   public static void readData() {
-    //напишите тут ваш код
+    ArrayList<Integer> counter = new ArrayList<Integer>();
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    try {
+      while (true) {
+        counter.add(Integer.parseInt(reader.readLine()));
+      }
+    }
+    catch (Exception e)
+    {
+      for (int i = 0; i < counter.size(); i++) {
+        System.out.println(counter.get(i));
+      }
+    }
   }
 }

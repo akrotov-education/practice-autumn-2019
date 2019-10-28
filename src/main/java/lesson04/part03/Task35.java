@@ -17,32 +17,32 @@ public class Task35 {
     method1();
   }
 
-  public static StackTraceElement[] method1() {
+  public static int method1() {
     method2();
-    //напишите тут ваш код
-    return null;
+    StackTraceElement[] elements = Thread.currentThread().getStackTrace();
+    return  elements[2].getLineNumber();
   }
 
-  public static StackTraceElement[] method2() {
+  public static int method2() {
     method3();
-    //напишите тут ваш код
-    return null;
+    StackTraceElement[] elements = Thread.currentThread().getStackTrace();
+    return  elements[2].getLineNumber();
   }
 
-  public static StackTraceElement[] method3() {
+  public static int method3() {
     method4();
-    //напишите тут ваш код
-    return null;
+    StackTraceElement[] elements = Thread.currentThread().getStackTrace();
+    return  elements[2].getLineNumber();
   }
 
-  public static StackTraceElement[] method4() {
+  public static int method4() {
     method5();
-    //напишите тут ваш код
-    return null;
+    StackTraceElement[] elements = Thread.currentThread().getStackTrace();
+    return  elements[2].getLineNumber();
   }
 
-  public static StackTraceElement[] method5() {
-    //напишите тут ваш код
-    return null;
+  public static int method5() {
+    StackTraceElement[] elements = Thread.currentThread().getStackTrace();
+    return  elements[2].getLineNumber();
   }
 }

@@ -1,6 +1,7 @@
 package lesson04.part02;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -34,12 +35,11 @@ public class Task30 {
   }
 
   public static long getGetTimeInMs(List list) {
-    // напишите тут ваш код
-
+    Date currentTime = new Date();
     get10000(list);
-
-    // напишите тут ваш код
-    return 0;
+    Date newTime = new Date();
+    long msDelay = newTime.getTime() - currentTime.getTime();
+    return msDelay;
   }
 
   public static void get10000(List list) {
@@ -47,7 +47,6 @@ public class Task30 {
       return;
     }
     int x = list.size() / 2;
-
     for (int i = 0; i < 10000; i++) {
       list.get(x);
     }

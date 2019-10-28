@@ -1,5 +1,8 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * 1. Создать массив на 10 строк.
  * 2. Создать массив на 10 чисел.
@@ -20,6 +23,18 @@ package lesson04.part01;
 public class Task03 {
 
   public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    String[] list = new String[10];
+
+    for (int i = 0; i < list.length; i++)
+    {
+      list[i] = reader.readLine();
+    }
+    int[] list2 = new int[10];
+    for (int i = 0; i < list.length; i++)
+      list2[i] = list[i].length();
+
+    for (int i = 0; i < list.length; i++)
+      System.out.println(list2[i]);
   }
 }

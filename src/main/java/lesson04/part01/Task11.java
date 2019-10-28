@@ -1,5 +1,7 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
@@ -22,10 +24,33 @@ import java.util.ArrayList;
 
 public class Task11 {
   public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
+    ArrayList<Integer> listMain = new ArrayList<>();
+    ArrayList<Integer> listOdd = new ArrayList<>();
+    ArrayList<Integer> listEven = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<>();
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+    for (int i = 0; i < 20; i++)
+      listMain.add(Integer.parseInt(reader.readLine()));
+
+
+    for (int i = 0; i < listMain.size(); i++) {
+      if (listMain.get(i) % 3 == 0)
+        listOdd.add(listMain.get(i));
+      if (listMain.get(i) % 2 == 0)
+        listEven.add(listMain.get(i));
+      if (listMain.get(i) % 2 != 0 && listMain.get(i) % 3 != 0)
+        list.add(listMain.get(i));
+    }
+
+    printList(listOdd);
+    printList(listEven);
+    printList(list);
   }
 
   public static void printList(ArrayList<Integer> list) {
-    //напишите тут ваш код
+    for (int i = 0; i < list.size(); i++){
+      System.out.println(list.get(i));
+    }
   }
 }

@@ -1,5 +1,10 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 /**
  * 1. Создай список из слов "мама", "мыла", "раму".
  * 2. После каждого слова вставь в список строку, содержащую слово "именно".
@@ -15,8 +20,19 @@ package lesson04.part01;
 
 public class Task12 {
 
-  public static void main(String[] args) {
-    //напишите тут ваш код
+  public static void main(String[] args) throws IOException {
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    ArrayList<String> list = new ArrayList<String>();
+    list.add(0, "мама");
+    list.add(1, "именно");
+    list.add(2, "мыла");
+    list.add(3, "именно");
+    list.add(4, "раму");
+    list.add(5, "именно");
+
+    for (int n = 0; n < list.size(); n++){
+      System.out.println(list.get(n));
+    }
   }
 }
 

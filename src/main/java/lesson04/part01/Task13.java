@@ -1,5 +1,7 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
@@ -31,20 +33,39 @@ import java.util.ArrayList;
  */
 
 public class Task13 {
-  public static void main(String[] args) {
-    ArrayList<String> strings = new ArrayList<String>();
-    strings.add("роза");
-    strings.add("лоза");
-    strings.add("лира");
-    strings = fix(strings);
+  public static void main(String[] args) throws Exception {
+    BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
 
-    for (String string : strings) {
-      System.out.println(string);
+    ArrayList<String> list = new ArrayList<String>();
+    list.add("роза"); //0
+    list.add("лоза"); //1
+    list.add("лира"); //2
+    list.add("мера");
+    list.add("вола");
+    list = fix(list);
+
+    for (String s : list) {
+      System.out.println(s);
     }
   }
 
-  public static ArrayList<String> fix(ArrayList<String> strings) {
+  public static ArrayList<String> fix(ArrayList<String> list) {
     //напишите тут ваш код
-    return null;
+    for (int i = 0; i < list.size(); i++) {
+      String word = list.get(i);
+      if (word.contains("р") && !word.contains("л")) {
+        list.remove(i);
+        i -= 1;
+      }
+      else if (word.contains("л") && !word.contains("р")) {
+        String s = word;
+        list.add(i + 1, s);
+        i += 1;
+      }
+      else if (word.contains("р") && word.contains("л")) {
+        continue;
+      }
+    }
+    return list;
   }
 }

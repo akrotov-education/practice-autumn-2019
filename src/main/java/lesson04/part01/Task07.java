@@ -1,5 +1,7 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
@@ -21,6 +23,23 @@ public class Task07 {
   private static ArrayList<String> strings;
 
   public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    strings = new ArrayList<String>();
+    for(int i = 0; i < 5; i++){
+      strings.add(reader.readLine());
+    }
+
+    int max = 0;
+    for (int a = 0; a < 5; a++ ) {
+      if (strings.get(a).length() > max) {
+        max = strings.get(a).length();
+      }
+    }
+
+    for(int b = 0; b < 5; b++ ){
+      if (max == strings.get(b).length()){
+        System.out.println(strings.get(b));
+      }
+    }
   }
 }

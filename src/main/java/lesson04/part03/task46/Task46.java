@@ -19,15 +19,19 @@ package lesson04.part03.task46;
 
 public class Task46 {
 
+
   public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
+    try {
+      method1();
+    } catch (Exception3 e){
 
-    method1();
+    } catch (Exception2 e){
 
-    //напишите тут ваш код
+    } catch (Exception1 e){
+
+    }
 
   }
-
   public static void method1() throws Exception1, Exception2, Exception3 {
     int i = (int) (Math.random() * 3);
     if (i == 0) {

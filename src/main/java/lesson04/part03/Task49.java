@@ -14,8 +14,16 @@ package lesson04.part03;
  */
 
 public class Task49 {
-
   public static void main(String[] args) {
-//    divideByZero();
+    try {
+      divideByZero();
+    }
+    catch (ArithmeticException e)
+    {
+      e.printStackTrace();
+    }
+  }
+  public static void divideByZero() {
+    System.out.println(123/0);
   }
 }

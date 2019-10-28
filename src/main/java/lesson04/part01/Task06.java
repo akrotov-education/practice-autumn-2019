@@ -1,5 +1,8 @@
 package lesson04.part01;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 /**
  * 1. Создай список строк.
  * 2. Добавь в него 5 различных строк.
@@ -16,7 +19,18 @@ package lesson04.part01;
 
 public class Task06 {
 
-  public static void main(String[] args) {
-    //напишите тут ваш код
-  }
+    public static void main(String[] args) throws IOException {
+      ArrayList<String> list = new ArrayList<String>();
+      list.add("as");
+      list.add("zxc");
+      list.add("123");
+      list.add("vbn");
+      list.add("tyu");
+
+      System.out.println(list.size());
+
+      for (int i = 0; i<5; i++){
+        System.out.println(list.get(i));
+      }
+    }
 }

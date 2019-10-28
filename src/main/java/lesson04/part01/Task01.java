@@ -1,6 +1,8 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * 1. В методе initializeArray():
@@ -24,12 +26,24 @@ public class Task01 {
   }
 
   public static int[] initializeArray() throws IOException {
-    // создай и заполни массив
-    return null;
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    int[] list = new int[20];
+
+    for (int i = 0; i < list.length; i++)
+    {
+      String s = reader.readLine();
+      list[i] = Integer.parseInt(s);
+    }
+    return list;
   }
 
-  public static int max(int[] array) {
-    // найди максимальное значение
-    return 0;
+  public static int max(int[] list) {
+    int max = list[0];
+    for (int i = 0; i < list.length; i++){
+      if (list[i]>max){
+        max = list[i];
+      }
+    }
+    return max;
   }
 }

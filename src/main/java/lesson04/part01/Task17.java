@@ -3,6 +3,7 @@ package lesson04.part01;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /**
  * Создать массив на 20 чисел.
@@ -19,12 +20,25 @@ import java.io.InputStreamReader;
 
 public class Task17 {
   public static void main(String[] args) throws IOException {
-    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    Scanner scanner = new Scanner(System.in);
 
-    int maximum = 0;
-    int minimum = 0;
+    int [] list = new int[20];
 
-    //напишите тут ваш код
+    for (int i = 0; i < 20; i++) {
+      list[i] = scanner.nextInt();
+    }
+    int maximum = list[0];
+    int minimum = list[0];
+    for (int i = 0; i < 20; i++) {
+      if (list[i] > maximum){
+        maximum = list[i];
+      }
+    }
+    for (int i = 0; i < 20; i++) {
+      if (list[i] < minimum){
+        minimum = list[i];
+      }
+    }
 
     System.out.print(maximum + " " + minimum);
   }

@@ -23,6 +23,7 @@ public class Task38 {
   }
 
   public static void log(String s) {
-    //напишите тут ваш код
+    StackTraceElement[] elements = Thread.currentThread().getStackTrace();
+    System.out.println(elements[2].getClassName()+": "+elements[2].getMethodName()+": "+s);
   }
 }

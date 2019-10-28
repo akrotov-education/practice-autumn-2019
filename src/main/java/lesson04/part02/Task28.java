@@ -19,7 +19,6 @@ import java.util.List;
  */
 
 public class Task28 {
-
   public static void main(String[] args) {
     // ArrayList
     ArrayList arrayList = new ArrayList();
@@ -37,22 +36,26 @@ public class Task28 {
   }
 
   public static void insert10000(List list) {
-    //напишите тут ваш код
-
+    for (int i = 0; i < 10000; i++) {
+      list.add(0, new Object());
+    }
   }
 
   public static void get10000(List list) {
-    //напишите тут ваш код
-
+    for (int i = 0; i < 10000; i++) {
+      list.get(i);
+    }
   }
 
   public static void set10000(List list) {
-    //напишите тут ваш код
-
+    for (int i = 0; i < 10000; i++) {
+      list.set(0, new Object());
+    }
   }
 
   public static void remove10000(List list) {
-    //напишите тут ваш код
-
+    for (int i = list.size()-1; i >=0; i--) {
+      list.remove(i);
+    }
   }
 }
