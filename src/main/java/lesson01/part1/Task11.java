@@ -26,8 +26,8 @@ public class Task11 {
         final protected int b = 25;
         final private int c = 2;
 
-        public long getVolume(int a, int b, int c) {
-            return this.a * this.b * this.c * 1000L;
+        public static long getVolume(int a, int b, int c) {
+            return a * b * c * 1000L;
         }
 
     }
