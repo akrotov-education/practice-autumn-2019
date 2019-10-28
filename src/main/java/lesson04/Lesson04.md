@@ -28,5 +28,15 @@
 
 Дополнительная информация:
 ================
-[Ввод-вывод в Java. Классы FileInputStream, FileOutputStream, BufferedInputStream](https://javarush.ru/groups/posts/2020-vvod-vihvod-v-java-klassih-fileinputstream-fileoutputstream-bufferedinputstream)<br>
+[Кое-что о массивах в Java](https://javarush.ru/groups/posts/1932-koe-chto-o-massivakh)<br>
+[Класс Arrays и его использование](https://javarush.ru/groups/posts/1933-klass-arrays-i-ego-ispoljhzovanie)<br>
+[Класс ArrayList](https://javarush.ru/groups/posts/klass-arraylist)<br>
+[Удаление элемента из списка ArrayList](https://javarush.ru/groups/posts/1935-udalenie-ehlementa-iz-spiska-arraylist)<br>
+[Работа ArrayList в картинках](https://javarush.ru/groups/posts/1936-rabota-arraylist-v-kartinkakh--)<br>
+[Класс Collections](https://javarush.ru/groups/posts/1937-klass-collections--)<br>
+[LinkedList](https://javarush.ru/groups/posts/1938-linkedlist--)<br>
+[HashMap — что за карта такая?](https://javarush.ru/groups/posts/1940-klass-hashmap---)<br>
+[Сигнатура метода](https://javarush.ru/groups/posts/1942-signatura-metoda---)<br>
+[Исключения: перехват и обработка](https://javarush.ru/groups/posts/1943-iskljuchenija-perekhvat-i-obrabotka---)<br>
+[Исключения: checked, unchecked и свои собственные](https://javarush.ru/groups/posts/1944-iskljuchenija-checked-unchecked-i-svoi-sobstvennihe---)<br>
 
