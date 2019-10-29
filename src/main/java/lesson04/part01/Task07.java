@@ -1,6 +1,8 @@
 package lesson04.part01;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.stream.Collectors;
 
 /**
  * 1. Создай список строк.
@@ -22,5 +24,12 @@ public class Task07 {
 
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
+    strings = new ArrayList<>();
+    Scanner scanner = new Scanner(System.in);
+    for(int i = 0; i < 5; ++i) strings.add(scanner.nextLine());
+    strings = (ArrayList<String>) strings.stream().sorted((str1, str2) -> str2.length() - str1.length()).
+                                    collect(Collectors.toList());
+    strings.stream().filter(str -> str.length() == strings.get(0).length()).
+                      forEach(System.out::println);
   }
 }

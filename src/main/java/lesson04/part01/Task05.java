@@ -1,6 +1,8 @@
 package lesson04.part01;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * 1. Создать массив на 15 целых чисел.
@@ -27,5 +29,19 @@ public class Task05 {
 
   public static void main(String[] args) throws IOException {
     //напишите тут ваш код
+    ArrayList<Integer> houses = new ArrayList<>();
+    Scanner scanner = new Scanner(System.in);
+    for(int i = 0; i < 15; ++i) houses.add(scanner.nextInt());
+    int mod2Count = houses.stream().filter(n1 -> n1 % 2 == 0).mapToInt(n1 -> n1).sum();
+    int notMod2Count = houses.stream().filter(n1 -> n1 % 2 != 0).mapToInt(n1 -> n1).sum();
+    if (mod2Count > notMod2Count){
+      System.out.println("В домах с четными номерами проживает больше жителей.");
+    }
+    else if (mod2Count < notMod2Count){
+      System.out.println("В домах с нечетными номерами проживает больше жителей.");
+    }
+    else{
+      System.out.println("Количество жителей в домах равно.");
+    }
   }
 }
