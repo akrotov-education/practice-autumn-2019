@@ -11,7 +11,7 @@ public class SystemInGatewayUtil {
     private static final InputStream originalIn = System.in;
     private static ByteArrayInputStream inContent = new ByteArrayInputStream("".getBytes());
     private static InputStream customIn = new CustomInputStream();
-
+    private static String inputString = "";
     public static void setOriginalIn() {
         System.setIn(originalIn);
     }
@@ -19,6 +19,20 @@ public class SystemInGatewayUtil {
     public static void setCustomIn(String userInput) {
         inContent = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inContent);
+    }
+
+
+    public static void addCustomIn(String userInput) {
+        if(inputString.isEmpty())
+            inputString += userInput;
+        else
+            inputString += "\n" + userInput;
+    }
+
+    public static void setCustomIn() {
+        inContent = new ByteArrayInputStream(inputString.getBytes());
+        System.setIn(inContent);
+        inputString = "";
     }
 
     public static ByteArrayInputStream getInputArray()
