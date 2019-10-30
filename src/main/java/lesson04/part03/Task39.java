@@ -19,8 +19,14 @@ public class Task39 {
   public static void main(String[] args) {
     //напишите тут ваш код
 
-    int a = 42 / 0;
+    try {
+      int a = 42 / 0;
+    } catch (ArithmeticException e) {
+      e.printStackTrace();
+      System.out.println(e.getClass().getName());
+    }
 
     //напишите тут ваш код
+
   }
 }

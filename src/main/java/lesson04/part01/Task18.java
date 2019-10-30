@@ -3,6 +3,7 @@ package lesson04.part01;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  * Создать список строк.
@@ -20,8 +21,17 @@ import java.io.InputStreamReader;
 
 public class Task18 {
   public static void main(String[] args) throws IOException {
-    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
     //напишите тут ваш код
+    ArrayList<String> arrayList = new ArrayList<>();
+    String string = in.readLine();
+    while(!string.equals("end")){
+      arrayList.add(string);
+      string = in.readLine();
+    }
+    for (String str: arrayList) {
+      System.out.println(str);
+    }
   }
 }

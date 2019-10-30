@@ -1,6 +1,10 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+
+import static java.lang.Integer.parseInt;
 
 /**
  * 1. В методе initializeArray():
@@ -25,11 +29,22 @@ public class Task01 {
 
   public static int[] initializeArray() throws IOException {
     // создай и заполни массив
-    return null;
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    int[] array = new int[20];
+    for (int i = 0; i < array.length; i++) {
+      array[i] = parseInt(in.readLine());
+    }
+    return array;
   }
 
   public static int max(int[] array) {
     // найди максимальное значение
-    return 0;
+    int max = array[0];
+    for (int num: array) {
+      if(num > max){
+        max = num;
+      }
+    }
+    return max;
   }
 }

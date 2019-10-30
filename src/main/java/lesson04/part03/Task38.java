@@ -24,5 +24,9 @@ public class Task38 {
 
   public static void log(String s) {
     //напишите тут ваш код
+    System.out.println(String.format("%s: %s: %s",
+            Thread.currentThread().getStackTrace()[Thread.currentThread().getStackTrace().length - 1].getClassName(),
+            Thread.currentThread().getName(),
+            s));
   }
 }

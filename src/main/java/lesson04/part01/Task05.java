@@ -1,6 +1,10 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+
+import static java.lang.Integer.parseInt;
 
 /**
  * 1. Создать массив на 15 целых чисел.
@@ -27,5 +31,21 @@ public class Task05 {
 
   public static void main(String[] args) throws IOException {
     //напишите тут ваш код
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    int[] array = new int[15];
+    int evenSide = 0;
+    int oddSide = 0;
+    for (int i = 0; i < array.length; i++) {
+      if(i%2 == 0){
+        evenSide += parseInt(in.readLine());
+      }else{
+        oddSide += parseInt(in.readLine());
+      }
+    }
+    if(oddSide > evenSide){
+      System.out.println("В домах с нечетными номерами проживает больше жителей.");
+    }else{
+      System.out.println("В домах с четными номерами проживает больше жителей.");
+    }
   }
 }
