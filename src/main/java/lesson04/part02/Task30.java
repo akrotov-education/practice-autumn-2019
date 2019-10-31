@@ -35,11 +35,11 @@ public class Task30 {
 
   public static long getGetTimeInMs(List list) {
     // напишите тут ваш код
-
+    long start = System.nanoTime();
     get10000(list);
 
     // напишите тут ваш код
-    return 0;
+    return System.nanoTime() - start;
   }
 
   public static void get10000(List list) {

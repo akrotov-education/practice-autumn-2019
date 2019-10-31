@@ -31,31 +31,42 @@ import java.nio.file.FileSystemException;
 
 public class Task47 {
 
-  public static StatelessBean BEAN = new StatelessBean();
+    public static StatelessBean BEAN = new StatelessBean();
 
-  public static void main(String[] args) {
-    handleExceptions();
-  }
-
-  public static void handleExceptions() {
-    // Раскомментируй
-//    BEAN.methodThrowExceptions();
-  }
-
-  public static class StatelessBean {
-    public void log(Exception exception) {
-      System.out.println(exception.getMessage() + ", " + exception.getClass().getSimpleName());
+    public static void main(String[] args) {
+        try {
+            handleExceptions();
+        } catch (FileSystemException e) {
+            System.out.println("FileSystemException: " + e);
+        }
     }
 
-    public void methodThrowExceptions() throws CharConversionException, FileSystemException, IOException {
-      int i = (int) (Math.random() * 3);
-      if (i == 0) {
-        throw new CharConversionException();
-      } else if (i == 1) {
-        throw new FileSystemException("");
-      } else if (i == 2) {
-        throw new IOException();
-      }
+    public static void handleExceptions() throws FileSystemException {
+        // Раскомментируй
+        try {
+            BEAN.methodThrowExceptions();
+        } catch (FileSystemException e) {
+            BEAN.log(e);
+            throw e;
+        } catch (IOException e) {
+            BEAN.log(e);
+        }
     }
-  }
+
+    public static class StatelessBean {
+        public void log(Exception exception) {
+            System.out.println(exception.getMessage() + ", " + exception.getClass().getSimpleName());
+        }
+
+        public void methodThrowExceptions() throws CharConversionException, FileSystemException, IOException {
+            int i = (int) (Math.random() * 3);
+            if (i == 0) {
+                throw new CharConversionException();
+            } else if (i == 1) {
+                throw new FileSystemException("");
+            } else if (i == 2) {
+                throw new IOException();
+            }
+        }
+    }
 }

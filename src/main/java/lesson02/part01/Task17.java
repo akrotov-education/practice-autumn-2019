@@ -16,12 +16,19 @@ package lesson02.part01;
  * 5.	Выведенный текст должен полностью соответствовать заданию.
  */
 
-import java.io.*;
 import java.util.*;
 
 public class Task17 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Name: ?");
+        String name = scanner.nextLine();
+
+        System.out.println("Years: ?");
+        int years = scanner.nextInt();
+
+        System.out.println(name + " захватит мир через " + years + " лет. Му-ха-ха!");
     }
 }

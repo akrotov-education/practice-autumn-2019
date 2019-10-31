@@ -1,5 +1,10 @@
 package lesson04.part03;
 
+import java.awt.*;
+import java.io.EOFException;
+import java.io.IOException;
+import java.net.SocketException;
+
 /**
  * Есть четыре класса MyException, MyException2, MyException3, MyException4.
  * Унаследуй классы так, чтобы у тебя появилось любые два checked исключения и любые два unchecked исключения.
@@ -17,18 +22,18 @@ package lesson04.part03;
 
 public class Task48 {
 
-  public static void main(String[] args) {
-  }
+    public static void main(String[] args) {
+    }
 
-  static class MyException {
-  }
+    static class MyException extends SocketException {
+    }
 
-  static class MyException2 {
-  }
+    static class MyException2 extends IOException {
+    }
 
-  static class MyException3 {
-  }
+    static class MyException3 extends ArrayIndexOutOfBoundsException {
+    }
 
-  static class MyException4 {
-  }
+    static class MyException4 extends LinkageError {
+    }
 }

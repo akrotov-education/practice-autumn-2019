@@ -1,5 +1,8 @@
 package lesson01.part1;
 
+import java.time.LocalTime;
+import static java.time.LocalTime.of;
+
 public class Task10 {
 
     /**
@@ -15,5 +18,9 @@ public class Task10 {
      */
 
     public static void main(String[] args) {
+        LocalTime past = LocalTime.of(15, 0);
+        LocalTime now = LocalTime.of(15, 30);
+
+        System.out.println(now.toSecondOfDay() - past.toSecondOfDay());
     }
 }

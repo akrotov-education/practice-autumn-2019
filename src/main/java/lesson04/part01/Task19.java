@@ -27,6 +27,11 @@ public class Task19 {
       System.out.println(i);
 
       //напишите тут ваш код
+      try {
+        Thread.sleep(100);
+      } catch (Exception e) {
+        System.out.println(e);
+      }
     }
 
     System.out.println("Бум!");

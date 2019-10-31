@@ -1,5 +1,8 @@
 package lesson02.part01;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 /**
  * Вывести на экран дату своего рождения в виде: MAY 1 2012
  * <p>
@@ -14,6 +17,7 @@ package lesson02.part01;
 public class Task05 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        LocalDate date = LocalDate.of(1998, Month.JULY, 31);
+        System.out.println(date.getMonth() + " " + date.getDayOfMonth() + " " + date.getYear());
     }
 }
