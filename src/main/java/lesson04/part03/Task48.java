@@ -17,18 +17,18 @@ package lesson04.part03;
 
 public class Task48 {
 
-  public static void main(String[] args) {
+  public static void main(String[] args)  {
   }
 
-  static class MyException {
+  static class MyException extends ArrayStoreException {
   }
 
-  static class MyException2 {
+  static class MyException2 extends ArithmeticException {
   }
 
-  static class MyException3 {
+  static class MyException3 extends NoSuchMethodException {
   }
 
-  static class MyException4 {
+  static class MyException4 extends NoSuchFieldException{
   }
 }

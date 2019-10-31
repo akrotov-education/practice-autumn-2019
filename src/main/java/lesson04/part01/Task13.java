@@ -34,8 +34,8 @@ public class Task13 {
   public static void main(String[] args) {
     ArrayList<String> strings = new ArrayList<String>();
     strings.add("роза");
-    strings.add("лоза");
     strings.add("лира");
+    strings.add("лоза");
     strings = fix(strings);
 
     for (String string : strings) {
@@ -44,7 +44,21 @@ public class Task13 {
   }
 
   public static ArrayList<String> fix(ArrayList<String> strings) {
-    //напишите тут ваш код
-    return null;
+    for (int i = 0; i < strings.size(); ) {
+
+      if (strings.get(i).contains("р")&&!strings.get(i).contains("л")) {
+        strings.remove(i);
+      } else if (strings.get(i).contains("л")&&!strings.get(i).contains("р")) {
+        strings.add(i + 1, strings.get(i));
+        i += 2;
+      }else if ((strings.get(i).contains("р")) && (strings.get(i).contains("л"))) {
+        i++;
+      }else if (!((strings.get(i).contains("р")) && (strings.get(i).contains("л")))) {
+        i++;
+      }
+
+
+    }
+    return strings;
   }
 }

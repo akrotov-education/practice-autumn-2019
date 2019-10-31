@@ -1,5 +1,7 @@
 package lesson04.part01;
 
+import java.util.Scanner;
+
 /**
  * 1. Создать массив на 10 строк.
  * 2. Создать массив на 10 чисел.
@@ -20,6 +22,17 @@ package lesson04.part01;
 public class Task03 {
 
   public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
+    String[] strings = new String[10];
+    int[] list = new int[10];
+    Scanner scanner = new Scanner(System.in);
+    for (int i = 0; i < 10; i++) {
+      strings[i] = scanner.nextLine();
+    }
+    int i=0;
+      for (int j=0; j<list.length; j++){
+        list[j] = strings[i].length();
+        System.out.println(list[j]);
+        i++;
+    }
   }
 }
