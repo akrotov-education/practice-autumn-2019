@@ -13,6 +13,9 @@ package lesson02.part01;
 
 public class Task05 {
     public static void main(String[] args) {
-        System.out.println("OCTOBER 9 1998");
+        String Month = "OCTOBER";
+        int Date = 9;
+        int year = 1998;
+        System.out.print(Month + " " + Date + " " + year);
     }
 }

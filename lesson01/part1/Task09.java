@@ -22,7 +22,7 @@ public class Task09 {
      */
 
     public static void main(String[] args) {
-        System.out.println(sumDigitsInNumber(546));
+        System.out.print(sumDigitsInNumber(546));
     }
 
     public static int sumDigitsInNumber(int number) {

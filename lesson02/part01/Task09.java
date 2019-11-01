@@ -24,11 +24,11 @@ public class Task09 {
     public static void main(String[] args) {
         String out = "1+";
         int sum = 1;
-        System.out.println(sum);
+        System.out.print(sum +"\n");
         for (int i=2; i<6; i++){
             out += Integer.toString(i);
             sum += i;
-            System.out.println(out + "=" + (sum));
+            System.out.print(out + "=" + (sum) + "\n");
             out += "+";
         }
     }

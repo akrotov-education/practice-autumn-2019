@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -26,15 +28,29 @@ import java.util.Scanner;
  * 4.	Если горит жёлтый цвет, необходимо вывести текст: "жёлтый"
  * 5.	Если горит красный цвет, необходимо вывести текст: "красный"
  */
-
+//
+//public class Task16 {
+//    public static void main(String[] args) throws Exception {
+//        double num;
+//        Scanner in = new Scanner(System.in);
+//        num = in.nextDouble();
+//        //ввод вещественного числа через запятую
+//        String res = (num%5<3)? ("зеленый"): ((num%5<4)? ("жёлтый"):("красный"));
+//        System.out.println(res);
+//    }
+//}
 public class Task16 {
     public static void main(String[] args) throws Exception {
-        double num;
-        Scanner in = new Scanner(System.in);
-        num = in.nextDouble();
-        //ввод вещесатвенного числа через запятую
+        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        double time = Double.parseDouble(reader.readLine());
 
-        String res = (num%5<3)? ("зеленый"): ((num%5<4)? ("жёлтый"):("красный"));
-        System.out.println(res);
+        if (time % 5 < 3) {
+            System.out.println("зелёный");
+        } else if ((int)time % 5 == 3) {
+            System.out.println("жёлтый");
+        } else {
+            System.out.println("красный");
+        }
     }
 }

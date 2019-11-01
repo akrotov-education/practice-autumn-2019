@@ -24,8 +24,8 @@ public class Task17 {
         String name;
         int let;
         Scanner in = new Scanner(System.in);
-        let = in.nextInt();
         name = in.next();
-        System.out.println(name + " захватит мир через " + let + " лет. Му-ха-ха!");
+        let = in.nextInt();
+        System.out.print(name + " захватит мир через " + let + " лет. Му-ха-ха!");
     }
 }

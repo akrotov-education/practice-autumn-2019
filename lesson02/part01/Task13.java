@@ -18,8 +18,8 @@ package lesson02.part01;
 
 public class Task13 {
     public static void main(String[] args) {
-        for (int i = 1; i < 10; i++) {
-            for (int k = 1; k < 10; k++) {
+        for (int i = 1; i < 11; i++) {
+            for (int k = 1; k < 11; k++) {
                 System.out.print(k * i + " ");
             }
             System.out.print("\n");

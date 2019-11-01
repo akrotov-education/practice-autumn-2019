@@ -14,6 +14,6 @@ package lesson02.part01;
 
 public class Task08 {
     public static void main(String[] args) {
-        System.out.println(10*9*8*7*6*5*4*3*2*1);
+        System.out.println(10*9*8*7*6*5*4*3*2);
     }
 }

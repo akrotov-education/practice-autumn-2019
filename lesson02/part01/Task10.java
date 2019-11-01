@@ -22,6 +22,8 @@ public class Task10 {
     }
 
     public static void writeToConsole(String s) {
-        System.out.println("printing: "+s);
+        System.out.print("printing: "+s);
     }
+
+
 }

@@ -20,8 +20,7 @@ public class Task01 {
      */
 
     public static void main(String[] args) {
-        Person Helen = new Person();
-        Person person = Helen;
+        Person person = new Person();
     }
 
     public static class Person {

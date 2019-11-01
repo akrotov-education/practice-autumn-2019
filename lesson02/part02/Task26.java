@@ -44,6 +44,6 @@ public class Task26 {
         return (i<0)? "отрицательное ": "положительное ";
     }
     public static String chet (int i) {
-        return (i%2==0)? "четное число": "нечетное число ";
+        return (i%2==0)? "четное число": "нечетное число";
     }
 }

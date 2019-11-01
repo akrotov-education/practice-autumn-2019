@@ -20,6 +20,6 @@ public class Task12 {
         String sausage = "Колбаса";
         String peach = "Персик";
 
-        System.out.print("Фрукты:\n" + apple + "\n" + peach);
+        System.out.print(apple + "\n" + peach);
     }
 }

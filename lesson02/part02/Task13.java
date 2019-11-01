@@ -50,6 +50,6 @@ public class Task13 {
             default:
                 System.out.println("такого дня недели не существует");
         }
-        System.out.println();
+        //System.out.println();
         }
 }

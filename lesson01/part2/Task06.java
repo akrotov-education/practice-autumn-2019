@@ -16,6 +16,6 @@ public class Task06 {
      */
 
     public static void main(String[] args) {
-        System.out.println("Будешь плохо кодить, придет Java и съест твою память");
+        System.out.print("Будешь плохо кодить, придет Java и съест твою память");
     }
 }

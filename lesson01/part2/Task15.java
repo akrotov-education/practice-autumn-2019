@@ -23,11 +23,9 @@ public class Task15 {
      */
 
     public static void main(String[] args) {
-        Man he = new Man();
-        Man man = he;
-        Woman she = new Woman();
-        Woman woman = she;
-        man.wife = she;
+        Man man = new Man();
+        Woman woman = new Woman();
+        man.wife = woman;
         woman.husband = man;
     }
 

@@ -22,10 +22,10 @@ public class Task19 {
         num3 = in.nextInt();
         num4 = in.nextInt();
 
-        int res = min(min(num1, num2), min(num3, num4));
+        int res = max(max(num1, num2), max(num3, num4));
         System.out.println(res);
     }
-    public static int min (int a, int b) {
-        return ((a<=b)? a:b);
+    public static int max (int a, int b) {
+        return ((a>=b)? a:b);
     }
 }

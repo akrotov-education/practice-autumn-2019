@@ -19,12 +19,12 @@ public class Task07 {
         int y = 0;
 
         y = y + 3 * x;
-        x = x * 2;
-        //x = x * 16;
-        y = y + 2 * x;
+        //x = x * 2;
+        x = x * 16;
+        //y = y + 2 * x;
         y = y + x;
 
-        System.out.println(y);
+        System.out.print(y);
     }
 
 }

@@ -24,6 +24,7 @@ public class Task06 {
 
         public void setName(String firstName, String lastName) {
             String fullName = firstName + " " + lastName;
+            this.fullName = fullName;
             //System.out.println(fullName);
         }
     }

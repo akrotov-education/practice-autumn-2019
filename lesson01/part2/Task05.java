@@ -22,7 +22,5 @@ public class Task05 {
     }
 
     public static class Cat {
-
     }
-
 }
