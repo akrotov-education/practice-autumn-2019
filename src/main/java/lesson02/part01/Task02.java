@@ -17,6 +17,6 @@ public class Task02 {
     // напишите тут ваш код
 
     public static void main(String[] args) {
-        printString("Hello, Amigo!");
+//        printString("Hello, Amigo!");
     }
 }
