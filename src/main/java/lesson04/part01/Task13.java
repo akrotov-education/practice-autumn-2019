@@ -1,6 +1,7 @@
 package lesson04.part01;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * 1. Создай список слов, заполни его самостоятельно.
@@ -32,7 +33,7 @@ import java.util.ArrayList;
 
 public class Task13 {
   public static void main(String[] args) {
-    ArrayList<String> strings = new ArrayList<String>();
+    ArrayList<String> strings = new ArrayList<>();
     strings.add("роза");
     strings.add("лоза");
     strings.add("лира");
@@ -45,6 +46,10 @@ public class Task13 {
 
   public static ArrayList<String> fix(ArrayList<String> strings) {
     //напишите тут ваш код
-    return null;
+    ArrayList strList = strings.stream().filter(str -> str.contains("л") && str.contains("р")).collect(Collectors.toCollection(ArrayList::new));
+    ArrayList strList2 = strings.stream().filter(str -> str.contains("л") && !str.contains("р")).collect(Collectors.toCollection(ArrayList::new));
+    strList2.addAll(strList2);
+    strList.addAll(strList2);
+    return strList;
   }
 }
