@@ -1,6 +1,12 @@
 package lesson04.part01;
 
+import jdk.nashorn.internal.runtime.regexp.joni.ScanEnvironment;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
 
 /**
  * 1. Введи с клавиатуры 20 чисел, сохрани их в список и рассортируй по трём другим спискам:
@@ -23,9 +29,21 @@ import java.util.ArrayList;
 public class Task11 {
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
+    ArrayList<Integer> nums = new ArrayList<>();
+    Scanner scanner = new Scanner(System.in);
+    for(int i = 0; i < 20; ++i) nums.add(scanner.nextInt());
+    ArrayList<Integer> mod3List = nums.stream().filter(n1 -> n1 % 3 == 0).collect(Collectors.toCollection(ArrayList::new));
+    ArrayList<Integer> mod2List = nums.stream().filter(n1 -> n1 % 2 == 0).collect(Collectors.toCollection(ArrayList::new));
+    ArrayList<Integer> restList = nums.stream().filter(n1 -> n1 % 3 != 0 && n1 % 2 != 0).collect(Collectors.toCollection(ArrayList::new));
+
+    printList(mod3List);
+    printList(mod2List);
+    printList(restList);
   }
 
   public static void printList(ArrayList<Integer> list) {
     //напишите тут ваш код
+    System.out.println("Output list:");
+    list.forEach(System.out::println);
   }
 }
