@@ -3,10 +3,10 @@ package lesson03.part01;
 /**
  * Разберись, что делает программа.
  * Найди и исправь одну ошибку в классе Circle. Метод main изменять нельзя.
- *
+ * <p>
  * Подсказка:
  * изучи конструктор по умолчанию.
- *
+ * <p>
  * Требования:
  * 1.	Программа не должна считывать данные с клавиатуры.
  * 2.	Метод main изменять нельзя.
@@ -15,30 +15,33 @@ package lesson03.part01;
  * 5.	Метод setDescription класса Color должен устанавливать значение переменной description.
  */
 
-public class Task16 {}
+public class Task16 {
 
-class Circle {
+  public static void main(String[] args) {
+    Circle circle = new Circle();
+    circle.color.setDescription("Red");
+    System.out.println(circle.color.getDescription());
+  }
+
+  public static class Circle {
+
     public Color color;
 
-    public static void main(String[] args) {
-        Circle circle = new Circle();
-        circle.color.setDescription("Red");
-        System.out.println(circle.color.getDescription());
-    }
-
     public void Circle() {
-        color = new Color();
+      color = new Color();
     }
 
     public class Color {
-        String description;
 
-        public String getDescription() {
-            return description;
-        }
+      String description;
 
-        public void setDescription(String description) {
-            this.description = description;
-        }
+      public String getDescription() {
+        return description;
+      }
+
+      public void setDescription(String description) {
+        this.description = description;
+      }
     }
+  }
 }
