@@ -1,6 +1,10 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+
+import static java.lang.Integer.parseInt;
 
 /**
  * 1. Введи с клавиатуры 10 слов в список строк.
@@ -19,15 +23,26 @@ import java.util.ArrayList;
 public class Task14 {
   public static void main(String[] args) throws Exception {
     // Считать строки с консоли и объявить ArrayList list тут
-    ArrayList<String> list = null;
-
-    ArrayList<String> result = doubleValues(list);
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    ArrayList<String> arrayList = new ArrayList<>();
+    for (int i = 0; i < 10; i++) {
+      arrayList.add(in.readLine());
+    }
+    ArrayList<String> result = doubleValues(arrayList);
 
     // Вывести на экран result
+    for (String res:result) {
+      System.out.println(res);
+    }
   }
 
   public static ArrayList<String> doubleValues(ArrayList<String> list) {
     //напишите тут ваш код
-    return null;
+    ArrayList<String> temp = new ArrayList<>();
+    temp.addAll(list);
+    for (String str : list) {
+      temp.add(temp.indexOf(str) + 1,str);
+    }
+    return temp;
   }
 }

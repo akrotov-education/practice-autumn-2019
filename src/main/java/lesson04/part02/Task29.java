@@ -1,8 +1,13 @@
 package lesson04.part02;
 
+import java.sql.Time;
+import java.time.Clock;
+import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Измерить, сколько времени занимает 10 тысяч вставок для каждого списка.
@@ -25,11 +30,13 @@ public class Task29 {
 
   public static long getInsertTimeInMs(List list) {
     // напишите тут ваш код
+    LocalTime timeNow = LocalTime.now();
 
     insert10000(list);
 
     // напишите тут ваш код
-    return 0;
+    LocalTime timeAfter = LocalTime.now();
+    return (timeAfter.getNano() - timeNow.getNano())/1000000;
   }
 
   public static void insert10000(List list) {

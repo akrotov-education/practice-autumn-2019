@@ -15,6 +15,8 @@ package lesson02.part02;
 public class Task35 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+    	for (int i = 1; i <= 100; i++) {
+    		System.out.println(i);
+		}
     }
 }

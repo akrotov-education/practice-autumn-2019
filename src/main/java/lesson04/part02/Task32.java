@@ -1,5 +1,6 @@
 package lesson04.part02;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -18,15 +19,26 @@ public class Task32 {
 
   public static Set<Integer> createSet() {
     // напишите тут ваш код
-    return null;
+    Set<Integer> set = new HashSet<>();
+    for (int i = 0; i < 20; i++) {
+      set.add(i);
+    }
+    return set;
   }
 
   public static Set<Integer> removeAllNumbersGreaterThan10(Set<Integer> set) {
     // напишите тут ваш код
-    return null;
+    Set<Integer> set1 = new HashSet<>();
+    set1.addAll(set);
+    for (int i:set) {
+      if(i > 10){
+        set1.remove(i);
+      }
+    }
+    return set1;
   }
 
   public static void main(String[] args) {
-
+    removeAllNumbersGreaterThan10( createSet());
   }
 }

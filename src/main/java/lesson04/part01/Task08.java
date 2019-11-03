@@ -1,5 +1,9 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 /**
  * 1. Создай список строк в методе main.
  * 2. Добавь в него 10 строчек с клавиатуры, но только добавлять не в конец списка, а в начало.
@@ -16,5 +20,13 @@ public class Task08 {
 
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    ArrayList<String> array = new ArrayList<>();
+    for (int i = 0; i < 10; i++) {
+      array.add(0, in.readLine());
+    }
+    for (String str:array) {
+      System.out.println(str);
+    }
   }
 }

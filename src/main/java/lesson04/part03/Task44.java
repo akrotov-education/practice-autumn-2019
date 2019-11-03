@@ -19,7 +19,13 @@ public class Task44 {
   public static void main(String[] args) {
     //напишите тут ваш код
 
-    int num = Integer.parseInt("XYZ");
+    int num = 0;
+    try {
+      num = Integer.parseInt("XYZ");
+    } catch (NumberFormatException e) {
+      e.printStackTrace();
+      System.out.println(e.getClass().getName());
+    }
     System.out.println(num);
 
     //напишите тут ваш код

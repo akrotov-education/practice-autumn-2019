@@ -1,6 +1,10 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+
+import static java.lang.Integer.parseInt;
 
 /**
  * 1. Введи с клавиатуры 20 чисел, сохрани их в список и рассортируй по трём другим спискам:
@@ -23,9 +27,32 @@ import java.util.ArrayList;
 public class Task11 {
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    ArrayList<Integer> array = new ArrayList<>();
+    ArrayList<Integer> array1 = new ArrayList<>();
+    ArrayList<Integer> array2 = new ArrayList<>();
+    ArrayList<Integer> array3 = new ArrayList<>();
+    for (int i = 0; i < 20; i++) {
+      array.add(parseInt(in.readLine()));
+      if(array.get(i) % 3 == 0){
+        array1.add(array.get(i));
+      }
+      if(array.get(i) % 2 == 0){
+        array2.add(array.get(i));
+      }
+      if(!(array.get(i) % 3 == 0) && !(array.get(i) % 2 == 0)){
+        array3.add(array.get(i));
+      }
+    }
+    printList(array1);
+    printList(array2);
+    printList(array3);
   }
 
   public static void printList(ArrayList<Integer> list) {
     //напишите тут ваш код
+    for (int num: list) {
+      System.out.println(num);
+    }
   }
 }

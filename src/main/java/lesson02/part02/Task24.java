@@ -22,6 +22,23 @@ import java.util.*;
 public class Task24 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+	   	Scanner in = new Scanner(System.in);
+	   	int mas[] = new int[3];
+	   	int dif = 0;
+	   	for (int i = 0; i < mas.length; i++) {
+			mas[i] = in.nextInt();
+		}
+	 	for (int i = 1; i < mas.length; i++) {
+			if(mas[0] != mas[i]) {
+				if(dif == 0)
+					dif = i+1;
+				else {
+					dif = 1;
+					break;
+				}
+			}
+	 	}
+		System.out.println(dif);
+	 	in.close();   
     }
 }

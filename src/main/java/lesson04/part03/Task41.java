@@ -1,5 +1,7 @@
 package lesson04.part03;
 
+import org.w3c.dom.ranges.RangeException;
+
 /**
  * Перехватить исключение (и вывести его на экран), указав его тип, возникающее при выполнении кода:
  * int[] m = new int[2];
@@ -19,7 +21,12 @@ public class Task41 {
     //напишите тут ваш код
 
     int[] m = new int[2];
-    m[8] = 5;
+    try {
+      m[8] = 5;
+    } catch (ArrayIndexOutOfBoundsException e) {
+      e.printStackTrace();
+      System.out.println(e.getClass().getName());
+    }
 
     //напишите тут ваш код
   }

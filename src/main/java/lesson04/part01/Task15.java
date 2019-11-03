@@ -3,6 +3,9 @@ package lesson04.part01;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+import static java.lang.Integer.parseInt;
 
 /**
  * Ввести с клавиатуры 10 чисел и заполнить ими список.
@@ -21,8 +24,13 @@ import java.io.InputStreamReader;
 
 public class Task15 {
   public static void main(String[] args) throws IOException {
-    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-    //напишите тут ваш код
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    ArrayList<Integer> arrayList = new ArrayList<>();
+    for (int i = 0; i < 10; i++) {
+      arrayList.add(parseInt(in.readLine()));
+    }
+    for (int i = arrayList.size()-1; i >= 0; i--) {
+      System.out.println(arrayList.get(i));
+    }
   }
 }

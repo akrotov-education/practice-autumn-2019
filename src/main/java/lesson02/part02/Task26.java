@@ -29,6 +29,24 @@ import java.util.*;
 public class Task26 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+	   	Scanner in = new Scanner(System.in);
+	   	int a = in.nextInt();
+		if(a > 0) {
+			if(Math.floorMod(a, 2) == 0) {
+				System.out.println("положительное четное число");
+			}else {
+				System.out.println("положительное нечетное число");
+			}
+		}else if (a < 0){
+			if(Math.floorMod(a, 2) == 0) {
+				System.out.println("отрицательное четное число");
+			}else {
+				System.out.println("отрицательное нечетное число");
+			}
+		}else {
+			System.out.println("ноль");
+		}
+		
+	 	in.close();  
     }
 }
