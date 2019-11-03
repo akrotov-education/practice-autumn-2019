@@ -13,10 +13,12 @@
 `git remote add upstream https://github.com/MtuciLabs/java-practice-tasks.git`<br>
 4. Выполни _fetch_, чтобы увидеть изменения базового репозитория.<br>
 `git fetch --all`<br>
-5. Найди ветку `lesson03` и создай на ее основе локальную ветку по шаблону: **группа/фамилия-имя/lesson03** и переключись на нее.<br>
-Пример: `but1801/ivanov-ivan/lesson03`
+5. Переключись на ветку `lesson03`.<br>
+`git checkout lesson03`
+6. Создай новую ветку по шаблону: **группа/фамилия-имя/lesson03** (пример: `but1801/ivanov-ivan/lesson03`) и переключись на нее.<br>
+`git checkout -b but1801/ivanov-ivan/lesson03`
 
-Также, эти шаги можно выполнить прямо через интерфейс Idea<br>
+Также, эти шаги можно выполнить прямо через интерфейс Idea. По ссылке описаны шаги алгоритма, но названия веток неактуальные<br>
 [Получение изменений из базового репозитория](https://github.com/MtuciLabs/java-lectures/blob/master/tutorials/%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B8%D0%B7%20%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F.md)<br>
 
 Задание:
