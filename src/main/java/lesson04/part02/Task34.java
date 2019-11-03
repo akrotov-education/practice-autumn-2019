@@ -1,5 +1,6 @@
 package lesson04.part02;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -17,14 +18,26 @@ public class Task34 {
 
   public static Map<String, Integer> createMap() {
     //напишите тут ваш код
-    return null;
+    Map<String, Integer> map = new HashMap<>();
+    for(int i = 0; i < 10; ++i){
+      map.put("Surname_"+i, 100 + i * 100);
+    }
+    return map;
   }
 
   public static void removeItemFromMap(Map<String, Integer> map) {
     //напишите тут ваш код
+    Map<String, Integer> mapCopy = new HashMap<>(map);
+    for (Map.Entry<String, Integer> pair :
+            mapCopy.entrySet()) {
+      if (pair.getValue() < 500){
+        map.remove(pair.getKey());
+      }
+    }
   }
 
   public static void main(String[] args) {
-
+    Map<String, Integer> map = createMap();
+    removeItemFromMap(map);
   }
 }

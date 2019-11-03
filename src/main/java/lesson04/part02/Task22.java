@@ -1,5 +1,8 @@
 package lesson04.part02;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Создать коллекцию Map<String, String> (реализация HashMap), занести туда 10 пар строк:
  * арбуз - ягода,
@@ -28,5 +31,17 @@ public class Task22 {
 
   public static void main(String[] args) {
     //напишите тут ваш код
+    Map<String, String> stringsMap = new HashMap<>();
+    stringsMap.put("арбуз", "ягода");
+    stringsMap.put( "банан", "трава");
+    stringsMap.put( "вишня", "ягода");
+    stringsMap.put( "груша", "фрукт");
+    stringsMap.put( "дыня", "овощ");
+    stringsMap.put( "ежевика", "куст");
+    stringsMap.put( "жень-шень", "корень");
+    stringsMap.put( "земляника", "ягода");
+    stringsMap.put( "ирис", "цветок");
+    stringsMap.put( "картофель", "клубень");
+    stringsMap.forEach((key, value) -> System.out.format("%s - %s\n", key, value));
   }
 }
