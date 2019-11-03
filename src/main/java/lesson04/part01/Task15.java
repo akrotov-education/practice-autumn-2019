@@ -1,28 +1,46 @@
 package lesson04.part01;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
 
 /**
- * Ввести с клавиатуры 10 чисел и заполнить ими список.
- * Вывести их в обратном порядке. Каждый элемент - с новой строки.
- * Использовать только цикл for.
- *
- * Подсказка:
- * Не забудь импортировать класс: java.util.ArrayList;
- *
+ * Есть метод, который выбрасывает два исключения, унаследованные от Exception, и два унаследованных от RuntimeException:
+ * NullPointerException, ArithmeticException, FileNotFoundException, URISyntaxException.
+ * <p>
+ * Нужно перехватить NullPointerException и FileNotFoundException, но не перехватывать
+ * ArithmeticException и URISyntaxException.
+ * Как это сделать?
+ * <p>
  * Требования:
- * 1.	Объяви переменную типа список целых чисел и сразу проинициализируй ee.
- * 2.	Считай 10 целых чисел с клавиатуры и добавь их в список.
- * 3.	Выведи числа в обратном порядке.
- * 4.	Используй цикл for.
+ * 1.	Метод main должен вызывать метод method1.
+ * 2.	Метод main должен перехватывать исключение NullPointerException.
+ * 3.	Метод main должен перехватывать исключение FileNotFoundException.
+ * 4.	Метод main не должен перехватывать исключение ArithmeticException.
+ * 5.	Метод main не должен перехватывать исключение URISyntaxException.
+ * 6.	Метод method1 не изменять.
  */
 
 public class Task15 {
-  public static void main(String[] args) throws IOException {
-    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+  public static void main(String[] args) throws Exception {
+    //напишите тут ваш код
+
+    method1();
 
     //напишите тут ваш код
+  }
+
+  public static void method1()
+      throws NullPointerException, ArithmeticException, FileNotFoundException, URISyntaxException {
+    int i = (int) (Math.random() * 4);
+    if (i == 0) {
+      throw new NullPointerException();
+    } else if (i == 1) {
+      throw new ArithmeticException();
+    } else if (i == 2) {
+      throw new FileNotFoundException();
+    } else if (i == 3) {
+      throw new URISyntaxException("", "");
+    }
   }
 }

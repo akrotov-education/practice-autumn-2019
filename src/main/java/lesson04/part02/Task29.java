@@ -1,12 +1,11 @@
-package lesson04.part01;
+package lesson04.part02;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
- * Перехватить исключение (и вывести его на экран), указав его тип, возникающее при выполнении кода:
- * HashMap map = new HashMap(null);
- * map.put(null, null);
- * map.remove(null);
+ * Перехватить исключение (и вывести его на экран, указав его тип), возникающее при выполнении кода:
+ * ArrayList<String> list = new ArrayList<String>();
+ * String s = list.get(18);
  *
  * Требования:
  * 1.	Программа должна выводить сообщение на экран.
@@ -16,14 +15,13 @@ import java.util.HashMap;
  * 5.	Имеющийся код в методе main не удалять.
  */
 
-public class Task14 {
+public class Task29 {
 
   public static void main(String[] args) {
     //напишите тут ваш код
 
-    HashMap<String, String> map = new HashMap<String, String>(null);
-    map.put(null, null);
-    map.remove(null);
+    ArrayList<String> list = new ArrayList<String>();
+    String s = list.get(18);
 
     //напишите тут ваш код
   }

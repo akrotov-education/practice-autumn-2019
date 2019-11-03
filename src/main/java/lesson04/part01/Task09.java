@@ -1,25 +1,40 @@
 package lesson04.part01;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
- * 1. Создай список строк.
- * 2. Добавь в него 5 строк с клавиатуры.
- * 3. Выполни 13 раз: удалить последнюю строку и вставить её в начало.
- * 4. Используя цикл выведи содержимое результирующего списка на экран, каждое значение с новой строки.
- * <p>
+ * Измерить, сколько времени занимает 10 тысяч вставок для каждого списка.
+ * Метод getInsertTimeInMs должен вернуть время своего исполнения в миллисекундах.
+ *
  * Требования:
- * 1.	Объяви переменную типа список строк и сразу проинициализируй ee.
- * 2.	Программа должна считывать 5 строк с клавиатуры.
- * 3.	Удали последнюю строку и вставь её в начало. Повторить 13 раз.
- * 4.	Программа должна выводить список на экран, каждое значение с новой строки.
+ * 1.	Программа должна выводить числа на экран.
+ * 2.	Метод main должен вызывать метод getInsertTimeInMs только два раза.
+ * 3.	Метод insert10000(List list) должен вставлять 10 тысяч элементов в список.
+ * 4.	Метод getInsertTimeInMs должен вызывать метод insert10000 только один раз.
+ * 5.	Метод getInsertTimeInMs должен вернуть время в миллисекундах, которое занимает 10 тысяч вставок в список.
  */
 
 public class Task09 {
 
-  public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
+  public static void main(String[] args) {
+    System.out.println(getInsertTimeInMs(new ArrayList()));
+    System.out.println(getInsertTimeInMs(new LinkedList()));
+  }
+
+  public static long getInsertTimeInMs(List list) {
+    // напишите тут ваш код
+
+    insert10000(list);
+
+    // напишите тут ваш код
+    return 0;
+  }
+
+  public static void insert10000(List list) {
+    for (int i = 0; i < 10000; i++) {
+      list.add(0, new Object());
+    }
   }
 }
