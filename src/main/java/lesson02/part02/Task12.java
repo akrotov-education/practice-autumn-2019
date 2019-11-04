@@ -21,9 +21,9 @@ public class Task12 {
         //напишите тут ваш код
         Scanner in = new Scanner(System.in);
         int num = in.nextInt();
-        if (num > 0) System.out.println(num * 2);
-        else if (num < 0) System.out.println(num + 1);
-        else if (num == 0) System.out.println(num);
+        if (num > 0) System.out.print(num * 2);
+        else if (num < 0) System.out.print(num + 1);
+        else if (num == 0) System.out.print(num);
     }
 
 }

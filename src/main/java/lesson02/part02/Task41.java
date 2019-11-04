@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -21,10 +23,10 @@ import java.util.Scanner;
 public class Task41 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-        Scanner sc = new Scanner(System.in);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         List<Integer> nums = new ArrayList<Integer>();
         for (int i = 0; i < 3; i++) {
-            nums.add(sc.nextInt());
+            nums.add(Integer.parseInt(reader.readLine()));
         }
         nums.sort(Comparator.naturalOrder());
         System.out.println(nums.get(1));

@@ -26,7 +26,7 @@ public class Task04 {
         //напишите тут ваш код
         int a = 10;
         int b = 5;
-        System.out.println(a+b + "\n" + a*b);
+        System.out.print(a+b + "\n" + a*b);
     }
 
 }

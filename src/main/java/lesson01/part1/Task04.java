@@ -12,7 +12,6 @@ public class Task04 {
      */
 
     public static void main(String[] args) {
-
         int x = 27;
         int y = 15;
 

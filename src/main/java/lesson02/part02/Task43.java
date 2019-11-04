@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -24,15 +26,11 @@ import java.util.Scanner;
 public class Task43 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-        Scanner sc = new Scanner(System.in);
-        System.out.println("введите имя");
-        String name = sc.nextLine();
-        System.out.println("введите день в формате dd");
-        int day = sc.nextInt();
-        System.out.println("введите месяц в формате mm");
-        int month = sc.nextInt();
-        System.out.println("введите год в формате yyyy");
-        int year = sc.nextInt();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine();
+        int day = Integer.parseInt(reader.readLine());
+        int month = Integer.parseInt(reader.readLine());
+        int year = Integer.parseInt(reader.readLine());
         System.out.printf("Меня зовут %s.\nЯ родился %d.%d.%d",name,day,month,year);
     }
 }

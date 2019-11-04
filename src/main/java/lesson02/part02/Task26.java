@@ -29,15 +29,14 @@ import java.util.*;
 public class Task26 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(reader.readLine());
         String result = "";
-        if (num == 0) {System.out.println("ноль");
-                        System.exit(0);}
         if (num > 0) result+="положительное ";
-        else if (num < 0) result+="отрицательное ";
+        else result+="отрицательное ";
         if (Math.abs(num)%2==0) result+="четное число";
         if (Math.abs(num)%2==1) result+="нечетное число";
-        System.out.println(result);
+        if (num != 0) System.out.println(result);
+        else System.out.println("ноль");
     }
 }
