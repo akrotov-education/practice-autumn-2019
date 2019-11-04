@@ -1,6 +1,10 @@
 package lesson04.part02;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * Создать множество чисел(Set<Integer>), занести туда 20 различных чисел.
@@ -18,15 +22,19 @@ public class Task32 {
 
   public static Set<Integer> createSet() {
     // напишите тут ваш код
-    return null;
+    Set<Integer> set = new HashSet<>(Arrays.asList(
+            2, 15, 13, 75, 4, 9, 19, 24, 7, 3, 11, 27, 8, 14, 23, 6, 17, 1, 10, 12 ));
+    return set;
   }
 
   public static Set<Integer> removeAllNumbersGreaterThan10(Set<Integer> set) {
     // напишите тут ваш код
-    return null;
+    return set.stream()
+            .filter(i -> i<10)
+            .collect(Collectors.toSet());
   }
 
   public static void main(String[] args) {
-
+    removeAllNumbersGreaterThan10(createSet());
   }
 }

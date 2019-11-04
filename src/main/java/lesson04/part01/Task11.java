@@ -1,6 +1,7 @@
 package lesson04.part01;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * 1. Введи с клавиатуры 20 чисел, сохрани их в список и рассортируй по трём другим спискам:
@@ -23,9 +24,36 @@ import java.util.ArrayList;
 public class Task11 {
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
+    ArrayList<Integer> list0 = new ArrayList<>();
+    ArrayList<Integer> list1 = new ArrayList<>();
+    ArrayList<Integer> list2 = new ArrayList<>();
+    ArrayList<Integer> list3 = new ArrayList<>();
+    Scanner scanner = new Scanner(System.in);
+    for (int i = 0; i < 20; i++){
+      list0.add(scanner.nextInt());
+    }
+    for (Integer i:list0){
+      if (i%3==0){
+        list1.add(i);
+      }
+      if (i%2==0){
+        list2.add(i);
+      }
+      if(!(i%3==0) && !(i%2==0)){
+        list3.add(i);
+      }
+    }
+    printList(list1);
+    printList(list2);
+    printList(list3);
   }
 
   public static void printList(ArrayList<Integer> list) {
     //напишите тут ваш код
+    String res = "";
+    for (Integer i:list) {
+      res += Integer.toString(i) + '\n';
+    }
+    System.out.println(res);
   }
 }

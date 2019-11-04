@@ -1,5 +1,9 @@
 package lesson04.part02;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.BiConsumer;
+
 /**
  * Создать коллекцию Map<String, String> (реализация HashMap), занести туда 10 пар строк:
  * арбуз - ягода,
@@ -28,5 +32,32 @@ public class Task22 {
 
   public static void main(String[] args) {
     //напишите тут ваш код
+    Map<String, String> map = new HashMap<>();
+    map.put("арбуз","ягода");
+    map.put("банан","трава");
+    map.put("вишня","ягода");
+    map.put("груша","фрукт");
+    map.put("дыня","овощ");
+    map.put("ежевика","куст");
+    map.put("жень-шень","корень");
+    map.put("земляника","ягода");
+    map.put("ирис","цветок");
+    map.put("картофель","клубень");
+/*
+    map.put("ягода", "арбуз");
+    map.put("трава", "банан");
+    map.put("ягода", "вишня");
+    map.put("фрукт", "груша");
+    map.put("овощ", "дыня");
+    map.put("куст", "ежевика");
+    map.put("корень", "жень-шень");
+    map.put("ягода", "земляника");
+    map.put("цветок", "ирис");
+    map.put("клубень", "картофель");
+
+ */
+    for (Map.Entry<String, String> m: map.entrySet()){
+      System.out.println(m.getKey() + " - " + m.getValue());
+    }
   }
 }

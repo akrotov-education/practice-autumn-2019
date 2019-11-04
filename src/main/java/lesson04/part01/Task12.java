@@ -1,5 +1,7 @@
 package lesson04.part01;
 
+import java.util.ArrayList;
+
 /**
  * 1. Создай список из слов "мама", "мыла", "раму".
  * 2. После каждого слова вставь в список строку, содержащую слово "именно".
@@ -17,6 +19,18 @@ public class Task12 {
 
   public static void main(String[] args) {
     //напишите тут ваш код
+    ArrayList<String> list = new ArrayList<>();
+    list.add("мама");
+    list.add("мыла");
+    list.add("раму");
+    for (int i = list.size(); i > 0; i--){
+      list.add(i, "именно");
+    }
+    String res = "";
+    for (String s:list){
+      res += s + '\n';
+    }
+    System.out.println(res.trim());
   }
 }
 

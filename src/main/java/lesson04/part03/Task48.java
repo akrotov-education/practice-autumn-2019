@@ -1,5 +1,8 @@
 package lesson04.part03;
 
+import java.io.IOException;
+import java.util.concurrent.BrokenBarrierException;
+
 /**
  * Есть четыре класса MyException, MyException2, MyException3, MyException4.
  * Унаследуй классы так, чтобы у тебя появилось любые два checked исключения и любые два unchecked исключения.
@@ -20,15 +23,15 @@ public class Task48 {
   public static void main(String[] args) {
   }
 
-  static class MyException {
+  static class MyException extends IOException {
   }
 
-  static class MyException2 {
+  static class MyException2 extends BrokenBarrierException {
   }
 
-  static class MyException3 {
+  static class MyException3 extends NullPointerException {
   }
 
-  static class MyException4 {
+  static class MyException4 extends ArithmeticException {
   }
 }

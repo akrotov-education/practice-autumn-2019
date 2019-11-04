@@ -1,8 +1,6 @@
 package lesson04.part02;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Измерить, сколько времени занимает 10 тысяч вызовов get для каждого списка.
@@ -35,11 +33,11 @@ public class Task30 {
 
   public static long getGetTimeInMs(List list) {
     // напишите тут ваш код
-
+    Date fDate = Calendar.getInstance().getTime();
     get10000(list);
-
+    Date sDate = Calendar.getInstance().getTime();
     // напишите тут ваш код
-    return 0;
+    return sDate.getTime() - fDate.getTime();
   }
 
   public static void get10000(List list) {

@@ -1,5 +1,6 @@
 package lesson04.part02;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -26,18 +27,27 @@ public class Task33 {
     Set<Cat> cats = createCats();
 
     //напишите тут ваш код. step 2 - пункт 2
+    cats.remove(cats.toArray()[0]);
 
     printCats(cats);
   }
 
   public static Set<Cat> createCats() {
     //напишите тут ваш код. step 1 - пункт 1
-    return null;
+    Set<Cat> set = new HashSet<>();
+    set.add(new Cat());
+    set.add(new Cat());
+    set.add(new Cat());
+    return set;
   }
 
   public static void printCats(Set<Cat> cats) {
     // step 3 - пункт 3
+    for (Cat c: cats){
+      System.out.println(c);
+    }
   }
 
-  public static class Cat {}
+  public static class Cat {}{
+  }
 }

@@ -1,5 +1,8 @@
 package lesson04.part01;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  * 1. Создай список строк.
  * 2. Добавь в него 5 строк с клавиатуры.
@@ -17,5 +20,21 @@ public class Task09 {
 
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
+    ArrayList<String> list = new ArrayList<>();
+    Scanner scanner = new Scanner(System.in);
+    for (int i = 0; i < 5; i++){
+      list.add(scanner.nextLine());
+    }
+    String temp;
+    for (int i = 0; i < 13; i++){
+      temp = list.get(4);
+      list.remove(4);
+      list.add(0, temp);
+    }
+    String res = "";
+    for (String s:list){
+      res += s + '\n';
+    }
+    System.out.println(res.trim());
   }
 }

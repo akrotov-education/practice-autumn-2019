@@ -27,8 +27,12 @@ public class Task19 {
       System.out.println(i);
 
       //напишите тут ваш код
+      try {
+        Thread.sleep(1000);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
     }
-
     System.out.println("Бум!");
   }
 }
