@@ -1,7 +1,14 @@
 package lesson04.part01;
 
+import lesson02.cw.loop.Iterator;
+
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Задача: Написать программу, которая вводит с клавиатуры 20 чисел и выводит их в убывающем порядке.
@@ -32,5 +39,13 @@ public class Task20 {
 
   public static void sort(int[] array) {
     //напишите тут ваш код
+    List<Integer> list = new ArrayList<>();
+    for(int i=0; i<20; i++){
+      list.add(array[i]);
+    }
+    list.sort(null);
+    for (int i = 0; i<20; i++){
+      array[i] = list.get(19-i);
+    }
   }
 }

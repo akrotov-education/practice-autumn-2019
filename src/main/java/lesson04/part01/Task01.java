@@ -1,6 +1,7 @@
 package lesson04.part01;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * 1. В методе initializeArray():
@@ -25,11 +26,22 @@ public class Task01 {
 
   public static int[] initializeArray() throws IOException {
     // создай и заполни массив
-    return null;
+    int[] array = new int[20];
+    Scanner scan = new Scanner(System.in);
+    for (int i = 0; i < 20; i++){
+      array[i] = scan.nextInt();
+    }
+    return array;
   }
 
   public static int max(int[] array) {
     // найди максимальное значение
-    return 0;
+    int max = array[0];
+    for (int i = 1; i < 20; i++){
+      if(max<array[i]){
+        max = array[i];
+      }
+    }
+    return max;
   }
 }

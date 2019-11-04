@@ -1,5 +1,8 @@
 package lesson04.part03;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  * Написать программу, которая будет вводить числа с клавиатуры.
  * Код по чтению чисел с клавиатуры должен быть в методе readData.
@@ -23,5 +26,17 @@ public class Task50 {
 
   public static void readData() {
     //напишите тут ваш код
+    ArrayList<Integer> list = new ArrayList<>();
+    Scanner scanner = new Scanner(System.in);
+    try {
+      for(;;){
+        list.add(scanner.nextInt());
+      }
+    }
+    catch (Exception e){
+      for(Integer i: list){
+        System.out.println(i);
+      }
+    }
   }
 }

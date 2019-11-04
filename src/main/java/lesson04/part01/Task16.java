@@ -3,6 +3,8 @@ package lesson04.part01;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Ввести с клавиатуры 2 числа N и M.
@@ -21,8 +23,24 @@ import java.io.InputStreamReader;
 
 public class Task16 {
   public static void main(String[] args) throws IOException {
-    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-    //напишите тут ваш код
+    ArrayList<String> list = new ArrayList<>();
+    Scanner scanner = new Scanner(System.in);
+    int n, m;
+    n = scanner.nextInt();
+    m = scanner.nextInt();
+    for (int i = 0; i < n; i++){
+      String t="";
+      while (t.equals("")){
+        t = scanner.nextLine();
+      }
+      list.add(t);
+    }
+    for (int i = 0; i < m; i++){
+      list.add(list.get(0));
+      list.remove(0);
+    }
+    for (int i = 0; i < list.size(); i++){
+      System.out.println(list.get(i));
+    }
   }
 }

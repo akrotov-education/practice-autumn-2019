@@ -1,6 +1,7 @@
 package lesson04.part01;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * 1. Создай список строк.
@@ -22,5 +23,20 @@ public class Task07 {
 
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
+    strings = new ArrayList<String>();
+    Scanner scanner = new Scanner(System.in);
+    int tmax, max = 0;
+    for (int i=0; i<5; i++){
+        strings.add(scanner.nextLine());
+        tmax = strings.get(i).length();
+        max = Math.max(max, tmax);
+    }
+    String res = "";
+    for (int i = 0; i<5 ; i++){
+        if (strings.get(i).length() == max){
+            res += strings.get(i) + '\n';
+        }
+    }
+      System.out.println(res.trim());
   }
 }

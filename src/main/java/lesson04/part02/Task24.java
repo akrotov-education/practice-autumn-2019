@@ -1,7 +1,10 @@
 package lesson04.part02;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Есть коллекция Map<String, String> (реализация HashMap), туда занесли 10 различных строк.
@@ -34,5 +37,8 @@ public class Task24 {
 
   public static void printKeys(Map<String, String> map) {
     //напишите тут ваш код
+    for (Map.Entry<String, String> m: map.entrySet()){
+      System.out.println(m.getKey());
+    }
   }
 }

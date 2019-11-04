@@ -1,5 +1,7 @@
 package lesson04.part01;
 
+import java.util.Scanner;
+
 /**
  * 1. Создать массив на 10 чисел.
  * 2. Ввести с клавиатуры 10 чисел и записать их в массив.
@@ -16,5 +18,15 @@ public class Task04 {
 
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
+    int[] mass = new int[10];
+    String res = "";
+    Scanner scanner = new Scanner(System.in);
+    for (int i = 0; i < 10; i++){
+      mass[i] = scanner.nextInt();
+    }
+    for (int i = 0; i < 10; i++){
+      res += Integer.toString(mass[9-i]) + '\n';
+    }
+    System.out.println(res.trim());
   }
 }
