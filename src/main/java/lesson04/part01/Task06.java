@@ -1,5 +1,7 @@
 package lesson04.part01;
 
+import java.util.ArrayList;
+
 /**
  * 1. Создай список строк.
  * 2. Добавь в него 5 различных строк.
@@ -18,5 +20,12 @@ public class Task06 {
 
   public static void main(String[] args) {
     //напишите тут ваш код
+    ArrayList<String> list = new ArrayList<>();
+    for (int i = 0; i < 5; i++)
+    {list.add("lol");
+    System.out.println(list.get(i));
+    }
+    System.out.println(list.size());
+    }
   }
-}
+

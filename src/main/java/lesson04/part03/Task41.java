@@ -17,10 +17,13 @@ public class Task41 {
 
   public static void main(String[] args) {
     //напишите тут ваш код
-
     int[] m = new int[2];
-    m[8] = 5;
-
+    try{
+      m[8] = 5;
+    }catch (ArrayIndexOutOfBoundsException e){
+      e.printStackTrace();
+      System.out.println(e.getClass().getName());
+    }
     //напишите тут ваш код
   }
 }

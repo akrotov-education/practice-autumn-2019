@@ -1,8 +1,11 @@
 package lesson04.part01;
 
+import com.sun.security.jgss.GSSUtil;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  * Создать список строк.
@@ -21,7 +24,15 @@ import java.io.InputStreamReader;
 public class Task18 {
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
+    ArrayList<String> list = new ArrayList<>();
+    String s = reader.readLine();
+    while(!s.equals("end")){
+      list.add(s);
+      s = reader.readLine();
+    }
+    for (int i = 0; i < list.size(); i++){
+      System.out.println(list.get(i));
+    }
     //напишите тут ваш код
   }
 }

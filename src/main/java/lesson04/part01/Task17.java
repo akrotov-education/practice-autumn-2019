@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static java.lang.Integer.min;
+import static java.lang.Integer.parseInt;
+
 /**
  * Создать массив на 20 чисел.
  * Заполнить его числами с клавиатуры.
@@ -25,7 +28,20 @@ public class Task17 {
     int minimum = 0;
 
     //напишите тут ваш код
-
+    int[] mas = new int[20];
+    for (int i = 0; i < 20; i++){
+      mas[i]= parseInt(reader.readLine());
+    }
+    maximum = mas[0];
+    minimum = mas[0];
+    for (int i = 0; i < 20 ; i++){
+      if (mas[i] > maximum){
+        maximum = mas[i];
+      }
+      if (mas[i] < minimum){
+        minimum = mas[i];
+      }
+    }
     System.out.print(maximum + " " + minimum);
   }
 }

@@ -1,5 +1,6 @@
 package lesson04.part02;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -35,11 +36,11 @@ public class Task30 {
 
   public static long getGetTimeInMs(List list) {
     // напишите тут ваш код
-
+    LocalTime time = LocalTime.now();
     get10000(list);
-
+    LocalTime time1 = LocalTime.now();
     // напишите тут ваш код
-    return 0;
+    return (time1.getNano() - time.getNano())/1000000;
   }
 
   public static void get10000(List list) {

@@ -1,6 +1,10 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+
+import static java.lang.Integer.parseInt;
 
 /**
  * 1. Создай список строк.
@@ -22,5 +26,21 @@ public class Task07 {
 
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
+    strings = new ArrayList<>();
+    BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+    int max = 0;
+    for (int i = 0; i < 5; i++)
+    {strings.add(r.readLine());
+      if (strings.get(i).length() > max)
+      {max = strings.get(i).length();
+      }
+    }
+    for (int i = 0; i < strings.size(); i++)
+    {
+      if (strings.get(i).length()==max)
+      {
+        System.out.println(strings.get(i));
+      }
+    }
   }
 }

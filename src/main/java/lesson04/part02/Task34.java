@@ -1,6 +1,8 @@
 package lesson04.part02;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * Создать словарь (Map<String, Integer>) и занести в него десять записей по принципу: "фамилия" - "зарплата".
@@ -17,14 +19,27 @@ public class Task34 {
 
   public static Map<String, Integer> createMap() {
     //напишите тут ваш код
-    return null;
+    Map<String, Integer> map = new HashMap<>();
+    for (int i = 0; i < 10; i++) {
+      String name = String.format("Name%d", i);
+      map.put(name, new Random().nextInt(5000));
+    }
+    return map;
   }
 
   public static void removeItemFromMap(Map<String, Integer> map) {
     //напишите тут ваш код
+    Map<String, Integer> MAP = new HashMap<>();
+    MAP.putAll(map);
+    map.forEach((s, integer) -> {
+      if (integer > 500){
+        MAP.remove(s,integer);
+      }
+    });
+    map.entrySet().removeAll(MAP.entrySet());
   }
 
   public static void main(String[] args) {
-
+    removeItemFromMap(createMap());
   }
 }

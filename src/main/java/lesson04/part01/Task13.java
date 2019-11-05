@@ -45,6 +45,20 @@ public class Task13 {
 
   public static ArrayList<String> fix(ArrayList<String> strings) {
     //напишите тут ваш код
-    return null;
+    for (int i = 0; i < strings.size(); i++) {
+      if (strings.get(i).contains("р")) {
+        if (!strings.get(i).contains("л")) {
+          strings.remove(i);
+        }
+      }
+    }
+    for (int i = strings.size()-1; i >= 0 ; i--) {
+      if (!strings.get(i).contains("р")) {
+        if (strings.get(i).contains("л")) {
+          strings.add(strings.get(i));
+        }
+      }
+    }
+    return strings;
   }
 }

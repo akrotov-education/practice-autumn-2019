@@ -34,12 +34,25 @@ public class Task47 {
   public static StatelessBean BEAN = new StatelessBean();
 
   public static void main(String[] args) {
-    handleExceptions();
+    try {
+      handleExceptions();
+    } catch (FileSystemException ex) {
+      System.out.println(ex.getClass().getName());
+    }
   }
 
-  public static void handleExceptions() {
+  public static void handleExceptions() throws FileSystemException {
     // Раскомментируй
-//    BEAN.methodThrowExceptions();
+    try {
+      BEAN.methodThrowExceptions();
+    } catch (FileSystemException ex) {
+      BEAN.log(ex);
+      throw ex;
+    }catch (CharConversionException ex){
+      BEAN.log(ex);
+    }catch (IOException ex){
+      BEAN.log(ex);
+    }
   }
 
   public static class StatelessBean {

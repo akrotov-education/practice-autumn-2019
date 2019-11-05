@@ -1,7 +1,9 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-
+import java.io.InputStreamReader;
+import static java.lang.Integer.parseInt;
 /**
  * 1. В методе initializeArray():
  * 1.1. Создайте массив на 20 чисел
@@ -25,11 +27,22 @@ public class Task01 {
 
   public static int[] initializeArray() throws IOException {
     // создай и заполни массив
-    return null;
+    int[] array = new int[20];
+    BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+    for (int i = 0; i < array.length; i++)
+    {array[i] = parseInt(r.readLine());
+    }
+    return array;
   }
 
   public static int max(int[] array) {
     // найди максимальное значение
-    return 0;
+    int max = 0;
+    for (int i = 0; i < array.length; i++)
+    {if (max < array[i])
+      {max = array[i];
+       }
+    }
+    return max;
   }
 }

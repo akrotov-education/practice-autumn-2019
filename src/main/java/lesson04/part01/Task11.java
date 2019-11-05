@@ -1,7 +1,9 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-
+import static java.lang.Integer.parseInt;
 /**
  * 1. Введи с клавиатуры 20 чисел, сохрани их в список и рассортируй по трём другим спискам:
  * Число нацело делится на 3 (x%3==0), нацело делится на 2 (x%2==0) и все остальные.
@@ -23,9 +25,37 @@ import java.util.ArrayList;
 public class Task11 {
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
+    ArrayList<Integer> list1 = new ArrayList<>();
+    ArrayList<Integer> list2 = new ArrayList<>();
+    ArrayList<Integer> list3 = new ArrayList<>();
+    ArrayList<Integer> list4 = new ArrayList<>();
+    BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+    for (int i = 0; i < 20; i++)
+    {
+      list1.add(parseInt(r.readLine()));
+      if (list1.get(i)%3 == 0)
+      {
+        list2.add(list1.get(i));
+      }
+      if (list1.get(i)%2 == 0)
+      {
+        list3.add(list1.get(i));
+      }
+      if (!(list1.get(i)%3 == 0) && !(list1.get(i)%2 == 0))
+      {
+        list4.add(list1.get(i));
+      }
+    }
+    printList(list2);
+    printList(list3);
+    printList(list4);
   }
 
   public static void printList(ArrayList<Integer> list) {
     //напишите тут ваш код
+    for (int i = 0; i < list.size(); i++)
+    {
+      System.out.println(list.get(i));
+    }
   }
 }
