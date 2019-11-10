@@ -1,5 +1,7 @@
 package lesson04.part03.task46;
 
+import java.io.FileNotFoundException;
+
 /**
  * 1. Есть три исключения последовательно унаследованные от Exception:
  * 2. class Exception1 extends Exception
@@ -21,8 +23,11 @@ public class Task46 {
 
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
-
-    method1();
+    try{
+      method1();
+    }
+    catch (Exception e){
+    }
 
     //напишите тут ваш код
 

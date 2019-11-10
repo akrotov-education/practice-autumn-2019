@@ -18,10 +18,13 @@ public class Task44 {
 
   public static void main(String[] args) {
     //напишите тут ваш код
-
-    int num = Integer.parseInt("XYZ");
-    System.out.println(num);
-
+    try{
+      int num = Integer.parseInt("XYZ");
+      System.out.println(num);
+    }
+    catch (NumberFormatException e){
+      System.out.println(e);
+    }
     //напишите тут ваш код
   }
 }

@@ -1,5 +1,8 @@
 package lesson04.part02;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 /**
  * Нужно создать два списка - LinkedList и ArrayList.
  *
@@ -14,13 +17,13 @@ package lesson04.part02;
 public class Task27 {
 
   public static Object createArrayList() {
-    //напишите тут ваш код
-    return null;
+    ArrayList<String> a = new ArrayList<String>();
+    return a;
   }
 
   public static Object createLinkedList() {
-    //напишите тут ваш код
-    return null;
+    LinkedList<String> a = new LinkedList<String>();
+    return a;
   }
 
   public static void main(String[] args) {

@@ -20,15 +20,15 @@ public class Task48 {
   public static void main(String[] args) {
   }
 
-  static class MyException {
+  static class MyException extends IndexOutOfBoundsException {
   }
 
-  static class MyException2 {
+  static class MyException2  extends IndexOutOfBoundsException{
   }
 
-  static class MyException3 {
+  static class MyException3 extends Exception {
   }
 
-  static class MyException4 {
+  static class MyException4 extends Exception{
   }
 }

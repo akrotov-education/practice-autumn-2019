@@ -1,5 +1,9 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 /**
  * 1. Создай список строк.
  * 2. Добавь в него 5 строк с клавиатуры.
@@ -16,6 +20,18 @@ package lesson04.part01;
 public class Task09 {
 
   public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
+
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    ArrayList<String> a=new ArrayList<String>();
+    for (int i=0;i<5;i++){
+      a.add(reader.readLine());
+    }
+    for (int i=0;i<13; i++) {
+      a.add(0,a.get(a.size()-1));
+      a.remove(a.size()-1);
+    }
+    for (int i=0; i<a.size(); i++) {
+      System.out.println(a.get(i));
+    }
   }
 }

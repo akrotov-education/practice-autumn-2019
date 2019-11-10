@@ -1,5 +1,7 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
@@ -19,15 +21,29 @@ import java.util.ArrayList;
 public class Task14 {
   public static void main(String[] args) throws Exception {
     // Считать строки с консоли и объявить ArrayList list тут
-    ArrayList<String> list = null;
+    ArrayList<String> a = new ArrayList<String>();
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    ArrayList<String> result = doubleValues(list);
+    for (int i = 0; i < 10; i++){
+      a.add(reader.readLine());
+    }
+
+
+    ArrayList<String> result = doubleValues(a);
+
+    for (String s: result){
+      System.out.println(s);
+    }
+
 
     // Вывести на экран result
   }
 
   public static ArrayList<String> doubleValues(ArrayList<String> list) {
-    //напишите тут ваш код
-    return null;
+    for (int i = 0; i < list.size();) {
+      list.add(i,list.get(i));
+      i+=2;
+    }
+    return list;
   }
 }
