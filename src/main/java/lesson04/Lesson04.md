@@ -15,4 +15,19 @@
 ```git push```
 6. Создать Pull Request в ветку **lesson04** к репозиторию.
 
+Дополнительная информация:
+================
+[Массивы в Java](https://javarush.ru/groups/posts/massivy-java)
+[Многомерные массивы](https://javarush.ru/groups/posts/mnogomernye-massivy)
+[Коротко о главном — Java Collections Framework](https://javarush.ru/groups/posts/2308-korotko-o-glavnom---java-collections-framework)
+[Интерфейсы коллекций](https://javarush.ru/quests/lectures/questcollections.level06.lecture03)
+[Структуры данных в картинках. LinkedHashMap](https://habr.com/ru/post/129037/)
+[Структуры данных в картинках. HashMap](https://habr.com/ru/post/128017/)
+[Структуры данных в картинках. ArrayList](https://habr.com/ru/post/128269/)
+[Структуры данных в картинках. LinkedList](https://habr.com/ru/post/127864/)
+[Класс Collections](https://javarush.ru/groups/posts/1937-klass-collections)
+[Исключения в Java](https://javarush.ru/groups/posts/isklyucheniya-java)
+[Исключения: checked, unchecked и свои собственные](https://javarush.ru/groups/posts/1944-iskljuchenija-checked-unchecked-i-svoi-sobstvennihe)
+[Исключения и их обработка](https://javarush.ru/groups/posts/1401-iskljuchenija-i-ikh-obrabotka)
+[Исключения: перехват и обработка](https://javarush.ru/groups/posts/1943-iskljuchenija-perekhvat-i-obrabotka)
 
