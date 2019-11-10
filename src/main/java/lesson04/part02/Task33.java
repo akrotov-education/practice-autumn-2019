@@ -23,9 +23,7 @@ import java.util.Set;
  */
 
 public class Task33 {
-  public static class Cat{
 
-  }
   public static void main(String[] args) {
     Set<Cat> cats = createCats();
     Iterator<Cat> it =  cats.iterator();
@@ -46,4 +44,5 @@ public class Task33 {
       System.out.println(cat);
     }
   }
+  public static class Cat{}
 }
