@@ -24,5 +24,7 @@ public class Task38 {
 
   public static void log(String s) {
     //напишите тут ваш код
+    StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[2];
+    System.out.println(stackTraceElement.getClassName() + ": " + stackTraceElement.getMethodName() + ": " + s);
   }
 }

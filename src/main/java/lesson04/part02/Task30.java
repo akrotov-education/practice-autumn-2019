@@ -35,11 +35,12 @@ public class Task30 {
 
   public static long getGetTimeInMs(List list) {
     // напишите тут ваш код
-
+    long start = System.currentTimeMillis();
     get10000(list);
+    long finish = System.currentTimeMillis();
 
     // напишите тут ваш код
-    return 0;
+    return finish - start;
   }
 
   public static void get10000(List list) {

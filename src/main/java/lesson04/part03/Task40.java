@@ -18,10 +18,13 @@ public class Task40 {
 
   public static void main(String[] args) {
     //напишите тут ваш код
+    try {
+      String s = null;
+      String m = s.toLowerCase();
 
-    String s = null;
-    String m = s.toLowerCase();
-
-    //напишите тут ваш код
+      //напишите тут ваш код
+    } catch (NullPointerException e) {
+      e.printStackTrace();
+    }
   }
 }

@@ -18,9 +18,11 @@ public class Task39 {
 
   public static void main(String[] args) {
     //напишите тут ваш код
-
-    int a = 42 / 0;
-
-    //напишите тут ваш код
+    try {
+      int a = 42 / 0;
+      //напишите тут ваш код
+    } catch (ArithmeticException e) {
+      System.out.println("ArithmeticException");
+    }
   }
 }

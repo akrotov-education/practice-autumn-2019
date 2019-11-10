@@ -1,6 +1,7 @@
 package lesson04.part01;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * 1. Создать массив на 15 целых чисел.
@@ -27,5 +28,22 @@ public class Task05 {
 
   public static void main(String[] args) throws IOException {
     //напишите тут ваш код
+    int[] arr = new int[15];
+    Scanner in = new Scanner(System.in);
+    for(int i = 0; i < arr.length; i++) {
+      arr[i] = in.nextInt();
+    }
+    int even = 0;
+    int noteven = 0;
+    for(int i = 0; i < arr.length; i++) {
+      if(i % 2 == 0)
+        even += arr[i];
+      else
+        noteven += arr[i];
+    }
+    if(even > noteven)
+      System.out.println("В домах с четными номерами проживает больше жителей.");
+    else
+      System.out.println("В домах с нечетными номерами проживает больше жителей.");
   }
 }

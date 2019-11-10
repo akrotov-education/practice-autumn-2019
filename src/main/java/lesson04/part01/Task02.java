@@ -1,5 +1,7 @@
 package lesson04.part01;
 
+import java.util.Scanner;
+
 /**
  * 1. Создать массив на 10 строк.
  * 2. Ввести с клавиатуры 8 строк и сохранить их в массив.
@@ -17,5 +19,12 @@ public class Task02 {
 
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
+    Scanner in = new Scanner(System.in);
+    String[] arr = new String[10];
+    for(int i = 0; i < 8; i++) {
+      arr[i] = in.nextLine();
+    }
+    for(int i = arr.length - 1; i >= 0; i--)
+      System.out.println(arr[i]);
   }
 }

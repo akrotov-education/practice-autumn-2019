@@ -1,6 +1,7 @@
 package lesson04.part01;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * 1. Введи с клавиатуры 10 слов в список строк.
@@ -19,15 +20,25 @@ import java.util.ArrayList;
 public class Task14 {
   public static void main(String[] args) throws Exception {
     // Считать строки с консоли и объявить ArrayList list тут
-    ArrayList<String> list = null;
+    ArrayList<String> list = new ArrayList<>();
+    Scanner in = new Scanner(System.in);
+    for(int i = 0; i < 10; i++) {
+      list.add(in.nextLine());
+    }
 
     ArrayList<String> result = doubleValues(list);
 
     // Вывести на экран result
+    for(String str: result) {
+      System.out.println(str);
+    }
   }
 
   public static ArrayList<String> doubleValues(ArrayList<String> list) {
     //напишите тут ваш код
-    return null;
+    for(int i = 0; i < list.size(); i+=2) {
+      list.add(i + 1, list.get(i));
+    }
+    return list;
   }
 }

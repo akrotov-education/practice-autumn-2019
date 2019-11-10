@@ -1,5 +1,9 @@
 package lesson04.part03;
 
+import java.util.InputMismatchException;
+import java.util.LinkedList;
+import java.util.Scanner;
+
 /**
  * Написать программу, которая будет вводить числа с клавиатуры.
  * Код по чтению чисел с клавиатуры должен быть в методе readData.
@@ -23,5 +27,16 @@ public class Task50 {
 
   public static void readData() {
     //напишите тут ваш код
+    Scanner in = new Scanner(System.in);
+    LinkedList<Integer> list = new LinkedList<>();
+    try {
+      while (true) {
+        list.add(in.nextInt());
+      }
+    } catch(InputMismatchException e) {
+      for(int el: list) {
+        System.out.println(el);
+      }
+    }
   }
 }

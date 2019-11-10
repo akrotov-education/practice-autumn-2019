@@ -1,5 +1,7 @@
 package lesson04.part02;
 
+import java.util.HashSet;
+
 /**
  * Создать коллекцию Set (реализация HashSet) с типом элементов String.
  * Добавить в неё 10 строк:
@@ -27,6 +29,19 @@ package lesson04.part02;
 public class Task21 {
   public static void main(String[] args) {
     //напишите тут ваш код
-
+    HashSet<String> set = new HashSet<>();
+    set.add("арбуз");
+    set.add("банан");
+    set.add("вишня");
+    set.add("груша");
+    set.add("дыня");
+    set.add("ежевика");
+    set.add("женьшень");
+    set.add("земляника");
+    set.add("ирис");
+    set.add("картофель");
+    for (String str: set) {
+      System.out.println(str);
+    }
   }
 }

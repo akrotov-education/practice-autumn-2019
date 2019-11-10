@@ -19,10 +19,13 @@ public class Task42 {
 
   public static void main(String[] args) {
     //напишите тут ваш код
+    try {
+      ArrayList<String> list = new ArrayList<String>();
+      String s = list.get(18);
 
-    ArrayList<String> list = new ArrayList<String>();
-    String s = list.get(18);
-
-    //напишите тут ваш код
+      //напишите тут ваш код
+    } catch(IndexOutOfBoundsException e) {
+      e.printStackTrace();
+    }
   }
 }

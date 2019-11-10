@@ -1,5 +1,7 @@
 package lesson04.part02;
 
+import sun.invoke.empty.Empty;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,5 +36,8 @@ public class Task24 {
 
   public static void printKeys(Map<String, String> map) {
     //напишите тут ваш код
+    for(Map.Entry<String, String> pair: map.entrySet()) {
+      System.out.println(pair.getKey());
+    }
   }
 }
