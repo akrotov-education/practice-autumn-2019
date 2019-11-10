@@ -1,5 +1,8 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * Ввести с клавиатуры три целых числа. Определить, имеется ли среди них хотя бы одна пара равных между собой чисел.
  * Если такая пара существует, вывести на экран числа через пробел. Если все три числа равны между собой, то вывести все три.
@@ -29,7 +32,19 @@ package lesson02.part02;
 
 public class Task17 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int a = Integer.parseInt(reader.readLine());
+        int b = Integer.parseInt(reader.readLine());
+        int c = Integer.parseInt(reader.readLine());
+
+        if (a == b & b == c)
+            System.out.println(a + " " + b + " " + c);
+        else if (a == b)
+            System.out.println(a + " " + b);
+        else if (a == c)
+            System.out.println(a + " " + c);
+        else if (c == b)
+            System.out.println(c + " " + b);
 
     }
 }

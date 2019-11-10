@@ -13,10 +13,10 @@ package lesson02.part01;
  * 6.	Программа должна вывести "Hello, Amigo;".
  */
 
-import static javax.xml.bind.DatatypeConverter.printString;
-
 public class Task02 {
-    // напишите тут ваш код
+    public static void printString(String str) {
+        System.out.println(str);
+    }
 
     public static void main(String[] args) {
         printString("Hello, Amigo!");

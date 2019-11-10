@@ -20,7 +20,12 @@ import java.util.*;
 
 public class Task18 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine();
+        int number = Integer.parseInt(reader.readLine());
+        int years = Integer.parseInt(reader.readLine());
+
+        System.out.println(name + " получает " + number + " через " + years + " лет.");
 
     }
 }

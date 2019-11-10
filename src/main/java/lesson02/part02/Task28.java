@@ -1,5 +1,8 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * Ввести с клавиатуры три целых числа. Вывести на экран количество положительных чисел среди этих трех.
  * Примеры:
@@ -35,7 +38,21 @@ package lesson02.part02;
 
 public class Task28 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        int a = Integer.parseInt(reader.readLine());
+        int b = Integer.parseInt(reader.readLine());
+        int c = Integer.parseInt(reader.readLine());
+        int count = 0;
+
+        if (a > 0)
+            count++;
+        if (b > 0)
+            count++;
+        if (c > 0)
+            count++;
+
+        System.out.print(count);
 
     }
 }

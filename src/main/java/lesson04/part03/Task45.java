@@ -24,14 +24,17 @@ public class Task45 {
 
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
+    try {
+      method1();
 
-    method1();
+    } catch (NullPointerException e) {
 
-    //напишите тут ваш код
+    } catch (FileNotFoundException e) {
+
+    }
   }
 
-  public static void method1()
-      throws NullPointerException, ArithmeticException, FileNotFoundException, URISyntaxException {
+  public static void method1() throws NullPointerException, ArithmeticException, FileNotFoundException, URISyntaxException {
     int i = (int) (Math.random() * 4);
     if (i == 0) {
       throw new NullPointerException();

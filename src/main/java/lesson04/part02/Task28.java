@@ -37,22 +37,23 @@ public class Task28 {
   }
 
   public static void insert10000(List list) {
-    //напишите тут ваш код
+    for (int i = 0; i < 10000; i ++)
+      list.add(2);
 
   }
 
   public static void get10000(List list) {
-    //напишите тут ваш код
-
+    for (int i = 0; i < 10000; i++)
+      list.get(i);
   }
 
   public static void set10000(List list) {
-    //напишите тут ваш код
-
+    for (int i = 0; i < 10000; i++)
+      list.set(i, 5);
   }
 
   public static void remove10000(List list) {
-    //напишите тут ваш код
-
+    for (int i = 9999; i > -1; i--)
+      list.remove(i);
   }
 }

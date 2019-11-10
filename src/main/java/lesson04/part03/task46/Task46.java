@@ -22,7 +22,11 @@ public class Task46 {
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
 
-    method1();
+    try {
+      method1();
+    } catch (Exception1 e) {
+
+    }
 
     //напишите тут ваш код
 

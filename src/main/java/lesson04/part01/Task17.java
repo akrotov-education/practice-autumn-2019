@@ -20,11 +20,21 @@ import java.io.InputStreamReader;
 public class Task17 {
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    int[] arr = new int[20];
 
-    int maximum = 0;
-    int minimum = 0;
+    for (int i = 0; i < 20; i++)
+      arr[i] = Integer.parseInt(reader.readLine());
 
-    //напишите тут ваш код
+    int maximum = arr[0];
+    int minimum = arr[0];
+
+    for (int i = 1; i < 20; i++) {
+      if (arr[i] > maximum)
+        maximum = arr[i];
+
+      if (arr[i] < minimum)
+        minimum = arr[i];
+    }
 
     System.out.print(maximum + " " + minimum);
   }
