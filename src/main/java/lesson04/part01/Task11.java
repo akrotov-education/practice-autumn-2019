@@ -29,18 +29,19 @@ public class Task11 {
     ArrayList<Integer> listEven = new ArrayList<>();
     ArrayList<Integer> list = new ArrayList<>();
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    for (int i = 0; i < 20; i++) {
+      int inp = Integer.parseInt(reader.readLine());
+      listMain.add(inp);
 
-    for (int i = 0; i < 20; i++)
-      listMain.add(Integer.parseInt(reader.readLine()));
-
-
-    for (int i = 0; i < listMain.size(); i++) {
-      if (listMain.get(i) % 3 == 0)
-        listOdd.add(listMain.get(i));
-      if (listMain.get(i) % 2 == 0)
-        listEven.add(listMain.get(i));
-      if (listMain.get(i) % 2 != 0 && listMain.get(i) % 3 != 0)
-        list.add(listMain.get(i));
+      if (inp % 3 == 0) {
+        listOdd.add(inp);
+      }
+      if (inp % 2 == 0) {
+        listEven.add(inp);
+      }
+      if (inp % 3 != 0 && inp % 2 != 0) {
+        list.add(inp);
+      }
     }
 
     printList(listOdd);
@@ -49,8 +50,8 @@ public class Task11 {
   }
 
   public static void printList(ArrayList<Integer> list) {
-    for (int i = 0; i < list.size(); i++){
-      System.out.println(list.get(i));
+    for (int num: list) {
+      System.out.println(num);
     }
   }
 }

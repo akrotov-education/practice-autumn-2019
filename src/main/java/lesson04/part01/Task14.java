@@ -20,7 +20,6 @@ import java.util.ArrayList;
 
 public class Task14 {
   public static void main(String[] args) throws Exception {
-    // Считать строки с консоли и объявить ArrayList list тут
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     ArrayList<String> list = new ArrayList<String>();
     for (int i = 0; i < 10; i++){

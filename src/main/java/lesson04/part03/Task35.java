@@ -17,32 +17,37 @@ public class Task35 {
     method1();
   }
 
-  public static int method1() {
+  public static StackTraceElement[] method1() {
     method2();
-    StackTraceElement[] elements = Thread.currentThread().getStackTrace();
-    return  elements[2].getLineNumber();
+    StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+
+    return stackTraceElements;
   }
 
-  public static int method2() {
+  public static StackTraceElement[] method2() {
     method3();
-    StackTraceElement[] elements = Thread.currentThread().getStackTrace();
-    return  elements[2].getLineNumber();
+    StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+
+    return stackTraceElements;
   }
 
-  public static int method3() {
+  public static StackTraceElement[] method3() {
     method4();
-    StackTraceElement[] elements = Thread.currentThread().getStackTrace();
-    return  elements[2].getLineNumber();
+    StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+
+    return stackTraceElements;
   }
 
-  public static int method4() {
+  public static StackTraceElement[] method4() {
     method5();
-    StackTraceElement[] elements = Thread.currentThread().getStackTrace();
-    return  elements[2].getLineNumber();
+    StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+
+    return stackTraceElements;
   }
 
-  public static int method5() {
-    StackTraceElement[] elements = Thread.currentThread().getStackTrace();
-    return  elements[2].getLineNumber();
+  public static StackTraceElement[] method5() {
+    StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+
+    return stackTraceElements;
   }
 }

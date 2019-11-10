@@ -30,7 +30,7 @@ public class Task18 {
       if(s.equals("end")) break;
       else  list.add(s);
     }
-    for(int i =0;i<list.size();i++){
+    for (int i =0;i<list.size();i++){
       System.out.println(list.get(i));
     }
   }

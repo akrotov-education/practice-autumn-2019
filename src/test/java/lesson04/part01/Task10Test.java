@@ -64,7 +64,7 @@ public class Task10Test {
     public void task10ifThirdElementDeleted() {
         boolean isInputExist = false;
         for (String s : collect) {
-            if (s.contains("list.remove(2);")) {
+            if (s.contains(".remove(2);")) {
                 isInputExist = true;
                 break;
             }

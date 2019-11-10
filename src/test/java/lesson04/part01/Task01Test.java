@@ -69,17 +69,17 @@ public class Task01Test {
     }
     @Test
     public void task01MainHaveNoChanges() {
-        boolean MainNoCganges = false;
+        boolean MainNoChanges = false;
         for (String s : collect) {
-            if (s.contains("public static void main(String[] args) throws Exception {\n" +
-                    "    int[] array = initializeArray();\n" +
-                    "    int max = max(array);\n" +
-                    "    System.out.println(max);\n" +
-                    "  }")) {
-                MainNoCganges = true;
+            if (s.contains("public static void main(String[] args) throws Exception {") ||
+                    s.contains("int[] array = initializeArray();") ||
+                    s.contains("int max = max(array);") ||
+                    s.contains("System.out.println(max);")
+            ) {
+                MainNoChanges = true;
                 break;
             }
         }
-        Assert.assertTrue("Метод main изменять нельзя.", MainNoCganges);
+        Assert.assertTrue("Метод main изменять нельзя.", MainNoChanges);
     }
 }

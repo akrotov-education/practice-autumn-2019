@@ -27,7 +27,7 @@ public class Task15 {
 
     ArrayList<Integer> list = new ArrayList<>();
     for (int i = 0; i < 10; i++){
-      list.add(new Scanner(System.in).nextInt());
+      list.add(Integer.parseInt(reader.readLine()));
     }
     for (int  i = 9; i>=0; i--){
       System.out.println(list.get(i));

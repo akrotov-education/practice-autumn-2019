@@ -22,7 +22,7 @@ public class Task17 {
   public static void main(String[] args) throws IOException {
     Scanner scanner = new Scanner(System.in);
 
-    int [] list = new int[20];
+    int[] list = new int[20];
 
     for (int i = 0; i < 20; i++) {
       list[i] = scanner.nextInt();
