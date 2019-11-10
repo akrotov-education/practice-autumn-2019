@@ -1,5 +1,6 @@
 package lesson04.part02;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -33,8 +34,11 @@ public class Task23 {
 
 
   public static Map<String, Cat> addCatsToMap(String[] cats) {
-    //напишите тут ваш код
-    return null;
+    Map<String, Cat> map = new HashMap<>();
+    for (String s:cats){
+      map.put(s,new Cat(s));
+    }
+    return map;
   }
 
 

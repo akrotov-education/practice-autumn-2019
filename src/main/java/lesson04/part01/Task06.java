@@ -1,5 +1,9 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 /**
  * 1. Создай список строк.
  * 2. Добавь в него 5 различных строк.
@@ -17,6 +21,14 @@ package lesson04.part01;
 public class Task06 {
 
   public static void main(String[] args) {
-    //напишите тут ваш код
+    ArrayList<String> a = new ArrayList<String>();
+
+    for(int i = 0; i < 5; i++)
+      a.add("m");
+
+    System.out.println(a.size());
+
+    for (int i = 0; i < a.size(); i++)
+      System.out.println(a.get(i));
   }
 }
