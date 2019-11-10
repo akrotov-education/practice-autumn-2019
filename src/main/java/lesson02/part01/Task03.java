@@ -17,12 +17,16 @@ package lesson02.part01;
 
 public class Task03 {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        double currentCourse = 0.91;
 
+        double inUsd = convertEurToUsd(23, currentCourse);
+        double inUsd2 = convertEurToUsd(10, currentCourse);
+
+        System.out.println(inUsd);
+        System.out.println(inUsd2);
     }
 
     public static double convertEurToUsd(int eur, double course) {
-        //напишите тут ваш код
-        return 0d;
+        return eur * course;
     }
 }

@@ -32,10 +32,10 @@ import java.util.ArrayList;
 
 public class Task13 {
   public static void main(String[] args) {
-    ArrayList<String> strings = new ArrayList<String>();
+    ArrayList<String> strings = new ArrayList<>();
+    strings.add("лирика");
     strings.add("роза");
-    strings.add("лоза");
-    strings.add("лира");
+    strings.add("лолик");
     strings = fix(strings);
 
     for (String string : strings) {
@@ -44,7 +44,18 @@ public class Task13 {
   }
 
   public static ArrayList<String> fix(ArrayList<String> strings) {
-    //напишите тут ваш код
-    return null;
+    for (int i = 0; i < strings.size(); i++) {
+      if (strings.get(i).contains("р") && !strings.get(i).contains("л")) {
+        strings.remove(i);
+        i--;
+      } else if (strings.get(i).contains("л") && !strings.get(i).contains("р")) {
+        strings.add(i + 1, strings.get(i));
+        i++;
+      } else {
+        continue;
+      }
+    }
+
+    return strings;
   }
 }

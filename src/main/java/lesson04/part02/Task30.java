@@ -1,6 +1,7 @@
 package lesson04.part02;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -34,12 +35,13 @@ public class Task30 {
   }
 
   public static long getGetTimeInMs(List list) {
-    // напишите тут ваш код
+    Date currDate = new Date();
 
     get10000(list);
 
-    // напишите тут ваш код
-    return 0;
+    Date newDate = new Date();
+
+    return newDate.getTime() - currDate.getTime();
   }
 
   public static void get10000(List list) {

@@ -1,5 +1,9 @@
 package lesson04.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 /**
  * Введи с клавиатуры 5 слов в список строк. Удали 3 - ий элемент списка,
  * и выведи оставшиеся элементы в обратном порядке.
@@ -14,6 +18,16 @@ package lesson04.part01;
 
 public class Task10 {
   public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
+    ArrayList<String> strList = new ArrayList<>();
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    for (int i = 0; i < 5; i++) {
+      strList.add(reader.readLine());
+    }
+
+    strList.remove(2);
+
+    for (int i = strList.size()-1; i >= 0; i--) {
+      System.out.println(strList.get(i));
+    }
   }
 }

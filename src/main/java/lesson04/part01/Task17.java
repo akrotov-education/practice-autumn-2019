@@ -20,12 +20,25 @@ import java.io.InputStreamReader;
 public class Task17 {
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    int[] arr = new int[20];
 
-    int maximum = 0;
-    int minimum = 0;
+    for (int i = 0; i < 20; i++) {
+      arr[i] = Integer.parseInt(reader.readLine());
+    }
 
-    //напишите тут ваш код
+    int max = arr[0];
+    int min = arr[0];
 
-    System.out.print(maximum + " " + minimum);
+    for (int i = 1; i < 20; i++) {
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+
+      if (arr[i] < min) {
+        min = arr[i];
+      }
+    }
+
+    System.out.println(max + " " + min);
   }
 }

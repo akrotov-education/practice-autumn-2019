@@ -1,5 +1,6 @@
 package lesson04.part02;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -19,10 +20,7 @@ import java.util.Map;
 public class Task23 {
 
   public static void main(String[] args) throws Exception {
-    String[] cats = new String[]{
-        "васька", "мурка", "дымка", "рыжик", "серый",
-        "снежок", "босс", "борис", "визя", "гарфи"
-    };
+    String[] cats = new String[]{"васька", "мурка", "дымка", "рыжик", "серый", "снежок", "босс", "борис", "визя", "гарфи"};
 
     Map<String, Cat> map = addCatsToMap(cats);
 
@@ -33,13 +31,17 @@ public class Task23 {
 
 
   public static Map<String, Cat> addCatsToMap(String[] cats) {
-    //напишите тут ваш код
-    return null;
+    Map<String, Cat> map = new HashMap<>();
+
+    for (String str: cats) {
+      map.put(str, new Cat(str));
+    }
+
+    return map;
   }
 
 
   public static class Cat {
-
     String name;
 
     public Cat(String name) {
