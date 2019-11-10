@@ -18,10 +18,16 @@ package lesson02.part02;
  * 3.	Программа должна выводить текст, шаблон которого указан в задании.
  * 4.	Каждое предложение вывести с новой строки.
  */
-
+import java.util.*;
 public class Task43 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        Scanner in = new Scanner(System.in);
+        String name = in.nextLine();
+        int y = in.nextInt();
+        int m = in.nextInt();
+        int d = in.nextInt();
+        System.out.println("Меня зовут " + name + ".");
+        System.out.println("Я родился " + d + "." + m + "." + y);
     }
 }

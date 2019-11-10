@@ -1,5 +1,7 @@
 package lesson01.part1;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 public class Task09 {
 
     /**
@@ -27,6 +29,6 @@ public class Task09 {
 
     public static int sumDigitsInNumber(int number) {
         //напишите тут ваш код
-        return 0;
+        return (number / 100) + ((number / 10 ) % 10) + (number % 10);
     }
 }
