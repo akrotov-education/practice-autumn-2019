@@ -1,5 +1,7 @@
 package lesson01.part1;
 
+import java.time.LocalTime;
+
 public class Task10 {
 
     /**
@@ -15,5 +17,8 @@ public class Task10 {
      */
 
     public static void main(String[] args) {
+        LocalTime specificTime = LocalTime.of(15, 00);
+        LocalTime specificTime1 = LocalTime.of(15, 30);
+        System.out.print(-(specificTime.getMinute() - specificTime1.getMinute()) * 60);
     }
 }

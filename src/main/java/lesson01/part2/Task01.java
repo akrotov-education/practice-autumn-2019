@@ -19,11 +19,14 @@ public class Task01 {
      * 6. Должно быть объявлено 5 переменных.
      */
 
-    public static void main(String[] args) {
-        //напишите тут ваш код
+    public void main(String[] args) {
+        Person person = new Person();
     }
 
-    public static class Person {
-        //напишите тут ваш код
+     public class Person {
+        String name;
+        private int age;
+        private int weight;
+        private int money;
     }
 }
