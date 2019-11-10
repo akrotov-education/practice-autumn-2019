@@ -26,8 +26,8 @@ public class Task10 {
     }
     list.remove(2);
 
-    for (int n = list.size() - 1; n >= 0; n--){
-      System.out.println(list.get(n));
+    for (int i = list.size() - 1; i >= 0; i--){
+      System.out.println(list.get(i));
     }
   }
 }

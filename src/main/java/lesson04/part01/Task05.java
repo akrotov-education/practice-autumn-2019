@@ -47,7 +47,7 @@ public class Task05 {
     if (kolchet > kolnechet){
       System.out.println("В домах с четными номерами проживает больше жителей.");
     }
-    else {
+    else if (kolchet < kolnechet){
       System.out.println("В домах с нечетными номерами проживает больше жителей.");
     }
   }

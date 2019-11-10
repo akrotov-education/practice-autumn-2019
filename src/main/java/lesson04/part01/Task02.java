@@ -23,8 +23,7 @@ public class Task02 {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     String[] list = new String[10];
 
-    for (int i = 0; i < list.length-2; i++)
-    {
+    for (int i = 0; i < list.length-2; i++) {
       list[i] = reader.readLine();
     }
     for (int i = 0; i < list.length; i++){
