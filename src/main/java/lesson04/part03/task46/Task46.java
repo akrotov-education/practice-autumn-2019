@@ -21,11 +21,13 @@ public class Task46 {
 
   public static void main(String[] args) throws Exception {
     //напишите тут ваш код
-
-    method1();
-
+    try {
+      method1();
+    }
     //напишите тут ваш код
-
+    catch (Exception1 e){
+      System.out.println(e.getClass().getSimpleName());
+    }
   }
 
   public static void method1() throws Exception1, Exception2, Exception3 {

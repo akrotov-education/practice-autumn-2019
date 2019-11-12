@@ -3,6 +3,7 @@ package lesson04.part01;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  * Создать список строк.
@@ -23,5 +24,12 @@ public class Task18 {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     //напишите тут ваш код
+    ArrayList<String> strings = new ArrayList<>();
+    String readStr = reader.readLine();
+    for(;!readStr.equals("end");){
+      strings.add(readStr);
+      readStr = reader.readLine();
+    }
+    strings.forEach(System.out::println);
   }
 }

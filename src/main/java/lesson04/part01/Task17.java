@@ -25,6 +25,20 @@ public class Task17 {
     int minimum = 0;
 
     //напишите тут ваш код
+    int[] array = new int[20];
+    for(int i = 0; i < 20; ++i){
+      array[i] = Integer.decode(reader.readLine());
+      if (i == 0){
+        maximum = array[i];
+        minimum = array[i];
+      }
+      if (array[i] > maximum){
+        maximum = array[i];
+      }
+      if (array[i] < minimum){
+        minimum = array[i];
+      }
+    }
 
     System.out.print(maximum + " " + minimum);
   }
