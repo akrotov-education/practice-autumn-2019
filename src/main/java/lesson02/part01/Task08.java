@@ -15,6 +15,9 @@ package lesson02.part01;
 public class Task08 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        int P = 1;
+        for(int i = 2; i <= 10; i++)
+            P *= i;
+        System.out.println(P);
     }
 }

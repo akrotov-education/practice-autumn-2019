@@ -22,12 +22,17 @@ public class Task12 {
 
     public static int min(int a, int b, int c, int d) {
         //напишите тут ваш код
-        return 0;
+        int min1 = min(a, b);
+        int min2 = min(c, d);
+        return min(min1, min2);
     }
 
     public static int min(int a, int b) {
         //напишите тут ваш код
-        return 0;
+        int min = a;
+        if(b < min)
+            min = b;
+        return min;
     }
 
     public static void main(String[] args) throws Exception {

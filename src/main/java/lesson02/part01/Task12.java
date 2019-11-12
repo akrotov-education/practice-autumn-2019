@@ -18,6 +18,10 @@ package lesson02.part01;
 public class Task12 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        String[] str = {"Мама", "Мыла", "Раму"};
+        for(int i = 0; i < str.length; i++)
+            for(int j = 0; j < str.length; j++)
+                if(str[i] != str[j])
+                    System.out.println(str[i] + str[j] + str[3 - i - j]);
     }
 }

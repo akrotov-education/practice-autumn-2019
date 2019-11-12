@@ -31,11 +31,24 @@ package lesson02.part02;
  * 6.	Если положительных чисел нет, программа должна вывести "количество положительных чисел: 0".
  * 7.	Учесть, что число "0" не относится ни к положительным, ни к отрицательным числам.
  */
-
+import java.util.*;
 
 public class Task29 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        Scanner in = new Scanner(System.in);
+        int[] arr = new int[3];
+        for (int i = 0; i < arr.length; i++)
+            arr[i] = in.nextInt();
+        int a = 0;
+        int b = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0)
+                a++;
+            if(arr[i] < 0)
+                b++;
+        }
+        System.out.println("количество отрицательных чисел: " + b);
+        System.out.println("количество положительных чисел: " + a);
     }
 }

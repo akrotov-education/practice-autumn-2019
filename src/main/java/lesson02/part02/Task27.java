@@ -34,6 +34,21 @@ import java.util.*;
 public class Task27 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        if(n <= 999 && n >=1) {
+            if(n < 10 && n % 2 == 0)
+                System.out.println("четное однозначное число");
+            if(n < 10 && n % 2 == 1)
+                System.out.println("нечетное однозначное число");
+            if(n >= 10 && n <100 && n % 2 == 0)
+                System.out.println("четное двузначное число");
+            if(n >= 10 && n <100 && n % 2 == 1)
+                System.out.println("нечетное двузначное число");
+            if(n >= 100 && n % 2 == 0)
+                System.out.println("четное трехзначное число");
+            if(n >= 100 && n % 2 == 1)
+                System.out.println("нечетное трехзначное число");
+        }
     }
 }

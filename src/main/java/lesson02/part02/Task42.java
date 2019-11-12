@@ -19,10 +19,19 @@ package lesson02.part02;
  * 3.	Программа должна посчитать сумму введенных чисел и вывести её на экран.
  * 4.	В программе должен использоваться цикл for, while или do-while.
  */
-
+import java.util.*;
 public class Task42 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        Scanner in = new Scanner(System.in);
+        int sum = 0;
+        while(true) {
+            int n = in.nextInt();
+            sum += n;
+            if(n == -1) {
+                System.out.println(sum);
+                break;
+            }
+        }
     }
 }

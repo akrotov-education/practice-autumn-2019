@@ -14,6 +14,7 @@ package lesson02.part01;
 public class Task05 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        String date = "JANUARY 5 1997";
+        System.out.println(date);
     }
 }
