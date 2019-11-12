@@ -1,5 +1,9 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры строку и число N больше 0.
  * Вывести на экран строку N раз используя цикл while. Каждое значение с новой строки.
@@ -22,6 +26,13 @@ package lesson02.part02;
 public class Task32 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String res = reader.readLine();
+        int rep = Integer.parseInt(reader.readLine());
+        int i = 0;
+        while (i < rep) {
+            System.out.println(res);
+            i++;
+        }
     }
 }

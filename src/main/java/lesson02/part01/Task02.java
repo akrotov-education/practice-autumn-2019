@@ -17,8 +17,11 @@ import static javax.xml.bind.DatatypeConverter.printString;
 
 public class Task02 {
     // напишите тут ваш код
-
     public static void main(String[] args) {
         printString("Hello, Amigo!");
+    }
+
+    public static void printString(String str) {
+        System.out.println(str);
     }
 }

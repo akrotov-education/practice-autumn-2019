@@ -34,6 +34,31 @@ import java.util.*;
 public class Task27 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(reader.readLine());
+        int length = String.valueOf(num).length();
+        String result = "";
+        if (length < 4 && num > 0) {
+            switch (num % 2) {
+                case 0:
+                    result += "четное ";
+                    break;
+                case 1:
+                    result += "нечетное ";
+                    break;
+            }
+            switch (length) {
+                case 1:
+                    result += "однозначное число";
+                    break;
+                case 2:
+                    result += "двузначное число";
+                    break;
+                case 3:
+                    result += "трехзначное число";
+                    break;
+            }
+            System.out.println(result);
+        }
     }
 }

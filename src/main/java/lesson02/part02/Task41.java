@@ -1,5 +1,12 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры три числа, вывести на экран среднее из них. Т.е. не самое большое и не самое маленькое.
  * Если все числа равны, вывести любое из них.
@@ -16,6 +23,12 @@ package lesson02.part02;
 public class Task41 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        List<Integer> nums = new ArrayList<Integer>();
+        for (int i = 0; i < 3; i++) {
+            nums.add(Integer.parseInt(reader.readLine()));
+        }
+        nums.sort(Comparator.naturalOrder());
+        System.out.println(nums.get(1));
     }
 }
