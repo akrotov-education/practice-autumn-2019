@@ -1,5 +1,8 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * Ввести с клавиатуры три числа, вывести на экран среднее из них. Т.е. не самое большое и не самое маленькое.
  * Если все числа равны, вывести любое из них.
@@ -16,6 +19,18 @@ package lesson02.part02;
 public class Task41 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int a=Integer.parseInt(reader.readLine());
+        int b=Integer.parseInt(reader.readLine());
+        int c=Integer.parseInt(reader.readLine());
+        int min=Math.min(a,Math.min(b,c));
+        int max=Math.max(a,Math.max(b,c));
+        if (a!=min && a!=max) System.out.println(a);
+        if (b!=min && b!=max) System.out.println(b);
+        if (c!=min && c!=max) System.out.println(c);
+        if (a==b || a==c) System.out.println(a);
+        else
+        if (b==c) System.out.println(b);
 
     }
 }

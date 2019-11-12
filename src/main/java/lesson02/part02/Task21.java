@@ -20,6 +20,11 @@ import java.util.*;
 public class Task21 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String a=reader.readLine();
+        String b=reader.readLine();
+        if (a.equals(b)) System.out.println("Имена идентичны");
+        else if (a.length()==b.length()) System.out.println("Длины имен равны");
 
     }
 }

@@ -1,5 +1,6 @@
 package lesson01.part2;
 
+
 public class Task09 {
 
     /**
@@ -16,7 +17,14 @@ public class Task09 {
      */
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        Woman woman=new Woman();
+        Cat cat=new Cat();
+        cat.owner=woman;
+        Fish cat1=new Fish();
+        cat1.owner=woman;
+        Dog cat2=new Dog();
+        cat2.owner=woman;
+
     }
 
     public static class Cat {

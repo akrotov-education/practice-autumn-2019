@@ -1,5 +1,8 @@
 package lesson02.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * Вывести на экран произведение 10 чисел от 1 до 10. Результат - это 1 число.
  * Подсказка: будет три миллиона с хвостиком.
@@ -14,7 +17,7 @@ package lesson02.part01;
 
 public class Task08 {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        System.out.println(2*3*4*5*6*7*8*9*10);
 
     }
 }

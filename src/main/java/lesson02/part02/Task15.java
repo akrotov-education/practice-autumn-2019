@@ -1,5 +1,11 @@
 package lesson02.part02;
 
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.nio.Buffer;
+import java.nio.BufferOverflowException;
+
 /**
  * Ввести с клавиатуры три числа а, b, c – стороны предполагаемого треугольника.
  * Определить возможность существования треугольника по сторонам. Результат вывести на экран в следующем виде:
@@ -20,6 +26,16 @@ package lesson02.part02;
 public class Task15 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String ba=reader.readLine();
+        int a=Integer.parseInt(ba);
+        ba=reader.readLine();
+        int b=Integer.parseInt(ba);
+        ba=reader.readLine();
+        int c=Integer.parseInt(ba);
+
+        System.out.println(( (a+b)<=c || (b+c)<=a || (a+c)<=b )?"Треугольник не существует.":"Треугольник существует.");
 
     }
 }
