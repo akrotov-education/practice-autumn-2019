@@ -26,7 +26,12 @@ public class Task09 {
     }
 
     public static int sumDigitsInNumber(int number) {
-        //напишите тут ваш код
-        return 0;
+        int result = 0;
+        for(int i=0;i<number; i++)
+        {
+            result += number%10;
+            number = number/10;
+        }
+        return result;
     }
 }

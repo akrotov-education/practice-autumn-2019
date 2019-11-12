@@ -17,10 +17,12 @@ public class Task05 {
      */
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        Cat cat1 = new Cat();
+        Cat cat2 = new Cat();
     }
 
     public static class Cat {
+
 
     }
 
