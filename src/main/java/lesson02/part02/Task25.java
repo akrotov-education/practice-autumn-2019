@@ -30,6 +30,23 @@ import java.util.*;
 public class Task25 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
+        int c1,c2;
+        System.out.print("Введите данные \n");
+        String cS = bufferedReader.readLine();
+        c1 = Integer.parseInt(cS);
+        cS = bufferedReader.readLine();
+        c2 = Integer.parseInt(cS);
+        if(c1>0&&c2>0)
+            System.out.print("1");
+        if(c1<0&&c2>0)
+            System.out.print("2");
+        if(c1<0&&c2<0)
+            System.out.print("3");
+        if(c1>0&&c2<0)
+            System.out.print("4");
     }
 }

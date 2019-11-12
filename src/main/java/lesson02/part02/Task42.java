@@ -20,9 +20,26 @@ package lesson02.part02;
  * 4.	В программе должен использоваться цикл for, while или do-while.
  */
 
+import java.io.*;
+import java.util.*;
+
 public class Task42 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
+        int i=0;
+        int s=0;
+
+        System.out.print("Введите данные \n");
+        while(i!=(-1)){
+            String cS = bufferedReader.readLine();
+            i=Integer.parseInt(cS);
+            s=s+ i;
+        }
+        s++;
+        System.out.print("\n"+s);
     }
 }

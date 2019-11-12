@@ -14,9 +14,19 @@ package lesson02.part01;
  * 4.	Выведенный тест должен полностью соответствовать заданию.
  */
 
+import java.io.*;
+import java.util.*;
+
 public class Task22 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
 
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        System.out.print("Введите желаемую зарплату ");
+        String n = bufferedReader.readLine();
+        System.out.print("\nЯ буду зарабатывать $"+n+" в час");
     }
 }

@@ -22,5 +22,18 @@ public class Task18 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
 
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        System.out.print("Введите имя ");
+        String name = bufferedReader.readLine();
+        System.out.print("\nВведите число ");
+        String c1 = bufferedReader.readLine();
+        System.out.print("\nВведите число ");
+        String c2 = bufferedReader.readLine();
+
+        System.out.print("\n"+ name+" получает "+c1+" через "+c2+" лет.");
+
     }
 }

@@ -22,9 +22,18 @@ package lesson02.part02;
  * 4.	В программе должен использоваться цикл for.
  */
 
+import java.io.*;
+import java.util.*;
+
 public class Task37 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         //напишите тут ваш код
 
+
+        for(int i=1;i<11;i++) {
+            for (int j = 1; j < i; j++)
+                System.out.print("8");
+            System.out.print("\n");
+        }
     }
 }

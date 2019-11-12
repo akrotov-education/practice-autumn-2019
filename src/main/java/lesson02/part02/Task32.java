@@ -19,9 +19,27 @@ package lesson02.part02;
  * 5.	В программе должен использоваться цикл while.
  */
 
+import java.io.*;
+import java.util.*;
+
 public class Task32 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        int cI;
+        String c;
+        System.out.print("Введите данные \n");
+        String cS = bufferedReader.readLine();
+        c = bufferedReader.readLine();
+        cI = Integer.parseInt(c);
+        int i=0;
+        while (i<cI) {
+            System.out.print(cS+"\n");
+            i++;
+        }
 
     }
 }

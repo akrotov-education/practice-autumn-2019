@@ -1,7 +1,8 @@
 package lesson02.part02;
 
 /**
- * Допишите код метода setName, чтобы с его помощью установить значение private String fullName равное значению локальной переменной String fullName.
+ * Допишите код метода setName, чтобы с его помощью установить значение private String fullName равное
+ * значению локальной переменной String fullName.
  * <p>
  * <p>
  * Требования:
@@ -23,8 +24,8 @@ public class Task06 {
 
         public void setName(String firstName, String lastName) {
             String fullName = firstName + " " + lastName;
-
             //напишите тут ваш код
+            this.fullName=fullName;
         }
     }
 }

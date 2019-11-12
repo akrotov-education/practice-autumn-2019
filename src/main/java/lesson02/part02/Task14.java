@@ -21,9 +21,31 @@ package lesson02.part02;
  */
 
 
+import java.io.*;
+import java.util.*;
+
 public class Task14 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
+        int cI=0;
+        System.out.print("Введите число ");
+        String cS = bufferedReader.readLine();
+        cI = Integer.parseInt(cS);
+
+        int m400 = cI%400;
+        int m4 = cI%4;
+        int m100 = cI%100;
+        if(m400==0)
+            System.out.print("366");
+        else if (m100==0)
+            System.out.print("365");
+        else if(m4==0)
+            System.out.print("366");
+        else
+            System.out.print("365");
     }
 }

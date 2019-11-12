@@ -34,6 +34,29 @@ import java.util.*;
 public class Task27 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        int cI;
+        System.out.print("Введите данные \n");
+        String cS = bufferedReader.readLine();
+        cI = Integer.parseInt(cS);
+        int m=cI%2;
+        if((cI-cI%100)!=0)
+            if(m==0)
+                System.out.print("Четное трехзначное число");
+            else
+                System.out.print("Нечетное трехзначное число");
+        else if((cI-cI%10)!=0)
+            if(m==0)
+                System.out.print("Четное двухзначное число");
+            else
+                System.out.print("Нечетное двухзначное число");
+        else if(m==0)
+                System.out.print("Четное однозначное число");
+            else
+                System.out.print("Нечетное однозначное число");
 
     }
 }

@@ -17,9 +17,12 @@ public class Task07 {
     public static void main(String[] args) {
         Cat cat1 = new Cat();
         //напишите тут ваш код
+        Cat.count=Cat.count+1;
 
         Cat cat2 = new Cat();
         //напишите тут ваш код
+
+        Cat.count=Cat.count+1;
 
         System.out.println("The cat count is " + Cat.count);
     }

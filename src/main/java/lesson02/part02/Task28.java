@@ -33,9 +33,33 @@ package lesson02.part02;
  * 5.	Учти, что "0" не относится ни к положительным, ни к отрицательным числам.
  */
 
+import java.io.*;
+import java.util.*;
+
 public class Task28 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
+        int c1, c2, c3;
+        System.out.print("Введите данные \n");
+        String cS = bufferedReader.readLine();
+        c1 = Integer.parseInt(cS);
+        cS = bufferedReader.readLine();
+        c2 = Integer.parseInt(cS);
+        cS = bufferedReader.readLine();
+        c3 = Integer.parseInt(cS);
+
+        int i=0;
+        if(c1>0)
+            i++;
+        if(c2>0)
+            i++;
+        if(c3>0)
+            i++;
+
+        System.out.print(i);
     }
 }

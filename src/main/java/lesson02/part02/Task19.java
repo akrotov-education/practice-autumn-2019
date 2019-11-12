@@ -11,9 +11,35 @@ package lesson02.part02;
  * 4.	Если максимальных чисел несколько, необходимо вывести любое из них.
  */
 
+
+import java.io.*;
+import java.util.*;
+
 public class Task19 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
+        int c1,c2;
+        System.out.print("Введите данные ");
+        String cS = bufferedReader.readLine();
+        c1 = Integer.parseInt(cS);
+        cS = bufferedReader.readLine();
+        c2 = Integer.parseInt(cS);
+        if(c2>c1)
+            c1=c2;
+        cS = bufferedReader.readLine();
+        c2 = Integer.parseInt(cS);
+        if(c2>c1)
+            c1=c2;
+        cS = bufferedReader.readLine();
+        c2 = Integer.parseInt(cS);
+        if(c2>c1)
+            System.out.print(c2);
+        else
+
+            System.out.print(c1);
     }
 }

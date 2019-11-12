@@ -11,9 +11,22 @@ package lesson02.part02;
  * 4.	Если возраст больше либо равно 18 ничего не выводить.
  */
 
+import java.io.*;
+import java.util.*;
+
 public class Task22 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
+        String n,g;
+        System.out.print("Введите данные ");
+        n = bufferedReader.readLine();
+        g = bufferedReader.readLine();
+        int gI = Integer.parseInt(g);
+        if(gI<18)
+            System.out.print("Подрасти ещё");
     }
 }

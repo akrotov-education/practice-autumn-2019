@@ -15,6 +15,11 @@ package lesson02.part02;
 public class Task30 {
     public static void main(String[] args) {
         //напишите тут ваш код
+        int cikl=1;
+        while (cikl!=11){
+            System.out.print(cikl+"\n");
+            cikl++;
+        }
 
     }
 }

@@ -25,9 +25,32 @@ package lesson02.part02;
  * 5.	Если горит красный цвет, необходимо вывести текст: "красный"
  */
 
+
+import java.io.*;
+import java.util.*;
+
 public class Task16 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        InputStream inputStream = System.in;
+        Reader inputStreamReader = new InputStreamReader(inputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        System.out.print("Введите время ");
+        String cS = bufferedReader.readLine();
+        int t = Integer.parseInt(cS);
+
+        if(t>59) {
+            System.out.print("Некорректные данные");
+            return;
+        }
+        int m=t%5;
+        if(m==3)
+            System.out.print("Желтый");
+        else if(m==4)
+            System.out.print("Красный");
+        else
+            System.out.print("Зеленый");
 
     }
 }
