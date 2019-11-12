@@ -21,5 +21,6 @@ public class Task06 {
 
     public static void printCircleLength(int radius) {
         //напишите тут ваш код
+        System.out.print(Math.PI * 2 * radius);
     }
 }
