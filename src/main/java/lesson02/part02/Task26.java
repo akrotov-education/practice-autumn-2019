@@ -28,7 +28,26 @@ import java.util.*;
 
 public class Task26 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        String positive="положительное";
+        String negative="отрицательное";
+        String even="четное";
+        String odd="нечетное";
+        String zero="ноль";
+        Scanner in=new Scanner(System.in);
+        int x=in.nextInt();
 
+        if(x==0)
+            System.out.println(zero);
+        else {
+            if(x>0)
+                System.out.print(positive);
+            else
+                System.out.print(negative);
+            if((x%2)==0)
+                System.out.print(" "+even);
+            else
+                System.out.print(" "+odd);
+            System.out.print(" число");
+        }
     }
 }

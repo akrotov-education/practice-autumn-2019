@@ -23,7 +23,14 @@ public class Task08 {
     }
 
     public static void compare(int a) {
-        //напишите тут ваш код
-
+        int x=5;
+        if (a<x)
+            System.out.println("Число "+a+" меньше 5");
+        else
+            if (a>x)
+                System.out.println("Число "+a+" больше 5");
+            else
+                if (a==x)
+                System.out.println("Число "+a+" равно 5");
     }
 }
