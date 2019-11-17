@@ -80,7 +80,7 @@ public class Task11Test {
     public void task11IfDiv3IntegersAdded() {
         boolean isDiv3IntegersAdded = false;
         for (int i = Task11Test.cycleBeginIndex; i < Task11Test.cycleEndIndex; i++) {
-            if (collect.get(i).contains("%3==0") && (collect.get(i).contains("add") || collect.get(i+1).contains("add")))
+            if (collect.get(i).contains("% 3 == 0") && (collect.get(i).contains("add") || collect.get(i+1).contains("add")))
                 isDiv3IntegersAdded = true;
         }
         Assert.assertTrue("нужно добавить делящиеся на 3 числа в список",isDiv3IntegersAdded);
@@ -90,7 +90,7 @@ public class Task11Test {
     public void task11IfDiv2IntegersAdded() {
         boolean isDiv2IntegersAdded = false;
         for (int i = Task11Test.cycleBeginIndex; i < Task11Test.cycleEndIndex; i++) {
-            if (collect.get(i).contains("%2==0") && (collect.get(i).contains("add") || collect.get(i+1).contains("add")))
+            if (collect.get(i).contains("% 2 == 0") && (collect.get(i).contains("add") || collect.get(i+1).contains("add")))
                 isDiv2IntegersAdded = true;
         }
         Assert.assertTrue("нужно добавить делящиеся на 2 числа в список",isDiv2IntegersAdded);
@@ -100,7 +100,7 @@ public class Task11Test {
     public void task11IfOtherIntegersAdded() {
         boolean isOtherIntegersAdded = false;
         for (int i = Task11Test.cycleBeginIndex; i < Task11Test.cycleEndIndex; i++) {
-            if ((collect.get(i).contains("%2!=0") && collect.get(i).contains("%3!=0"))
+            if ((collect.get(i).contains("% 2 != 0") && collect.get(i).contains("% 3 != 0"))
                     && (collect.get(i).contains("add") || collect.get(i+1).contains("add")))
                 isOtherIntegersAdded = true;
         }
@@ -111,7 +111,7 @@ public class Task11Test {
     public void task11ifPrintListCalled3Times() {
         int printListCalls = 0;
         for (String s : collect)
-            if (s.contains("printList") && !s.contains("public static void printList"))
+            if (s.contains("printList(") && !s.contains("tic void printLis"))
                 printListCalls++;
         Assert.assertEquals("метод вывода списков должен быть вызван трижды",3,printListCalls);
     }
