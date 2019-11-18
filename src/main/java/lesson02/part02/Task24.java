@@ -21,7 +21,22 @@ import java.util.*;
 
 public class Task24 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int num1, num2, num3;
+        Scanner in = new Scanner(System.in);
+        num1 = in.nextInt();
+        num2 = in.nextInt();
+        num3 = in.nextInt();
 
-    }
+        int[] arr = {num1, num2, num3};
+
+        if (arr[0]==arr[1]){
+            System.out.println(3);
+        }
+        else if (arr[1]==arr[2]){
+            System.out.println(1);
+        }
+        else if (arr[0]==arr[2]){
+            System.out.println(2);
+
+    }}
 }

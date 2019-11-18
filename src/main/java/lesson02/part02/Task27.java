@@ -33,7 +33,26 @@ import java.util.*;
 
 public class Task27 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int a;
+        Scanner in = new Scanner(System.in);
+        a = in.nextInt();
+
+        if ((a>0)&(a<999)){
+            System.out.println(chet(a) + kolcifr(a));
+        }
+
+    }
+
+    public static String chet(int i) {
+        return (i % 2 == 0) ? "четное " : "нечетное ";
+    }
+
+    public static String kolcifr(int i) {
+        String res = "";
+        if (i%10==i) {res = "однозначное число";}
+        else  if (i%100==i) {res = "двузначное число";}
+        else  if (i%1000==i) {res = "трехзначное число";}
+        return res;
 
     }
 }

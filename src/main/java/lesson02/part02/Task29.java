@@ -32,10 +32,24 @@ package lesson02.part02;
  * 7.	Учесть, что число "0" не относится ни к положительным, ни к отрицательным числам.
  */
 
-
+import java.util.Scanner;
 public class Task29 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int a, b, c;
+        Scanner in = new Scanner(System.in);
+        a = in.nextInt();
+        b = in.nextInt();
+        c = in.nextInt();
+
+        int[] arr = {a, b, c};
+        int count1 = 0;
+        int count2 = 0;
+        for (int i=0; i<3; i++){
+            if (arr[i]<0){count1++;}
+            else if (arr[i]>0){count2++;}
+        }
+        System.out.println("количество отрицательных чисел: " + count1);
+        System.out.println("количество положительных чисел: " + count2);
 
     }
 }

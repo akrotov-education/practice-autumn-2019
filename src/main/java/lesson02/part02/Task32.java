@@ -18,10 +18,19 @@ package lesson02.part02;
  * 4.	Программа должна выводить на экран строку N раз.
  * 5.	В программе должен использоваться цикл while.
  */
-
+import java.util.Scanner;
 public class Task32 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int n;
+        String a;
+        Scanner in = new Scanner(System.in);
+        a = in.next();
+        n = in.nextInt();
 
+        while (n > 0) {
+            System.out.println(a);
+            n--;
+
+        }
     }
 }

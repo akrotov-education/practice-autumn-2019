@@ -10,10 +10,16 @@ package lesson02.part02;
  * 3.	Программа должна выводить на экран минимальное из двух целых чисел.
  * 4.	Если два числа равны между собой, необходимо вывести любое.
  */
-
+import java.util.Scanner;
 public class Task18 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int num1, num2;
+        Scanner in = new Scanner(System.in);
+        num1 = in.nextInt();
+        num2 = in.nextInt();
+
+        int res = (num1<=num2)? num1:num2;
+        System.out.println(res);
 
     }
 }

@@ -22,10 +22,15 @@ package lesson02.part02;
  * 3.	Программа должна выводить 10 раз текст указанный в задании.
  * 4.	В программе должен использоваться цикл for.
  */
-
+import java.util.Scanner;
 public class Task39 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        String name;
+        Scanner in = new Scanner(System.in);
+        name = in.next();
+
+        for (int i=1; i<11; i++){
+            System.out.printf("%s любит меня.\n", name);
 
     }
-}
+}}

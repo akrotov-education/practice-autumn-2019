@@ -16,15 +16,16 @@ package lesson02.part02;
 public class Task07 {
     public static void main(String[] args) {
         Cat cat1 = new Cat();
-        //напишите тут ваш код
+        cat1.addNewCat();
 
         Cat cat2 = new Cat();
-        //напишите тут ваш код
+        cat2.addNewCat();
 
         System.out.println("The cat count is " + Cat.count);
     }
 
     public static class Cat {
         public static int count = 0;
+        public static void addNewCat() { count ++;}
     }
 }

@@ -24,10 +24,18 @@ package lesson02.part02;
  * 4.	Если горит жёлтый цвет, необходимо вывести текст: "жёлтый"
  * 5.	Если горит красный цвет, необходимо вывести текст: "красный"
  */
-
+import java.util.Scanner;
 public class Task16 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        System.out.println("Введите время в минутах:");
+        Scanner in = new Scanner(System.in);
+        double m = in.nextDouble();
+        if (m%5<3)
+            System.out.println("зеленый");
+        else if (m%5>=3 && m%5<4)
+            System.out.println("желтый");
+        else
+            System.out.println("красный");
 
     }
 }
