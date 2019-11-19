@@ -22,11 +22,15 @@ public class Task09 {
      */
 
     public static void main(String[] args) {
+
         System.out.println(sumDigitsInNumber(546));
     }
 
     public static int sumDigitsInNumber(int number) {
-        //напишите тут ваш код
-        return 0;
+        int sum = 0;
+        for ( ; number>0; number/=10) {
+            sum += number%10;
+            }
+    return sum;
     }
 }
