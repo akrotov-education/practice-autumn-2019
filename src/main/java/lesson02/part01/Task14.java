@@ -23,7 +23,13 @@ package lesson02.part01;
 
 public class Task14 {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        Red col1 = new Red();
+        Orange col2 = new Orange();
+        Yellow col3 = new Yellow();
+        Green col4 = new Green();
+        Blue col5 = new Blue();
+        Indigo col6 = new Indigo();
+        Violet col7 = new Violet();
 
     }
 

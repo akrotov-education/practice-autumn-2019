@@ -11,9 +11,17 @@ package lesson02.part02;
  * 4.	Если возраст меньше либо равно 20 ничего не выводить.
  */
 
+import java.util.Scanner;
 public class Task23 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int age;
+        String name;
+        Scanner in = new Scanner(System.in);
+        name = in.next();
+        age = in.nextInt();
 
-    }
-}
+        if (age>20) {
+            System.out.println("И 18-ти достаточно");
+        }
+    }}
+

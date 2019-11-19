@@ -25,7 +25,16 @@ package lesson02.part02;
 
 public class Task33 {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        int n=10;
+        while (n > 0) {
+            int i=0;
+            while (i< 10) {
+                System.out.print(" S");
+                i++;
+            }
+            System.out.print("\n");
+            n--;
 
-    }
+
+        }}
 }

@@ -10,10 +10,27 @@ package lesson02.part02;
  * 3.	Программа должна выводить три числа разделенных пробелами.
  * 4.	Программа должна выводить числа в порядке убывания.
 */
-
+import java.util.Scanner;
 public class Task20 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int num1, num2, num3;
+        Scanner in = new Scanner(System.in);
+        num1 = in.nextInt();
+        num2 = in.nextInt();
+        num3 = in.nextInt();
+        int[] arr = {num1, num2, num3};
+
+        for (int i=arr.length-1; i>0; i--){
+            for (int k=0; k<i; k++){
+                if (arr[k]<arr[k+1]){
+                    int tmp = arr[k];
+                    arr[k]=arr[k+1];
+                    arr[k+1]=tmp;
+                }
+            }
+        }
+        //System.out.print(arr[0] + " " + arr[1] + " " + arr[2]);
+        System.out.printf("%d %d %d", arr[0], arr[1], arr[2]);
 
     }
 }

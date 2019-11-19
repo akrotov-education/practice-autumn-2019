@@ -14,9 +14,15 @@ package lesson02.part02;
  * 5.	В программе должен использоваться цикл for.
  */
 
+import java.util.Scanner;
+
 public class Task38 {
     public static void main(String[] args) {
-        //напишите тут ваш код
-
-    }
+        for (int i=1; i<11; i++){
+            System.out.print(8);
+        }
+        System.out.print("\n");
+        for (int i=1; i<11; i++){
+            System.out.println(8);
+    }}
 }

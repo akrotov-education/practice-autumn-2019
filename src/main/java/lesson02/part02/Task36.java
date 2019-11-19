@@ -14,10 +14,19 @@ package lesson02.part02;
  * 3.	Программа должна выводить прямоугольник размером m на n из восьмёрок.
  * 4.	В программе должен использоваться цикл for.
  */
-
+import java.util.Scanner;
 public class Task36 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int m, n;
+        Scanner in = new Scanner(System.in);
+        m = in.nextInt();
+        n = in.nextInt();
 
-    }
+        for (int i=m; i>0; i--) {
+            for (int j=n; j>0; j--) {
+                System.out.print(8);
+            }
+            System.out.print("\n");
+
+    }}
 }
