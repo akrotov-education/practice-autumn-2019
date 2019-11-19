@@ -26,10 +26,26 @@ package lesson02.part02;
  * 4.	Если все три числа равны между собой, необходимо вывести все три.
  * 5.	Если нет равных чисел, ничего не выводить.
  */
-
+import java.util.Scanner;
 public class Task17 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int a, b, c;
+        Scanner in =  new Scanner( System.in);
+        a =  in.nextInt();
+        b = in.nextInt();
+        c =  in.nextInt();
+
+        if (a==b& b==c){
+            System.out.println(a +  " " +  b +  " "  +  c);
+        }
+        else if (a== b){
+            System.out.println(a +  " "  +  b);
+        }
+            else if (a== c){
+            System.out.println(a +  " "  +  c);
+        }
+                else if (c==b){
+            System.out.println(c + " " + b);
 
     }
-}
+}}

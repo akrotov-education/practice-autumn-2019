@@ -28,7 +28,23 @@ import java.util.*;
 
 public class Task26 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int a;
+        Scanner in = new Scanner(System.in);
+        a = in.nextInt();
+
+        if (a==0){
+            System.out.println("ноль");
+        }
+        else {
+            System.out.println(znak(a) + chet(a));
+        }
+
+    }
+    public static String znak (int i) {
+        return (i<0)? "отрицательное ": "положительное ";
+    }
+    public static String chet (int i) {
+        return (i%2==0)? "четное число": "нечетное число";
 
     }
 }

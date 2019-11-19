@@ -12,10 +12,21 @@ package lesson02.part02;
  * 4.	Если все числа равны, вывести любое из них.
  * 5.	Если два числа из трех равны, вывести любое из двух.
  */
-
+import java.util.Scanner;
 public class Task41 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int a, b, c;
+        Scanner in = new Scanner(System.in);
+        a = in.nextInt();
+        b = in.nextInt();
+        c = in.nextInt();
+
+        if (a==b|a==c){System.out.println(a);}
+        else if (a==b|b==c){System.out.println(b);}
+        else if (a>b&a<c|a<b&a>c){System.out.println(a);}
+        else if (b>a&b<c|b<a&b>c){System.out.println(b);}
+        else {System.out.println(c);
+        }
 
     }
 }

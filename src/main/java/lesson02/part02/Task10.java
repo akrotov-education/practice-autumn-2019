@@ -26,7 +26,8 @@ public class Task10 {
     }
 
     public static void checkInterval(int a) {
-        //напишите тут ваш код
+        String check = (a<101)&(a>49)? " содержится в интервале": " не содержится в интервале";
+        System.out.println("Число " + a +  check);
 
     }
 }

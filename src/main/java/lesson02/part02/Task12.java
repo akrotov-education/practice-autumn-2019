@@ -13,10 +13,15 @@ package lesson02.part02;
  * 4.	Если введенное число отрицательное, необходимо увеличить его на единицу и вывести.
  * 5.	Если введенное число равно нулю, необходимо вывести ноль.
  */
-
+import java.util.Scanner;
 public class Task12 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int num;
+        Scanner in = new Scanner(System.in);
+        num = in.nextInt();
+
+        int res = (num<0)? num+1: ((num>0)? num*2: 0);
+        System.out.println(res);
 
     }
 

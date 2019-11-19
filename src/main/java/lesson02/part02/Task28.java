@@ -32,10 +32,23 @@ package lesson02.part02;
  * 4.	Если положительных чисел нет, программа должна вывести "0".
  * 5.	Учти, что "0" не относится ни к положительным, ни к отрицательным числам.
  */
-
+import java.util.Scanner;
 public class Task28 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int a, b, c;
+        Scanner in = new Scanner(System.in);
+        a = in.nextInt();
+        b = in.nextInt();
+        c = in.nextInt();
+
+        int[] arr = {a, b, c};
+        int count = 0;
+        for (int i=0; i<3; i++){
+            if (arr[i]>0){
+                count++;
+            }
+        }
+        System.out.println(count);
 
     }
 }

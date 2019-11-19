@@ -11,9 +11,22 @@ package lesson02.part02;
  * 4.	Если максимальных чисел несколько, необходимо вывести любое из них.
  */
 
+import java.util.Scanner;
+
 public class Task19 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int num1, num2, num3, num4;
+        Scanner in = new Scanner(System.in);
+        num1 = in.nextInt();
+        num2 = in.nextInt();
+        num3 = in.nextInt();
+        num4 = in.nextInt();
+
+        int res = max(max(num1, num2), max(num3, num4));
+        System.out.println(res);
+    }
+    public static int max (int a, int b) {
+        return ((a>=b)? a:b);
 
     }
 }
