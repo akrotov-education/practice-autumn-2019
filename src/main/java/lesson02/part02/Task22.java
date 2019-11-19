@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры имя и возраст. Если возраст меньше 18 вывести надпись «Подрасти еще».
  * <p>
@@ -14,6 +16,14 @@ package lesson02.part02;
 public class Task22 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Name: ?");
+        String name = scanner.nextLine();
 
+        System.out.println("Name: ?");
+        int age = scanner.nextInt();
+
+        if(age < 18)
+            System.out.println("Подрасти еще");
     }
 }

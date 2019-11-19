@@ -27,5 +27,17 @@ public class Task33 {
     public static void main(String[] args) {
         //напишите тут ваш код
 
+        int y = 10;
+        while (y > 0)
+        {
+            int x = 10;
+            while(x > 0) {
+                System.out.print("S");
+                x--;
+            }
+
+            System.out.println();
+            y--;
+        }
     }
 }
