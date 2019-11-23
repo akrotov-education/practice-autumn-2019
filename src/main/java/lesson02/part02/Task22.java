@@ -1,5 +1,8 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * Ввести с клавиатуры имя и возраст. Если возраст меньше 18 вывести надпись «Подрасти еще».
  * <p>
@@ -13,7 +16,12 @@ package lesson02.part02;
 
 public class Task22 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+        String age;
+        age = read.readLine();
+        int theage = Integer.parseInt(age);
+        if (theage < 18) {
+            System.out.println("Подрасти еще");
+        }
     }
 }

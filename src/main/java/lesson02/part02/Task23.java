@@ -1,5 +1,8 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * Ввести с клавиатуры имя и возраст. Если возраст больше 20 вывести надпись «И 18-ти достаточно».
  * <p>
@@ -13,7 +16,13 @@ package lesson02.part02;
 
 public class Task23 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name,age;
+        name=reader.readLine();
+        age=reader.readLine();
+        int ageN = Integer.parseInt(age);
+        if(ageN>20){
+            System.out.println("И 18-ти достаточно");
+        }
     }
 }

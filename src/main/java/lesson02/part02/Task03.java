@@ -8,7 +8,8 @@ package lesson02.part02;
  * 1.	Класс Cat должен содержать только одну переменную name.
  * 2.	Переменная name должна иметь модификатор доступа private и тип String.
  * 3.	Класс Cat должен содержать только два метода setName и main.
- * 4.	Метод setName класса Cat должен устанавливать значение переменной private String name равным переданному параметру String name.
+ * 4.	Метод setName класса Cat должен устанавливать значение переменной private String name
+ * равным переданному параметру String name.
  */
 public class Task03 {
 
@@ -22,7 +23,7 @@ public class Task03 {
         private String name = "безымянный кот";
 
         public void setName(String name) {
-            //напишите тут ваш код
+        this.name=name;
 
         }
     }

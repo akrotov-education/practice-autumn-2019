@@ -28,7 +28,34 @@ import java.util.*;
 
 public class Task26 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        boolean negative, even;
 
+        if (a < 0) {
+            negative = true;
+        } else {
+            negative = false;
+        }
+        if (a % 2 == 0) {
+            even = true;
+        } else {
+            even = false;
+        }
+        if (negative && even) {
+            System.out.println("отрицательное четное число");
+        }
+        if (negative && !even) {
+            System.out.println("отрицательное нечетное число");
+        }
+        if (!negative && even && a!=0) {
+            System.out.println("положительное четное число");
+        }
+        if (!negative && !even) {
+            System.out.println("положительное нечетное число");
+        }
+        if (a == 0) {
+            System.out.println("ноль");
+        }
     }
 }

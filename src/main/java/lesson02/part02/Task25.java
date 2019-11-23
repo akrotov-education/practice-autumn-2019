@@ -29,7 +29,23 @@ import java.util.*;
 
 public class Task25 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        String num1,num2;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        num1 = reader.readLine();
+        num2 = reader.readLine();
+        int a = Integer.parseInt(num1);
+        int b = Integer.parseInt(num2);
+        if (a>0 && b>0){
+            System.out.println("1");
+        }
+        if (a<0 && b>0){
+            System.out.println("2");
+        }
+        if(a<0 && b<0){
+            System.out.println("3");
+        }
+        if(a>0 && b<0){
+            System.out.println("4");
+        }
     }
 }

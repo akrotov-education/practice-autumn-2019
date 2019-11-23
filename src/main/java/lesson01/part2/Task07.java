@@ -18,13 +18,12 @@ public class Task07 {
         int x = 1;
         int y = 0;
 
-        y = y + 3 * x;
-        x = x * 2;
-        x = x * 16;
-        y = y + 2 * x;
-        y = y + x;
+        y = y + 3 * x; //3
+        //x = x * 2; // 2
+        x = x * 16; // x = 16
+        //y = y + 2 * x; // 2
+        y = y + x; // 1
 
         System.out.println(y);
     }
-
 }

@@ -1,5 +1,10 @@
 package lesson02.part02;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры два целых числа, и вывести на экран минимальное из них. Если два числа равны между собой, необходимо вывести любое.
  * <p>
@@ -13,7 +18,19 @@ package lesson02.part02;
 
 public class Task18 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        Scanner scanner = new Scanner(System.in);
+        Comp comp = new Comp();
+        System.out.println("Введите два целых числа: ");
+        comp.x = scanner.nextInt();
+        comp.y = scanner.nextInt();
+        comp.comparing(comp.x, comp.y);
     }
+        public static class Comp{
+            public int x, y;
+
+            public void comparing(int x, int y){
+            this.x=x; this.y=y;
+            if (x<y){System.out.println(x);}
+            else {System.out.println(y);}            }
+        }
 }
