@@ -1,5 +1,9 @@
 package lesson02.part01;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры три имени, вывести на экран надпись:
  * name1 + name2 + name3 = Чистая любовь, да-да!
@@ -17,7 +21,10 @@ package lesson02.part01;
 
 public class Task20 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        Scanner scanner = new Scanner(System.in);
+        String name1 = scanner.nextLine();
+        String name2 = scanner.nextLine();
+        String name3 = scanner.nextLine();
+        System.out.println(name1 + " + " + name2 + " + " + name3 + " = Чистая любовь, да-да!" );
     }
 }

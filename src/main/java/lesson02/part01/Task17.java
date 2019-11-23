@@ -16,12 +16,18 @@ package lesson02.part01;
  * 5.	Выведенный текст должен полностью соответствовать заданию.
  */
 
+import com.sun.javaws.IconUtil;
+
 import java.io.*;
 import java.util.*;
 
 public class Task17 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine();
+        String years = reader.readLine();
+        System.out.println(name + " " + "захватит мир через" + " " + years + " " + "лет. Му-ха-ха!");
     }
 }
+
+

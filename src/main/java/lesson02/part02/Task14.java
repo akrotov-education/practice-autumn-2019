@@ -1,5 +1,7 @@
 package lesson02.part02;
 
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры год, определить количество дней в году. Результат вывести на экран в следующем виде:
  * "количество дней в году: x", где х - 366 для високосного года, х - 365 для обычного года.
@@ -23,7 +25,13 @@ package lesson02.part02;
 
 public class Task14 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        Scanner scanner = new Scanner(System.in);
+        int x;
+        System.out.println("Введите год: ");
+        x = scanner.nextInt();
+        if (x % 400 == 0) {System.out.println("Количество дней в году: 366");}
+        else if (x % 100 == 0) {System.out.println("Количество дней в году: 365");}
+        else if (x % 4 == 0) {System.out.println("Количество дней в году: 366");}
+        else {System.out.println("Количество дней в году: 365");}
     }
 }

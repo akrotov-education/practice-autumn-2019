@@ -7,7 +7,8 @@ package lesson02.part02;
  * <p>
  * Требования:
  * 1.	Класс Cat должен содержать только одну переменную catsCount.
- * 2.	Переменная catsCount должна быть статической, иметь модификатор доступа private, тип int и проинициализирована нулем.
+ * 2.	Переменная catsCount должна быть статической, иметь модификатор доступа private, тип int и
+ * проинициализирована нулем.
  * 3.	Класс Cat должен содержать два метода addNewCat и main.
  * 4.	Метод addNewCat класса Cat должен увеличивать количество котов на 1.
  */
@@ -15,17 +16,15 @@ package lesson02.part02;
 public class Task04 {
 
     public static void main(String[] args) {
-
+        Cat.addNewCat();
+        System.out.println(Cat.catsCount);
     }
 
     public static class Cat {
         private static int catsCount = 0;
 
         public static void addNewCat() {
-            //напишите тут ваш код
-
+            Cat.catsCount+=1;
         }
     }
-
 }
-
