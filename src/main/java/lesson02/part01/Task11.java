@@ -14,10 +14,16 @@ package lesson02.part01;
  */
 
 public class Task11 {
-    //напишите тут ваш код
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+    System.out.println(convertToSeconds(2));
+    System.out.println(convertToSeconds(1));
 
+    }
+    public static int convertToSeconds(int hour){
+        int minutes, seconds;
+        minutes=hour*60;
+        seconds=minutes*60;
+        return seconds;
     }
 }

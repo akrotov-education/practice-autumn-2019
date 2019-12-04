@@ -14,7 +14,9 @@ package lesson02.part01;
 
 public class Task08 {
     public static void main(String[] args) {
-        //напишите тут ваш код
-
+        int multiplication=1;
+        for (int i=2;i<=10;i++)
+            multiplication*=i;
+        System.out.println(multiplication);
     }
 }

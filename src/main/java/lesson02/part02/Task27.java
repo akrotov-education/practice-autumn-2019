@@ -33,7 +33,34 @@ import java.util.*;
 
 public class Task27 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        String even="четное";
+        String odd="нечетное";
+        String singleDigit="однозначное";
+        String doubleDigit="двузначное";
+        String tripleDigit="трехзначное";
+        String s="";
+        Scanner in=new Scanner(System.in);
+        int x=in.nextInt();
 
+        if((x>0)&(x<1000)){
+            if((x%2)==0)
+                s+=even;
+            else
+                s+=odd;
+            switch ((String.valueOf(x)).length()){
+                case 1:
+                    s+=" "+singleDigit;
+                    break;
+                case 2:
+                    s+=" "+doubleDigit;
+                    break;
+                case 3:
+                    s+=" "+tripleDigit;
+                    break;
+                default:
+                    break;
+            }
+        System.out.print(s+" число");
+        }
     }
 }

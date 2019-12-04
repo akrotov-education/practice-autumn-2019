@@ -20,12 +20,13 @@ public class Task04 {
         // y = y - x;
         // y = y + x;
         // y = y + x;
-        // y = x / y;
+        y = x / y;
         // y = y / x;
         // y = y * x;
 
-        x = x - y;
-        y = y - x;
+        x = x - y; //26
+        y = y - x; // 1-26=-25
+
 
         System.out.println(Math.abs(x));
         System.out.println(Math.abs(y));

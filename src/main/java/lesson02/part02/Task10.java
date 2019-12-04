@@ -26,7 +26,9 @@ public class Task10 {
     }
 
     public static void checkInterval(int a) {
-        //напишите тут ваш код
-
+        int x1=50,x2=100;
+        if ((a>x1)&(a<x2))
+            System.out.println("Число "+a+" содержится в интервале.");
+        else System.out.println("Число "+a+" не содержится в интервале.");
     }
 }

@@ -1,5 +1,7 @@
 package lesson01.part1;
 
+import java.text.SimpleDateFormat;
+
 public class Task10 {
 
     /**
@@ -15,5 +17,9 @@ public class Task10 {
      */
 
     public static void main(String[] args) {
+        int minutes, seconds;
+        minutes=(15*60+30)-15*60;
+        seconds=minutes*60;
+        System.out.print(seconds);
     }
 }
