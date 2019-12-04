@@ -33,7 +33,8 @@ public class Task24 {
   }
 
   public static void printKeys(Map<String, String> map) {
-    for (Map.Entry<String, String> pair: map.entrySet())
+    for (Map.Entry<String, String> pair: map.entrySet()) {
       System.out.println(pair.getKey());
+    }
   }
 }

@@ -14,13 +14,11 @@ package lesson02.part01;
 
 public class Task08 {
     public static void main(String[] args) {
-        //напишите тут ваш код
-        int i = 1;
-        int result = 1;
-        while (i < 11) {
-            result*=i;
-            i++;
+        int multiply = 1;
+        for (int i = 2; i < 11; i++) {
+            multiply *= i;
         }
-        System.out.println(result);
+
+        System.out.println(multiply);
     }
 }

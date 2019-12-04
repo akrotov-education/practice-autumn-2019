@@ -27,7 +27,6 @@ public class Task21Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -66,29 +65,29 @@ public class Task21Test {
 
     @Test
     public void task21sameLengthNamesOutputCheck() throws Exception {
-        SystemInGatewayUtil.provideInput("Eugene\nAlexei");
+        SystemInGatewayUtil.provideInput("Eugene\r\nAlexei");
         Task21.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если имена разные, но длины равны, нужно вывести \"Длины имен равны\"",
-                "Длины имен равны\r\n",result);
+                "Длины имен равны", result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task21assertNamesAreSame() throws Exception {
-        SystemInGatewayUtil.provideInput("Eugene\nEugene");
+        SystemInGatewayUtil.provideInput("Eugene\r\nEugene");
         Task21.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если имена одинаковые, нужно вывести сообщение \"Имена идентичны\"",
-                "Имена идентичны\r\n",result);
+                "Имена идентичны", result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task21isOutputEmpty() throws Exception {
-        SystemInGatewayUtil.provideInput("Eugene\nAlex");
+        SystemInGatewayUtil.provideInput("Eugene\r\nAlex");
         Task21.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();

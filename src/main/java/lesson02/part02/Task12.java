@@ -1,6 +1,9 @@
 package lesson02.part02;
 
-import java.util.Scanner;
+import lesson02.cw.loop.Do;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * Ввести с клавиатуры число. Если число положительное, то увеличить его в два раза. Если число отрицательное, то прибавить единицу.
@@ -18,12 +21,10 @@ import java.util.Scanner;
 
 public class Task12 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-        Scanner in = new Scanner(System.in);
-        int num = in.nextInt();
-        if (num > 0) System.out.print(num * 2);
-        else if (num < 0) System.out.print(num + 1);
-        else if (num == 0) System.out.print(num);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int number = Integer.parseInt(reader.readLine());
+
+        System.out.println(number > 0 ? number*2 : number < 0 ? number+1 : number);
     }
 
 }

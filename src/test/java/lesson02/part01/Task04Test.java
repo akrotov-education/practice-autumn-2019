@@ -29,18 +29,19 @@ public class Task04Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
     @Test
     public void CheckOutput(){
         Task04.main(null);
         ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
         String s2 = s.toString();
-        Assert.assertEquals("9.9\n", s2);
+        Assert.assertEquals("9.9\r\n", s2);
     }
     @Test
     public void checkParameter() {
-        List<String> lines = ReadFileUtil.readFileInList("/Users/Xesavov/Documents/practice-autumn-2019/src/main/java/lesson02/part01/Task04.java");
-        String lineWithMethodCall = lines.get(21);
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson02/part01/Task04.java");
+        String lineWithMethodCall = lines.get(23);
 
 
         Assert.assertTrue("Method main must call method addTenPercent with parameter 9",

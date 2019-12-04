@@ -27,7 +27,7 @@ public class Task19Test {
 
     @Test
     public void checkInput() {
-        SystemInGatewayUtil.provideInput("1\n2\n5\n0");
+        SystemInGatewayUtil.provideInput("1\r\n2\r\n5\r\n0");
 
         try {
             Task19.main(null);
@@ -38,28 +38,28 @@ public class Task19Test {
 
     @Test
     public void checkMax() {
-        SystemInGatewayUtil.provideInput("1\n2\n0\n5");
+        SystemInGatewayUtil.provideInput("1\r\n2\r\n0\r\n5");
         try {
             Task19.main(null);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        SystemInGatewayUtil.provideInput("-1\n2\n5\n0");
+        SystemInGatewayUtil.provideInput("-1\r\n2\r\n5\r\n0");
         try {
             Task19.main(null);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        SystemInGatewayUtil.provideInput("1\n7\n5\n0");
+        SystemInGatewayUtil.provideInput("1\r\n7\r\n5\r\n0");
         try {
             Task19.main(null);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        SystemInGatewayUtil.provideInput("9\n2\n5\n0");
+        SystemInGatewayUtil.provideInput("9\r\n2\r\n5\r\n0");
         try {
             Task19.main(null);
         } catch (Exception e) {
@@ -67,7 +67,7 @@ public class Task19Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         Assert.assertEquals("The program should display maximum of four values",
                 "5",
@@ -89,21 +89,21 @@ public class Task19Test {
 
     @Test
     public void checkMaxEqual() {
-        SystemInGatewayUtil.provideInput("1\n5\n0\n5");
+        SystemInGatewayUtil.provideInput("1\r\n5\r\n0\r\n5");
         try {
             Task19.main(null);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        SystemInGatewayUtil.provideInput("-1\n2\n2\n0");
+        SystemInGatewayUtil.provideInput("-1\r\n2\r\n2\r\n0");
         try {
             Task19.main(null);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        SystemInGatewayUtil.provideInput("7\n7\n7\n7");
+        SystemInGatewayUtil.provideInput("7\r\n7\r\n7\r\n7");
         try {
             Task19.main(null);
         } catch (Exception e) {
@@ -111,7 +111,7 @@ public class Task19Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         Assert.assertEquals("The program should display one of maximum values",
                 "5",

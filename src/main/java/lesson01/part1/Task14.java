@@ -22,9 +22,8 @@ public class Task14 {
     public static int d = 27;
 
     public static void main(String[] args) {
+        int result = -a + b - c + d;
 
-        int result = - a + b - c + d;
-
-        System.out.print(result);
+        System.out.println(result);
     }
 }

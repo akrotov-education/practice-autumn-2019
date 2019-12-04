@@ -26,6 +26,7 @@ public class Task05Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
     @Test
     public void CheckOutput(){

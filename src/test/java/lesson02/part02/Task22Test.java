@@ -27,7 +27,6 @@ public class Task22Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -66,18 +65,18 @@ public class Task22Test {
 
     @Test
     public void task22isOutputCorrectUnder18() throws Exception {
-        SystemInGatewayUtil.provideInput("Jane\n17");
+        SystemInGatewayUtil.provideInput("Jane\r\n17");
         Task22.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если возраст меньше 18, вывести сообщение \"Подрасти ещё\"",
-                "Подрасти ещё\r\n",result);
+                "Подрасти еще",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task22isOutputCorrectAbove18() throws Exception {
-        SystemInGatewayUtil.provideInput("Jane\n18");
+        SystemInGatewayUtil.provideInput("Jane\r\n18");
         Task22.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();

@@ -1,6 +1,7 @@
 package lesson01.part2;
 
 import lesson01.part1.Task01;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,14 +25,20 @@ public class Task15Test {
 
     }
 
+    @After
+    public void after() {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
+    }
+
     @Test
     public void test15_1() {
         Task15.main(null);
-        String fileName=".\\src\\main\\java\\lesson01\\part2\\Task15.java";
+        String fileName="./src/main/java/lesson01/part2/Task15.java";
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 
             List<String> collect = stream.collect(Collectors.toList());
-            Assert.assertTrue("не пройдено 1е условие!",collect.get(25).contains("Man ") && collect.get(25).contains("=new Man();")   );
+            Assert.assertTrue("не пройдено 1е условие!",collect.get(25).contains("Man ") && collect.get(25).contains("= new Man();")   );
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,11 +48,11 @@ public class Task15Test {
     @Test
     public void test15_2() {
         Task15.main(null);
-        String fileName="C:\\Users\\hp\\practice-autumn-2019\\src\\main\\java\\lesson01\\part2\\Task15.java";
+        String fileName="./src/main/java/lesson01/part2/Task15.java";
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 
             List<String> collect = stream.collect(Collectors.toList());
-            Assert.assertTrue("не пройдено 2е условие!",collect.get(26).contains("Woman ") && collect.get(26).contains("=new Woman();")   );
+            Assert.assertTrue("не пройдено 2е условие!",collect.get(26).contains("Woman ") && collect.get(26).contains("= new Woman();")   );
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -55,11 +62,11 @@ public class Task15Test {
     @Test
     public void test15_3() {
         Task15.main(null);
-        String fileName="C:\\Users\\hp\\practice-autumn-2019\\src\\main\\java\\lesson01\\part2\\Task15.java";
+        String fileName="./src/main/java/lesson01/part2/Task15.java";
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 
             List<String> collect = stream.collect(Collectors.toList());
-            Assert.assertTrue("не пройдено 3е условие!",collect.get(27).contains(".wife=")   );
+            Assert.assertTrue("не пройдено 3е условие!",collect.get(28).contains(".wife =")   );
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -69,11 +76,11 @@ public class Task15Test {
     @Test
     public void test15_4() {
         Task15.main(null);
-        String fileName="C:\\Users\\hp\\practice-autumn-2019\\src\\main\\java\\lesson01\\part2\\Task15.java";
+        String fileName="./src/main/java/lesson01/part2/Task15.java";
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 
             List<String> collect = stream.collect(Collectors.toList());
-            Assert.assertTrue("не пройдено 4е условие!",collect.get(28).contains(".husband=")   );
+            Assert.assertTrue("не пройдено 4е условие!",collect.get(29).contains(".husband =")   );
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -83,14 +90,14 @@ public class Task15Test {
     @Test
     public void test15_5() {
         Task15.main(null);
-        String fileName="C:\\Users\\hp\\practice-autumn-2019\\src\\main\\java\\lesson01\\part2\\Task15.java";
+        String fileName="./src/main/java/lesson01/part2/Task15.java";
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 
             List<String> collect = stream.collect(Collectors.toList());
             Assert.assertTrue("не пройдено 5е условие!",
-                    collect.get(33).contains("public int age") &&
-                            collect.get(34).contains("public int height") &&
-                            collect.get(35).contains("public Woman wife")   );
+                     collect.get(33).contains("public int age") &&
+                               collect.get(34).contains("public int height") &&
+                               collect.get(35).contains("public Woman wife")   );
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -100,14 +107,14 @@ public class Task15Test {
     @Test
     public void test15_6() {
         Task15.main(null);
-        String fileName="C:\\Users\\hp\\practice-autumn-2019\\src\\main\\java\\lesson01\\part2\\Task15.java";
+        String fileName="./src/main/java/lesson01/part2/Task15.java";
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 
             List<String> collect = stream.collect(Collectors.toList());
             Assert.assertTrue(  "не пройдено 5е условие!",
-                    collect.get(39).contains("public int age") &&
-                            collect.get(40).contains("public int height") &&
-                            collect.get(41).contains("public Man husband")   );
+                        collect.get(39).contains("public int age") &&
+                                collect.get(40).contains("public int height") &&
+                                collect.get(41).contains("public Man husband")   );
 
         } catch (IOException e) {
             e.printStackTrace();

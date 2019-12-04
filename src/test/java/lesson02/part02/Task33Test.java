@@ -26,7 +26,6 @@ public class Task33Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -70,16 +69,16 @@ public class Task33Test {
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Программа должна вывести квадрат 10х10 из букв S",
-                "SSSSSSSSSS\n" +
-                        "SSSSSSSSSS\n" +
-                        "SSSSSSSSSS\n" +
-                        "SSSSSSSSSS\n" +
-                        "SSSSSSSSSS\n" +
-                        "SSSSSSSSSS\n" +
-                        "SSSSSSSSSS\n" +
-                        "SSSSSSSSSS\n" +
-                        "SSSSSSSSSS\n" +
-                        "SSSSSSSSSS\n", result);
+                "SSSSSSSSSS\r\n" +
+                        "SSSSSSSSSS\r\n" +
+                        "SSSSSSSSSS\r\n" +
+                        "SSSSSSSSSS\r\n" +
+                        "SSSSSSSSSS\r\n" +
+                        "SSSSSSSSSS\r\n" +
+                        "SSSSSSSSSS\r\n" +
+                        "SSSSSSSSSS\r\n" +
+                        "SSSSSSSSSS\r\n" +
+                        "SSSSSSSSSS\r\n", result);
         stream.reset();
     }
 

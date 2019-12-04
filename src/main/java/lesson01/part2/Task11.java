@@ -18,11 +18,19 @@ public class Task11 {
      */
 
     public static int min(int a, int b, int c) {
-        int min = 0;
-        if (a < b)
-            min = a;
-        else min = b;
-        return min < c ? min : c;
+        if (a < b) {
+            if (a < c) {
+                return a;
+            } else {
+                return c;
+            }
+        } else {
+            if (b < c) {
+                return b;
+            } else {
+                return c;
+            }
+        }
     }
 
     public static void main(String[] args) {

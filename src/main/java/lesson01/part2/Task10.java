@@ -19,7 +19,6 @@ public class Task10 {
 
     public static int min(int a, int b) {
         return a < b ? a : b;
-        //напишите тут ваш код
     }
 
     public static void main(String[] args) {

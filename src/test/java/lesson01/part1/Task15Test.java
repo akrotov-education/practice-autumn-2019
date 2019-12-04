@@ -25,6 +25,7 @@ public class Task15Test {
 
     @After
     public void after() {
+        SystemOutGatewayUtil.setOriginalOut();
         SystemOutGatewayUtil.clearOutput();
     }
 
@@ -107,7 +108,7 @@ public class Task15Test {
     @Test
     public void test15NumberPow() {
         Task15.main(null);
-        double number = Math.pow(Task15.number, 2);
+        double number = Math.sqrt(Task15.number);
         SystemOutGatewayUtil.setOriginalOut();
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
         String s = outputArr.toString();

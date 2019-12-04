@@ -3,7 +3,6 @@ package lesson04.part01;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-
 /**
  * 1. Создать массив на 10 чисел.
  * 2. Ввести с клавиатуры 10 чисел и записать их в массив.
@@ -19,13 +18,14 @@ import java.io.InputStreamReader;
 public class Task04 {
 
   public static void main(String[] args) throws Exception {
-    int[] ints = new int[10];
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    int[] arr = new int[10];
+    for (int i = 0; i < 10; i++) {
+      arr[i] = Integer.parseInt(reader.readLine());
+    }
 
-    for (int i=0; i<10; i++)
-      ints[i] = Integer.parseInt(reader.readLine());
-
-    for (int i=ints.length-1; i>-1; i--)
-      System.out.println(ints[i]);
+    for (int i = arr.length-1; i >= 0; i--) {
+      System.out.println(arr[i]);
+    }
   }
 }

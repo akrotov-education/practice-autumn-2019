@@ -18,8 +18,8 @@ public class Task49 {
   public static void main(String[] args) {
     try {
       divideByZero();
-    } catch (ArithmeticException e) {
-      e.printStackTrace();
+    } catch (ArithmeticException exception) {
+      exception.printStackTrace();
     }
   }
 
@@ -28,4 +28,3 @@ public class Task49 {
     System.out.println(a/0);
   }
 }
-

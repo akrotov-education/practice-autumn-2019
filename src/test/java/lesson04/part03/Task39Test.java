@@ -85,7 +85,7 @@ public class Task39Test {
 
     @Test
     public void checkSout(){
-        Assert.assertTrue("",r.contains("java.lang.ArithmeticException: / by zero"));
+        Assert.assertTrue("",r.contains("ArithmeticException"));
     }
     @Test
     public void checkMainNotDelCode(){

@@ -24,6 +24,7 @@ public class Task14Test {
 
     @After
     public void after() {
+        SystemOutGatewayUtil.setOriginalOut();
         SystemOutGatewayUtil.clearOutput();
     }
 
@@ -92,13 +93,13 @@ public class Task14Test {
         Assert.assertTrue(
                 "Порядок создания объектов должен соответствовать порядку цветов в радуге",
                 s.contains(
-                        "Red\n" +
-                        "Orange\n" +
-                        "Yellow\n" +
-                        "Green\n" +
-                        "Blue\n" +
-                        "Indigo\n" +
-                        "Violet\n"
+                        "Red\r\n" +
+                        "Orange\r\n" +
+                        "Yellow\r\n" +
+                        "Green\r\n" +
+                        "Blue\r\n" +
+                        "Indigo\r\n" +
+                        "Violet\r\n"
                 )
         );
     }

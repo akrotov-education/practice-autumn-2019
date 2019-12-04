@@ -1,5 +1,8 @@
 package lesson01.part1;
-import java.time.LocalTime;
+
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
 public class Task10 {
 
     /**
@@ -15,10 +18,11 @@ public class Task10 {
      */
 
     public static void main(String[] args) {
-        int secondsAfter15 = 0;
-        LocalTime time1 = LocalTime.of(15,0,0);
-        LocalTime time2 = LocalTime.of(15,30,0);
-        secondsAfter15 = (time2.getMinute() - time1.getMinute()) * 60;
-        System.out.print(secondsAfter15);
+        LocalDateTime initTime = LocalDateTime.of(2019, 9, 22, 15, 0);
+        LocalDateTime endTime = LocalDateTime.of(2019, 9, 22, 15, 30);
+
+        long secondsAfter15 = ChronoUnit.SECONDS.between(initTime, endTime);
+        String otvet = Long.toString(secondsAfter15);
+        System.out.print(otvet);
     }
 }

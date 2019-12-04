@@ -65,8 +65,10 @@ public class Task17Test {
 
     @Test
     public void task17IsResultCorrect() throws IOException {
-        String input = "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n";
-        String expected = "9 0";
+        String input = "0\r\n1\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n0\r\n1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n";
+        String expected = "9 0\r\n";
+
+
         SystemInGatewayUtil.provideInput(input);
         Task17.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();

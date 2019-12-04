@@ -29,13 +29,22 @@ import java.util.*;
 
 public class Task25 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int x = Integer.parseInt(reader.readLine());
-        int y = Integer.parseInt(reader.readLine());
-        if (x*y > 0 && x > 0) System.out.println(1);
-        if (x*y > 0 && x < 0) System.out.println(3);
-        if (x*y < 0 && x < 0) System.out.println(2);
-        if (x*y < 0 && x > 0) System.out.println(4);
+
+        int a = Integer.parseInt(reader.readLine());
+        int b = Integer.parseInt(reader.readLine());
+
+        if (a > 0 && b > 0) {
+            System.out.println(1);
+        }
+        if (a < 0 && b > 0) {
+            System.out.println(2);
+        }
+        if (a < 0 && b < 0) {
+            System.out.println(3);
+        }
+        if (a > 0 && b < 0) {
+            System.out.println(4);
+        }
     }
 }

@@ -27,7 +27,6 @@ public class Task23Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -66,18 +65,18 @@ public class Task23Test {
 
     @Test
     public void task23isOutputCorrectAbove21() throws Exception {
-        SystemInGatewayUtil.provideInput("Jane\n21");
+        SystemInGatewayUtil.provideInput("Jane\r\n21");
         Task23.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если возраст больше 20, вывести сообщение \"И 18-ти достаточно\"",
-                "И 18-ти достаточно\r\n",result);
+                "И 18-ти достаточно", result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task22isOutputCorrectUnder21() throws Exception {
-        SystemInGatewayUtil.provideInput("Jane\n20");
+        SystemInGatewayUtil.provideInput("Jane\r\n20");
         Task23.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();

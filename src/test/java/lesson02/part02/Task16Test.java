@@ -47,7 +47,7 @@ public class Task16Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
         Assert.assertEquals("The program should return that is glowing green",
                 "зелёный",
                 outLines[0]
@@ -65,7 +65,7 @@ public class Task16Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
         Assert.assertEquals("The program should return that is glowing yellow",
                 "жёлтый",
                 outLines[0]
@@ -83,7 +83,7 @@ public class Task16Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
         Assert.assertEquals("The program should return that is glowing red",
                 "красный",
                 outLines[0]

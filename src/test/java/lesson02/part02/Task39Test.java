@@ -28,7 +28,6 @@ public class Task39Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -68,7 +67,7 @@ public class Task39Test {
 
     @Test
     public void task39isResultGood() throws Exception {
-        SystemInGatewayUtil.provideInput("Java\n");
+        SystemInGatewayUtil.provideInput("Java\r\n");
         Task39.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();

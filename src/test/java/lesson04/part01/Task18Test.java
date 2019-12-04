@@ -53,7 +53,7 @@ public class Task18Test {
 
     @Test
     public void task18ifInputCorrect() throws IOException {
-        String input = "a\nb\nc\nend\n";
+        String input = "a\r\nb\r\nc\r\nend\r\n";
         String expected = "a\r\nb\r\nc\r\n";
         SystemInGatewayUtil.provideInput(input);
         Task18.main(null);

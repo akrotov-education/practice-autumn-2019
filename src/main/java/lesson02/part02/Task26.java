@@ -28,15 +28,26 @@ import java.util.*;
 
 public class Task26 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int num = Integer.parseInt(reader.readLine());
-        String result = "";
-        if (num > 0) result+="положительное ";
-        else result+="отрицательное ";
-        if (Math.abs(num)%2==0) result+="четное число";
-        if (Math.abs(num)%2==1) result+="нечетное число";
-        if (num != 0) System.out.println(result);
-        else System.out.println("ноль");
+
+        int a = Integer.parseInt(reader.readLine());
+
+        boolean b = a > 0;
+        boolean c = a % 2 == 0;
+
+        if (a == 0) {
+            System.out.println("ноль");
+        } else {
+            if (b) {
+                System.out.print("положительное ");
+            } else {
+                System.out.print("отрицательное ");
+            }
+            if (c) {
+                System.out.print("четное число");
+            } else {
+                System.out.print("нечетное число");
+            }
+        }
     }
 }

@@ -20,26 +20,27 @@ import java.util.ArrayList;
 
 public class Task07 {
 
-   public static void main(String[] args) throws Exception {
-    ArrayList<String> strings = new ArrayList<>();
+  private static ArrayList<String> strings;
+
+  public static void main(String[] args) throws Exception {
+    strings = new ArrayList<>();
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    for (int i=0; i<5; i++) {
-      strings.add(reader.readLine());
-    }
-    int max = 0;
-    for (int i=1; i<strings.size(); i++) {
-      if (strings.get(i-1).length()>strings.get(i).length()) {
-        max = strings.get(i-1).length();
-        strings.remove(i);
-      } else if (strings.get(i-1).length()<strings.get(i).length()) {
-        max = strings.get(i).length();
-        strings.remove(i-1);
+
+    int maxLen = 0;
+    for (int i = 0; i < 5; i++) {
+      String inp = reader.readLine();
+      strings.add(inp);
+      if (inp.length() > maxLen) {
+        maxLen = inp.length();
       }
     }
-    for(int i=0; i<strings.size(); i++)
-    {
-      if (max == strings.get(i).length())
-        System.out.println(strings.get(i));
+
+    for (String str: strings) {
+      if (str.length() != maxLen) {
+        continue;
+      }
+
+      System.out.println(str);
     }
   }
 }

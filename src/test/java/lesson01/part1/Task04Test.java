@@ -23,13 +23,14 @@ public class Task04Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
     @Test
     public void checkOutput(){
         Task04.main(null);
         ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
         String s2 = s.toString();
-        Assert.assertEquals("26\n25\n", s2);
+        Assert.assertEquals("26\r\n25\r\n", s2);
     }
     @Test
     public void checkLine() {

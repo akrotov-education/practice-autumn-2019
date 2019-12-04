@@ -15,13 +15,10 @@ public class Task14 {
      */
 
     public static void print3(String s) {
-        //напишите тут ваш код
-        int i = 0;
-        while ( i < 3) {
-            System.out.print(s + " ");
-            i++;
+        for (int i = 0; i < 3; i++) {
+            System.out.printf(s + " ");
         }
-        System.out.print("\n");
+        System.out.println();
     }
 
     public static void main(String[] args) {

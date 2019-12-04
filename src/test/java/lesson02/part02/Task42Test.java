@@ -28,7 +28,6 @@ public class Task42Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -50,7 +49,7 @@ public class Task42Test {
 
     @Test
     public void task42isResultGood() throws Exception {
-        SystemInGatewayUtil.provideInput("-1\n");
+        SystemInGatewayUtil.provideInput("-1\r\n");
         Task42.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
@@ -61,7 +60,7 @@ public class Task42Test {
 
     @Test
     public void task42isResultCorrect() throws Exception {
-        SystemInGatewayUtil.provideInput("1\n2\n3\n4\n-1\n");
+        SystemInGatewayUtil.provideInput("1\r\n2\r\n3\r\n4\r\n-1\r\n");
         Task42.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();

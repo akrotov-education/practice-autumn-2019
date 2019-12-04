@@ -2,6 +2,7 @@ package lesson02.part01;
 
 import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -15,6 +16,7 @@ import static org.junit.Assert.*;
 @RunWith(JUnit4.class)
 
 public class Task02Test {
+    @Before
     public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
 
@@ -22,20 +24,19 @@ public class Task02Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
     @Test
     public void CheckOutput(){
-
-        Task02.printString("Hello, Amigo!");
         Task02.main(null);
         ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
         String s2 = s.toString();
-        Assert.assertEquals("Hello, Amigo!\n", s2);
+        Assert.assertEquals("Hello, Amigo!\r\n", s2);
     }
     @Test
     public void checkPrintStringCreate() {
-        List<String> lines = ReadFileUtil.readFileInList("/Users/Xesavov/Documents/practice-autumn-2019/src/main/java/lesson02/part01/Task02.java");
-        String lineWithMethodCall = lines.get(18);
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson02/part01/Task02.java");
+        String lineWithMethodCall = lines.get(16);
 
         Assert.assertTrue("line must contain public static void printString(String s)", lineWithMethodCall.contains("public static void printString(String s)"));
     }

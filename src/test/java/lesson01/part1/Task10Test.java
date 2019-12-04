@@ -27,6 +27,7 @@ public class Task10Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -52,9 +53,12 @@ public class Task10Test {
         Task10.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
+
         int value = 0;
         try {
+           // value = Integer.parseInt(result.substring(0, result.length()-1));
             value = Integer.parseInt(result);
+
         } catch (Exception e) {
             System.out.println(e);
         }

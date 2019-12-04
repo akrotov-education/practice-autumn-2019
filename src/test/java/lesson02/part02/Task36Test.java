@@ -28,7 +28,6 @@ public class Task36Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -68,12 +67,12 @@ public class Task36Test {
 
     @Test
     public void task36isResultGood() throws Exception {
-        SystemInGatewayUtil.provideInput("2\n3\n");
+        SystemInGatewayUtil.provideInput("2\r\n3\r\n");
         Task36.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Неправильный вывод",
-                "888\n888\n",result);
+                "888\r\n888\r\n",result);
         stream.reset();
     }
 

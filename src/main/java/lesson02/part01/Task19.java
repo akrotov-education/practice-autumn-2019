@@ -1,6 +1,7 @@
 package lesson02.part01;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * Ввести с клавиатуры имя и вывести надпись:
@@ -17,10 +18,9 @@ import java.util.Scanner;
 
 public class Task19 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-        Scanner in = new Scanner(System.in);
-        System.out.println("enter name");
-        String name = in.nextLine();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine();
+
         System.out.println(name + " зарабатывает $5,000. Ха-ха-ха!");
     }
 }

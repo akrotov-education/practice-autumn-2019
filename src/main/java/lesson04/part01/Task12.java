@@ -17,20 +17,18 @@ import java.util.ArrayList;
 
 public class Task12 {
 
-    public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("мама");
-        list.add("мыла");
-        list.add("раму");
+  public static void main(String[] args) {
+    ArrayList<String> list = new ArrayList<>();
+    list.add("мама");
+    list.add("мыла");
+    list.add("раму");
+    list.add(1, "именно");
+    list.add(3, "именно");
+    list.add("именно");
 
-        int end = list.size();
-        int i=0;
-        while (i<(2*end)) {
-            System.out.println(list.get(i));
-            list.add(i+1, "именно");
-            System.out.println(list.get(i+1));
-            i+=2;
-        }
+    for (String str: list) {
+      System.out.println(str);
     }
+  }
 }
 

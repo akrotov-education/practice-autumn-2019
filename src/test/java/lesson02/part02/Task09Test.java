@@ -34,7 +34,7 @@ public class Task09Test {
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
         Assert.assertTrue("The program must output numbers", output.toString().length() > 0);
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         try {
             for (String line : outLines) {
@@ -134,7 +134,7 @@ public class Task09Test {
         Task09.displayClosestToTen(7, 14);
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         Assert.assertEquals("Method displayClosestToTen works incorrect",
                 "11",

@@ -61,7 +61,7 @@ public class Task20Test {
     public void task20MainCalledSort() {
         boolean isSortCalled = false;
         for (int i = Task20Test.mainBeginIndex; i < Task20Test.mainEndIndex; i++) {
-            if (collect.get(i).contains("sort(array)"))
+            if (collect.get(i).contains("sort(nums)"))
                 isSortCalled = true;
         }
         Assert.assertTrue("метод main должен вызывать сортировку", isSortCalled);
@@ -86,7 +86,7 @@ public class Task20Test {
         Task20.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
-        String[] results = result.split("\r\n");
+        String[] results = result.split("\n");
         Assert.assertEquals("программа должна выводить 20 чисел",20,results.length);
         stream.reset();
     }

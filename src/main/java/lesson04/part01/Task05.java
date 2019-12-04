@@ -28,22 +28,23 @@ import java.io.InputStreamReader;
 public class Task05 {
 
   public static void main(String[] args) throws IOException {
-    int[] ints = new int[15];
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    int oddCount = 0;
+    int evenCount = 0;
 
-    for (int i=0; i<15; i++)
-      ints[i] = Integer.parseInt(reader.readLine());
+    int[] houses = new int[15];
+    for (int i = 0; i < 15; i++) {
+      houses[i] = Integer.parseInt(reader.readLine());
+      if (i % 2 == 0) {
+        evenCount += houses[i];
+      } else {
+        oddCount += houses[i];
+      }
+    }
 
-    int a=0, b=0;
-    for (int i=0; i<15; i++)
-      if (i%2==0)
-        a += ints[i];
-      else
-        b += ints[i];
-
-    if (a>b)
-      System.out.print("В домах с четными номерами проживает больше жителей.");
-    else
-      System.out.print("В домах с нечетными номерами проживает больше жителей.");
+    System.out.println(evenCount > oddCount ?
+            "В домах с четными номерами проживает больше жителей." :
+            "В домах с нечетными номерами проживает больше жителей."
+    );
   }
 }

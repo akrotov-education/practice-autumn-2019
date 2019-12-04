@@ -26,24 +26,24 @@ public class Task01 {
   }
 
   public static int[] initializeArray() throws IOException {
+    int[] arr = new int[20];
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    int[] list = new int[20];
 
-    for (int i=0; i<list.length; i++)
-    {
-      String s = reader.readLine();
-      list[i] = Integer.parseInt(s);
+    for (int i = 0; i < 20; i++) {
+      arr[i] = Integer.parseInt(reader.readLine());
     }
-    return list;
+
+    return arr;
   }
 
   public static int max(int[] array) {
-      int max = array[0];
-      for(int i=0; i<array.length; i++) {
-          if(array[i] > max) {
-              max = array[i];
-          }
+    int max = array[0];
+    for (int num: array) {
+      if (num > max) {
+        max = num;
       }
-      return max;
+    }
+
+    return max;
   }
 }

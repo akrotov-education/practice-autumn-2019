@@ -66,7 +66,7 @@ public class Task14Test {
     @Test
     public void task14doubleValuesWorks() {
         ArrayList<String> test = new ArrayList<>(Arrays.asList("тест","уйди"));
-        Task14.doubleValues(test);
+        test = Task14.doubleValues(test);
         Assert.assertTrue("метод должен выводить строку дважды",
                 test.get(0) == test.get(1) && test.get(2) == test.get(3));
     }

@@ -41,7 +41,7 @@ public class Task04Test {
     public void task04ifListCreated() {
         boolean isListCreated = false;
         for (String s : collect) {
-            if (s.contains("int[] ") && s.contains("= new int[10];"))
+            if (s.contains("int[]") && s.contains("= new int[10];"))
                 isListCreated = true;
         }
         Assert.assertTrue("Программа должна создавать массив на 10 целых чисел",
@@ -62,7 +62,7 @@ public class Task04Test {
     public void task04OutArrayOnScreen() {
         boolean isInputExist = false;
         for (String s : collect) {
-            if ((s.contains("System.out.println(arr[arr.length-i-1]);"))) {
+            if ((s.contains("System.out.println(arr[i])"))) {
                 isInputExist = true;
                 break;
             }

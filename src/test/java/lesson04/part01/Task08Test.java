@@ -45,7 +45,7 @@ public class Task08Test {
     public void task08ifListCreated() {
         boolean isListCreated = false;
         for (String s : collect) {
-            if (s.contains("ArrayList<String>") && s.contains("=new ArrayList"))
+            if (s.contains("ArrayList<String>") && s.contains("= new ArrayList"))
                 isListCreated = true;
         }
         Assert.assertTrue("Объяви переменную типа список строк и сразу проинициализируй ee.",
@@ -55,7 +55,7 @@ public class Task08Test {
     public void task08KeyboardInputToList() {
         boolean isInputExist = false;
         for (String s : collect) {
-            if (s.contains("(int i=0;i<10;i++)") || s.contains("list.add") && s.contains("readLine()")) {
+            if (s.contains("(int i = 0; i<10; i++)") || s.contains(".add") && s.contains("readLine()")) {
                 isInputExist = true;
                 break;
             }
@@ -65,18 +65,13 @@ public class Task08Test {
     @Test
     public void task08OutFromListWithRequire3() {
         boolean isInputExist = false;
-        boolean a=false;
         for (String s : collect) {
-            if (s.contains("for (int i=0;i<10;i++)") ) {
+            if (s.contains("(String str: strList)") || s.contains("System.out.println(str);")) {
                 isInputExist = true;
-
-            }
-            if (isInputExist && s.contains("System.out.println(a.get(i));")) {
-                a = true;
                 break;
             }
         }
         Assert.assertTrue("Программа должна добавлять строки в начало списка.\n" +
-                "Программа должна выводить список на экран, каждое значение с новой строки.",a);
+                "Программа должна выводить список на экран, каждое значение с новой строки.",isInputExist);
     }
 }

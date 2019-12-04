@@ -27,7 +27,7 @@ public class Task20Test {
 
     @Test
     public void checkInput() {
-        SystemInGatewayUtil.provideInput("1\n2\n5");
+        SystemInGatewayUtil.provideInput("1\r\n2\r\n5");
 
         try {
             Task20.main(null);
@@ -38,7 +38,7 @@ public class Task20Test {
 
     @Test
     public void checkOutput() {
-        SystemInGatewayUtil.provideInput("1\n2\n5");
+        SystemInGatewayUtil.provideInput("1\r\n2\r\n5");
 
         try {
             Task20.main(null);
@@ -48,7 +48,7 @@ public class Task20Test {
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
         Assert.assertTrue("The program must output numbers", output.toString().length() > 0);
-        String[] outLines = output.toString().split("\n")[0].split(" ");
+        String[] outLines = output.toString().split("\r\n")[0].split(" ");
 
         try {
             for (String line : outLines) {
@@ -61,7 +61,7 @@ public class Task20Test {
 
     @Test
     public void checkCorrectOutput() {
-        SystemInGatewayUtil.provideInput("1\n2\n5");
+        SystemInGatewayUtil.provideInput("1\r\n2\r\n5");
 
         try {
             Task20.main(null);
@@ -70,7 +70,7 @@ public class Task20Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         Assert.assertTrue("The program should display 3 values in one line divided by space",
                 outLines.length == 1 && outLines[0].split(" ").length == 3
@@ -79,7 +79,7 @@ public class Task20Test {
 
     @Test
     public void checkDescendOutput() {
-        SystemInGatewayUtil.provideInput("2\n10\n0");
+        SystemInGatewayUtil.provideInput("2\r\n10\r\n0");
 
         try {
             Task20.main(null);
@@ -88,7 +88,7 @@ public class Task20Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outStrNums = output.toString().split("\n")[0].split(" ");
+        String[] outStrNums = output.toString().split("\r\n")[0].split(" ");
 
         Assert.assertTrue("The program should display 3 values in one line divided by space",
                 Integer.parseInt(outStrNums[0]) > Integer.parseInt(outStrNums[1]) &&

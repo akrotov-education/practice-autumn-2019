@@ -23,12 +23,13 @@ public class Task03Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
     @Test
     public void CheckOutput(){
         Task03.main(null);
         ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
         String s2 = s.toString();
-        Assert.assertEquals("1921", s2);
+        Assert.assertEquals("1921\r\n", s2);
     }
 }

@@ -59,7 +59,7 @@ public class Task13Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
         Assert.assertEquals("The program should display name of the day",
                 "вторник",
                 outLines[0]
@@ -83,7 +83,7 @@ public class Task13Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
         Assert.assertEquals("The program should display error message",
                 "такого дня недели не существует",
                 outLines[0]

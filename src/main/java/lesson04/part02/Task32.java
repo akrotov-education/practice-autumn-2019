@@ -19,24 +19,31 @@ import java.util.Set;
 public class Task32 {
 
   public static Set<Integer> createSet() {
-    Set<Integer> list = new HashSet<Integer>();
-    for (int i = 0; i < 20; i++)
+    Set<Integer> list = new HashSet<>();
+
+    for (int i = 0; i < 20; i++) {
       list.add(i);
+    }
+
     return list;
   }
 
   public static Set<Integer> removeAllNumbersGreaterThan10(Set<Integer> set) {
     Iterator<Integer> iterator = set.iterator();
+
     while(iterator.hasNext()) {
       Integer n = iterator.next();
+
       if (n > 10)
         iterator.remove();
     }
+
     return set;
   }
 
   public static void main(String[] args) {
-    Set<Integer> set = new HashSet<Integer>();
+    Set<Integer> set = new HashSet<>();
+
     createSet();
     removeAllNumbersGreaterThan10(set);
   }

@@ -29,7 +29,7 @@ import java.util.Set;
 
 public class Task21 {
   public static void main(String[] args) {
-    Set<String> set = new HashSet<>();
+    Set<String> set = new HashSet<String>();
     set.add("арбуз");
     set.add("банан");
     set.add("вишня");
@@ -41,7 +41,8 @@ public class Task21 {
     set.add("ирис");
     set.add("картофель");
 
-    for (String text: set)
+    for (String text: set) {
       System.out.println(text);
+    }
   }
 }

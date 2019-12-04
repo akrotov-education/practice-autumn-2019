@@ -40,7 +40,7 @@ public class Task03Test {
     public void task03ifStringArrayCreated() {
         boolean isListCreated = false;
         for (String s : collect) {
-            if (s.contains("String[]") && s.contains("=new String[10]"))
+            if (s.contains("String[]") && s.contains("= new String[10]"))
                 isListCreated = true;
         }
         Assert.assertTrue("Программа должна создавать массив на 10 строк.",
@@ -50,7 +50,7 @@ public class Task03Test {
     public void task03ifArrayIntCreated() {
         boolean isListCreated = false;
         for (String s : collect) {
-            if (s.contains("int[]") && s.contains("=new int[10]"))
+            if (s.contains("int[]") && s.contains("= new int[10]"))
                 isListCreated = true;
         }
         Assert.assertTrue("Программа должна создавать массив на 10 целых чисел.",
@@ -60,7 +60,7 @@ public class Task03Test {
     public void task03KeyboardInputStrings() {
         boolean isInputExist = false;
         for (String s : collect) {
-            if (s.contains("a[i]=reader.readLine();")) {
+            if (s.contains("[i] = reader.readLine()")) {
                 isInputExist = true;
                 break;
             }
@@ -71,7 +71,7 @@ public class Task03Test {
     public void task03StringSizeToArray() {
         boolean isInputExist = false;
         for (String s : collect) {
-            if (s.contains("b[i]=a[i].length();")) {
+            if (s.contains("[i].length();")) {
                 isInputExist = true;
                 break;
             }
@@ -82,7 +82,7 @@ public class Task03Test {
     public void task03CheckOut() {
         boolean isInputExist = false;
         for (String s : collect) {
-            if (s.contains("System.out.println(b[i]);")) {
+            if (s.contains("System.out.println(len)")) {
                 isInputExist = true;
                 break;
             }

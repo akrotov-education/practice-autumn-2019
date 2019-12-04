@@ -114,13 +114,13 @@ public class Task10Test {
         Task10.checkInterval(112);
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
         Assert.assertEquals("Method checkInterval works incorrect",
-                "Число а содержится в интервале.",
+                "Число 60 содержится в интервале.",
                 outLines[0]
         );
         Assert.assertEquals("Method checkInterval works incorrect",
-                "Число а не содержится в интервале.",
+                "Число 112 не содержится в интервале.",
                 outLines[1]
         );
     }

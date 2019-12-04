@@ -23,14 +23,19 @@ public class Task18 {
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     ArrayList<String> list = new ArrayList<>();
-    for (;;) {
-      String str = reader.readLine();
-      if (str.equals("end"))
+
+    String str;
+    while (true) {
+      str = reader.readLine();
+      if (str.equals("end")) {
         break;
+      }
+
       list.add(str);
     }
 
-    for (String s: list)
-      System.out.println(s);
+    for (String string: list) {
+      System.out.println(string);
+    }
   }
 }

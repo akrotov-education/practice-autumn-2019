@@ -28,7 +28,6 @@ public class Task28Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -72,7 +71,7 @@ public class Task28Test {
         Task28.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
-        Assert.assertEquals("Программа должна выводить количество положительных чисел в исходном наборе.","3\r\n",result);
+        Assert.assertEquals("Программа должна выводить количество положительных чисел в исходном наборе.","3",result.split("\n")[0]);
         stream.reset();
     }
 
@@ -84,7 +83,7 @@ public class Task28Test {
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если положительных чисел нет, программа должна вывести \"0\"",
-                "0\r\n",result);
+                "0",result.split("\n")[0]);
         stream.reset();
     }
 
@@ -94,7 +93,7 @@ public class Task28Test {
         Task28.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
-        Assert.assertEquals("0 не должен идти в счётчик положительных чисел!","0\r\n",result);
+        Assert.assertEquals("0 не должен идти в счётчик положительных чисел!","0",result.split("\n")[0]);
         stream.reset();
     }
 }

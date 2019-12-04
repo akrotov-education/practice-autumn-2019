@@ -14,31 +14,32 @@ package lesson02.part01;
 
 public class Task07 {
     public static void main(String[] args) {
-        //напишите тут ваш код
-        Zerg a = new Zerg();
-        Zerg b = new Zerg();
-        Zerg c = new Zerg();
-        Zerg d = new Zerg();
-        Zerg e = new Zerg();
-        a.name = "a1";
-        b.name = "b1";
-        c.name = "c1";
-        d.name = "d1";
-        e.name = "e1";
-        Protoss f = new Protoss();
-        Protoss g = new Protoss();
-        Protoss h = new Protoss();
-        f.name = "f1";
-        g.name = "g1";
-        h.name = "h1";
-        Terran i = new Terran();
-        Terran j = new Terran();
-        Terran k = new Terran();
-        Terran l = new Terran();
-        i.name = "i1";
-        j.name = "j1";
-        k.name = "k1";
-        l.name = "l1";
+        Zerg zerg1 = new Zerg();
+        zerg1.name = "Vasya";
+        Zerg zerg2 = new Zerg();
+        zerg2.name = "Petya";
+        Zerg zerg3 = new Zerg();
+        zerg3.name = "Vanya";
+        Zerg zerg4 = new Zerg();
+        zerg4.name = "Jenya";
+        Zerg zerg5 = new Zerg();
+        zerg5.name = "Sveta";
+
+        Protoss prot1 = new Protoss();
+        prot1.name = "Nastya";
+        Protoss prot2 = new Protoss();
+        prot2.name = "Lena";
+        Protoss prot3 = new Protoss();
+        prot3.name = "Katya";
+
+        Terran terr1 = new Terran();
+        terr1.name = "Misha";
+        Terran terr2 = new Terran();
+        terr2.name = "Pasha";
+        Terran terr3 = new Terran();
+        terr3.name = "Masha";
+        Terran terr4 = new Terran();
+        terr4.name = "Arina";
     }
 
     public static class Zerg {

@@ -28,7 +28,6 @@ public class Task32Test {
     public void tearDown() throws Exception {
         SystemInGatewayUtil.setOriginalIn();
         SystemOutGatewayUtil.setOriginalOut();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -86,7 +85,7 @@ public class Task32Test {
 
     @Test
     public void task32ifStringPrintedNTimes() throws Exception {
-        SystemInGatewayUtil.provideInput("Jane\n3");
+        SystemInGatewayUtil.provideInput("Jane\r\n3");
         Task32.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();

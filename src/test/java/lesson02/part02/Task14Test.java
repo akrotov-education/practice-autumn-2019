@@ -46,7 +46,7 @@ public class Task14Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
         Assert.assertEquals("The program should display correct value for leap year",
                 "количество дней в году: 366",
                 outLines[0]
@@ -63,7 +63,7 @@ public class Task14Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
         Assert.assertEquals("The program should display correct value for not leap year",
                 "количество дней в году: 365",
                 outLines[0]

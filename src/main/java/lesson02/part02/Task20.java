@@ -1,6 +1,8 @@
 package lesson02.part02;
 
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * Ввести с клавиатуры три числа, и вывести их в порядке убывания. Выведенные числа должны быть разделены пробелом.
  *
@@ -14,14 +16,30 @@ import java.util.*;
 
 public class Task20 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-        Scanner in = new Scanner(System.in);
-        List<Integer> numbers = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            numbers.add(in.nextInt());
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        int a = Integer.parseInt(reader.readLine());
+        int b = Integer.parseInt(reader.readLine());
+        int c = Integer.parseInt(reader.readLine());
+
+        if (a < b) {
+            int d = a;
+            a = b;
+            b = d;
         }
-        numbers.sort(Comparator.reverseOrder());
-        for (int i = 0; i < 3; i++)
-            System.out.print(numbers.get(i) + " ");
+
+        if (a < c) {
+            int d = a;
+            a = c;
+            c = d;
+        }
+
+        if (b < c) {
+            int d = b;
+            b = c;
+            c = d;
+        }
+
+        System.out.println(a + " " + b + " " + c);
     }
 }

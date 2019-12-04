@@ -23,10 +23,11 @@ public class Task04 {
      */
 
     public static void main(String[] args) {
-        //напишите тут ваш код
-        int a = 10;
-        int b = 5;
-        System.out.print(a+b + "\n" + a*b);
-    }
+        int a = 24;
+        int b = 12;
 
+        System.out.println(String.format("%d + %d = %d", a, b, a + b));
+
+        System.out.println(String.format("%d * %d = %d", a, b, a * b));
+    }
 }

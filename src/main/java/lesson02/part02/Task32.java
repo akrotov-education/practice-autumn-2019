@@ -2,7 +2,6 @@ package lesson02.part02;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 /**
  * Ввести с клавиатуры строку и число N больше 0.
@@ -25,14 +24,14 @@ import java.util.Scanner;
 
 public class Task32 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String res = reader.readLine();
-        int rep = Integer.parseInt(reader.readLine());
-        int i = 0;
-        while (i < rep) {
-            System.out.println(res);
-            i++;
+
+        String str = reader.readLine();
+        int n = Integer.parseInt(reader.readLine());
+
+        while (n > 0) {
+            System.out.println(str);
+            n--;
         }
     }
 }

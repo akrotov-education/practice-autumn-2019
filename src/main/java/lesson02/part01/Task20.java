@@ -1,6 +1,7 @@
 package lesson02.part01;
 
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * Ввести с клавиатуры три имени, вывести на экран надпись:
@@ -19,13 +20,11 @@ import java.util.*;
 
 public class Task20 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-        List<String> names = new ArrayList<String>();
-        Scanner input = new Scanner(System.in);
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Введите имя");
-            names.add(input.nextLine());
-        }
-        System.out.println(names.get(0) + " + " + names.get(1) + " + " + names.get(2) + " = Чистая любовь, да-да!");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name1 = reader.readLine();
+        String name2 = reader.readLine();
+        String name3 = reader.readLine();
+
+        System.out.println(name1 + " + " + name2 + " + " + name3 + " = Чистая любовь, да-да!");
     }
 }

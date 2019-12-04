@@ -28,7 +28,6 @@ public class Task24Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -68,18 +67,18 @@ public class Task24Test {
 
     @Test
     public void task24ifCorrectIndex() throws Exception {
-        SystemInGatewayUtil.provideInput("1\n2\n1\n");
+        SystemInGatewayUtil.provideInput("1\r\n2\r\n1\r\n");
         Task24.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Программа должна выводить на экран порядковый номер числа, отличного от остальных.",
-                "2\r\n",result);
+                "2", result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task24ifOutputExistWithDiffValues() throws Exception {
-        SystemInGatewayUtil.provideInput("1\n2\n3\n");
+        SystemInGatewayUtil.provideInput("1\r\n2\r\n3\r\n");
         Task24.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();

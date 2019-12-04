@@ -1,6 +1,7 @@
 package lesson02.part01;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * Ввести с клавиатуры число n.
@@ -18,10 +19,9 @@ import java.util.Scanner;
 
 public class Task22 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter n");
-        String n = input.nextLine();
-        System.out.printf("Я буду зарабатывать $%s в час", n);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int number = Integer.parseInt(reader.readLine());
+
+        System.out.println("Я буду зарабатывать $" + number + " в час");
     }
 }

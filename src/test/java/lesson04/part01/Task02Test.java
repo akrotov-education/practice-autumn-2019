@@ -39,7 +39,7 @@ public class Task02Test {
     public void task02ifStringListCreated() {
         boolean isListCreated = false;
         for (String s : collect) {
-            if (s.contains("String[]") && s.contains("=new String[10]"))
+            if (s.contains("String[]") && s.contains("= new String[10]"))
                 isListCreated = true;
         }
         Assert.assertTrue("Программа должна создавать массив на 10 строк.",
@@ -49,7 +49,7 @@ public class Task02Test {
     public void task02InputStringsToList() {
         boolean inp = false;
         for (String s : collect) {
-            if (s.contains("int i=0;i<list.length-2;i++") || s.contains("[i]=reader.readLine()"))
+            if (s.contains("int i = 0; i < 8; i++") || s.contains("[i] = reader.readLine()"))
                 inp = true;
         }
         Assert.assertTrue("Программа должна считывать 8 строк для массива с клавиатуры", inp);
@@ -58,9 +58,9 @@ public class Task02Test {
     public void task02CheckOutput() {
         boolean checkout = false;
         for (String s : collect) {
-            if (s.contains("System.out.println(a[i]);")) {
+            if (s.contains("System.out.println(arr[i])")) {
                 checkout = true;
-            } else if (s.contains("for(int i=9;i>=0;i--)")) {
+            } else if (s.contains("int i = arr.length-1; i >= 0; i--")) {
                 checkout = true;
             }
         }

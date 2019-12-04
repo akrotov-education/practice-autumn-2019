@@ -21,18 +21,18 @@ import java.util.*;
 
 public class Task24 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        List<Integer> numbers = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            numbers.add(Integer.parseInt(reader.readLine()));
-        }
-        if (!numbers.get(1).equals(numbers.get(0)) && !numbers.get(1).equals(numbers.get(2))) {
-            if (numbers.get(0).equals(numbers.get(2))) System.out.println(2);
-        }
-        if (numbers.get(1).equals(numbers.get(0)) && !numbers.get(1).equals(numbers.get(2)))
+
+        int a = Integer.parseInt(reader.readLine());
+        int b = Integer.parseInt(reader.readLine());
+        int c = Integer.parseInt(reader.readLine());
+
+        if (a == b) {
             System.out.println(3);
-        if (numbers.get(1).equals(numbers.get(2)) && !numbers.get(0).equals(numbers.get(1)))
+        } else if (a == c) {
+            System.out.println(2);
+        } else if (b == c) {
             System.out.println(1);
+        }
     }
 }

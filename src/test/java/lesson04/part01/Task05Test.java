@@ -44,7 +44,7 @@ public class Task05Test {
     public void task05ifListCreated() {
         boolean isListCreated = false;
         for (String s : collect) {
-            if (s.contains("int[] list") && s.contains("= new int[15];"))
+            if (s.contains("int[]") && s.contains("= new int[15];"))
                 isListCreated = true;
         }
         Assert.assertTrue("Программа должна создавать массив на 15 целых чисел",
@@ -54,7 +54,7 @@ public class Task05Test {
     public void task05KeyboardInput() {
         boolean isInputExist = false;
         for (String s : collect) {
-            if (s.contains("for (int i = 0; i < 15; i++)") || s.contains("listInt[i] = Integer.parseInt(reader.readLine());")) {
+            if (s.contains("for (int i = 0; i < houses.length; i++)") || s.contains("houses[i] = Integer.parseInt")) {
                 isInputExist = true;
                 break;
             }
@@ -65,8 +65,8 @@ public class Task05Test {
     public void task05OutForChet() {
         boolean isInputExist = false;
         for (String s : collect) {
-            if (s.contains("if (kolchet > kolnechet)")
-                    || s.contains("System.out.println(\"В домах с четными номерами проживает больше жителей.\")")) {
+            if (s.contains("evenCount > oddCount ?")
+                    || s.contains("В домах с четными номерами проживает больше жителей.")) {
                 isInputExist = true;
                 break;
             }

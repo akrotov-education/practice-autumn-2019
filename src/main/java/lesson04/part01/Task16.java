@@ -24,18 +24,20 @@ public class Task16 {
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     ArrayList<String> list = new ArrayList<>();
+
     int n = Integer.parseInt(reader.readLine());
     int m = Integer.parseInt(reader.readLine());
 
-    for (int i=0; i<n; i++)
+    for (int i = 0; i < n; i++) {
       list.add(reader.readLine());
-
-    for (int i=0; i<m; i++) {
-      list.add(list.get(0));
-      list.remove(0);
     }
 
-    for (String str: list)
+    for (int i = 0; i < m; i++) {
+      list.add(list.remove(0));
+    }
+
+    for (String str: list) {
       System.out.println(str);
+    }
   }
 }

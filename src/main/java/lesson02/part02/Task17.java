@@ -1,9 +1,7 @@
 package lesson02.part02;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * Ввести с клавиатуры три целых числа. Определить, имеется ли среди них хотя бы одна пара равных между собой чисел.
@@ -34,25 +32,19 @@ import java.util.Scanner;
 
 public class Task17 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-        Scanner in = new Scanner(System.in);
-        List<Integer> numbers = new ArrayList<Integer>();
-        for (int i = 0; i < 3; i++) {
-            System.out.println("введите число");
-            numbers.add(in.nextInt());
-        }
-        if (numbers.get(0).equals(numbers.get(1)) && numbers.get(0).equals(numbers.get(2))) {
-            for (int i = 0; i < 3; i++)
-                System.out.print(numbers.get(i) + " ");
-            System.exit(0);
-        }
-        for (int i = 0; i < 2; i++) {
-            for (int j = 1; j < 3; j++) {
-                if (numbers.get(i).equals(numbers.get(j))) {
-                    System.out.print(numbers.get(i) + " " + numbers.get(j));
-                    System.exit(0);
-                }
-            }
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int a = Integer.parseInt(reader.readLine());
+        int b = Integer.parseInt(reader.readLine());
+        int c = Integer.parseInt(reader.readLine());
+
+        if (a == b & b == c) {
+            System.out.println(a + " " + b + " " + c);
+        } else if (a == b) {
+            System.out.println(a + " " + b);
+        } else if (a == c) {
+            System.out.println(a + " " + c);
+        } else if (c == b) {
+            System.out.println(c + " " + b);
         }
     }
 }

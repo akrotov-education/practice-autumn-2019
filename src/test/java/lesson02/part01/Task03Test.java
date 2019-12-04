@@ -24,32 +24,33 @@ public class Task03Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
     @Test
     public void CheckOutput(){
         Task03.main(null);
         ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
         String s2 = s.toString();
-        Assert.assertEquals("200.0\n1200.0\n", s2);
+        Assert.assertEquals("20.93\r\n9.1\r\n", s2);
     }
     @Test
     public void checkConvertNoPrint() {
-        List<String> lines = ReadFileUtil.readFileInList("/Users/Xesavov/Documents/practice-autumn-2019/src/main/java/lesson02/part01/Task03.java");
-        String lineWithMethodCall = lines.get(24);
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson02/part01/Task03.java");
+        String lineWithMethodCall = lines.get(29);
 
 
-        Assert.assertTrue("Method convertEurToUsd musn`t call Print",
+        Assert.assertTrue("Method convertEurToUsd mustn't call Print",
                 lineWithMethodCall.contains("return"));
     }
     @Test
     public void checkConvertUses2Times() {
-        List<String> lines = ReadFileUtil.readFileInList("/Users/Xesavov/Documents/practice-autumn-2019/src/main/java/lesson02/part01/Task03.java");
-        String lineWithMethodCall = lines.get(19);
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson02/part01/Task03.java");
+        String lineWithMethodCall = lines.get(21);
 
         Assert.assertTrue("Method main must call convertEurToUsd",
                 lineWithMethodCall.contains("convertEurToUsd"));
 
-        lineWithMethodCall = lines.get(20);
+        lineWithMethodCall = lines.get(22);
 
         Assert.assertTrue("Method main must call convertEurToUsd",
                 lineWithMethodCall.contains("convertEurToUsd"));

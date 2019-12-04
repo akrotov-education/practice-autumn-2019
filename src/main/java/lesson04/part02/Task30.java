@@ -35,10 +35,13 @@ public class Task30 {
   }
 
   public static long getGetTimeInMs(List list) {
-    Date start = new Date();
+    Date currDate = new Date();
+
     get10000(list);
-    Date end = new Date();
-    return end.getTime() - start.getTime();
+
+    Date newDate = new Date();
+
+    return newDate.getTime() - currDate.getTime();
   }
 
   public static void get10000(List list) {

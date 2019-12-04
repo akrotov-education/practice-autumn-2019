@@ -38,7 +38,7 @@ public class Task20Test {
 
 
 
-        String fileName=".\\src\\main\\java\\lesson02\\part01\\Task20.java";
+        String fileName="./src/main/java/lesson02/part01/Task20.java";
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
             collect = stream.collect(Collectors.toList());
         } catch (IOException e) {
@@ -50,6 +50,7 @@ public class Task20Test {
     public void after() {
 
         SystemInGatewayUtil.setOriginalIn();
+        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -120,7 +121,7 @@ public class Task20Test {
 
     @Test
     public void test21_6(){
-        Assert.assertTrue("Не пройдено 6е условие!", s.equals(n1+" + "+n2+" + "+n3+" = Чистая любовь, да-да! \r\n"));
+        Assert.assertTrue("Не пройдено 6е условие!", s.equals(n1+" + "+n2+" + "+n3+" = Чистая любовь, да-да!\r\n"));
     }
 
 }

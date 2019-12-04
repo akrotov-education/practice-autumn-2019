@@ -29,7 +29,6 @@ public class Task43Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -81,12 +80,12 @@ public class Task43Test {
 
     @Test
     public void task43ifOutputInTwoLines() throws Exception {
-        SystemInGatewayUtil.provideInput("Nikita\n10\n11\n1997");
+        SystemInGatewayUtil.provideInput("Nikita\r\n10\r\n11\r\n1997");
         Task43.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Вывод должен быть в две строки",
-                "Меня зовут Nikita.\nЯ родился 10.11.1997",result);
+                "Меня зовут Nikita.\r\nЯ родился 10.11.1997\r\n",result);
         stream.reset();
     }
 }

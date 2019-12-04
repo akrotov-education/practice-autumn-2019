@@ -47,7 +47,7 @@ public class Task12Test {
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
         Assert.assertTrue("The program must output numbers", output.toString().length() > 0);
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         try {
             for (String line : outLines) {
@@ -68,7 +68,7 @@ public class Task12Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         Assert.assertEquals("The program should display a value twice as large",
                 "4",
@@ -86,7 +86,7 @@ public class Task12Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         Assert.assertEquals("The program should display a value 1 more",
                 "-1",
@@ -104,7 +104,7 @@ public class Task12Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         Assert.assertEquals("The program should display zero",
                 "0",

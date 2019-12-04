@@ -24,18 +24,19 @@ public class Task08Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
     @Test
     public void CheckOutput(){
         Task08.main(null);
         ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
         String s2 = s.toString();
-        Assert.assertEquals("3628800\n", s2);
+        Assert.assertEquals("3628800\r\n", s2);
     }
     @Test
     public void checkMainContainPrint() {
-        List<String> lines = ReadFileUtil.readFileInList("/Users/Xesavov/Documents/practice-autumn-2019/src/main/java/lesson02/part01/Task08.java");
-        String lineWithMethodCall = lines.get(20);
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson02/part01/Task08.java");
+        String lineWithMethodCall = lines.get(21);
 
 
         Assert.assertTrue("Method main must contain print",

@@ -25,10 +25,12 @@ public class Task29 {
   }
 
   public static long getInsertTimeInMs(List list) {
-    Date start = new Date();
+    Date currDate = new Date();
+
     insert10000(list);
-    Date end = new Date();
-    return end.getTime() - start.getTime();
+    Date newDate = new Date();
+
+    return newDate.getTime() - currDate.getTime();
   }
 
   public static void insert10000(List list) {

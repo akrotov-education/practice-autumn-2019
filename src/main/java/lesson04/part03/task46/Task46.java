@@ -22,10 +22,9 @@ public class Task46 {
   public static void main(String[] args) throws Exception {
     try {
       method1();
-    } catch (Exception3 e) {
-        System.out.println(e);
-    }
+    } catch (Exception1 e) {
 
+    }
   }
 
   public static void method1() throws Exception1, Exception2, Exception3 {

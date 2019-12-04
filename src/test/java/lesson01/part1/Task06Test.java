@@ -26,13 +26,14 @@ public class Task06Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
     @Test
     public void checkOutput(){
         Task06.main(null);
         ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
         String s2 = s.toString();
-        Assert.assertEquals("31.400000000000002\n", s2);
+        Assert.assertEquals("L = 31.400002\r\n", s2);
     }
     @Test
     public void checkParameter() {

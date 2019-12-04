@@ -26,10 +26,6 @@ public class Task10 {
     }
 
     public static void checkInterval(int a) {
-        //напишите тут ваш код
-        if ( a > 50 && a < 100)
-            System.out.printf("Число %d содержится в интервале.\n",a);
-        else
-            System.out.printf("Число %d не содержится в интервале.\n",a);
+        System.out.println(a > 49 && a < 101 ? "Число " + a + " содержится в интервале." : "Число " + a + " не содержится в интервале.");
     }
 }

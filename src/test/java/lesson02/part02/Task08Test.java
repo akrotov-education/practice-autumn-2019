@@ -109,7 +109,7 @@ public class Task08Test {
         Task08.compare(5);
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         Assert.assertEquals("Method works incorrect",
                 "Число меньше 5",

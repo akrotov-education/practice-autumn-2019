@@ -20,6 +20,7 @@ public class Task16Test {
 
     @After
     public void after() {
+        SystemOutGatewayUtil.setOriginalOut();
         SystemOutGatewayUtil.clearOutput();
     }
 
@@ -77,7 +78,7 @@ public class Task16Test {
 
         Assert.assertTrue(
                 "Выведенный текст должен соответствовать заданию",
-                s.split("\n")[0].equals("日本語")
+                s.split("\r\n")[0].equals("日本語")
         );
     }
 }

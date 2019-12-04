@@ -2,9 +2,6 @@ package lesson02.part02;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 /**
  * Вводить с клавиатуры числа.
@@ -28,20 +25,15 @@ import java.util.Scanner;
 
 public class Task42 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        List<Integer> nums = new ArrayList<>();
-        int number = 0;
+        int sum = 0;
+
         while (true) {
-            number = Integer.parseInt(reader.readLine());
-            nums.add(number);
-            if (number == -1)
-                break;
+            int number = Integer.parseInt(reader.readLine());
+            sum += number;
+            if (number == -1) break;
         }
-        int summ = 0;
-        for (int i : nums) {
-            summ+=i;
-        }
-        System.out.println(summ);
+
+        System.out.println(sum);
     }
 }

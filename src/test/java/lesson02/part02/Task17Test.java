@@ -70,21 +70,21 @@ public class Task17Test {
 
     @Test
     public void checkTwoEquals() {
-        SystemInGatewayUtil.provideInput("4\n5\n5");
+        SystemInGatewayUtil.provideInput("4\r\n5\r\n5");
         try {
             Task17.main(null);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        SystemInGatewayUtil.provideInput("5\n4\n5");
+        SystemInGatewayUtil.provideInput("5\r\n4\r\n5");
         try {
             Task17.main(null);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        SystemInGatewayUtil.provideInput("5\n5\n4");
+        SystemInGatewayUtil.provideInput("5\r\n5\r\n4");
         try {
             Task17.main(null);
         } catch (Exception e) {
@@ -92,7 +92,7 @@ public class Task17Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
         Assert.assertEquals("The program should display two equal nums",
                 "5 5",
                 outLines[0]
@@ -111,7 +111,7 @@ public class Task17Test {
 
     @Test
     public void checkThreeEquals() {
-        SystemInGatewayUtil.provideInput("5\n5\n5");
+        SystemInGatewayUtil.provideInput("5\r\n5\r\n5");
         try {
             Task17.main(null);
         } catch (Exception e) {
@@ -119,7 +119,7 @@ public class Task17Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
         Assert.assertEquals("The program should display three equal nums",
                 "5 5 5",
                 outLines[0]
@@ -128,7 +128,7 @@ public class Task17Test {
 
     @Test
     public void checkNoEquals() {
-        SystemInGatewayUtil.provideInput("1\n2\n3");
+        SystemInGatewayUtil.provideInput("1\r\n2\r\n3");
         try {
             Task17.main(null);
         } catch (Exception e) {

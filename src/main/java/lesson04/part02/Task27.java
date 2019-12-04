@@ -17,12 +17,12 @@ import java.util.LinkedList;
 public class Task27 {
 
   public static Object createArrayList() {
-    ArrayList<String> list = new ArrayList<String>();
+    ArrayList<String> list = new ArrayList<>();
     return list;
   }
 
   public static Object createLinkedList() {
-    LinkedList<String> list = new LinkedList<String>();
+    LinkedList<String> list = new LinkedList<>();
     return list;
   }
 

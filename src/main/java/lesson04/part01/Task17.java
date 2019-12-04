@@ -18,20 +18,27 @@ import java.io.InputStreamReader;
  */
 
 public class Task17 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+  public static void main(String[] args) throws IOException {
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    int[] arr = new int[20];
 
-        int[] arr = new int[20];
-        for (int i=0; i<20; i++)
-            arr[i] = Integer.parseInt(reader.readLine());
-        int maximum = arr[0];
-        int minimum = arr[0];
-        for (int i=1; i<20; i++) {
-            if (arr[i]>=maximum)
-                maximum = arr[i];
-            if (arr[i]<=minimum)
-                minimum = arr[i];
-        }
-        System.out.print(maximum + " " + minimum);
+    for (int i = 0; i < 20; i++) {
+      arr[i] = Integer.parseInt(reader.readLine());
     }
+
+    int max = arr[0];
+    int min = arr[0];
+
+    for (int i = 1; i < 20; i++) {
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+
+      if (arr[i] < min) {
+        min = arr[i];
+      }
+    }
+
+    System.out.println(max + " " + min);
+  }
 }

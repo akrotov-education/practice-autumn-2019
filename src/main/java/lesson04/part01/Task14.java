@@ -23,18 +23,22 @@ public class Task14 {
     ArrayList<String> list = new ArrayList<>();
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    for (int i=0; i<10; i++)
+    for (int i = 0; i < 10; i++) {
       list.add(reader.readLine());
+    }
 
-    for (String str: doubleValues(list))
+    ArrayList<String> result = doubleValues(list);
+
+    for (String str: result) {
       System.out.println(str);
+    }
   }
 
   public static ArrayList<String> doubleValues(ArrayList<String> list) {
-    for (int i=0; i<list.size();) {
+    for (int i = 0; i < list.size(); i += 2) {
       list.add(i, list.get(i));
-      i+=2;
     }
+
     return list;
   }
 }

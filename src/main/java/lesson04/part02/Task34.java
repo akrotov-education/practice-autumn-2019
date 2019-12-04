@@ -19,25 +19,29 @@ public class Task34 {
 
   public static Map<String, Integer> createMap() {
     Map<String, Integer> map = new HashMap<>();
-    map.put("1", 1);
-    map.put("2", 3000);
-    map.put("3", 9);
-    map.put("4", 5444);
-    map.put("5", 10000);
-    map.put("6", 1);
-    map.put("7", 744);
-    map.put("8", 2);
-    map.put("9", 0);
-    map.put("10", 1);
+    map.put("Попов", 1);
+    map.put("Лыков", 3000);
+    map.put("Собянин", 9);
+    map.put("Медведев", 5444);
+    map.put("Путин", 10000);
+    map.put("Жириновский", 1);
+    map.put("Буянов", 744);
+    map.put("Городничев", 2);
+    map.put("Шишкин", 0);
+    map.put("Золотов", 1);
+
     return map;
   }
 
   public static void removeItemFromMap(Map<String, Integer> map) {
     Iterator<Map.Entry<String, Integer>> iterator = map.entrySet().iterator();
+
     while (iterator.hasNext()) {
       Integer n = iterator.next().getValue();
-      if (n < 500)
+
+      if (n < 500) {
         iterator.remove();
+      }
     }
   }
 

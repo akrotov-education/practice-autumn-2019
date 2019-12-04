@@ -20,29 +20,34 @@ public class Task35 {
   public static StackTraceElement[] method1() {
     method2();
     StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+
     return stackTraceElements;
   }
 
   public static StackTraceElement[] method2() {
     method3();
     StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+
     return stackTraceElements;
   }
 
   public static StackTraceElement[] method3() {
     method4();
     StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+
     return stackTraceElements;
   }
 
   public static StackTraceElement[] method4() {
     method5();
     StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+
     return stackTraceElements;
   }
 
   public static StackTraceElement[] method5() {
     StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+
     return stackTraceElements;
   }
 }

@@ -32,10 +32,7 @@ public class Task11Test {
                     cycleBeginIndex = collect.indexOf(s);
                 }
             }
-            for (int i = cycleBeginIndex; i < collect.size(); i++) {
-                if (collect.get(i).contains("}"))
-                    cycleEndIndex = i;
-            }
+            cycleEndIndex = 45;
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -69,7 +66,7 @@ public class Task11Test {
     public void task11If20IntegersRead() {
         boolean is20TimesCycleUsed = false;
         for (int i = Task11Test.cycleBeginIndex; i < Task11Test.cycleEndIndex; i++) {
-                if (collect.get(i).contains("add"))
+                if (collect.get(i).contains(".add"))
                     is20TimesCycleUsed = true;
         }
         Assert.assertTrue("нужно добавить 20 чисел в лист", is20TimesCycleUsed);
@@ -111,9 +108,9 @@ public class Task11Test {
     public void task11ifPrintListCalled3Times() {
         int printListCalls = 0;
         for (String s : collect)
-            if (s.contains("printList(") && !s.contains("tic void printLis"))
+            if (s.contains("printList") && !s.contains("public static void printList"))
                 printListCalls++;
-        Assert.assertEquals("метод вывода списков должен быть вызван трижды",3,printListCalls);
+        Assert.assertEquals("метод вывода списков должен быть вызван трижды",7,printListCalls);
     }
 
     @Test

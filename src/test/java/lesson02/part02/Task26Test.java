@@ -28,7 +28,6 @@ public class Task26Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -68,56 +67,56 @@ public class Task26Test {
 
     @Test
     public void task26isNegativeEven() throws Exception {
-        SystemInGatewayUtil.provideInput("-10\n");
+        SystemInGatewayUtil.provideInput("-10\r\n");
         Task26.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если число отрицательное и четное, вывести \"отрицательное четное число\".",
-                "отрицательное четное число\r\n",result);
+                "отрицательное четное число",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task26isNegativeOdd() throws Exception {
-        SystemInGatewayUtil.provideInput("-9\n");
+        SystemInGatewayUtil.provideInput("-9\r\n");
         Task26.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если число отрицательное и нечетное, вывести \"отрицательное нечетное число\".",
-                "отрицательное нечетное число\r\n",result);
+                "отрицательное нечетное число",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task26isZero() throws Exception {
-        SystemInGatewayUtil.provideInput("0\n");
+        SystemInGatewayUtil.provideInput("0\r\n");
         Task26.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если число равно 0, вывести \"ноль\".",
-                "ноль\r\n",result);
+                "ноль",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task26isPositiveEven() throws Exception {
-        SystemInGatewayUtil.provideInput("10\n");
+        SystemInGatewayUtil.provideInput("10\r\n");
         Task26.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если число положительное и четное, вывести \"положительное четное число\".",
-                "положительное четное число\r\n",result);
+                "положительное четное число",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task26isPositiveOdd() throws Exception {
-        SystemInGatewayUtil.provideInput("11\n");
+        SystemInGatewayUtil.provideInput("11\r\n");
         Task26.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если число положительное и нечетное, вывести \"положительное нечетное число\".",
-                "положительное нечетное число\r\n",result);
+                "положительное нечетное число",result.split("\r\n")[0]);
         stream.reset();
     }
 }

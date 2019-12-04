@@ -23,10 +23,12 @@ package lesson04.part01;
 public class Task19 {
 
   public static void main(String[] args) throws InterruptedException {
-    for (int i=30; i>-1; i--) {
+    for (int i = 30; i >= 0; i--) {
       System.out.println(i);
+
       Thread.sleep(100);
     }
+
     System.out.println("Бум!");
   }
 }

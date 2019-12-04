@@ -33,7 +33,7 @@ public class Task17Test {
     public void test17OutputScreen() throws Exception {
         String name = "kek";
         int years = 12;
-        SystemInGatewayUtil.provideInput(name + "\n" + years);
+        SystemInGatewayUtil.provideInput(name + "\r\n" + years);
         Task17.main(null);
         SystemOutGatewayUtil.setOriginalOut();
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
@@ -82,7 +82,7 @@ public class Task17Test {
     public void test17ContainsVariables() throws Exception {
         String name = "kek";
         int years = 12;
-        SystemInGatewayUtil.provideInput(name + "\n" + years);
+        SystemInGatewayUtil.provideInput(name + "\r\n" + years);
         Task17.main(null);
         SystemOutGatewayUtil.setOriginalOut();
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
@@ -90,8 +90,8 @@ public class Task17Test {
 
         Assert.assertTrue(
                 "Программа должна считывать данные с клавиатуры",
-                s.equals(name + " захватит мир через " + years + ". Му-ха-ха!\n") ||
-                        s.equals(name + " захватит мир через " + years + ". Му-ха-ха!")
+                s.equals(name + " захватит мир через " + years + " лет. Му-ха-ха!\r\n") ||
+                        s.equals(name + " захватит мир через " + years + " лет. Му-ха-ха!\r\n")
         );
     }
 
@@ -99,7 +99,7 @@ public class Task17Test {
     public void test17ContainsName() throws Exception {
         String name = "kek";
         int years = 12;
-        SystemInGatewayUtil.provideInput(name + "\n" + years);
+        SystemInGatewayUtil.provideInput(name + "\r\n" + years);
         Task17.main(null);
         SystemOutGatewayUtil.setOriginalOut();
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
@@ -115,7 +115,7 @@ public class Task17Test {
     public void test17ContainsNumber() throws Exception {
         String name = "kek";
         int years = 12;
-        SystemInGatewayUtil.provideInput(name + "\n" + years);
+        SystemInGatewayUtil.provideInput(name + "\r\n" + years);
         Task17.main(null);
         SystemOutGatewayUtil.setOriginalOut();
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
@@ -123,7 +123,7 @@ public class Task17Test {
 
         Assert.assertTrue(
                 "Выведенный текст должен содержать введенное число",
-                s.contains(" " + years + ".")
+                s.contains(" " + years + " лет.")
         );
     }
 }

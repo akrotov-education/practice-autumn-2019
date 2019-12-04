@@ -2,10 +2,6 @@ package lesson02.part02;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
 
 /**
  * Ввести с клавиатуры три числа, вывести на экран среднее из них. Т.е. не самое большое и не самое маленькое.
@@ -22,13 +18,29 @@ import java.util.Scanner;
 
 public class Task41 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        List<Integer> nums = new ArrayList<Integer>();
-        for (int i = 0; i < 3; i++) {
-            nums.add(Integer.parseInt(reader.readLine()));
+
+        int a = Integer.parseInt(reader.readLine());
+        int b = Integer.parseInt(reader.readLine());
+        int c = Integer.parseInt(reader.readLine());
+
+        if (a < b) {
+            int d = b;
+            b = a;
+            a = d;
         }
-        nums.sort(Comparator.naturalOrder());
-        System.out.println(nums.get(1));
+        if (a < c) {
+            int d = c;
+            c = a;
+            a = d;
+        }
+
+        if (b < c) {
+            int d = c;
+            c = b;
+            b = d;
+        }
+
+        System.out.println(b);
     }
 }

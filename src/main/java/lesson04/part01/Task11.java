@@ -24,31 +24,35 @@ import java.util.ArrayList;
 
 public class Task11 {
   public static void main(String[] args) throws Exception {
-    ArrayList<Integer> list = new ArrayList<>();
-    ArrayList<Integer> list3 = new ArrayList<>();
+    ArrayList<Integer> mainList = new ArrayList<>();
+    ArrayList<Integer> list1 = new ArrayList<>();
     ArrayList<Integer> list2 = new ArrayList<>();
-    ArrayList<Integer> listother = new ArrayList<>();
+    ArrayList<Integer> list3 = new ArrayList<>();
+
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    for (int i = 0; i < 20; i++) {
+      int inp = Integer.parseInt(reader.readLine());
+      mainList.add(inp);
 
-    for (int i=0; i<20; i++)
-    list.add(Integer.parseInt(reader.readLine()));
-
-    for (int i=0; i<list.size(); i++) {
-      if (list.get(i)%3==0)
-        list3.add(list.get(i));
-      if (list.get(i)%2==0)
-        list2.add(list.get(i));
-      if ((list.get(i)%2!=0)&(list.get(i)%3!=0))
-        listother.add(list.get(i));
+      if (inp % 3 == 0) {
+        list1.add(inp);
+      }
+      if (inp % 2 == 0) {
+        list2.add(inp);
+      }
+      if (inp % 3 != 0 && inp % 2 != 0) {
+        list3.add(inp);
+      }
     }
 
-    printList(list3);
+    printList(list1);
     printList(list2);
-    printList(listother);
+    printList(list3);
   }
 
   public static void printList(ArrayList<Integer> list) {
-    for (int i=0; i<list.size(); i++)
-      System.out.println(list.get(i));
+    for (int num: list) {
+      System.out.println(num);
+    }
   }
 }

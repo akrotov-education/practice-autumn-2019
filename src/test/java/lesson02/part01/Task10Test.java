@@ -23,17 +23,18 @@ public class Task10Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
     @Test
     public void CheckOutput(){
         Task10.main(null);
         ByteArrayOutputStream s = SystemOutGatewayUtil.getOutputArray();
         String s2 = s.toString();
-        Assert.assertEquals("printing: Hello world!\n", s2);
+        Assert.assertEquals("printing: Hello world!\r\n", s2);
     }
     @Test
     public void containWriteToConsole() {
-        List<String> lines = ReadFileUtil.readFileInList("/Users/Xesavov/Documents/practice-autumn-2019/src/main/java/lesson02/part01/Task10.java");
+        List<String> lines = ReadFileUtil.readFileInList("./src/main/java/lesson02/part01/Task10.java");
         String lineWithMethodCall = lines.get(23);
 
 

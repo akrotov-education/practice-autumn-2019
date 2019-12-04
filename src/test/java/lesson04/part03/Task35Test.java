@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
 
 public class Task35Test {
     private static String fileName = "./src/main/java/lesson04/part03/Task35.java";
-    private static String returnString="return Thread.currentThread().getStackTrace();";
+    private static String returnString="return stackTraceElements";
     int startLineMain;
     int startLineMethod1;
     int startLineMethod2;

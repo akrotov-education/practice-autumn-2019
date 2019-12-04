@@ -18,15 +18,15 @@ import java.util.ArrayList;
 
 public class Task06 {
 
-    public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("a");
-        list.add("b");
-        list.add("c");
-        list.add("d");
-        list.add("e");
-        System.out.println(list.size());
-        for (int i=0; i<list.size(); i++)
-            System.out.println(list.get(i));
+  public static void main(String[] args) {
+    ArrayList<String> strList = new ArrayList<>();
+    for (int i = 0; i < 5; i++) {
+      strList.add(String.valueOf(i));
     }
+
+    System.out.println(strList.size());
+    for (String str: strList) {
+      System.out.println(str);
+    }
+  }
 }

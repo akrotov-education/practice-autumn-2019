@@ -26,7 +26,8 @@ public class Task07 {
     }
 
     public static double convertCelsiusToFahrenheit(int celsius) {
-        //напишите тут ваш код
-        return (double)9/(double)5 * celsius + 32;
+        double TF = (9 / 5d) * celsius + 32;
+
+        return TF;
     }
 }

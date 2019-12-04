@@ -32,7 +32,7 @@ public class Task22Test {
         List<String> fileLines = ReadFileUtil.readFileInList("./src/main/java/lesson04/part02/Task22.java");
         boolean isOk = false;
         for (String line : fileLines) {
-            if (!line.matches(".*Map\\s*<String,String>.*new.*")) {
+            if (!line.matches(".*Map\\s*<String, String>.*new.*")) {
                 continue;
             }
 

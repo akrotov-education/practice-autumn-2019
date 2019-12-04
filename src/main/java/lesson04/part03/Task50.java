@@ -27,14 +27,14 @@ public class Task50 {
 
   public static void readData() {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    ArrayList<Integer> list = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<Integer>();
     try {
-      for (;;) {
+      while (true) {
         list.add(Integer.parseInt(reader.readLine()));
       }
     } catch (Exception e) {
-      for (int i = 0; i < list.size(); i++) {
-        System.out.println(list.get(i));
+      for (int str: list) {
+        System.out.println(str);
       }
     }
   }

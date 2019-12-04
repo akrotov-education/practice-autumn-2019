@@ -116,7 +116,7 @@ public class Task11Test {
         Task11.checkSeason(10);
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         Assert.assertEquals("Method checkSeason works incorrect",
                 "зима",

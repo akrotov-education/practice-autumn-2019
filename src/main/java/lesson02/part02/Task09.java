@@ -1,7 +1,5 @@
 package lesson02.part02;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
 /**
  * Напишите метод displayClosestToTen. Метод должен выводить на экран ближайшее к 10 из двух чисел, записанных в аргументах метода.
  * Например, среди чисел 8 и 11 ближайшее к десяти 11. Если оба числа на равной длине к 10, то вывести на экран любое из них.
@@ -23,11 +21,7 @@ public class Task09 {
     }
 
     public static void displayClosestToTen(int a, int b) {
-        // напишите тут ваш код
-        if (abs(a-10) < abs(b-10))
-            System.out.println(a);
-        else
-            System.out.println(b);
+        System.out.println(abs(10-a) < abs(10-b) ? a : b);
     }
 
     public static int abs(int a) {

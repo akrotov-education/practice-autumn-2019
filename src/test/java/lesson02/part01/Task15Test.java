@@ -18,9 +18,9 @@ public class Task15Test {
 
     @After
     public void after() {
+        SystemOutGatewayUtil.setOriginalOut();
         SystemOutGatewayUtil.clearOutput();
     }
-
     @Test
     public void test15OutputScreen() {
         Task15.main(null);
@@ -41,7 +41,7 @@ public class Task15Test {
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
         String s = outputArr.toString();
 
-        int count = s.split("\n").length - 1;
+        int count = s.split("\r\n").length - 1;
 
         Assert.assertTrue(
                 "Должно быть выведено две строки",
@@ -56,7 +56,7 @@ public class Task15Test {
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
         String s = outputArr.toString();
 
-        String str = s.split("\n")[0];
+        String str = s.split("\r\n")[0];
 
         Assert.assertTrue(
                 "Текст первый строки должен быть: It's Windows path: \"C:\\Program Files\\Java\\jdk1.7.0\\bin\"",
@@ -71,7 +71,7 @@ public class Task15Test {
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
         String s = outputArr.toString();
 
-        String str = s.split("\n")[1];
+        String str = s.split("\r\n")[1];
 
         Assert.assertTrue(
                 "Текст второй строки должен быть: It's Java string: \\\"C:\\\\Program Files\\\\Java\\\\jdk1.7.0\\\\bin\\\"",

@@ -1,6 +1,7 @@
 package lesson04.part01;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /**
  * 1. Создать массив на 10 строк.
@@ -18,16 +19,14 @@ import java.util.Scanner;
 public class Task02 {
 
   public static void main(String[] args) throws Exception {
-    String[] list = new String[10];
-    Scanner scanner = new Scanner(System.in);
-    for (int i=0; i<8; i++) {
-      list[i] = scanner.nextLine();
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    String[] arr = new String[10];
+    for (int i = 0; i < 8; i++) {
+      arr[i] = reader.readLine();
     }
-    for (int i=0; i<list.length; i++) {
-      System.out.println(list[i]);
-    }
-    for (int i=list.length-1; i>-1; i--) {
-      System.out.println(list[i]);
+
+    for (int i = arr.length-1; i >= 0; i--) {
+      System.out.println(arr[i]);
     }
   }
 }

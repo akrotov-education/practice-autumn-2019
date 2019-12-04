@@ -41,7 +41,7 @@ public class Task07Test {
     public void task07ifListCreated() {
         boolean isListCreated = false;
         for (String s : collect) {
-            if (s.contains("strings = new ArrayList<String>()"))
+            if (s.contains("strings = new ArrayList<>()"))
                 isListCreated = true;
         }
         Assert.assertTrue("В методе main инициализируй существующее поле strings новым ArrayList<>",
@@ -51,7 +51,7 @@ public class Task07Test {
     public void task07KeyboardInputToList() {
         boolean isInputExist = false;
         for (String s : collect) {
-            if ((s.contains("for(int i = 0; i < 5; i++)"))
+            if ((s.contains("(int i = 0; i < 5; i++)"))
                     || (s.contains("strings.add(reader.readLine())"))) {
                 isInputExist = true;
                 break;
@@ -63,7 +63,7 @@ public class Task07Test {
     public void task07OutLongestString() {
         boolean isInputExist = false;
         for (String s : collect) {
-            if ((s.contains("if (strings.get(i).length() == max)")) || (s.contains("System.out.println(strings.get(b))"))) {
+            if ((s.contains("if (str.length() != maxLen)")) || (s.contains("System.out.println(str)"))) {
                 isInputExist = true;
                 break;
             }

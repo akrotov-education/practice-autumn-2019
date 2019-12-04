@@ -42,7 +42,8 @@ public class Task22 {
     map.put("ирис", "цветок");
     map.put("картофель", "клубень");
 
-    for (Map.Entry<String, String> text: map.entrySet())
-      System.out.println(text.getKey() + " - " + text.getValue());
+    for (Map.Entry<String, String> entry: map.entrySet()) {
+      System.out.println(entry.getKey() + " - " + entry.getValue());
+    }
   }
 }

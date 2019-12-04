@@ -28,7 +28,6 @@ public class Task41Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -68,7 +67,7 @@ public class Task41Test {
 
     @Test
     public void task41isResultGood() throws Exception {
-        SystemInGatewayUtil.provideInput("1\n3\n2\n");
+        SystemInGatewayUtil.provideInput("1\r\n3\r\n2\r\n");
         Task41.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
@@ -79,7 +78,7 @@ public class Task41Test {
 
     @Test
     public void task41isResultGoodForThreeEquals() throws Exception {
-        SystemInGatewayUtil.provideInput("3\n3\n3\n");
+        SystemInGatewayUtil.provideInput("3\r\n3\r\n3\r\n");
         Task41.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
@@ -90,7 +89,7 @@ public class Task41Test {
 
     @Test
     public void task41isResultGoodForTwoEquals() throws Exception {
-        SystemInGatewayUtil.provideInput("1\n2\n2\n");
+        SystemInGatewayUtil.provideInput("1\r\n2\r\n2\r\n");
         Task41.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();

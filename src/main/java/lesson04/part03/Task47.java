@@ -39,7 +39,6 @@ public class Task47 {
     } catch (FileSystemException e) {
       BEAN.log(e);
     }
-
   }
 
   public static void handleExceptions() throws FileSystemException {

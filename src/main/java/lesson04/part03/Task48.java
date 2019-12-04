@@ -17,7 +17,7 @@ package lesson04.part03;
 
 public class Task48 {
 
-  public static void main(String[] args) {
+  public static void main(String[] args)  {
   }
 
   static class MyException extends ArrayStoreException {

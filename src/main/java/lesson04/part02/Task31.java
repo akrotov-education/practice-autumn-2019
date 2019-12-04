@@ -23,22 +23,28 @@ public class Task31 {
 
   public static List getListForGet() {
     ArrayList list = new ArrayList();
-    return null;
+
+    return list;
+
   }
 
   public static List getListForSet() {
     ArrayList list = new ArrayList();
-    return null;
+
+    return list;
+
   }
 
   public static List getListForAddOrInsert() {
     LinkedList list = new LinkedList();
-    return null;
+
+    return list;
   }
 
   public static List getListForRemove() {
     LinkedList list = new LinkedList();
-    return null;
+
+    return list;
   }
 
   public static void main(String[] args) {

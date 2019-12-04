@@ -35,7 +35,7 @@ public class Task21Test {
 
 
 
-        String fileName=".\\src\\main\\java\\lesson02\\part01\\Task21.java";
+        String fileName="./src/main/java/lesson02/part01/Task21.java";
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
             collect = stream.collect(Collectors.toList());
         } catch (IOException e) {
@@ -46,6 +46,7 @@ public class Task21Test {
     @After
     public void after() {
         SystemInGatewayUtil.setOriginalIn();
+        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -88,21 +89,21 @@ public class Task21Test {
 
     @Test
     public void test21_5(){
-        Assert.assertTrue("Не пройдено 5е условие!", s.split("\n").length==10);
+        Assert.assertTrue("Не пройдено 5е условие!", s.split("\r\n").length==10);
     }
 
     @Test
     public void test21_6(){
         Assert.assertTrue("Не пройдено 5е условие!", s.equals("Я хочу большую зарплату, и для этого изучаю Java\r\n" +
-                "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
-                "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
-                "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
-                "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
-                "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
-                "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
-                "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
-                "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
-                "Я хочу большую зарплату, и для этого изучаю Java\r\n"));
+                                                                        "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
+                                                                        "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
+                                                                        "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
+                                                                        "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
+                                                                        "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
+                                                                        "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
+                                                                        "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
+                                                                        "Я хочу большую зарплату, и для этого изучаю Java\r\n" +
+                                                                        "Я хочу большую зарплату, и для этого изучаю Java\r\n"));
     }
 
 }

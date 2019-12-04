@@ -20,18 +20,18 @@ import java.util.ArrayList;
 public class Task09 {
 
   public static void main(String[] args) throws Exception {
-    ArrayList<String> list = new ArrayList<String>();
+    ArrayList<String> strList = new ArrayList<>();
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-    for (int i=0; i <5; i++)
-      list.add(reader.readLine());
-
-    for (int i=0; i<13; i++) {
-      list.add(0,list.get(list.size()-1));
-      list.remove(list.size()-1);
+    for (int i = 0; i < 5; i++) {
+      strList.add(reader.readLine());
     }
 
-    for (int i=0; i<list.size(); i++)
-      System.out.println(list.get(i));
+    for (int i = 0; i < 13; i++) {
+      strList.add(0, strList.remove(4));
+    }
+
+    for (String str: strList) {
+      System.out.println(str);
+    }
   }
 }

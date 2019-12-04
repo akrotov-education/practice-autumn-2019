@@ -1,5 +1,6 @@
 package lesson01.part1;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,6 +21,12 @@ public class Task11Test {
     @Before
     public void before() {
         SystemOutGatewayUtil.setCustomOut();
+    }
+
+    @After
+    public void after() {
+        SystemOutGatewayUtil.setOriginalOut();
+        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test

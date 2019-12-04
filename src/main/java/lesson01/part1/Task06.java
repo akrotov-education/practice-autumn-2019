@@ -20,7 +20,9 @@ public class Task06 {
     }
 
     public static void printCircleLength(int radius) {
-        //напишите тут ваш код
-        System.out.print(Math.PI * 2 * radius);
+        float pi = 3.14f;
+        float L = 2 * pi * radius;
+
+        System.out.println("L = " + L);
     }
 }

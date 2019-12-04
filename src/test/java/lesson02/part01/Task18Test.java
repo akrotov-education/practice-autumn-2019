@@ -34,7 +34,7 @@ public class Task18Test {
         String name = "kek";
         int num1 = 15;
         int num2 = 12;
-        SystemInGatewayUtil.provideInput(name + "\n" + num1 + "\n" + num2);
+        SystemInGatewayUtil.provideInput(name + "\r\n" + num1 + "\r\n" + num2);
         Task18.main(null);
         SystemOutGatewayUtil.setOriginalOut();
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
@@ -84,7 +84,7 @@ public class Task18Test {
         String name = "kek";
         int num1 = 15;
         int num2 = 12;
-        SystemInGatewayUtil.provideInput(name + "\n" + num1 + "\n" + num2);
+        SystemInGatewayUtil.provideInput(name + "\r\n" + num1 + "\r\n" + num2);
         Task18.main(null);
         SystemOutGatewayUtil.setOriginalOut();
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
@@ -101,7 +101,7 @@ public class Task18Test {
         String name = "kek";
         int num1 = 15;
         int num2 = 12;
-        SystemInGatewayUtil.provideInput(name + "\n" + num1 + "\n" + num2);
+        SystemInGatewayUtil.provideInput(name + "\r\n" + num1 + "\r\n" + num2);
         Task18.main(null);
         SystemOutGatewayUtil.setOriginalOut();
         ByteArrayOutputStream outputArr = SystemOutGatewayUtil.getOutputArray();
@@ -110,7 +110,7 @@ public class Task18Test {
         Assert.assertTrue(
                 "Выведенный тест должен полностью соответствовать заданию",
                 s.equals(name + " получает " + num1 + " через " + num2 + " лет.") ||
-                        s.equals(name + " получает " + num1 + " через " + num2 + " лет.\n")
+                        s.equals(name + " получает " + num1 + " через " + num2 + " лет.\r\n")
         );
     }
 }

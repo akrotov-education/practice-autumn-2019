@@ -26,7 +26,6 @@ public class Task37Test {
     @After
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -70,16 +69,16 @@ public class Task37Test {
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Неправильный вывод",
-                "8\n" +
-                        "88\n" +
-                        "888\n" +
-                        "8888\n" +
-                        "88888\n" +
-                        "888888\n" +
-                        "8888888\n" +
-                        "88888888\n" +
-                        "888888888\n" +
-                        "8888888888\n",result);
+                "8\r\n" +
+                        "88\r\n" +
+                        "888\r\n" +
+                        "8888\r\n" +
+                        "88888\r\n" +
+                        "888888\r\n" +
+                        "8888888\r\n" +
+                        "88888888\r\n" +
+                        "888888888\r\n" +
+                        "8888888888\r\n",result);
         stream.reset();
     }
 

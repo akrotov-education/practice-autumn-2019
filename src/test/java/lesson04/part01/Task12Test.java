@@ -64,7 +64,7 @@ public class Task12Test {
     }
 
     @Test
-    public void task12ifListWasAddedAndEditedAndPrinted() {
+    public void task12ifListWasAddedAndEditedAndPrinted() throws IOException {
         Task12.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();

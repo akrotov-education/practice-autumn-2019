@@ -27,7 +27,7 @@ public class Task18Test {
 
     @Test
     public void checkInput() {
-        SystemInGatewayUtil.provideInput("1\n2");
+        SystemInGatewayUtil.provideInput("1\r\n2");
 
         try {
             Task18.main(null);
@@ -38,7 +38,7 @@ public class Task18Test {
 
     @Test
     public void checkOutput() {
-        SystemInGatewayUtil.provideInput("1\n2");
+        SystemInGatewayUtil.provideInput("1\r\n2");
 
         try {
             Task18.main(null);
@@ -48,7 +48,7 @@ public class Task18Test {
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
         Assert.assertTrue("The program must output numbers", output.toString().length() > 0);
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         try {
             for (String line : outLines) {
@@ -61,7 +61,7 @@ public class Task18Test {
 
     @Test
     public void checkMin() {
-        SystemInGatewayUtil.provideInput("1\n2");
+        SystemInGatewayUtil.provideInput("1\r\n2");
 
         try {
             Task18.main(null);
@@ -70,7 +70,7 @@ public class Task18Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         Assert.assertEquals("The program should display minimum of two values",
                 "1",
@@ -80,7 +80,7 @@ public class Task18Test {
 
     @Test
     public void checkMinEquals() {
-        SystemInGatewayUtil.provideInput("2\n2");
+        SystemInGatewayUtil.provideInput("2\r\n2");
 
         try {
             Task18.main(null);
@@ -89,7 +89,7 @@ public class Task18Test {
         }
 
         ByteArrayOutputStream output = SystemOutGatewayUtil.getOutputArray();
-        String[] outLines = output.toString().split("\n");
+        String[] outLines = output.toString().split("\r\n");
 
         Assert.assertEquals("The program should display one of two equal values",
                 "2",

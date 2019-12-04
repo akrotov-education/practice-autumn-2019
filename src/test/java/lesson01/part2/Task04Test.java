@@ -23,6 +23,7 @@ public class Task04Test {
 
     @After
     public void after() {
+        SystemOutGatewayUtil.setOriginalOut();
         SystemOutGatewayUtil.clearOutput();
     }
 
@@ -134,7 +135,7 @@ public class Task04Test {
 
             Assert.assertTrue(
                     "Метод main должен выводить на экран произведение переменных a и b!",
-                    collect.get(28).contains("a * b")
+                    collect.get(30).contains("%d * %d")
             );
         } catch (IOException e) {
             e.printStackTrace();

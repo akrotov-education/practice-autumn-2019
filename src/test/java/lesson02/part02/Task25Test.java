@@ -28,7 +28,6 @@ public class Task25Test {
     public void tearDown() throws Exception {
         SystemOutGatewayUtil.setOriginalOut();
         SystemInGatewayUtil.setOriginalIn();
-        SystemOutGatewayUtil.clearOutput();
     }
 
     @Test
@@ -68,45 +67,45 @@ public class Task25Test {
 
     @Test
     public void task25correct1stQuarter() throws Exception {
-        SystemInGatewayUtil.provideInput("1\n1\n");
+        SystemInGatewayUtil.provideInput("1\r\n1\r\n");
         Task25.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если точка находится в первой координатной четверти, вывести \"1\".",
-                "1\r\n",result);
+                "1",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task25correct2ndQuarter() throws Exception {
-        SystemInGatewayUtil.provideInput("-1\n1\n");
+        SystemInGatewayUtil.provideInput("-1\r\n1\r\n");
         Task25.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если точка находится во второй координатной четверти, вывести \"2\".",
-                "2\r\n",result);
+                "2",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task25correct3rdQuarter() throws Exception {
-        SystemInGatewayUtil.provideInput("-1\n-1\n");
+        SystemInGatewayUtil.provideInput("-1\r\n-1\r\n");
         Task25.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если точка находится в третьей координатной четверти, вывести \"3\".",
-                "3\r\n",result);
+                "3",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task25correct4thQuarter() throws Exception {
-        SystemInGatewayUtil.provideInput("1\n-1\n");
+        SystemInGatewayUtil.provideInput("1\r\n-1\r\n");
         Task25.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если точка находится в четвертой координатной четверти, вывести \"4\".",
-                "4\r\n",result);
+                "4",result.split("\r\n")[0]);
         stream.reset();
     }
 }

@@ -75,7 +75,7 @@ public class Task42Test {
 
     @Test
     public void checkSout(){
-        Assert.assertTrue("",r.contains("java.lang.IndexOutOfBoundsException: Index 18 out of bounds for length 0"));
+        Assert.assertTrue("",r.contains("java.lang.IndexOutOfBoundsException: Index: 18"));
     }
 
     @Test

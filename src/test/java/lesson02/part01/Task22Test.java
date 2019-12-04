@@ -36,7 +36,7 @@ public class Task22Test {
 
 
 
-        String fileName=".\\src\\main\\java\\lesson02\\part01\\Task22.java";
+        String fileName="./src/main/java/lesson02/part01/Task22.java";
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
             collect = stream.collect(Collectors.toList());
         } catch (IOException e) {

@@ -85,73 +85,73 @@ public class Task27Test {
 
     @Test
     public void task27isOneDigitEven() throws Exception {
-        SystemInGatewayUtil.provideInput("2\n");
+        SystemInGatewayUtil.provideInput("2\r\n");
         Task27.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если число четное и имеет одну цифру, вывести \"четное однозначное число\".",
-                "четное однозначное число\r\n",result);
+                "четное однозначное число",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task27isOneDigitOdd() throws Exception {
-        SystemInGatewayUtil.provideInput("1\n");
+        SystemInGatewayUtil.provideInput("1\r\n");
         Task27.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если число нечетное и имеет одну цифру, вывести \"нечетное однозначное число\".",
-                "нечетное однозначное число\r\n",result);
+                "нечетное однозначное число",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task27isTwoDigitEven() throws Exception {
-        SystemInGatewayUtil.provideInput("20\n");
+        SystemInGatewayUtil.provideInput("20\r\n");
         Task27.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если число четное и имеет две цифры, вывести \"четное двузначное число\".",
-                "четное двузначное число\r\n",result);
+                "четное двузначное число",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task27isTwoDigitOdd() throws Exception {
-        SystemInGatewayUtil.provideInput("21\n");
+        SystemInGatewayUtil.provideInput("21\r\n");
         Task27.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если число нечетное и имеет две цифры, вывести \"нечетное двузначное число\".",
-                "нечетное двузначное число\r\n",result);
+                "нечетное двузначное число",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task27isThreeDigitEven() throws Exception {
-        SystemInGatewayUtil.provideInput("210\n");
+        SystemInGatewayUtil.provideInput("210\r\n");
         Task27.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если число четное и имеет три цифры, вывести \"четное трехзначное число\".",
-                "четное трехзначное число\r\n",result);
+                "четное трехзначное число",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task27isThreeDigitOdd() throws Exception {
-        SystemInGatewayUtil.provideInput("211\n");
+        SystemInGatewayUtil.provideInput("211\r\n");
         Task27.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();
         Assert.assertEquals("Если число нечетное и имеет три цифры, вывести \"нечетное трехзначное число\".",
-                "нечетное трехзначное число\r\n",result);
+                "нечетное трехзначное число",result.split("\r\n")[0]);
         stream.reset();
     }
 
     @Test
     public void task27isInInterval() throws Exception {
-        SystemInGatewayUtil.provideInput("0\n");
+        SystemInGatewayUtil.provideInput("0\r\n");
         Task27.main(null);
         ByteArrayOutputStream stream = SystemOutGatewayUtil.getOutputArray();
         String result = stream.toString();

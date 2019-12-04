@@ -26,10 +26,12 @@ public class Task33 {
 
   public static void main(String[] args) {
     Set<Cat> cats = createCats();
+
     for (Cat cat : cats) {
       cats.remove(cat);
       break;
     }
+
     printCats(cats);
   }
 
@@ -44,6 +46,7 @@ public class Task33 {
 
   public static void printCats(Set<Cat> cats) {
     Iterator<Cat> iterator = cats.iterator();
+
     while (iterator.hasNext()) {
       System.out.println(iterator.next());
     }

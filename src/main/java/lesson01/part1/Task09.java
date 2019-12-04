@@ -26,13 +26,13 @@ public class Task09 {
     }
 
     public static int sumDigitsInNumber(int number) {
-        //напишите тут ваш код
-        number = Math.abs(number);
-        int summ = 0;
-        while (number != 0) {
-            summ += number % 10;
-            number /= 10;
+        int sum = 0;
+        String asStr = Integer.toString(number);
+        for (char letter : asStr.toCharArray()) {
+            int singleNum = Character.getNumericValue(letter);
+            sum += singleNum;
         }
-        return summ;
+
+        return sum;
     }
 }
