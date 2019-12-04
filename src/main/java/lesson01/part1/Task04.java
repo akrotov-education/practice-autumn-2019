@@ -12,7 +12,6 @@ public class Task04 {
      */
 
     public static void main(String[] args) {
-
         int x = 27;
         int y = 15;
 
@@ -20,7 +19,7 @@ public class Task04 {
         // y = y - x;
         // y = y + x;
         // y = y + x;
-           y = x / y;
+         y = x / y;
         // y = y / x;
         // y = y * x;
 

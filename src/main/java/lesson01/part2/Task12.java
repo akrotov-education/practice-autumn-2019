@@ -22,24 +22,15 @@ public class Task12 {
 
     public static int min(int a, int b, int c, int d) {
         //напишите тут ваш код
-        int m1,m2;
-        if (a > b) m1 = b;
-        else m1 = a;
-
-        if (c > d) m2 = d;
-        else m2 = c;
-
-        if (m1 > m2) return m2;
-        else return m1;
-
+        return min(a,b) < min(c,d) ? min(a,b) : min(c,d);
     }
 
     public static int min(int a, int b) {
-        if (a > b) return b;
-        else return a;
+        //напишите тут ваш код
+        return a < b ? a : b;
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         System.out.println(min(-20, -10));
         System.out.println(min(-40, -10, -30, 40));
         System.out.println(min(-20, -40, -30, 40));

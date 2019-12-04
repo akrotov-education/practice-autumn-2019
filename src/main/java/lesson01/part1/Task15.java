@@ -20,6 +20,6 @@ public class Task15 {
 
     public static void main(String[] args) {
         //Измените код
-        System.out.println(Math.pow(number,2));
+        System.out.print(number * number);
     }
 }
