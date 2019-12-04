@@ -20,7 +20,6 @@ public class Task01Test {
     @Before
     public void setUp() throws Exception {
         SystemOutGatewayUtil.setCustomOut();
-
     }
 
     @After
