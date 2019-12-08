@@ -12,8 +12,8 @@ package lesson02.part01;
 */
 
 public class Task16 {
-    public static void main(String[] args) {
-        //напишите тут ваш код
-
+    public static void main(String[] args)
+    {
+        System.out.println("日本語");
     }
 }

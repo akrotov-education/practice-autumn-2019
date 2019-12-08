@@ -20,9 +20,14 @@ package lesson02.part01;
  * 4.	Выводимый текст должен соответствовать заданию.
  */
 
-public class Task09 {
-    public static void main(String[] args) {
-        //напишите тут ваш код
+public class Task09
+{
 
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 1; i <= 5; i++) {
+            sum += i;
+            System.out.println(sum);
+        }
     }
 }

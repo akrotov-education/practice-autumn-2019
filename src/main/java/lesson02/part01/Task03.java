@@ -17,12 +17,13 @@ package lesson02.part01;
 
 public class Task03 {
     public static void main(String[] args) {
-        //напишите тут ваш код
 
+        System.out.println(convertEurToUsd(1, 1.34));
+        System.out.println(convertEurToUsd(100,1.6));
     }
 
-    public static double convertEurToUsd(int eur, double course) {
-        //напишите тут ваш код
-        return 0d;
+    public static double convertEurToUsd(int eu, double c) {
+        double sum=eu*c;
+        return sum;
     }
 }

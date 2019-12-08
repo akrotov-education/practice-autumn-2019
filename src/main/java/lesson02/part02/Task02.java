@@ -19,14 +19,14 @@ public class Task02 {
         apple.addPrice(50);
         Apple apple2 = new Apple();
         apple2.addPrice(100);
-        System.out.println("Стоимость яблок " + Apple.applesPrice);
+        System.out.println("Всего " + Apple.applesPrice);
     }
 
     public static class Apple {
         public static int applesPrice = 0;
 
         public static void addPrice(int applesPrice) {
-            //напишите тут ваш код
+            Apple.applesPrice+=applesPrice;
 
         }
     }

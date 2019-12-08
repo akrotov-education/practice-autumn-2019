@@ -15,12 +15,15 @@ package lesson02.part01;
  * 6.	Выведенный тест должен полностью соответствовать заданию.
  */
 
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
 public class Task18 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
 
+        Scanner scan = new Scanner(System.in);
+        String name = scan.next();
+        int num1 = scan.nextInt();
+        int num2 = scan.nextInt();
+        System.out.println(name + " получает " + num1 + " через " + num2 + " лет.");
     }
 }

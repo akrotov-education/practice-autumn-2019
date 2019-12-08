@@ -14,14 +14,15 @@ package lesson02.part02;
 public class Task05 {
 
     public static void main(String[] args) {
-
+        Cat cat = new Cat();
+        System.out.println(cat.catsCount);
     }
 
     public static class Cat {
-        private static int catsCount = 0;
+        private static int catsCount = 5;
 
         public static void setCatsCount(int catsCount) {
-            //напишите тут ваш код
+            Cat.catsCount = catsCount;
 
         }
     }

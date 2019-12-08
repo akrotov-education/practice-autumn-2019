@@ -23,12 +23,21 @@ package lesson02.part02;
  * 7.	Если число положительное и нечетное, вывести "положительное нечетное число".
  */
 
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
 public class Task26 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        int a = new Scanner(System.in).nextInt();
+        if (a<0)
+            System.out.print("отрицательное ");
+        else
+            System.out.print("положительное ");
+        if (a % 2 == 0)
+            System.out.print("четное ");
+        else
+            System.out.print("нечетное ");
+        System.out.println("число");
+
 
     }
 }

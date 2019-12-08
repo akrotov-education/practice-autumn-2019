@@ -12,8 +12,7 @@ package lesson02.part01;
  */
 
 public class Task05 {
-    public static void main(String[] args) {
-        //напишите тут ваш код
-
-    }
+        public static void main(String[] args) {
+            System.out.println("SEP 3 1998");
+        }
 }
