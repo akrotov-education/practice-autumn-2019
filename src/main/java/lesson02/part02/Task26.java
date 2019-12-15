@@ -28,7 +28,21 @@ import java.util.*;
 
 public class Task26 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Введите число: ");
+        String d=reader.readLine();
+        int a=Integer.parseInt(d);
+        if(a<0&a%2==0)
+            System.out.println("отрицательное четное число");
+        if(a<0&a%2==-1)
+            System.out.println("отрицательное нечетное число");
+        if(a==0)
+            System.out.println("нулевое число");
+        if(a>0&a%2==0)
+            System.out.println("положительное четное число");
+        if(a>0&a%2==1)
+            System.out.println("положительное нечетное число");
+        else
+            System.out.println("Число некорректное");
     }
 }
