@@ -1,5 +1,9 @@
 package lesson02.part02;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
 /**
  * Ввести с клавиатуры строку name.
  * Ввести с клавиатуры дату рождения (три числа): y, m, d.
@@ -22,6 +26,11 @@ package lesson02.part02;
 public class Task43 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine();
+        int day = Integer.parseInt(reader.readLine());
+        int month = Integer.parseInt(reader.readLine());
+        int year = Integer.parseInt(reader.readLine());
+        System.out.printf("Меня зовут %s.\nЯ родился %d.%d.%d",name,day,month,year);
     }
 }

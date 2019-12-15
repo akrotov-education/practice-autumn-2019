@@ -1,5 +1,10 @@
 package lesson02.part01;
 
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.util.Calendar;
+
+
 /**
  * Вывести на экран дату своего рождения в виде: MAY 1 2012
  * <p>
@@ -14,6 +19,9 @@ package lesson02.part01;
 public class Task05 {
     public static void main(String[] args) {
         //напишите тут ваш код
-
+        LocalDateTime birthDate = LocalDateTime.of(1997,Month.NOVEMBER,10,0,0);
+        System.out.print(birthDate.getMonth());
+        System.out.print(" " + birthDate.getDayOfMonth());
+        System.out.print(" " + birthDate.getYear());
     }
 }

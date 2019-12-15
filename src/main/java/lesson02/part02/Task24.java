@@ -22,6 +22,17 @@ import java.util.*;
 public class Task24 {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            numbers.add(Integer.parseInt(reader.readLine()));
+        }
+        if (!numbers.get(1).equals(numbers.get(0)) && !numbers.get(1).equals(numbers.get(2))) {
+            if (numbers.get(0).equals(numbers.get(2))) System.out.println(2);
+        }
+        if (numbers.get(1).equals(numbers.get(0)) && !numbers.get(1).equals(numbers.get(2)))
+            System.out.println(3);
+        if (numbers.get(1).equals(numbers.get(2)) && !numbers.get(0).equals(numbers.get(1)))
+            System.out.println(1);
     }
 }

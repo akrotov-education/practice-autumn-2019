@@ -18,8 +18,11 @@ public class Task11 {
      */
 
     public static int min(int a, int b, int c) {
-        //напишите тут ваш код
-        return 0;
+        int min = 0;
+        if (a < b)
+            min = a;
+        else min = b;
+        return min < c ? min : c;
     }
 
     public static void main(String[] args) {
