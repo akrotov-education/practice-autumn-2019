@@ -19,7 +19,7 @@ import org.junit.Test;
 /**
  * @author Azamat_Abidokov Date: 07-Oct-19
  */
-public class Task05Test {
+public class Task06Test {
 
   private static final PrintStream originalOut = System.out;
   private static final ByteArrayOutputStream fakeOut = new ByteArrayOutputStream();
@@ -36,19 +36,24 @@ public class Task05Test {
 
   @Test
   public void main_ConsoleOutput() {
+    // given
+    double pi = 3.14;
+    int radius = 5;
+    String output = String.valueOf(2 * pi * radius);
+
     // when
-    Task05.main(null);
+    Task06.main(null);
 
     // then
     assertEquals("Вывод программы не соответствует ожидаемому.",
-        "9 умножить на 3 равно 27", fakeOut.toString());
+        output, fakeOut.toString().trim());
   }
 
   @Test
   public void main_FileChanges() {
     // given
-    String expected = "publicstaticvoidmain(String[]args){inta=3;intb=9;//System.out.print(\"девять\");System.out.print(b);System.out.print(\"умножить\");System.out.print(\"на\");System.out.print(a);//System.out.print(\"три\");//System.out.print(\"не\");//System.out.print(\"будет\");System.out.print(\"равно\");//System.out.print(\"пятнадцать\");//System.out.print(21);System.out.print((int)Math.pow(3,3));}";
-    String taskPath = "./src/main/java/lesson01/part1/Task05.java";
+    String expected = "publicstaticvoidmain(String[]args){printCircleLength(5);}";
+    String taskPath = "./src/main/java/lesson01/part1/Task06.java";
 
     // when
     try {
@@ -56,7 +61,7 @@ public class Task05Test {
       String normalizeContent = StringUtils.deleteWhitespace(content);
 
       // then
-      assertTrue("Нарушено условие задачи: Нельзя изменять (добавлять, удалять) строки с кодом",
+      assertTrue("Нарушено условие задачи: Метод main должен вызывать метод printCircleLength с параметром 5",
           normalizeContent.contains(expected));
     } catch (IOException e) {
       fail("Ошибка при считывании файла");

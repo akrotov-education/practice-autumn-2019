@@ -19,7 +19,7 @@ import org.junit.Test;
 /**
  * @author Azamat_Abidokov Date: 07-Oct-19
  */
-public class Task05Test {
+public class Task04Test {
 
   private static final PrintStream originalOut = System.out;
   private static final ByteArrayOutputStream fakeOut = new ByteArrayOutputStream();
@@ -36,19 +36,22 @@ public class Task05Test {
 
   @Test
   public void main_ConsoleOutput() {
+    // given
+    String expectedOutput = String.join(System.lineSeparator(), "25", "26");
+
     // when
-    Task05.main(null);
+    Task04.main(null);
 
     // then
     assertEquals("Вывод программы не соответствует ожидаемому.",
-        "9 умножить на 3 равно 27", fakeOut.toString());
+        expectedOutput, fakeOut.toString().trim());
   }
 
   @Test
   public void main_FileChanges() {
     // given
-    String expected = "publicstaticvoidmain(String[]args){inta=3;intb=9;//System.out.print(\"девять\");System.out.print(b);System.out.print(\"умножить\");System.out.print(\"на\");System.out.print(a);//System.out.print(\"три\");//System.out.print(\"не\");//System.out.print(\"будет\");System.out.print(\"равно\");//System.out.print(\"пятнадцать\");//System.out.print(21);System.out.print((int)Math.pow(3,3));}";
-    String taskPath = "./src/main/java/lesson01/part1/Task05.java";
+    String expected = "publicstaticvoidmain(String[]args){intx=27;inty=15;//y=x-y;//y=y-x;//y=y+x;//y=y+x;y=x/y;//y=y/x;//y=y*x;x=x-y;y=y-x;System.out.println(Math.abs(x));System.out.println(Math.abs(y));}";
+    String taskPath = "./src/main/java/lesson01/part1/Task04.java";
 
     // when
     try {

@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'com.mtuci.azamat'
+group 'com.mtuci'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = JavaVersion.VERSION_11
@@ -16,12 +16,11 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.5.2'
-}
+    implementation 'org.apache.commons:commons-lang3:3.9'
+    implementation 'commons-io:commons-io:2.6'
 
-test {
-    useJUnitPlatform()
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:3.2.4'
+    testImplementation 'org.powermock:powermock-module-junit4:2.0.2'
+    testImplementation 'org.powermock:powermock-api-mockito2:2.0.2'
 }
