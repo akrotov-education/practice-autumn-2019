@@ -2,7 +2,8 @@ name: Run build
 
 on:
   pull_request:
-    types: [opened, edited, ready_for_review]
+    branches:
+      - master
 
 jobs:
   build:
