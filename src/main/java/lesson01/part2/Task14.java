@@ -15,8 +15,9 @@ public class Task14 {
      */
 
     public static void print3(String s) {
-        //напишите тут ваш код
-
+        for (int x = 0; x < 4; x = x+1)
+            System.out.print(s);
+            System.out.print(" ");
     }
 
     public static void main(String[] args) {
