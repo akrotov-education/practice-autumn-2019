@@ -37,7 +37,7 @@ public class Task04Test {
   @Test
   public void main_ConsoleOutput() {
     // given
-    String expectedOutput = String.join(System.lineSeparator(), "25", "26");
+    String expectedOutput = String.join(System.lineSeparator(), "26", "25");
 
     // when
     Task04.main(null);

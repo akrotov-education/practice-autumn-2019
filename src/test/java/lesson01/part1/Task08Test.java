@@ -12,7 +12,7 @@ import org.junit.Test;
 /**
  * @author Azamat_Abidokov Date: 07-Oct-19
  */
-public class Task06Test {
+public class Task08Test {
 
   private static final PrintStream originalOut = System.out;
   private static final ByteArrayOutputStream fakeOut = new ByteArrayOutputStream();
@@ -30,12 +30,10 @@ public class Task06Test {
   @Test
   public void main_SpecialCase() {
     // given
-    String expected = String.valueOf(2 * 3.14 * 5);
+    int expected = 2;
 
     // when
-    fakeOut.reset();
-    Task06.printCircleLength(5);
-    String actual = fakeOut.toString().trim();
+    int actual = Task08.getMetreFromCentimetre(243);
 
     // then
     assertEquals("Вывод программы не соответствует ожидаемому.",
@@ -44,15 +42,12 @@ public class Task06Test {
 
   @Test
   public void main_ArbitraryCases() {
-    for (int parameter = 0; parameter < 100; parameter++) {
+    for (int parameter = 1; parameter < 10000; parameter += 100) {
       // given
-      double pi = 3.14;
-      String expected = String.valueOf(2 * pi * parameter);
+      int expected = parameter / 100;
 
       // when
-      fakeOut.reset();
-      Task06.printCircleLength(parameter);
-      String actual = fakeOut.toString().trim();
+      int actual = Task08.getMetreFromCentimetre(parameter);
 
       // then
       assertEquals("Вывод программы не соответствует ожидаемому.",
