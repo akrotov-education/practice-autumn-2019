@@ -65,8 +65,8 @@ public class Task02Test {
       Method printString = Task02.class.getDeclaredMethod("printString", String.class);
       String testText = "random$text";
       printString.invoke(null, testText);
-      assertEquals(testText, fakeOut.toString().trim(),
-          "Метод printString должен выводить переданный текст на экран.");
+      assertEquals("Метод printString должен выводить переданный текст на экран.", testText,
+          fakeOut.toString().trim());
     } catch (Exception e) {}
   }
 
@@ -76,7 +76,7 @@ public class Task02Test {
     try {
       Method main = Task02.class.getDeclaredMethod("main", String[].class);
       main.invoke(null, (Object[]) null);
-      assertEquals("Hello, Amigo!", fakeOut.toString().trim(), "Программа должна вывести \"Hello, Amigo!\"");
+      assertEquals("Программа должна вывести \"Hello, Amigo!\"", "Hello, Amigo!", fakeOut.toString().trim());
     } catch (Exception e) {}
   }
 }
