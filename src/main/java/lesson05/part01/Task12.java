@@ -22,7 +22,7 @@ public class Task12 {
 
     }
 
-    public class SamsungGalaxyS2 {
+    public class SamsungGalaxyS2 extends AppleIPhone {
 
     }
 }

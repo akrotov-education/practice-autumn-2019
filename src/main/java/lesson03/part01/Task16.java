@@ -27,7 +27,7 @@ public class Task16 {
 
     public Color color;
 
-    public void Circle() {
+    public Circle() {
       color = new Color();
     }
 

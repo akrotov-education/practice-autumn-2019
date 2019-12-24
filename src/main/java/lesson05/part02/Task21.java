@@ -23,7 +23,7 @@ public class Task21 {
 
     public static class Pet {
         public String getName() {
-            return "Я - пушистик";
+            return "Я - кот!";
         }
     }
 

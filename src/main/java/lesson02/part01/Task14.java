@@ -23,8 +23,13 @@ package lesson02.part01;
 
 public class Task14 {
     public static void main(String[] args) {
-        //напишите тут ваш код
-
+        Red krasni = new Red();
+        Orange orang = new Orange();
+        Yellow jelt = new Yellow();
+        Green zelen = new Green();
+        Blue gol = new Blue();
+        Indigo sin = new Indigo();
+        Violet fiol = new Violet();
     }
 
     public static class Red {

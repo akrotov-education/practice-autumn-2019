@@ -13,7 +13,9 @@ package lesson02.part01;
 
 public class Task05 {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        System.out.print("June ");
+        System.out.print("12 ");
+        System.out.print("2000");
 
     }
 }

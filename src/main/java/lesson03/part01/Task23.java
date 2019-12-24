@@ -17,14 +17,24 @@ package lesson03.part01;
 public class Task23 {
 
   public static void main(String[] args) {
-    // Создай 10 котов
+    Cat Barsuk = new Cat();
+    Cat Edjik = new Cat();
+    Cat Krotik = new Cat();
+    Cat Bilka = new Cat();
+    Cat Lacalut = new Cat();
+    Cat Shakalat = new Cat();
+    Cat Olya = new Cat();
+    Cat DjSlovik = new Cat();
+    Cat Beliy = new Cat();
+    Cat Cherniy = new Cat();
 
-    // Выведи значение переменной catCount
+    System.out.println(Barsuk.catCount);
   }
 
   public static class Cat {
-    // Создай статическую переменную catCount
-
-    // Создай конструктор
+    public static int catCount;
+    public Cat(){
+      this.catCount=catCount+1;
+    }
   }
 }

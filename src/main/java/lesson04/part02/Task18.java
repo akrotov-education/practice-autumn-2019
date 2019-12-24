@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Есть коллекция Map<String, String> (реализация HashMap), туда занесли 10 различных строк.
  * Вывести на экран список ключей, каждый элемент с новой строки.
- *
+ * <p>
  * Требования:
  * 1.	Программа должна создавать переменную коллекции Map с типом элементов String, String. Переменная должна быть сразу проинициализирована.
  * 2.	Программа не должна считывать значения с клавиатуры.
@@ -33,6 +33,8 @@ public class Task18 {
   }
 
   public static void printKeys(Map<String, String> map) {
-    //напишите тут ваш код
+    for (Map.Entry<String, String> entry : map.entrySet()) {
+      System.out.println(entry.getKey());
+    }
   }
 }

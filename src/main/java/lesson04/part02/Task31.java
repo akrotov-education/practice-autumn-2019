@@ -8,7 +8,7 @@ package lesson04.part02;
  * 5. Есть метод, который описан так:
  * public static void method1() throws Exception1, Exception2, Exception3
  * 6. Напиши catch, который перехватит все три Exception1, Exception2 и Exception3
- *
+ * <p>
  * Требования:
  * 1.	Метод main должен вызывать метод method1.
  * 2.	Метод main должен перехватывать исключение Exception1.
@@ -18,16 +18,13 @@ package lesson04.part02;
  */
 
 public class Task31 {
-
   public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
-
-    method1();
-
-    //напишите тут ваш код
-
+    try {
+      method1();
+    } catch (Exception e) {
+      System.out.println(e);
+    }
   }
-
   public static void method1() throws Exception1, Exception2, Exception3 {
     int i = (int) (Math.random() * 3);
     if (i == 0) {
@@ -38,13 +35,10 @@ public class Task31 {
       throw new Exception3();
     }
   }
-
   static class Exception1 extends Exception {
   }
-
   static class Exception2 extends Exception1 {
   }
-
   static class Exception3 extends Exception2 {
   }
 }

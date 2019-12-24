@@ -21,19 +21,19 @@ public class Task17 {
     public static void main(String[] args) {
     }
 
-    public class Carnivore {
+    public class Carnivore extends Animal {
 
     }
 
-    public class Cow {
+    public class Cow extends Animal {
 
     }
 
-    public class Dog {
+    public class Dog extends Carnivore {
 
     }
 
-    public class Pig {
+    public class Pig extends Animal {
 
     }
 

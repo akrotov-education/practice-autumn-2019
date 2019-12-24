@@ -20,10 +20,16 @@ public class Task09 {
         displayClosestToTen(7, 14);
     }
 
-    public static void displayClosestToTen(int a, int b) {
-        // напишите тут ваш код
+    public static int displayClosestToTen(int a, int b) {
+        if (abs(10-a)>=abs(10-b)){
+           return  b;
+        }
+        else {
+            return a;
+        }
+        }
 
-    }
+
 
     public static int abs(int a) {
         if (a < 0) {

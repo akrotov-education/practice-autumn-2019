@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Для arrayList и linkedList провести 10 тысяч вставок, удалений, а также вызовов get и set.
- *
+ * <p>
  * Требования:
  * 1.	Программа не должна выводить текст на экран.
  * 2.	Программа не должна считывать значения с клавиатуры.
@@ -15,7 +15,6 @@ import java.util.List;
  * 5.	Метод get10000(List list) должен вызывать 10 тысяч раз get у списка.
  * 6.	Метод set10000(List list) должен вызывать 10 тысяч раз set у списка.
  * 7.	Метод remove10000(List list) должен удалять 10 тысяч элементов из списка.
- *
  */
 
 public class Task20 {
@@ -37,22 +36,30 @@ public class Task20 {
   }
 
   public static void insert10000(List list) {
-    //напишите тут ваш код
+    for (int i = 0; i < 10000; i++) {
+      list.add(i, i);
+    }
 
   }
 
   public static void get10000(List list) {
-    //напишите тут ваш код
+    for (int i = 0; i < 10000; i++) {
+      list.get(i);
+    }
 
   }
 
   public static void set10000(List list) {
-    //напишите тут ваш код
+    for (int i = 0; i < 10000; i++) {
+      list.set(i, list.get(i));
+    }
 
   }
 
   public static void remove10000(List list) {
-    //напишите тут ваш код
+    for (int i = list.size() - 1; i >= 0; i--) {
+      list.remove(i);
+    }
 
   }
 }

@@ -15,17 +15,18 @@ package lesson02.part02;
 public class Task04 {
 
     public static void main(String[] args) {
-
+        /*Cat cat = new Cat();
+        cat.addNewCat(0);
+        System.out.println(Cat.catsCount); */
     }
 
     public static class Cat {
         private static int catsCount = 0;
 
-        public static void addNewCat() {
-            //напишите тут ваш код
+        public static void addNewCat(int catsCount) {
+            Cat.catsCount = catsCount + 1;
 
         }
     }
 
 }
-

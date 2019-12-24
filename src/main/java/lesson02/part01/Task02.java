@@ -14,9 +14,11 @@ package lesson02.part01;
  */
 
 public class Task02 {
-    // напишите тут ваш код
+    public static void printString(String args){
+      System.out.print(args);
+    }
 
     public static void main(String[] args) {
-//        printString("Hello, Amigo!");
+        printString("Hello, Amigo!");
     }
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Перехватить исключение (и вывести его на экран, указав его тип), возникающее при выполнении кода:
  * ArrayList<String> list = new ArrayList<String>();
  * String s = list.get(18);
- *
+ * <p>
  * Требования:
  * 1.	Программа должна выводить сообщение на экран.
  * 2.	В программе должен быть блок try-catch.
@@ -18,11 +18,12 @@ import java.util.ArrayList;
 public class Task29 {
 
   public static void main(String[] args) {
-    //напишите тут ваш код
+    try {
+      ArrayList<String> list = new ArrayList<String>();
+      String s = list.get(18);
 
-    ArrayList<String> list = new ArrayList<String>();
-    String s = list.get(18);
-
-    //напишите тут ваш код
+    } catch (IndexOutOfBoundsException e) {
+      System.out.println(e);
+    }
   }
 }

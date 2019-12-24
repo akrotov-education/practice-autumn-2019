@@ -1,3 +1,4 @@
+
 package lesson05.part02;
 
 /**
@@ -20,6 +21,19 @@ public class Task17 {
 
     }
 
-//add interfaces here - добавь интерфейсы тут
+    public interface CanFly {
+
+        public void method1();
+    }
+
+    public interface CanRun {
+
+        public void method1();
+    }
+
+    public interface CanSwim {
+
+        public void method1();
+    }
 
 }

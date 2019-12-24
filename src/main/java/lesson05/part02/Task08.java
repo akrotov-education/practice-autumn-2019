@@ -14,8 +14,32 @@ package lesson05.part02;
 
 public class Task08 {
     public static void main(String[] args) {
+        int a = 0;
+        Integer b = 0;
+        String s = "Ку-ку";
+        long d = 0;
+        boolean f = true;
+
+        print(a);
+        print(b);
+        print(s);
+        print(d);
+        print(f);
 
     }
 
-    //Напишите тут ваши методы
+    public static void print(int a) {
+    }
+
+    public static void print(Integer a) {
+    }
+
+    public static void print(String a) {
+    }
+
+    public static void print(long a) {
+    }
+
+    public static void print(boolean a) {
+    }
 }

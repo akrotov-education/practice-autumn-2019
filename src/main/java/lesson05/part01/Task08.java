@@ -17,9 +17,9 @@ public class Task08 {
     }
 
     public class Cat {
-        public String name;
-        public int age;
-        public int weight;
+        private String name;
+        private int age;
+        private int weight;
 
         public Cat(String name, int age, int weight) {
             this.name = name;

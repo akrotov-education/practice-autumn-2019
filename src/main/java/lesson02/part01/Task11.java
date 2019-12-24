@@ -17,7 +17,12 @@ public class Task11 {
     //напишите тут ваш код
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+    System.out.println(convertToSeconds(3));
+    System.out.println(convertToSeconds(16));
+    }
 
+    public static int convertToSeconds(int hour) {
+        int i = hour * 3600;
+        return i;
     }
 }

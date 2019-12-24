@@ -13,8 +13,12 @@ package lesson02.part01;
  */
 
 public class Task08 {
-    public static void main(String[] args) {
-        //напишите тут ваш код
+  public static void main(String[] args) {
+    //напишите тут ваш код
+    int s=1;
+    for (int i=1; i<11; i++)
+      s=s*i;
+    System.out.println(s);
 
-    }
+  }
 }

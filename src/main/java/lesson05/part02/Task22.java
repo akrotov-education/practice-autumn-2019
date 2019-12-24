@@ -19,7 +19,7 @@ package lesson05.part02;
 public class Task22 {
     public static void main(String[] args) {
         Pet pet = new Cat();
-        pet.setName("Я - пушистик");
+        pet.setName("Я - кот");
 
         System.out.println(pet.getName());
     }

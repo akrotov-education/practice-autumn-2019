@@ -1,7 +1,6 @@
 package lesson04.part02;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -22,23 +21,23 @@ import java.util.List;
 public class Task22 {
 
   public static List getListForGet() {
-    //напишите тут ваш код
-    return null;
+    ArrayList list = new ArrayList();
+    return list;
   }
 
   public static List getListForSet() {
-    //напишите тут ваш код
-    return null;
+    ArrayList list = new ArrayList();
+    return list;
   }
 
   public static List getListForAddOrInsert() {
-    //напишите тут ваш код
-    return null;
+    ArrayList list = new ArrayList();
+    return list;
   }
 
   public static List getListForRemove() {
-    //напишите тут ваш код
-    return null;
+    ArrayList list = new ArrayList();
+    return list;
   }
 
   public static void main(String[] args) {

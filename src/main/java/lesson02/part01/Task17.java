@@ -16,12 +16,16 @@ package lesson02.part01;
  * 5.	Выведенный текст должен полностью соответствовать заданию.
  */
 
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
 public class Task17 {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        Scanner scan = new Scanner(System.in);
+        String name = scan.nextLine();
+        String number = scan.nextLine();
+        System.out.print(name);
+        System.out.print(" захватит мир через ");
+        System.out.print(number);
+        System.out.print(" лет. Му-ха-ха!");
     }
 }

@@ -33,15 +33,35 @@ public class Task18 {
         void eat();
     }
 
-    public class Dog {
+    public class Dog implements CanMove, CanEat {
+        public void move() {
+        }
+
+        public void eat() {
+        }
     }
 
-    public class Duck {
+    public class Duck implements CanMove, CanEat, CanFly {
+        public void fly() {
+        }
+
+        public void move() {
+        }
+
+        public void eat() {
+        }
     }
 
-    public class Car {
+    public class Car implements CanMove {
+        public void move() {
+        }
     }
 
-    public class Airplane {
+    public class Airplane implements CanMove, CanFly {
+        public void fly() {
+        }
+
+        public void move() {
+        }
     }
 }

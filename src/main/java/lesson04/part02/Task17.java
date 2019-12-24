@@ -8,7 +8,7 @@ import java.util.Map;
  * Создать коллекцию Map<String, Cat> (реализация HashMap).
  * Добавить в коллекцию 10 котов, в качестве ключа использовать имя кота.
  * Вывести результат на экран, каждый элемент с новой строки.
- *
+ * <p>
  * Требования:
  * 1.	Программа не должна считывать значения с клавиатуры.
  * 2.	В методе addCatsToMap() объяви переменную коллекции Map с типом элементов String, Cat
@@ -34,8 +34,11 @@ public class Task17 {
 
 
   public static Map<String, Cat> addCatsToMap(String[] cats) {
-    //напишите тут ваш код
-    return null;
+    HashMap<String, Cat> addCats = new HashMap<>();
+    for (String s : cats) {
+      addCats.put(s, new Cat(s));
+    }
+    return addCats;
   }
 
 

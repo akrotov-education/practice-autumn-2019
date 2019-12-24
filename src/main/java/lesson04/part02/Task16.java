@@ -16,10 +16,10 @@ import java.util.Map;
  * ирис - цветок,
  * картофель - клубень.
  * Вывести содержимое коллекции на экран, каждый элемент с новой строки.
- *
+ * <p>
  * Пример вывода (тут показана только одна строка):
  * картофель - клубень
- *
+ * <p>
  * Требования:
  * 1.	Объяви переменную коллекции Map с типом элементов String, String и сразу проинициализируй ee.
  * 2.	Программа не должна считывать значения с клавиатуры.
@@ -30,6 +30,21 @@ import java.util.Map;
 public class Task16 {
 
   public static void main(String[] args) {
-    //напишите тут ваш код
+    Map<String, String> map = new HashMap<>();
+    map.put("арбуз", "ягода");
+    map.put("банан", "трава");
+    map.put("вишня", "ягода");
+    map.put("груша", "фрукт");
+    map.put("дыня", "овощ");
+    map.put("ежевика", "куст");
+    map.put("женьшень", "корень");
+    map.put("земляника", "ягода");
+    map.put("ирис", "цветок");
+    map.put("картофель", "клубень");
+
+    for (Map.Entry<String, String> entry : map.entrySet()) {
+      System.out.println(entry.getKey() + " - " + entry.getValue());
+    }
+
   }
 }

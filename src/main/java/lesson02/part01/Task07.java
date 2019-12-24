@@ -29,4 +29,17 @@ public class Task07 {
     public static class Terran {
         public String name;
     }
-}
+    Zerg Zergling = new Zerg();
+    Zerg Drone = new Zerg();
+    Zerg Overlord = new Zerg();
+    Zerg Queen = new Zerg();
+    Zerg Hydralisk = new Zerg();
+    Protoss Archon = new Protoss();
+    Protoss Zealot = new Protoss();
+    Protoss Templar = new Protoss();
+    Terran Ghost = new Terran();
+    Terran Marine = new Terran();
+    Terran Medivac = new Terran();
+    Terran Banshee = new Terran();
+    }
+

@@ -28,6 +28,9 @@ public class Task02 {
     }
 
     public static class Whale extends Cow {
+        public String getName() {
+            return null;
+        }
 
     }
 }

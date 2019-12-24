@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Порядок объявления списков очень важен.
  * 2. Метод printList должен выводить на экран все элементы списка с новой строки.
  * 3. Используя метод printList выведи эти три списка на экран. Сначала тот, который для x%3, потом тот, который для x%2, потом последний.
- *
+ * <p>
  * Требования:
  * 1.	Объяви и сразу проинициализируй 4 переменных типа ArrayList<Integer> (список целых чисел). Первый список будет главным, а остальные - дополнительными.
  * 2.	Считать 20 чисел с клавиатуры и добавить их в главный список.
@@ -24,10 +24,37 @@ import java.util.ArrayList;
 
 public class Task07 {
   public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+    ArrayList<Integer> array_list = new ArrayList<>();
+    ArrayList<Integer> list1 = new ArrayList<>();
+    ArrayList<Integer> list2 = new ArrayList<>();
+    ArrayList<Integer> list3 = new ArrayList<>();
+
+    for (int i = 0; i < 8; i++) {
+      System.out.println("Введите число: ");
+      array_list.add(Integer.parseInt(reader.readLine()));
+    }
+
+    for (int i = 0; i < 8; i++) {
+      if ((array_list.get(i) % 3) == 0) {
+        list1.add(array_list.get(i));
+      }
+      if ((array_list.get(i) % 2) == 0) {
+        list2.add(array_list.get(i));
+      } else list3.add(array_list.get(i));
+    }
+    printList(list1);
+    printList(list2);
+    printList(list3);
+
   }
 
   public static void printList(ArrayList<Integer> list) {
-    //напишите тут ваш код
+    for (Integer lists : list) {
+      System.out.println(lists);
+    }
+    System.out.println("");
+
   }
 }

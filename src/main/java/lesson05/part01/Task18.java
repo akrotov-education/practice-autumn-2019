@@ -24,7 +24,7 @@ public class Task18 {
 
     }
 
-    public class Cat {
+    public class Cat extends Pet {
 
     }
 
@@ -32,7 +32,7 @@ public class Task18 {
 
     }
 
-    public class Dog {
+    public class Dog extends Pet {
 
     }
 }

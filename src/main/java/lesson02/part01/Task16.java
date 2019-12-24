@@ -13,7 +13,7 @@ package lesson02.part01;
 
 public class Task16 {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        System.out.print("日本語");
 
     }
 }

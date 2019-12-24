@@ -18,6 +18,17 @@ import java.io.InputStreamReader;
 public class Task02 {
 
   public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+    int[] array = new int[10];
+
+    for (int i = 0; i < 10; i++) {
+      System.out.println("Введите число: ");
+      array[i] = Integer.parseInt(reader.readLine());
+    }
+
+    for (int i = 9; i >= 0; i--) {
+      System.out.println(array[i]);
+    }
   }
 }

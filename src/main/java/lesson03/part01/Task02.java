@@ -15,14 +15,32 @@ package lesson03.part01;
  */
 
 public class Task02 {
+  public static void main(String[] args) {
 
-    public static void main(String[] args) {
+    class Dog {
 
+      private int age;
+      private String name;
+
+
+      public Dog(String name, int age) {
+        this.name = name;
+        this.age = age;
+      }
+      public void setName(String name) {
+        this.name = "Do";
+      }
+      public String getName() {
+        return name;
+      }
+      public void setAge(int age) {
+        this.age = 2;
+      }
+      public int getAge() {
+        return age;
+      }
     }
 
-    public static class Dog {
-        //напишите тут ваш код
 
-    }
-
+  }
 }

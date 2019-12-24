@@ -20,7 +20,32 @@ package lesson05.part02;
 public class Task10 {
     public static void main(String[] args) {
 
+        int a = 0;
+        int b = 999;
+
+        long c = 0;
+        long d = 999;
+
+        double e = 0;
+        double f = 999;
+
+        max(a, b);
+        max(c, d);
+        max(e, f);
     }
 
-    //Напишите тут ваши методы
+    public static int max(int a, int b) {
+        int max = Math.max(a, b);
+        return max;
+    }
+
+    public static long max(long a, long b) {
+        long max = Math.max(a, b);
+        return max;
+    }
+
+    public static double max(double a, double b) {
+        double max = Math.max(a, b);
+        return max;
+    }
 }

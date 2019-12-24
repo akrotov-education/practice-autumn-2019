@@ -9,17 +9,17 @@ import java.util.ArrayList;
  * 2.2. удваивать все слова содержащие букву "л".
  * 2.3. если слово содержит и букву "р" и букву "л", то оставить это слово без изменений.
  * 2.4. с другими словами ничего не делать.
- *
+ * <p>
  * Пример:
  * роза
  * лира
  * лоза
- *
+ * <p>
  * Выходные данные:
  * лира
  * лоза
  * лоза
- *
+ * <p>
  * Требования:
  * 1.	Программа не должна считывать данные с клавиатуры.
  * 2.	Метод fix должен удалять из списка строк все слова, содержащие букву "р".
@@ -44,7 +44,16 @@ public class Task09 {
   }
 
   public static ArrayList<String> fix(ArrayList<String> strings) {
-    //напишите тут ваш код
-    return null;
+    for (int i = 0; i < strings.size(); ) {
+      String s = strings.get(i);
+      if (s.contains("р") && !s.contains("л"))
+        strings.remove(i);
+      else if (!s.contains("р") && s.contains("л")) {
+        strings.add(i, s);
+        i = i + 2;
+      } else
+        i++;
+    }
+    return strings;
   }
 }

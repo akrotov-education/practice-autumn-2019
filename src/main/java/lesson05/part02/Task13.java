@@ -17,12 +17,12 @@ public class Task13 {
 
     }
 
-//    public static class Pet {
-//        public String getName() {
-//            return "Я - котенок";
-//        }
-//
-//        public Pet getChild();
-//    }
+    public static abstract class Pet {
+        public String getName() {
+            return "Я - котенок";
+        }
+
+        public abstract Pet getChild();
+    }
 
 }

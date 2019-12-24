@@ -25,15 +25,15 @@ public class Task09 {
 }
 
 class Cat {
-    public String name;
-    public int speed;
+    private String name;
+    private int speed;
 
     public Cat(String name, int speed) {
         this.name = name;
         this.speed = speed;
     }
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
@@ -47,15 +47,15 @@ class Cat {
 }
 
 class Dog {
-    public String name;
-    public int speed;
+    private String name;
+    private int speed;
 
     public Dog(String name, int speed) {
         this.name = name;
         this.speed = speed;
     }
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
@@ -67,6 +67,3 @@ class Dog {
         return this.speed > cat.getSpeed();
     }
 }
-
-
-

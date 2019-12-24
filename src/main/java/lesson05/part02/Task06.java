@@ -15,8 +15,11 @@ package lesson05.part02;
 
 public class Task06 {
     public static void main(String[] args) {
-
     }
 
-    //Напишите тут ваши методы
+    public static void print(int i) {
+    }
+
+    public static void print(String s) {
+    }
 }

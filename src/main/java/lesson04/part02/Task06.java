@@ -18,6 +18,19 @@ import java.util.ArrayList;
 
 public class Task06 {
   public static void main(String[] args) throws Exception {
-    //напишите тут ваш код
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+    ArrayList<String> array_list = new ArrayList<>();
+
+    for (int i = 0; i<5; i++) {
+      System.out.println("Введите строку: ");
+      array_list.add(reader.readLine());
+    }
+
+    array_list.remove(2);
+
+    for (int i = array_list.size()-1; i>=0; i--) {
+      System.out.println(array_list.get(i));
+    }
   }
 }

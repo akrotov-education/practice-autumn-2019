@@ -14,7 +14,12 @@ package lesson02.part02;
 
 public class Task30 {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        int c = 1;
+        while (c != 11){
+            System.out.println(c);
+            c+=1;
+        }
+
 
     }
 }
