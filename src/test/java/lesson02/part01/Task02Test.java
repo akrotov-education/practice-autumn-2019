@@ -59,11 +59,11 @@ public class Task02Test {
   }
 
   @Test
-//  @DisplayName("Проверка модификаторов")
   public void printString_ValidateOutput() {
     try {
       Method printString = Task02.class.getDeclaredMethod("printString", String.class);
       String testText = "random$text";
+      fakeOut.reset();
       printString.invoke(null, testText);
       assertEquals("Метод printString должен выводить переданный текст на экран.", testText,
           fakeOut.toString().trim());
@@ -71,11 +71,10 @@ public class Task02Test {
   }
 
   @Test
-//  @DisplayName("Проверка модификаторов")
   public void main() {
     try {
-      Method main = Task02.class.getDeclaredMethod("main", String[].class);
-      main.invoke(null, (Object[]) null);
+      fakeOut.reset();
+      Task02.main(null);
       assertEquals("Программа должна вывести \"Hello, Amigo!\"", "Hello, Amigo!", fakeOut.toString().trim());
     } catch (Exception e) {}
   }

@@ -1,6 +1,9 @@
 name: Run build
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
     branches:
       - master
