@@ -22,8 +22,10 @@ public class Task02 {
         div(2, 4);
     }
 
-    public static int div(int a, int b) {
-    return(a/b);
+    public static void div(int a, int b) {
+        //напишите тут ваш код
+        int s= a/b;
+        System.out.print(s);
 
     }
 }

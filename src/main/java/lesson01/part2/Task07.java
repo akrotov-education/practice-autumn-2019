@@ -1,6 +1,6 @@
 package lesson01.part2;
 
-public class  Task07 {
+public class Task07 {
 
     /**
      * Самое нужное число

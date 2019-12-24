@@ -13,13 +13,13 @@ public class Task13 {
      * 3. Метод print3 должен выводить текст на экран.
      * 4. Метод main должен вызвать метод print3 только один раз.
      * 5. Метод print3 должен выводить на экран строку 3 раза. Каждый раз с новой строки.
-     * @return
      */
 
-    public static String print3(String s) {
-        for (int x = 0; x < 4; x = x+1)
-        return("I love you");
-        return s;
+    public static void print3(String s) {
+        System.out.println(s);
+        System.out.println(s);
+        System.out.println(s);
+
     }
 
     public static void main(String[] args) {

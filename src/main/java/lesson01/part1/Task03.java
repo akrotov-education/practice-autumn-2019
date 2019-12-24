@@ -16,6 +16,6 @@ public class Task03 {
 
     public static void main(String[] args) {
         int g = 2019 - 98;
-            System.out.println(g);
+        System.out.println(g);
     }
 }

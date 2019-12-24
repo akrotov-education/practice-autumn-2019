@@ -20,7 +20,11 @@ public class Task12 {
         String sausage = "Колбаса";
         String peach = "Персик";
 
+        //напишите тут ваш код
         System.out.println(apple);
+        System.out.println(porridge);
+        System.out.println(sausage);
         System.out.println(peach);
+
     }
 }

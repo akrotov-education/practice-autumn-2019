@@ -18,12 +18,15 @@ public class Task10 {
      */
 
     public static int min(int a, int b) {
-        if (a>b) {
-            return (b);
-           }else {
-                return(a);
-            }
-            }
+        int m;
+        if (a>b)
+            m = b;
+        else
+            m = a;
+        return m;
+        //напишите тут ваш код
+
+    }
 
     public static void main(String[] args) {
         System.out.println(min(12, 33));
