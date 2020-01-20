@@ -23,7 +23,16 @@ public class Task15 {
      */
 
     public static void main(String[] args) {
+<<<<<<< HEAD
+        Man he = new Man();
+        Man man = he;
+        Woman she = new Woman();
+        Woman woman = she;
+        man.wife = she;
+        woman.husband = man;
+=======
         //напишите тут ваш код
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     }
 
     public static class Man {

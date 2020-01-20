@@ -14,14 +14,24 @@ public class Task07 {
      * 4. Нужно закомментировать некоторые строки и не менять остальные.
      */
 
+<<<<<<< HEAD
+     public static void main(String[] args) {
+=======
     public static void main(String[] args) {
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
         int x = 1;
         int y = 0;
 
         y = y + 3 * x;
+<<<<<<< HEAD
+        //x = x * 2;
+        x = x * 16;
+        //y = y + 2 * x;
+=======
         x = x * 2;
         x = x * 16;
         y = y + 2 * x;
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
         y = y + x;
 
         System.out.println(y);

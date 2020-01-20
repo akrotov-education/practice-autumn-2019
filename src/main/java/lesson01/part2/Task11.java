@@ -17,10 +17,23 @@ public class Task11 {
      * 5. Метод min должен возвращать минимальное значение из чисел a, b и с.
      */
 
+<<<<<<< HEAD
+     public static int min(int a, int b, int c) {
+        if (a<b) {
+            if (a<c) {return a;}
+           else {return c;}
+        }
+        else {
+            if (a<c) {return b;}
+            else {return c;}
+        }
+    };
+=======
     public static int min(int a, int b, int c) {
         //напишите тут ваш код
         return 0;
     }
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
 
     public static void main(String[] args) {
         System.out.println(min(1, 2, 3));

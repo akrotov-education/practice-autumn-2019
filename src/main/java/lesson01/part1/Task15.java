@@ -19,7 +19,11 @@ public class Task15 {
     public static int number = 25;
 
     public static void main(String[] args) {
+<<<<<<< HEAD
+        System.out.println(Math.pow(number,2));
+=======
         //Измените код
         System.out.println(Math.cos(number));
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
     }
 }

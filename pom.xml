@@ -7,6 +7,8 @@
     <groupId>mtuci.java</groupId>
     <artifactId>java</artifactId>
     <version>1.0</version>
+<<<<<<< HEAD
+=======
     <build>
         <plugins>
             <plugin>
@@ -44,5 +46,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+>>>>>>> 63ed5ccc4a76e65d25aa84e4a9540f22d1e60c19
 
 </project>
